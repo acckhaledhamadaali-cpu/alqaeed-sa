@@ -17,10 +17,6 @@ export default function ProblemsSection(props: HTMLAttributes<HTMLElement>) {
             <SectionTitle id="problems-title" level={2} className="font-bold">
               هل ينطبق على منشأتك واحد أو أكثر من هذه الأسئلة؟
             </SectionTitle>
-            
-            <SectionDescription id="problems-description" className="text-center">
-              قد تحقق منشأتك مبيعات جيدة لكن هل تعرف أرباحك الحقيقية
-            </SectionDescription>
           </div>
 
           {/* Problem Checklist: 1 column on Mobile, 2 columns on Tablet & Desktop */}
