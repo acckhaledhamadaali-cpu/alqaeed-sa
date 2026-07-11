@@ -1,0 +1,6 @@
+{
+  "name": "خالد القائد - محاسب ومحلل مالي",
+  "description": "الصفحة التعريفية للمحاسب والمحلل المالي خالد القائد، التي تستهدف أصحاب المشاريع والمنشآت الصغيرة والمتوسطة في المملكة العربية السعودية.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
