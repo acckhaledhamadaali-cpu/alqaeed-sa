@@ -11,6 +11,7 @@ export default function ResultCard({ title, description, id, className = '', ...
     <div 
       id={id} 
       className={`bg-white border border-border-subtle p-5 sm:p-6 ${RADIUS.large} ${TRANSITIONS.fast} hover:border-text-muted flex flex-col space-y-2 text-right h-full ${className}`} 
+      role="listitem"
       {...props}
     >
       <h3 

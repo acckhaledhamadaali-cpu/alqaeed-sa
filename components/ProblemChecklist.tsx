@@ -23,6 +23,8 @@ export default function ProblemChecklist({ className = '', ...props }: ProblemCh
     <div 
       id="problem-checklist-container" 
       className={className} 
+      role="list"
+      aria-label="قائمة الأسئلة والتحديات المالية الشائعة في المنشآت"
       {...props}
     >
       {QUESTIONS.map((question, index) => (
@@ -30,6 +32,7 @@ export default function ProblemChecklist({ className = '', ...props }: ProblemCh
           key={index} 
           id={`problem-checklist-row-${index}`} 
           className="flex items-start space-x-3 space-x-reverse"
+          role="listitem"
         >
           {/* Simple custom visual checkbox, relying on tokens, no animations */}
           <div 

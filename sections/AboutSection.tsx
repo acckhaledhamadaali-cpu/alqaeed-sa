@@ -35,7 +35,7 @@ const QUOTE: string = "الأرقام وحدها لا تنجح المنشآت ل
 
 export default function AboutSection(props: HTMLAttributes<HTMLElement>) {
   return (
-    <SectionWrapper id="about-section-wrapper" variant="white" spacing="default" className="!py-10 md:!py-24" {...props}>
+    <SectionWrapper id="about-section-wrapper" variant="white" spacing="default" className="!py-10 md:!py-24" itemScope itemType="https://schema.org/Person" {...props}>
       <Container id="about-container">
         <div id="about-content" className="flex flex-col space-y-6 md:space-y-16 text-right">
           
@@ -54,10 +54,10 @@ export default function AboutSection(props: HTMLAttributes<HTMLElement>) {
               
               {/* Profile Area */}
               <div id="about-profile-area" className="flex flex-col space-y-2">
-                <h3 id="about-profile-name" className={`${TYPOGRAPHY.display.l} text-text-primary font-bold`}>
+                <h3 id="about-profile-name" className={`${TYPOGRAPHY.display.l} text-text-primary font-bold`} itemProp="name">
                   {PROFILE.name}
                 </h3>
-                <p id="about-profile-title" className={`${TYPOGRAPHY.body.large} text-text-secondary font-medium`}>
+                <p id="about-profile-title" className={`${TYPOGRAPHY.body.large} text-text-secondary font-medium`} itemProp="jobTitle">
                   {PROFILE.title}
                 </p>
               </div>
@@ -92,7 +92,7 @@ export default function AboutSection(props: HTMLAttributes<HTMLElement>) {
             <div id="about-col-2" className="flex flex-col space-y-6 md:space-y-8 max-w-xl md:max-w-2xl">
               
               {/* Description Paragraphs */}
-              <div id="about-description" className="flex flex-col space-y-4 md:space-y-8">
+              <div id="about-description" className="flex flex-col space-y-4 md:space-y-8" itemProp="description">
                 {PARAGRAPHS.map((paragraph, index) => (
                   <p 
                     key={index} 

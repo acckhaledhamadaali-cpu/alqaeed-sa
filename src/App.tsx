@@ -15,13 +15,15 @@ import FloatingWhatsApp from '../sections/FloatingWhatsApp';
 export default function App() {
   return (
     <div className="min-h-screen bg-bg-light text-text-primary antialiased selection:bg-secondary/10" dir="rtl">
-      {/* Structural sections in order */}
-      <HeroSection />
-      <ProblemsSection />
-      <HowIWorkSection />
-      <ResultsSection />
-      <AboutSection />
-      <FinalCTASection />
+      <main id="main-content">
+        {/* Structural sections in order */}
+        <HeroSection />
+        <ProblemsSection />
+        <HowIWorkSection />
+        <ResultsSection />
+        <AboutSection />
+        <FinalCTASection />
+      </main>
       <FooterSection />
       
       {/* Floating elements */}

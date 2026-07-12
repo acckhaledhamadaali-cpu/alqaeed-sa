@@ -41,12 +41,19 @@ const STEPS: Step[] = [
 
 export default function Timeline({ className = '', ...props }: TimelineProps) {
   return (
-    <div id="timeline-container" className={`flex flex-col ${className}`} {...props}>
+    <div 
+      id="timeline-container" 
+      className={`flex flex-col ${className}`} 
+      role="list"
+      aria-label="خطوات ومنهجية العمل المحاسبي والمالي المشترك"
+      {...props}
+    >
       {STEPS.map((step, index) => (
         <div 
           key={index} 
           id={`timeline-step-${index}`} 
           className="flex gap-4 md:gap-6 items-stretch"
+          role="listitem"
         >
           {/* Vertical line and step number container */}
           <div className="flex flex-col items-center flex-shrink-0">

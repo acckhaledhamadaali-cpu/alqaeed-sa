@@ -1,9 +1,10 @@
-import { ReactNode, HTMLAttributes } from 'react';
+import { ReactNode, HTMLAttributes, ElementType } from 'react';
 
 export interface SectionWrapperProps extends HTMLAttributes<HTMLElement> {
   children: ReactNode;
   variant?: 'white' | 'subtle' | 'primary';
   spacing?: 'default' | 'dense' | 'none';
+  as?: ElementType;
 }
 
 export default function SectionWrapper({
@@ -11,6 +12,7 @@ export default function SectionWrapper({
   variant = 'white',
   spacing = 'default',
   className = '',
+  as: Component = 'section',
   ...props
 }: SectionWrapperProps) {
   const variants = {
@@ -26,11 +28,11 @@ export default function SectionWrapper({
   };
 
   return (
-    <section
+    <Component
       className={`${variants[variant]} ${spacings[spacing]} w-full overflow-hidden ${className}`}
       {...props}
     >
       {children}
-    </section>
+    </Component>
   );
 }

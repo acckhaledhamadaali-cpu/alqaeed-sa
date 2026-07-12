@@ -55,7 +55,12 @@ export default function ResultsSection(props: HTMLAttributes<HTMLElement>) {
           </div>
 
           {/* Results Grid */}
-          <div id="results-grid" className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6 w-full items-stretch">
+          <div 
+            id="results-grid" 
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6 w-full items-stretch"
+            role="list"
+            aria-label="النتائج والقيمة المضافة لأصحاب المنشآت عند التعاقد مع خالد القائد"
+          >
             {RESULTS.map((result, index) => (
               <ResultCard 
                 key={index}

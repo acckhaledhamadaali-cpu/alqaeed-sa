@@ -32,31 +32,33 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
             className="md:col-span-7 flex flex-col items-center md:items-start text-center md:text-right space-y-6 md:space-y-8 order-2 md:order-1"
           >
             
-            {/* Brand & Tagline Area */}
-            <div id="hero-brand-area" className="flex flex-col items-center md:items-start space-y-1">
-              <span id="hero-brand-name" className={`${TYPOGRAPHY.body.small} font-semibold text-text-primary`}>
-                خـالـد الـقـائـد
-              </span>
-              <span id="hero-brand-tagline" className={`${TYPOGRAPHY.caption} text-secondary`}>
-                أرْقامٌ مُرتّبة... وقراراتٌ أفضل
-              </span>
-            </div>
+            <header id="hero-header" className="flex flex-col items-center md:items-start space-y-6 md:space-y-8 w-full text-center md:text-right">
+              {/* Brand & Tagline Area */}
+              <div id="hero-brand-area" className="flex flex-col items-center md:items-start space-y-1">
+                <span id="hero-brand-name" className={`${TYPOGRAPHY.body.small} font-semibold text-text-primary`}>
+                  خـالـد الـقـائـد
+                </span>
+                <span id="hero-brand-tagline" className={`${TYPOGRAPHY.caption} text-secondary`}>
+                  أرْقامٌ مُرتّبة... وقراراتٌ أفضل
+                </span>
+              </div>
 
-            {/* Main Heading (H1) */}
-            <h1 
-              id="hero-main-heading" 
-              className={`${TYPOGRAPHY.display.xl} text-text-primary`}
-            >
-              ابدأ مشروعك وأنت مطمئن أن أرقامك مرتبة من أول يوم
-            </h1>
+              {/* Main Heading (H1) */}
+              <h1 
+                id="hero-main-heading" 
+                className={`${TYPOGRAPHY.display.xl} text-text-primary`}
+              >
+                ابدأ مشروعك وأنت مطمئن أن أرقامك مرتبة من أول يوم
+              </h1>
 
-            {/* Description (Paragraph) */}
-            <p 
-              id="hero-description" 
-              className={`${TYPOGRAPHY.body.large} max-w-xl`}
-            >
-              أساعد أصحاب المنشآت في المملكة العربية السعودية على تنظيم الحسابات ومتابعة الأداء المالي وتحويل الأرقام إلى قرارات تساعد على نمو أعمالهم دون الحاجة إلى توظيف محاسب بدوام كامل.
-            </p>
+              {/* Description (Paragraph) */}
+              <p 
+                id="hero-description" 
+                className={`${TYPOGRAPHY.body.large} max-w-xl`}
+              >
+                أساعد أصحاب المنشآت في المملكة العربية السعودية على تنظيم الحسابات ومتابعة الأداء المالي وتحويل الأرقام إلى قرارات تساعد على نمو أعمالهم دون الحاجة إلى توظيف محاسب بدوام كامل.
+              </p>
+            </header>
 
             {/* Benefits (List of 3 items, spaced equally, each on its own line) */}
             <ul id="hero-benefits-list" className="flex flex-col space-y-3 items-center md:items-start">
