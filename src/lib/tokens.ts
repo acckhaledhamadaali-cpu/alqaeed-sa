@@ -43,20 +43,20 @@ export const COLORS = {
 
 export const TYPOGRAPHY = {
   display: {
-    xl: 'text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight font-arabic leading-tight',
-    l: 'text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight font-arabic leading-tight',
+    xl: 'text-xl sm:text-2xl md:text-3xl font-bold tracking-tight font-arabic leading-tight',
+    l: 'text-lg sm:text-xl md:text-2xl font-bold tracking-tight font-arabic leading-tight',
   },
   heading: {
-    h1: 'text-2xl md:text-3xl font-semibold font-arabic leading-snug',
-    h2: 'text-xl md:text-2xl font-semibold font-arabic leading-snug',
-    h3: 'text-lg md:text-xl font-medium font-arabic leading-normal',
+    h1: 'text-lg md:text-xl font-semibold font-arabic leading-snug',
+    h2: 'text-base md:text-lg font-semibold font-arabic leading-snug',
+    h3: 'text-sm md:text-base font-medium font-arabic leading-normal',
   },
   body: {
-    large: 'text-lg font-normal leading-relaxed text-text-secondary font-arabic',
-    normal: 'text-base font-normal leading-relaxed text-text-secondary font-arabic',
-    small: 'text-sm font-normal leading-normal text-text-muted font-arabic',
+    large: 'text-sm font-normal leading-relaxed text-text-secondary font-arabic',
+    normal: 'text-xs font-normal leading-relaxed text-text-secondary font-arabic',
+    small: 'text-[10px] font-normal leading-normal text-text-muted font-arabic',
   },
-  caption: 'text-xs font-medium tracking-wider text-text-muted font-arabic uppercase',
+  caption: 'text-[8px] font-medium tracking-wider text-text-muted font-arabic uppercase',
 };
 
 export const RADIUS = {

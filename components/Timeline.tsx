@@ -14,28 +14,28 @@ interface Step {
 const STEPS: Step[] = [
   {
     number: "1",
-    title: "تنظيم الحسابات",
-    description: "أرتب حسابات منشأتك وأبني نظاماً مالياً واضحاً يناسب طبيعة نشاطك."
+    title: "تحليل الفجوات المالية",
+    description: "ندرس نموذج عملك ونكتشف أماكن الهدر ونقاط الضعف في نظامك المالي الحالي"
   },
   {
     number: "2",
-    title: "المتابعة المالية",
-    description: "أتابع الإيرادات والمصروفات والعملاء والموردين والتدفقات النقدية بشكل مستمر."
+    title: "بناء النظام المالي",
+    description: "نؤسس هيكلاً مالياً متيناً يضمن دقة تسجيل الإيرادات والمصروفات والتدفقات النقدية"
   },
   {
     number: "3",
-    title: "التقارير المالية",
-    description: "أعد تقارير مالية واضحة وبسيطة توضح الأداء الحقيقي لمنشأتك."
+    title: "الرقابة والمتابعة",
+    description: "نراقب أداءك المالي باستمرار لنضمن التزامك بالموازنة وتحقيق مستهدفاتك الربحية"
   },
   {
     number: "4",
-    title: "التحليل المالي",
-    description: "أحلل النتائج وأوضح نقاط القوة والضعف وفرص تحسين الأداء."
+    title: "مؤشرات وتقارير",
+    description: "نزودك بلوحات معلومات وتقارير أداء دقيقة تدعم قراراتك الاستراتيجية وتسرع نموك"
   },
   {
     number: "5",
-    title: "التوصيات",
-    description: "أقدم توصيات عملية تساعدك على اتخاذ قرارات أفضل وتحقيق نمو مستدام."
+    title: "توجيه استراتيجي",
+    description: "نعمل كشريك مالي يقدم التوصيات المستمرة لضمان الاستدامة وتعظيم العوائد"
   }
 ];
 
@@ -60,7 +60,7 @@ export default function Timeline({ className = '', ...props }: TimelineProps) {
             {/* Step Number Circle */}
             <div 
               id={`timeline-step-circle-${index}`} 
-              className="w-6 h-6 md:w-7 md:h-7 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xs md:text-sm select-none z-10"
+              className="w-6 h-6 md:w-7 md:h-7 rounded-full bg-primary text-white flex items-center justify-center font-bold text-[8px] md:text-[10px] select-none z-10"
             >
               {step.number}
             </div>

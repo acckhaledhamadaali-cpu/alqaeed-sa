@@ -22,27 +22,26 @@ const STATISTICS: StatItem[] = [
 ];
 
 const PARAGRAPHS: string[] = [
-  "أنا خالد القائد محاسب ومحلل مالي أساعد أصحاب المنشآت الصغيرة والمتوسطة في المملكة العربية السعودية على بناء إدارة مالية تمنحهم رؤية واضحة لأعمالهم لأنني أؤمن أن القرار الصحيح يبدأ من أرقام صحيحة",
-  "على مدار أكثر من 9 سنوات من الخبرة عملت مع 12 قطاعا مختلفا مما أكسبني فهما عمليا لاحتياجات كل نشاط سواء كان مطعما أو مقهى أو شركة تجارية أو مصنعا أو مؤسسة مقاولات أو نشاطا خدميا لذلك لا أقدم حلولا عامة بل أقدم حلولا تناسب طبيعة كل منشأة وأهدافها",
-  "أحمل بكالوريوس التجارة شعبة المحاسبة وماجستير إدارة الأعمال كما أستفيد من تقنيات الذكاء الاصطناعي وهندسة الأوامر لتحليل البيانات المالية بكفاءة أعلى واستخراج المعلومات بسرعة ودقة مع الالتزام الكامل بالمعايير المحاسبية وأفضل الممارسات المالية لأن التقنية بالنسبة لي وسيلة لرفع جودة الخدمة أما القرار المالي فيبقى مبنيا على الخبرة والتحليل المهني",
-  "عندما تبدأ العمل معي فأنت لا تتعامل مع شخص يقتصر دوره على تسجيل القيود المحاسبية أو إعداد التقارير فقط بل مع شريك مالي يتابع منشأتك باستمرار ويحول الأرقام إلى معلومات واضحة تساعدك على اتخاذ قرارات أكثر ثقة واكتشاف فرص التحسين ومعالجة المشكلات قبل أن تؤثر على نمو أعمالك",
-  "سأساعدك على تنظيم حسابات منشأتك ومتابعة الإيرادات والمصروفات والتدفقات النقدية وقياس الربحية الحقيقية وإعداد التقارير المالية وتحليل الأداء وتقديم توصيات عملية تساعدك على تحسين النتائج وخفض الهدر ودعم خطط النمو والتوسع",
-  "هدفي أن تكون أرقام منشأتك واضحة في أي وقت وأن تعرف أين تحقق الأرباح وأين توجد فرص التحسين وأن تتخذ قراراتك بثقة اعتمادا على بيانات دقيقة بينما تتفرغ أنت لإدارة أعمالك وتنميتها وأتولى أنا متابعة الجانب المالي بكل احترافية",
-  "ولأن نجاح أي منشأة لا يعتمد على حجم مبيعاتها فقط بل على قدرتها على فهم أرقامها واتخاذ القرار الصحيح في الوقت المناسب"
+  "تحتاج المنشآت الصغيرة والمتوسطة **SMEs** إلى أكثر من مجرد تسجيل فواتير لتنجح إنها بحاجة إلى رؤية مالية ثاقبة تحميها من التعثر وتوجهها نحو النمو المستدام",
+  "كصاحب عمل ينصب تركيزك على ابتكار الحلول وخدمة عملائك بينما يشكل الجانب المالي عبئاً يستنزف طاقتك هنا يأتي دورنا كشريك مالي استراتيجي يحمل عنك هذا العبء ويوجهك نحو الربحية",
+  "من خلال خبرة عملية تمتد لأكثر من 9 سنوات في 12 قطاعاً حيوياً (تشمل المطاعم المقاهي المقاولات والمصانع) ندرك تماماً أن التحديات تختلف ولذلك نبتكر حلولاً مالية مفصلة تناسب طبيعة نشاطك",
+  "نجمع بين عمق المعرفة المحاسبية (بكالوريوس محاسبة وماجستير **MBA**) وقوة التكنولوجيا الحديثة حيث نوظف أدوات الذكاء الاصطناعي **AI** وهندسة الأوامر **Prompt Engineering** لتحليل بياناتك بسرعة فائقة وبدقة متناهية",
+  "نضمن التزامك التام بالمعايير المحاسبية الدولية **IFRS** ونتجاوز دور المحاسب التقليدي لنكون عينك الساهرة على أداء المنشأة نراقب **Cash Flow** نحلل **KPIs** ونكتشف فرص تعظيم الأرباح",
+  "هدفنا أن نوفر لك الطمأنينة الكاملة واليقين المالي لتتخذ قراراتك بثقة تامة وتتفرغ بشغف لتنمية وتوسيع إمبراطوريتك التجارية"
 ];
 
-const QUOTE: string = "الأرقام وحدها لا تنجح المنشآت لكن فهمها هو ما يصنع الفرق";
+const QUOTE: string = "النجاح الحقيقي لمنشأتك يبدأ عندما تتحول الأرقام الغامضة إلى قرارات استراتيجية واضحة";
 
 export default function AboutSection(props: HTMLAttributes<HTMLElement>) {
   return (
-    <SectionWrapper id="about-section-wrapper" variant="white" spacing="default" className="!py-10 md:!py-24" itemScope itemType="https://schema.org/Person" {...props}>
+    <SectionWrapper id="about-section-wrapper" variant="white" spacing="default" itemScope itemType="https://schema.org/Person" {...props}>
       <Container id="about-container">
         <div id="about-content" className="flex flex-col space-y-6 md:space-y-16 text-right">
           
           {/* Section Title */}
           <div id="about-header" className="w-full">
             <SectionTitle id="about-title" level={2} className="font-bold">
-              من أنا
+              شريكك المالي
             </SectionTitle>
           </div>
 
@@ -68,17 +67,17 @@ export default function AboutSection(props: HTMLAttributes<HTMLElement>) {
                   <div 
                     key={index} 
                     id={`about-stat-item-${index}`}
-                    className="border border-border-subtle p-3 sm:p-5 rounded-xl bg-white flex flex-col items-center justify-center text-center h-full min-h-[100px] sm:min-h-[130px] transition-all duration-200 hover:border-secondary/30 shadow-[0_2px_8px_rgba(0,0,0,0.01)]"
+                    className="border border-white p-3 sm:p-5 rounded-xl bg-white flex flex-col items-center justify-center text-center h-full min-h-[100px] sm:min-h-[130px] transition-all duration-200 hover:border-secondary/30 shadow-[0_2px_8px_rgba(0,0,0,0.01)]"
                   >
                     <span 
                       id={`about-stat-value-${index}`} 
-                      className={`${stat.value === 'AI Financial' ? 'text-sm xs:text-base sm:text-lg md:text-xl font-bold font-sans leading-tight' : 'text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight font-sans leading-none'} text-text-primary mb-1.5`}
+                      className={`${stat.value === 'AI Financial' ? 'text-[10px] xs:text-xs sm:text-sm md:text-base font-bold font-sans leading-tight' : 'text-lg xs:text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight font-sans leading-none'} text-text-primary mb-1.5`}
                     >
                       {stat.value}
                     </span>
                     <span 
                       id={`about-stat-label-${index}`} 
-                      className="text-[10px] xs:text-[11px] sm:text-xs md:text-sm font-medium leading-snug text-text-secondary font-arabic"
+                      className="text-[8px] xs:text-[9px] sm:text-[10px] md:text-xs font-medium leading-snug text-text-secondary font-arabic"
                     >
                       {stat.label}
                     </span>
@@ -99,7 +98,7 @@ export default function AboutSection(props: HTMLAttributes<HTMLElement>) {
                     id={`about-description-paragraph-${index}`}
                     className={`${TYPOGRAPHY.body.normal} text-text-secondary leading-[1.6] md:leading-[1.85]`}
                   >
-                    {paragraph}
+                    {paragraph.split('**').map((part, i) => i % 2 === 1 ? <strong key={i} className="font-bold text-text-primary">{part}</strong> : part)}
                   </p>
                 ))}
               </div>
@@ -109,7 +108,7 @@ export default function AboutSection(props: HTMLAttributes<HTMLElement>) {
                 id="about-quote" 
                 className="border-r-4 border-secondary bg-surface-muted/40 pr-6 pl-4 py-4 sm:py-5 rounded-l-lg text-right"
               >
-                <p className="text-xl md:text-2xl font-semibold text-text-primary font-arabic leading-[1.5] md:leading-relaxed">
+                <p className="text-base md:text-lg font-semibold text-text-primary font-arabic leading-[1.5] md:leading-relaxed">
                   "{QUOTE}"
                 </p>
               </blockquote>

@@ -36,45 +36,23 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
               {/* Brand & Tagline Area */}
               <div id="hero-brand-area" className="flex flex-col items-center md:items-start space-y-1">
                 <span id="hero-brand-name" className={`${TYPOGRAPHY.body.small} font-semibold text-text-primary`}>
-                  خـالـد الـقـائـد
+                  إدارة مالية متكاملة عن بعد
                 </span>
                 <span id="hero-brand-tagline" className={`${TYPOGRAPHY.caption} text-secondary`}>
-                  أرْقامٌ مُرتّبة... وقراراتٌ أفضل
+                  نمو مستدام وأرباح مضاعفة
                 </span>
               </div>
-
-              {/* Main Heading (H1) */}
-              <h1 
-                id="hero-main-heading" 
-                className={`${TYPOGRAPHY.display.xl} text-text-primary`}
-              >
-                ابدأ مشروعك وأنت مطمئن أن أرقامك مرتبة من أول يوم
-              </h1>
 
               {/* Description (Paragraph) */}
               <p 
                 id="hero-description" 
                 className={`${TYPOGRAPHY.body.large} max-w-xl`}
               >
-                أساعد أصحاب المنشآت في المملكة العربية السعودية على تنظيم الحسابات ومتابعة الأداء المالي وتحويل الأرقام إلى قرارات تساعد على نمو أعمالهم دون الحاجة إلى توظيف محاسب بدوام كامل.
+                حوّل الفوضى المالية إلى وضوح تام نساعدك في بناء نظام مالي قوي يمنحك السيطرة الكاملة على إيراداتك ومصروفاتك لتبني قراراتك على بيانات دقيقة وتضاعف أرباحك دون الحاجة لتأسيس قسم مالي مكلف
               </p>
             </header>
 
-            {/* Benefits (List of 3 items, spaced equally, each on its own line) */}
-            <ul id="hero-benefits-list" className="flex flex-col space-y-3 items-center md:items-start">
-              <li id="hero-benefit-item-1" className={`flex items-center space-x-2 space-x-reverse ${TYPOGRAPHY.body.normal}`}>
-                <span className="text-secondary font-bold">✓</span>
-                <span>تنظيم الحسابات</span>
-              </li>
-              <li id="hero-benefit-item-2" className={`flex items-center space-x-2 space-x-reverse ${TYPOGRAPHY.body.normal}`}>
-                <span className="text-secondary font-bold">✓</span>
-                <span>متابعة مالية مستمرة</span>
-              </li>
-              <li id="hero-benefit-item-3" className={`flex items-center space-x-2 space-x-reverse ${TYPOGRAPHY.body.normal}`}>
-                <span className="text-secondary font-bold">✓</span>
-                <span>إعداد تقارير وتحليل مالي يساعد على اتخاذ القرار</span>
-              </li>
-            </ul>
+
 
           </div>
 

@@ -23,15 +23,15 @@ export default function Button({
   const variants = {
     primary: 'bg-primary hover:bg-primary-light text-white focus:ring-primary',
     secondary: 'bg-secondary hover:bg-secondary-light text-white focus:ring-secondary',
-    outline: 'border border-border-subtle bg-transparent text-text-primary hover:bg-surface-muted focus:ring-primary',
+    outline: 'border border-white bg-transparent text-text-primary hover:bg-surface-muted focus:ring-primary',
     ghost: 'bg-transparent text-text-secondary hover:bg-surface-muted focus:ring-primary',
   };
 
   // Size mapping using spacing and radius principles
   const sizes = {
-    sm: `px-3 py-1.5 text-sm ${RADIUS.small}`,
-    md: `px-4 py-2 text-base ${RADIUS.medium}`,
-    lg: `px-6 py-3 text-lg ${RADIUS.large}`,
+    sm: `px-3 py-1.5 text-[10px] ${RADIUS.small}`,
+    md: `px-4 py-2 text-xs ${RADIUS.medium}`,
+    lg: `px-6 py-3 text-sm ${RADIUS.large}`,
   };
 
   const widthStyle = fullWidth ? 'w-full' : '';

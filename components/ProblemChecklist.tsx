@@ -6,16 +6,12 @@ export interface ProblemChecklistProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const QUESTIONS = [
-  'هل تحقق منشأتك مبيعات جيدة لكن لا تعرف أرباحك الحقيقية',
-  'هل تعتمد على رصيد البنك لمعرفة وضع منشأتك المالي',
-  'هل تزداد المصروفات كل شهر دون أن تعرف السبب',
-  'هل تعرف أين تذهب أموال منشأتك',
-  'هل تعرف تكلفة المنتج أو الخدمة بعد احتساب جميع المصروفات',
-  'هل تقلق من الزكاة أو الضرائب أو الفاتورة الإلكترونية',
-  'هل تمتلك تقارير مالية واضحة تساعدك على اتخاذ القرار',
-  'هل تكتشف الأخطاء والخسائر بعد فوات الأوان',
-  'هل تقضي وقتا طويلا في متابعة الحسابات بدلا من تطوير منشأتك',
-  'هل تشعر براحة واطمئنان تجاه الوضع المالي لمنشأتك'
+  'تبيع كثيراً ولكن لا تعرف أين تذهب الأرباح الحقيقية',
+  'تتسرب السيولة النقدية في مصروفات غير مبررة ولا تستطيع إيقافها',
+  'تعاني من نقص السيولة المفاجئ رغم تحقيق مبيعات جيدة',
+  'تتخذ قراراتك الاستراتيجية بناءً على الحدس لغياب التقارير',
+  'تغرق في التفاصيل المحاسبية بدلاً من التفرغ لقيادة فريقك',
+  'تتفاجأ بالالتزامات الضريبية والزكوية بسبب غياب التخطيط المالي'
 ];
 
 export default function ProblemChecklist({ className = '', ...props }: ProblemChecklistProps) {
@@ -39,7 +35,7 @@ export default function ProblemChecklist({ className = '', ...props }: ProblemCh
             id={`problem-checkbox-visual-${index}`} 
             className={`w-5 h-5 mt-1 flex-shrink-0 border border-border flex items-center justify-center text-secondary bg-white ${RADIUS.small}`}
           >
-            <span className="text-xs font-bold select-none">✓</span>
+            <span className="text-[8px] font-bold select-none">✓</span>
           </div>
           <span 
             id={`problem-checklist-text-${index}`} 

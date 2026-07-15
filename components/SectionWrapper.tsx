@@ -16,14 +16,14 @@ export default function SectionWrapper({
   ...props
 }: SectionWrapperProps) {
   const variants = {
-    white: 'bg-white',
-    subtle: 'bg-bg-light',
+    white: 'bg-white border border-white',
+    subtle: 'bg-white border border-white',
     primary: 'bg-primary text-white',
   };
 
   const spacings = {
-    default: 'py-16 md:py-24',
-    dense: 'py-10 md:py-16',
+    default: 'py-8 md:py-12',
+    dense: 'py-6 md:py-8',
     none: 'py-0',
   };
 

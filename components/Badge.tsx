@@ -12,7 +12,7 @@ export default function Badge({
   className = '',
   ...props
 }: BadgeProps) {
-  const baseStyles = `inline-flex items-center px-2.5 py-0.5 text-xs font-semibold font-arabic ${RADIUS.full} select-none`;
+  const baseStyles = `inline-flex items-center px-2.5 py-0.5 text-[8px] font-semibold font-arabic ${RADIUS.full} select-none`;
 
   const variants = {
     primary: 'bg-primary-light/10 text-primary-light border border-primary-light/20',
@@ -20,7 +20,7 @@ export default function Badge({
     success: 'bg-success/10 text-success border border-success/20',
     warning: 'bg-warning/10 text-warning border border-warning/20',
     danger: 'bg-danger/10 text-danger border border-danger/20',
-    neutral: 'bg-surface-muted text-text-secondary border border-border-subtle',
+    neutral: 'bg-surface-muted text-text-secondary border border-white',
   };
 
   return (

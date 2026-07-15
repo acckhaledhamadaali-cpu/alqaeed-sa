@@ -15,7 +15,7 @@ export default function ProblemsSection(props: HTMLAttributes<HTMLElement>) {
           {/* Section Header Area (Centered, spacious) */}
           <div id="problems-header" className="flex flex-col space-y-4 text-center items-center max-w-3xl">
             <SectionTitle id="problems-title" level={2} className="font-bold">
-              هل ينطبق على منشأتك واحد أو أكثر من هذه الأسئلة؟
+              هل تستنزف هذه التحديات أرباحك ووقتك؟
             </SectionTitle>
           </div>
 
@@ -31,7 +31,7 @@ export default function ProblemsSection(props: HTMLAttributes<HTMLElement>) {
               id="problems-closing-statement" 
               className={`${TYPOGRAPHY.body.large} font-medium text-text-primary`}
             >
-              إذا أجبت بنعم على سؤال واحد أو أكثر فقد حان الوقت لتنظيم الإدارة المالية لمنشأتك
+              غياب الرؤية المالية الواضحة يجعلك تدور في حلقة مفرغة من المشاكل اليومية التي تعيق نمو أعمالك نحن هنا لنكسر هذه الحلقة
             </p>
           </div>
 

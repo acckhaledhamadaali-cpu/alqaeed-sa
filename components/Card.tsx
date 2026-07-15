@@ -15,7 +15,7 @@ export default function Card({
   ...props
 }: CardProps) {
   // Styles based on Design Tokens
-  const baseStyles = `bg-surface-card font-arabic text-text-primary border-border-subtle`;
+  const baseStyles = `bg-surface-card font-arabic text-text-primary border-white`;
 
   const variants = {
     elevated: `${SHADOWS.medium} ${RADIUS.large}`,
