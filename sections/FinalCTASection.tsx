@@ -33,14 +33,9 @@ export default function FinalCTASection(props: HTMLAttributes<HTMLElement>) {
         <div id="final-cta-content" className="flex flex-col space-y-4 max-w-2xl mx-auto text-center items-center py-4">
           
           {/* Title */}
-          <SectionTitle id="final-cta-title" level={2} className="font-bold text-text-primary">
-            هل تريد أن تصبح أرقام منشأتك واضحة وتديرها بثقة
+          <SectionTitle id="final-cta-title" level={2} className="font-bold text-center max-w-xl text-sm sm:text-base md:text-lg font-arabic leading-relaxed">
+            إذا كنت تبحث عن تنظيم حسابات منشأتك وبناء نظام مالي يساعدك على اتخاذ قرارات أفضل فتواصل معي وسنناقش احتياج منشأتك
           </SectionTitle>
-
-          {/* Description */}
-          <SectionDescription id="final-cta-description" className="text-center text-text-secondary max-w-xl text-xs sm:text-sm">
-            إذا كنت تبحث عن تنظيم حسابات منشأتك وبناء نظام مالي يساعدك على اتخاذ قرارات أفضل فتواصل معي وسنناقش احتياج منشأتك.
-          </SectionDescription>
 
           {/* Button - WhatsApp style */}
           <div id="final-cta-action" className="pt-1.5">
