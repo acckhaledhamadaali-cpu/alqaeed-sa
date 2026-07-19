@@ -2,7 +2,6 @@ import { HTMLAttributes } from 'react';
 import SectionWrapper from '../components/SectionWrapper';
 import Container from '../components/Container';
 import { TYPOGRAPHY } from '../src/lib/tokens';
-import khaledProfile from '../src/assets/images/khaled.webp';
 import { MessageCircle } from 'lucide-react';
 
 const WHATSAPP_NUMBER = "966511294383";
@@ -35,7 +34,7 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
           {/* Profile Image Area (Top on Mobile, Right on Desktop - 5 columns) */}
           <div id="hero-image-column" className="w-full md:col-span-5 flex justify-center order-1 md:order-2">
             <img 
-              src={khaledProfile}
+              src="/images/khaled.webp"
               alt="خالد القائد متخصص في الإدارة المالية المتكاملة عن بعد للمنشآت"
               loading="eager"
               decoding="async"
