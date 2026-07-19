@@ -19,7 +19,7 @@ export default function FloatingWhatsApp(props: HTMLAttributes<HTMLAnchorElement
       (window as any).gtag('event', 'whatsapp_click', {
         event_category: 'engagement',
         event_label: 'floating_whatsapp',
-        link_url: 'https://wa.me/966511294383'
+        link_url: WHATSAPP_URL
       });
     }
   };

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// Design Tokens for خالد القائد - محاسب ومحلل مالي
+// Design Tokens for القائد - الإدارة المالية المتكاملة عن بعد للمنشآت
 // All values are aligned with Saudi SME financial consultation context (Modern SaaS look, Clean, Minimal, Professional)
 
 export const COLORS = {

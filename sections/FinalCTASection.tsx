@@ -3,46 +3,62 @@ import SectionWrapper from '../components/SectionWrapper';
 import Container from '../components/Container';
 import SectionTitle from '../components/SectionTitle';
 import SectionDescription from '../components/SectionDescription';
-import { TYPOGRAPHY } from '../src/lib/tokens';
+import { MessageCircle } from 'lucide-react';
 
-interface CTAContent {
-  title: string;
-  description: string;
-  closing: string;
-}
+const WHATSAPP_NUMBER = "966511294383";
+const WHATSAPP_MESSAGE = `السلام عليكم
+أرغب في حجز استشارة لبحث سبل تطوير الأداء المالي لمنشأتي
+اسم حضرتك الكريم  /
+اسم المنشأة / 
+نوع النشاط / 
+عدد الفروع / 
+هل يمكن تحديد موعد مناسب للبدء`;
 
-const CTA_CONTENT: CTAContent = {
-  title: "هل أنت مستعد لمضاعفة أرباحك وتنمية أعمالك؟",
-  description: "لا تترك نجاح منشأتك للصدفة تواصل معنا اليوم لتحصل على تقييم شامل لوضعك المالي وتبدأ رحلة النمو المستدام المبني على أرقام دقيقة",
-  closing: "التقييم مجاني ولا يلزمك بأي التزامات القرار المالي الصحيح يبدأ من هنا"
-};
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 export default function FinalCTASection(props: HTMLAttributes<HTMLElement>) {
-  return (
-    <SectionWrapper id="final-cta-section-wrapper" variant="subtle" spacing="default" {...props}>
-      <Container id="final-cta-container">
-        <div id="final-cta-content" className="flex flex-col items-center justify-center text-center space-y-6 md:space-y-8 max-w-3xl mx-auto">
-          
-          <header id="final-cta-header" className="flex flex-col items-center justify-center text-center space-y-4 md:space-y-6">
-            <SectionTitle id="final-cta-title" level={1} className="font-bold text-center">
-              {CTA_CONTENT.title}
-            </SectionTitle>
-            
-            <SectionDescription id="final-cta-description" size="large" className="text-center mx-auto max-w-2xl leading-relaxed">
-              {CTA_CONTENT.description}
-            </SectionDescription>
-          </header>
+  const trackWhatsAppClick = () => {
+    if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+      (window as any).gtag('event', 'whatsapp_click', {
+        event_category: 'engagement',
+        event_label: 'cta_whatsapp',
+        link_url: WHATSAPP_URL
+      });
+    }
+  };
 
-          <p 
-            id="final-cta-closing" 
-            className={`${TYPOGRAPHY.body.small} text-text-secondary font-arabic text-center max-w-xl font-bold`}
-          >
-            {CTA_CONTENT.closing}
-          </p>
+  return (
+    <SectionWrapper id="final-cta-section-wrapper" variant="white" spacing="dense" {...props}>
+      <Container id="final-cta-container">
+        <div id="final-cta-content" className="flex flex-col space-y-4 max-w-2xl mx-auto text-center items-center py-4">
+          
+          {/* Title */}
+          <SectionTitle id="final-cta-title" level={2} className="font-bold text-text-primary">
+            هل تريد أن تصبح أرقام منشأتك واضحة وتديرها بثقة
+          </SectionTitle>
+
+          {/* Description */}
+          <SectionDescription id="final-cta-description" className="text-center text-text-secondary max-w-xl text-xs sm:text-sm">
+            إذا كنت تبحث عن تنظيم حسابات منشأتك وبناء نظام مالي يساعدك على اتخاذ قرارات أفضل فتواصل معي وسنناقش احتياج منشأتك.
+          </SectionDescription>
+
+          {/* Button - WhatsApp style */}
+          <div id="final-cta-action" className="pt-1.5">
+            <a 
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={trackWhatsAppClick}
+              className="inline-flex items-center gap-x-2 px-5 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs sm:text-sm font-semibold shadow-md transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
+              id="final-cta-whatsapp-btn"
+            >
+              <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span>تواصل معي عبر واتساب</span>
+            </a>
+          </div>
 
         </div>
       </Container>
     </SectionWrapper>
   );
 }
-

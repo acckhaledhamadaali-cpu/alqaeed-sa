@@ -4,10 +4,10 @@
  */
 
 import HeroSection from '../sections/HeroSection';
-import ProblemsSection from '../sections/ProblemsSection';
+import ExperienceBar from '../sections/ExperienceBar';
 import HowIWorkSection from '../sections/HowIWorkSection';
+import ChallengesSection from '../sections/ChallengesSection';
 import ServicesSection from '../sections/ServicesSection';
-import ResultsSection from '../sections/ResultsSection';
 import AboutSection from '../sections/AboutSection';
 import FinalCTASection from '../sections/FinalCTASection';
 import FooterSection from '../sections/FooterSection';
@@ -19,10 +19,10 @@ export default function App() {
       <main id="main-content">
         {/* Structural sections in order */}
         <HeroSection />
-        <ProblemsSection />
-        <HowIWorkSection />
+        <ExperienceBar />
+        <ChallengesSection />
         <ServicesSection />
-        <ResultsSection />
+        <HowIWorkSection />
         <AboutSection />
         <FinalCTASection />
       </main>

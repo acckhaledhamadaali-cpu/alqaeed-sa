@@ -3,106 +3,54 @@ import SectionWrapper from '../components/SectionWrapper';
 import Container from '../components/Container';
 import SectionTitle from '../components/SectionTitle';
 import SectionDescription from '../components/SectionDescription';
-import { TYPOGRAPHY, RADIUS, TRANSITIONS } from '../src/lib/tokens';
 
-interface ServiceItem {
-  title: string;
-  items: string[];
-}
-
-const SERVICES: ServiceItem[] = [
-  {
-    title: "الرقابة والمحاسبة المالية",
-    items: [
-      "تأسيس الدورة المستندية",
-      "إعداد القيود والإقفالات الدورية",
-      "إصدار القوائم المالية الدقيقة",
-      "مطابقة التسويات البنكية",
-      "بناء التقارير المحاسبية"
-    ]
-  },
-  {
-    title: "التحليل الاستراتيجي",
-    items: [
-      "تقييم الأداء المالي",
-      "تحليل هوامش الربحية",
-      "إدارة التدفقات النقدية",
-      "تخطيط وإعداد الموازنات",
-      "قياس مؤشرات الأداء KPIs"
-    ]
-  },
-  {
-    title: "الامتثال الضريبي والزكوي",
-    items: [
-      "إدارة ضريبة القيمة المضافة VAT",
-      "احتساب الإقرارات الزكوية",
-      "تطبيق الفاتورة الإلكترونية",
-      "مراجعة الالتزام وتجنب الغرامات"
-    ]
-  },
-  {
-    title: "القيادة المالية (CFO)",
-    items: [
-      "إدارة مالية خارجية Virtual CFO",
-      "الاستشارات المالية المخصصة",
-      "التخطيط المالي للمستقبل",
-      "تطوير الأنظمة والإجراءات",
-      "دعم القرارات الاستراتيجية"
-    ]
-  }
+const SERVICES = [
+  "تنظيم الحسابات",
+  "مسك الدفاتر",
+  "إعداد القوائم المالية",
+  "التحليل المالي",
+  "التقارير الإدارية",
+  "إعداد الموازنات",
+  "إدارة التدفقات النقدية",
+  "المدير المالي عن بعد Virtual CFO"
 ];
 
 export default function ServicesSection(props: HTMLAttributes<HTMLElement>) {
   return (
-    <SectionWrapper id="services-section-wrapper" variant="white" spacing="default" {...props}>
+    <SectionWrapper id="services-section-wrapper" variant="white" spacing="dense" {...props}>
       <Container id="services-container">
-        <div id="services-content" className="flex flex-col space-y-12 md:space-y-16 items-center">
+        <div id="services-content" className="flex flex-col space-y-5 max-w-3xl mx-auto text-center items-center">
           
-          {/* Header */}
-          <div id="services-header" className="flex flex-col space-y-4 text-center items-center max-w-3xl">
+          {/* Section Header */}
+          <div id="services-header" className="flex flex-col space-y-1.5 text-center items-center">
             <SectionTitle id="services-title" level={2} className="font-bold">
-              حلول مالية متكاملة لتمكين أعمالك
+              ماذا أتولى داخل منشأتك
             </SectionTitle>
-
-            <SectionDescription id="services-description" className="text-center">
-              صممنا باقة من الخدمات المالية المترابطة التي تغطي كافة احتياجات منشأتك لتضمن لك الامتثال المالي وتعظم أرباحك بطريقة منهجية ومدروسة
+            <SectionDescription id="services-description" className="text-center max-w-2xl text-text-secondary text-xs sm:text-sm">
+              أتولى إدارة وتنظيم الجوانب المالية التي تحتاجها المنشآت لتصبح الحسابات واضحة والتقارير دقيقة والقرارات مبنية على أرقام فعلية.
             </SectionDescription>
           </div>
 
-          {/* Cards Grid: 4 columns on large screens, 2 columns on medium, 1 column on mobile */}
+          {/* Simple, lightweight list */}
           <div 
-            id="services-grid" 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full items-stretch"
-            role="list"
-            aria-label="خدمات الإدارة المالية المتكاملة"
+            id="services-list-container" 
+            className="w-full max-w-xl bg-surface-subtle/30 rounded-xl p-4 sm:p-5 border border-border-subtle"
           >
-            {SERVICES.map((service, index) => (
-              <div 
-                key={index}
-                id={`service-card-${index}`}
-                className={`bg-white border border-white p-6 sm:p-8 ${RADIUS.large} ${TRANSITIONS.fast} hover:border-secondary/30 flex flex-col space-y-4 text-right h-full shadow-[0_2px_8px_rgba(0,0,0,0.01)]`}
-                role="listitem"
-              >
-                <h3 
-                  id={`service-card-title-${index}`}
-                  className={`${TYPOGRAPHY.heading.h2} text-text-primary font-bold border-b border-white pb-3`}
+            <ul 
+              id="services-list" 
+              className="flex flex-col sm:flex-row sm:flex-wrap justify-between gap-y-2 gap-x-4 text-right w-full"
+            >
+              {SERVICES.map((service, index) => (
+                <li 
+                  key={index} 
+                  id={`services-item-${index}`}
+                  className="flex items-center gap-x-2 text-text-primary text-xs md:text-sm font-medium font-arabic w-full sm:w-[47%]"
                 >
-                  {service.title}
-                </h3>
-                <ul id={`service-card-list-${index}`} className="space-y-3 pt-2">
-                  {service.items.map((item, itemIdx) => (
-                    <li 
-                      key={itemIdx} 
-                      id={`service-card-item-${index}-${itemIdx}`}
-                      className={`${TYPOGRAPHY.body.normal} flex items-center space-x-2 space-x-reverse font-bold`}
-                    >
-                      <span className="text-secondary font-bold text-sm select-none">•</span>
-                      <span className="text-text-secondary font-bold">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+                  <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-secondary" aria-hidden="true" />
+                  <span>{service}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
         </div>
