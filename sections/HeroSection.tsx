@@ -2,29 +2,8 @@ import { HTMLAttributes } from 'react';
 import SectionWrapper from '../components/SectionWrapper';
 import Container from '../components/Container';
 import { TYPOGRAPHY } from '../src/lib/tokens';
-import { MessageCircle } from 'lucide-react';
-
-const WHATSAPP_NUMBER = "966511294383";
-const WHATSAPP_MESSAGE = `السلام عليكم
-أرغب في حجز استشارة لبحث سبل تطوير الأداء المالي لمنشأتي
-اسم حضرتك الكريم  /
-اسم المنشأة / 
-نوع النشاط / 
-عدد الفروع / 
-هل يمكن تحديد موعد مناسب للبدء`;
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
-  const trackWhatsAppClick = () => {
-    if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
-      (window as any).gtag('event', 'whatsapp_click', {
-        event_category: 'engagement',
-        event_label: 'hero_whatsapp',
-        link_url: WHATSAPP_URL
-      });
-    }
-  };
-
   return (
     <SectionWrapper id="hero-section-wrapper" variant="white" spacing="default" {...props}>
       <Container id="hero-container">

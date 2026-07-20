@@ -2,7 +2,6 @@ import { HTMLAttributes } from 'react';
 import SectionWrapper from '../components/SectionWrapper';
 import Container from '../components/Container';
 import SectionTitle from '../components/SectionTitle';
-import SectionDescription from '../components/SectionDescription';
 import { MessageCircle } from 'lucide-react';
 
 const WHATSAPP_NUMBER = "966511294383";

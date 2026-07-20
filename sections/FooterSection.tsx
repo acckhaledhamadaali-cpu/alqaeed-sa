@@ -1,7 +1,6 @@
 import { HTMLAttributes } from 'react';
 import SectionWrapper from '../components/SectionWrapper';
 import Container from '../components/Container';
-import { TYPOGRAPHY } from '../src/lib/tokens';
 
 const WHATSAPP_NUMBER = "966511294383";
 const WHATSAPP_MESSAGE = `السلام عليكم

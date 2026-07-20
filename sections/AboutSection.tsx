@@ -2,16 +2,11 @@ import { HTMLAttributes } from 'react';
 import SectionWrapper from '../components/SectionWrapper';
 import Container from '../components/Container';
 import SectionTitle from '../components/SectionTitle';
-import { TYPOGRAPHY } from '../src/lib/tokens';
 
 interface StatItem {
   value: string;
   label: string;
 }
-
-const PROFILE = {
-  name: "خالد القائد"
-};
 
 const STATISTICS: StatItem[] = [
   { value: "9+", label: "سنوات خبرة" },
