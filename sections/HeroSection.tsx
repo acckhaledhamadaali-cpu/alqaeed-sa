@@ -34,7 +34,7 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
           {/* Profile Image Area (Top on Mobile, Right on Desktop - 5 columns) */}
           <div id="hero-image-column" className="w-full md:col-span-5 flex justify-center order-1 md:order-2">
             <img 
-              src="/images/khaled.png?v=3"
+              src="/images/khaled.png"
               alt="خالد القائد متخصص في الإدارة المالية المتكاملة عن بعد للمنشآت"
               loading="eager"
               decoding="async"
