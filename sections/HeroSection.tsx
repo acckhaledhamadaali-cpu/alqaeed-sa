@@ -14,8 +14,11 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
           <div id="hero-image-column" className="w-full md:col-span-5 flex justify-center order-1 md:order-2">
             <img 
               src="/images/khaled.webp"
+              srcSet="/images/khaled-400.webp 400w, /images/khaled-800.webp 800w, /images/khaled.webp 1023w"
+              sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1023px"
               alt="خالد القائد متخصص في الإدارة المالية المتكاملة عن بعد للمنشآت"
               loading="eager"
+              fetchPriority="high"
               decoding="async"
               referrerPolicy="no-referrer"
               width={600}
