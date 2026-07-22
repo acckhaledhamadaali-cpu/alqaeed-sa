@@ -18,7 +18,7 @@ export default function SectionTitle({
     3: TYPOGRAPHY.heading.h2,
   };
 
-  const Component = `h${level + 1}` as 'h2' | 'h3' | 'h4';
+  const Component = `h${level}` as 'h1' | 'h2' | 'h3';
 
   return (
     <Component

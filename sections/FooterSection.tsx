@@ -50,6 +50,13 @@ export default function FooterSection(props: HTMLAttributes<HTMLElement>) {
             <span className="hidden sm:inline text-border-subtle">|</span>
             <span>الواتساب <a onClick={trackWhatsAppClick} href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors font-sans">0511294383</a></span>
           </div>
+          <div id="footer-legal" className="mt-3 flex flex-wrap gap-x-4 gap-y-2 justify-center text-[10px] sm:text-xs text-text-muted font-arabic pt-2 border-t border-border-subtle w-full max-w-4xl">
+            <a href="/privacy-policy" className="hover:text-primary transition-colors">سياسة الخصوصية</a>
+            <span className="text-border-subtle">|</span>
+            <a href="/terms" className="hover:text-primary transition-colors">الشروط والأحكام</a>
+            <span className="text-border-subtle">|</span>
+            <a href="/cookies" className="hover:text-primary transition-colors">سياسة ملفات تعريف الارتباط</a>
+          </div>
         </div>
       </Container>
     </SectionWrapper>

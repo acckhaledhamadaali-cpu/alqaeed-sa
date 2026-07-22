@@ -1,0 +1,187 @@
+
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://alqaeed-sa.netlify.app/#person",
+          "name": "خالد القائد",
+          "jobTitle": "مؤسس القائد ومتخصص في الإدارة المالية المتكاملة عن بعد للمنشآت",
+          "url": "https://alqaeed-sa.netlify.app/",
+          "image": "https://alqaeed-sa.netlify.app/images/khaled.webp",
+          "description": "خالد القائد، مؤسس القائد. متخصص في الإدارة المالية المتكاملة، التقارير المالية، التحليل المالي، والزكاة والضرائب لتقديم رؤى دقيقة تدعم اتخاذ القرار وتحسن الأداء المالي للمنشآت.",
+          "email": "alqaeed.sa@gmail.com",
+          "telephone": "+966511294383",
+          "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "ماجستير إدارة الأعمال MBA وبكالوريوس التجارة شعبة المحاسبة"
+          },
+          "knowsAbout": [
+            "الإدارة المالية",
+            "الإدارة المالية عن بعد",
+            "التخطيط المالي",
+            "التحليل المالي",
+            "إعداد القوائم المالية",
+            "مسك الدفاتر",
+            "المؤشرات المالية",
+            "إعداد الميزانيات",
+            "التقارير المالية",
+            "تحليل الربحية",
+            "تحليل التدفقات النقدية",
+            "الزكاة",
+            "ضريبة القيمة المضافة",
+            "الفاتورة الإلكترونية",
+            "الاستشارات المالية",
+            "Financial Management",
+            "Remote Financial Management",
+            "Financial Analysis",
+            "Financial Planning",
+            "Budgeting",
+            "Financial Statements",
+            "VAT",
+            "IFRS",
+            "ERP",
+            "Virtual CFO",
+            "KPIs",
+            "Cash Flow",
+            "Internal Control",
+            "Financial Reporting"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "SA",
+            "addressRegion": "المملكة العربية السعودية"
+          },
+          "worksFor": {
+            "@id": "https://alqaeed-sa.netlify.app/#organization"
+          }
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://alqaeed-sa.netlify.app/#service",
+          "name": "القائد",
+          "url": "https://alqaeed-sa.netlify.app/",
+          "logo": "https://alqaeed-sa.netlify.app/images/khaled.webp",
+          "image": "https://alqaeed-sa.netlify.app/images/khaled.webp",
+          "description": "القائد - الإدارة المالية المتكاملة عن بعد للمنشآت. أقدم حلولاً مالية شاملة للمنشآت الصغيرة والمتوسطة لضمان الامتثال المالي وتحسين الأداء.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "SA",
+            "addressRegion": "المملكة العربية السعودية"
+          },
+          "telephone": "+966511294383",
+          "priceRange": "$$",
+          "provider": {
+            "@id": "https://alqaeed-sa.netlify.app/#person"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "Saudi Arabia"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "خدمات الإدارة المالية | Financial Management Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "الإدارة المالية عن بعد | Remote Financial Management",
+                  "description": "إدارة كاملة للعمليات المالية والمحاسبية عن بعد بكفاءة عالية."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "التخطيط المالي والميزانيات | Financial Planning & Budgeting",
+                  "description": "تخطيط مستقبلي محكم وإعداد الميزانيات التقديرية لتوجيه المنشأة نحو النمو."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "التحليل المالي وتحليل الربحية | Financial & Profitability Analysis",
+                  "description": "تحليل متعمق للأرقام والمؤشرات المالية لدعم اتخاذ القرار وتحسين الربحية."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "إعداد التقارير والقوائم المالية | Financial Reporting",
+                  "description": "تقارير دورية وقوائم مالية دقيقة تعكس الوضع المالي الحقيقي للمنشأة."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "مسك الدفاتر وإدارة الحسابات | Bookkeeping",
+                  "description": "تسجيل دقيق ومنظم لكافة العمليات المالية بشكل يومي."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "الاستشارات الضريبية والزكوية | Zakat & VAT Advisory",
+                  "description": "ضمان الامتثال لمتطلبات هيئة الزكاة والضريبة والجمارك وتجهيز الإقرارات."
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://alqaeed-sa.netlify.app/#organization",
+          "name": "القائد",
+          "url": "https://alqaeed-sa.netlify.app/",
+          "logo": "https://alqaeed-sa.netlify.app/images/khaled.webp",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+966511294383",
+            "contactType": "customer service",
+            "email": "alqaeed.sa@gmail.com",
+            "availableLanguage": ["Arabic", "English"]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://alqaeed-sa.netlify.app/#website",
+          "url": "https://alqaeed-sa.netlify.app/",
+          "name": "القائد | الإدارة المالية المتكاملة عن بعد للمنشآت",
+          "description": "القائد - الإدارة المالية المتكاملة عن بعد للمنشآت. حلول مالية متكاملة لدعم اتخاذ القرار وتحسين الأداء المالي للمنشآت في السعودية.",
+          "publisher": {
+            "@id": "https://alqaeed-sa.netlify.app/#organization"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://alqaeed-sa.netlify.app/#webpage",
+          "url": "https://alqaeed-sa.netlify.app/",
+          "name": "القائد | الإدارة المالية المتكاملة عن بعد للمنشآت",
+          "description": "القائد - الإدارة المالية المتكاملة عن بعد للمنشآت. حلول مالية متكاملة لدعم اتخاذ القرار وتحسين الأداء المالي للمنشآت في السعودية.",
+          "isPartOf": {
+            "@id": "https://alqaeed-sa.netlify.app/#website"
+          },
+          "about": {
+            "@id": "https://alqaeed-sa.netlify.app/#organization"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://alqaeed-sa.netlify.app/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "الرئيسية",
+              "item": "https://alqaeed-sa.netlify.app/"
+            }
+          ]
+        }
+      ]
+    }
+    

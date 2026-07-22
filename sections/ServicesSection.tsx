@@ -5,14 +5,14 @@ import SectionTitle from '../components/SectionTitle';
 import SectionDescription from '../components/SectionDescription';
 
 const SERVICES = [
-  "تنظيم الحسابات",
-  "مسك الدفاتر",
-  "إعداد القوائم المالية",
-  "التحليل المالي",
-  "التقارير الإدارية",
-  "إعداد الموازنات",
-  "إدارة التدفقات النقدية",
-  "المدير المالي عن بعد Virtual CFO"
+  { name: "تنظيم الحسابات ومسك الدفاتر", link: "/services/bookkeeping" },
+  { name: "الزكاة والضريبة", link: "/services/zakat-tax" },
+  { name: "إعداد القوائم المالية", link: "/services/financial-statements" },
+  { name: "التحليل المالي", link: "/services/financial-analysis" },
+  { name: "التقارير الإدارية", link: "/services/management-reports" },
+  { name: "إعداد الموازنات", link: "/services/budgeting" },
+  { name: "إدارة التدفقات النقدية", link: "/services/cash-flow" },
+  { name: "المدير المالي عن بعد Virtual CFO", link: "/services/virtual-cfo" }
 ];
 
 export default function ServicesSection(props: HTMLAttributes<HTMLElement>) {
@@ -47,7 +47,9 @@ export default function ServicesSection(props: HTMLAttributes<HTMLElement>) {
                   className="flex items-center gap-x-2 text-text-primary text-xs md:text-sm font-medium font-arabic w-full sm:w-[47%]"
                 >
                   <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-secondary" aria-hidden="true" />
-                  <span>{service}</span>
+                  <a href={service.link} className="hover:text-primary transition-colors hover:underline">
+                    {service.name}
+                  </a>
                 </li>
               ))}
             </ul>

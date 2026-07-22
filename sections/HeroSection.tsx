@@ -37,9 +37,9 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
             <header id="hero-header" className="flex flex-col items-center md:items-start space-y-3.5 md:space-y-4 w-full text-center md:text-right">
               {/* Brand & Tagline Area */}
               <div id="hero-brand-area" className="flex flex-col items-center md:items-start space-y-1">
-                <span id="hero-brand-name" className={`${TYPOGRAPHY.heading.h1} font-bold text-text-primary`}>
+                <h1 id="hero-brand-name" className={`${TYPOGRAPHY.heading.h1} font-bold text-text-primary`}>
                   القائد
-                </span>
+                </h1>
                 <span id="hero-brand-tagline" className={`${TYPOGRAPHY.body.large} text-secondary uppercase font-semibold`}>
                   الإدارة المالية المتكاملة عن بعد للمنشآت
                 </span>

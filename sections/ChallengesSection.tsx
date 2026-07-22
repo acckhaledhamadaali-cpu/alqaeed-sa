@@ -41,7 +41,7 @@ const CHALLENGES: ChallengeItem[] = [
 
 export default function ChallengesSection(props: HTMLAttributes<HTMLElement>) {
   return (
-    <SectionWrapper id="services-section-wrapper" variant="white" spacing="dense" {...props}>
+    <SectionWrapper id="challenges-section-wrapper" variant="white" spacing="dense" {...props}>
       <Container id="challenges-container">
         <div id="challenges-content" className="flex flex-col space-y-4 max-w-2xl mx-auto text-right">
           
