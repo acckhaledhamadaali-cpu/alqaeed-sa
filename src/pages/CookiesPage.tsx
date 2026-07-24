@@ -11,7 +11,11 @@ export default function CookiesPage() {
     "url": "https://alqaeed-sa.netlify.app/cookies",
     "name": "سياسة ملفات تعريف الارتباط | القائد",
     "description": "تعرف على كيفية استخدامنا لملفات تعريف الارتباط (Cookies) لتحسين تجربتك على موقع القائد وتحليل أداء الموقع.",
-    "isPartOf": {
+    "primaryImageOfPage": {
+          "@id": "https://alqaeed-sa.netlify.app/#logo"
+        },
+        "inLanguage": "ar-SA",
+        "isPartOf": {
       "@id": "https://alqaeed-sa.netlify.app/#website"
     }
   };

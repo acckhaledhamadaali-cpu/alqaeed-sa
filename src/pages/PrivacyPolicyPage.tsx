@@ -11,7 +11,11 @@ export default function PrivacyPolicyPage() {
     "url": "https://alqaeed-sa.netlify.app/privacy-policy",
     "name": "سياسة الخصوصية | القائد",
     "description": "توضح سياسة الخصوصية كيفية تعاملنا مع بياناتك في القائد لخدمات الإدارة المالية عن بعد. نحن نلتزم بحماية سرية معلوماتك.",
-    "isPartOf": {
+    "primaryImageOfPage": {
+          "@id": "https://alqaeed-sa.netlify.app/#logo"
+        },
+        "inLanguage": "ar-SA",
+        "isPartOf": {
       "@id": "https://alqaeed-sa.netlify.app/#website"
     }
   };

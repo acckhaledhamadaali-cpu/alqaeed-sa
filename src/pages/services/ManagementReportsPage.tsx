@@ -26,6 +26,10 @@ export default function ManagementReportsPage() {
         "url": url,
         "name": metaTitle,
         "description": metaDesc,
+        "primaryImageOfPage": {
+          "@id": "https://alqaeed-sa.netlify.app/#logo"
+        },
+        "inLanguage": "ar-SA",
         "isPartOf": {
           "@id": "https://alqaeed-sa.netlify.app/#website"
         }
@@ -33,12 +37,12 @@ export default function ManagementReportsPage() {
       {
         "@type": "Service",
         "@id": url + "/#service",
-        "name": name,
+        "name": metaTitle,
         "description": metaDesc,
         "provider": {
           "@id": "https://alqaeed-sa.netlify.app/#organization"
         },
-        "areaServed": "SA"
+        "areaServed": "Saudi Arabia"
       },
       {
         "@type": "BreadcrumbList",

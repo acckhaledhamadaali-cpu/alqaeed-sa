@@ -11,7 +11,11 @@ export default function TermsPage() {
     "url": "https://alqaeed-sa.netlify.app/terms",
     "name": "الشروط والأحكام | القائد",
     "description": "اقرأ الشروط والأحكام المتعلقة باستخدام موقع القائد لخدمات الإدارة المالية والاستشارات. توضح هذه الصفحة القواعد المطبقة على خدماتنا.",
-    "isPartOf": {
+    "primaryImageOfPage": {
+          "@id": "https://alqaeed-sa.netlify.app/#logo"
+        },
+        "inLanguage": "ar-SA",
+        "isPartOf": {
       "@id": "https://alqaeed-sa.netlify.app/#website"
     }
   };
