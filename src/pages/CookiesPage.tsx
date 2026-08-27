@@ -30,7 +30,15 @@ export default function CookiesPage() {
   return (
     <SectionWrapper id="cookies-section-wrapper" variant="white" spacing="default">
       <Container id="cookies-container">
-        <div className="max-w-3xl mx-auto py-8 md:py-12 space-y-6 text-right">
+        <div className="max-w-3xl mx-auto py-8 md:py-12 space-y-6 text-right font-arabic">
+          
+          {/* Breadcrumb Navigation */}
+          <nav aria-label="مسار التنقل" className="mb-2 text-xs text-text-muted">
+            <a href="/" className="hover:text-primary transition-colors">الرئيسية - القائد للإدارة المالية</a>
+            <span className="mx-2 text-border-subtle">/</span>
+            <span className="text-text-secondary">سياسة ملفات تعريف الارتباط</span>
+          </nav>
+
           <h1 className={`${TYPOGRAPHY.heading.h1} font-bold text-text-primary border-b border-border-subtle pb-4`}>
             سياسة ملفات تعريف الارتباط (Cookies)
           </h1>

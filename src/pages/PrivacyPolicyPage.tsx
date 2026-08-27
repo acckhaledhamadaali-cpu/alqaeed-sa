@@ -30,7 +30,15 @@ export default function PrivacyPolicyPage() {
   return (
     <SectionWrapper id="privacy-section-wrapper" variant="white" spacing="default">
       <Container id="privacy-container">
-        <div className="max-w-3xl mx-auto py-8 md:py-12 space-y-6 text-right">
+        <div className="max-w-3xl mx-auto py-8 md:py-12 space-y-6 text-right font-arabic">
+          
+          {/* Breadcrumb Navigation */}
+          <nav aria-label="مسار التنقل" className="mb-2 text-xs text-text-muted">
+            <a href="/" className="hover:text-primary transition-colors">الرئيسية - القائد للإدارة المالية</a>
+            <span className="mx-2 text-border-subtle">/</span>
+            <span className="text-text-secondary">سياسة الخصوصية</span>
+          </nav>
+
           <h1 className={`${TYPOGRAPHY.heading.h1} font-bold text-text-primary border-b border-border-subtle pb-4`}>
             سياسة الخصوصية
           </h1>
@@ -57,6 +65,13 @@ export default function PrivacyPolicyPage() {
                 <li>فهم احتياجات منشأتك لتقديم أفضل استشارة أو خدمة (كإعداد القوائم المالية، التقارير المالية، أو الاستشارات الزكوية).</li>
                 <li>التواصل معك لترتيب مواعيد العمل والتعاقد.</li>
               </ul>
+            </div>
+
+            <div>
+              <h2 className="text-base md:text-lg font-bold text-text-primary mb-2">إشعارات المتصفح (Web Push Notifications)</h2>
+              <p>
+                يوفر الموقع إمكانية الاشتراك الاختياري في إشعارات المتصفح لتلقي نصائح مالية وتحديثات محاسبية دورية غير مزعجة. هذا الاشتراك اختياري تماماً ولا يتم تفعيله إلا بموافقتك الصريحة، ولا يتم جمع أي بيانات شخصية محددة للهوية من خلاله، ويمكنك إلغاء الاشتراك في أي وقت عبر إعدادات متصفحك. في حال الاستعانة بمزود خدمة تقني موثوق مستقبلاً لإدارة الإشعارات، سيتم إيضاح ذلك في هذه السياسة.
+              </p>
             </div>
 
             <div>

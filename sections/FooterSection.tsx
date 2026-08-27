@@ -15,6 +15,8 @@ export default function FooterSection(props: HTMLAttributes<HTMLElement>) {
             جميع الحقوق محفوظة &copy; {currentYear} القائد
           </p>
           <div id="footer-legal" className="mt-3 flex flex-wrap gap-x-4 gap-y-2 justify-center text-[10px] sm:text-xs text-text-muted font-arabic pt-2 border-t border-border-subtle w-full max-w-4xl">
+            <a href="/blog" className="hover:text-primary transition-colors">المكتبة المالية</a>
+            <span className="text-border-subtle">|</span>
             <a href="/privacy-policy" className="hover:text-primary transition-colors">سياسة الخصوصية</a>
             <span className="text-border-subtle">|</span>
             <a href="/terms" className="hover:text-primary transition-colors">الشروط والأحكام</a>

@@ -87,6 +87,13 @@ export default function FinancialStatementsPage() {
       <Container>
         <div className="max-w-3xl mx-auto py-4 md:py-8 text-right font-arabic">
           
+          {/* Breadcrumb Navigation */}
+          <nav aria-label="مسار التنقل" className="mb-4 text-xs text-text-muted">
+            <a href="/" className="hover:text-primary transition-colors">الرئيسية - القائد للإدارة المالية</a>
+            <span className="mx-2 text-border-subtle">/</span>
+            <span className="text-text-secondary">{name}</span>
+          </nav>
+
           <h1 className={`${TYPOGRAPHY.heading.h1} font-bold text-text-primary mb-6 leading-tight`}>
             {name}
           </h1>
@@ -128,7 +135,38 @@ export default function FinancialStatementsPage() {
               إذا كنت تبحث عن محاسب مالي يساعدك في إعداد القوائم المالية بأسلوب احترافي وبما يتوافق مع المعايير المحاسبية، فأنا جاهز لتقديم خدمة تضمن لك دقة البيانات ووضوح الرؤية المالية لمنشأتك.
             </p>
           </div>
+
+          {/* Related Services Internal Linking */}
+          <div className="mt-10 pt-6 border-t border-border-subtle">
+            <h2 className="text-base md:text-lg font-bold text-text-primary mb-4 font-arabic">
+              خدمات مالية مرتبطة قد تحتاجها منشأتك
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <a
+                href="/services/financial-analysis"
+                className="p-3 bg-surface-subtle/50 hover:bg-surface-subtle border border-border-subtle rounded-lg text-xs md:text-sm font-medium text-text-primary hover:text-primary transition-all flex items-center justify-between"
+              >
+                <span>التحليل المالي وتقييم الأداء</span>
+                <span className="text-secondary text-base">←</span>
+              </a>
+              <a
+                href="/services/bookkeeping"
+                className="p-3 bg-surface-subtle/50 hover:bg-surface-subtle border border-border-subtle rounded-lg text-xs md:text-sm font-medium text-text-primary hover:text-primary transition-all flex items-center justify-between"
+              >
+                <span>تنظيم الحسابات ومسك الدفاتر</span>
+                <span className="text-secondary text-base">←</span>
+              </a>
+              <a
+                href="/services/cash-flow"
+                className="p-3 bg-surface-subtle/50 hover:bg-surface-subtle border border-border-subtle rounded-lg text-xs md:text-sm font-medium text-text-primary hover:text-primary transition-all flex items-center justify-between"
+              >
+                <span>إدارة التدفقات النقدية والسيولة</span>
+                <span className="text-secondary text-base">←</span>
+              </a>
+            </div>
           </div>
+
+        </div>
       </Container>
     </SectionWrapper>
   );

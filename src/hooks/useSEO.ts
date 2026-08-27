@@ -13,28 +13,35 @@ export function useSEO({ title, description, canonical, schema }: SEOProps) {
     document.title = title;
 
     // Update meta description
-    let metaDesc = document.querySelector('meta[name="description"]');
+    const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       metaDesc.setAttribute('content', description);
     }
 
     // Update canonical URL
-    let canonicalTag = document.querySelector('link[rel="canonical"]');
+    const canonicalTag = document.querySelector('link[rel="canonical"]');
     if (canonicalTag) {
       canonicalTag.setAttribute('href', canonical);
     }
 
-    // Inject WebPage Schema
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.innerHTML = JSON.stringify(schema);
-    document.head.appendChild(script);
+    // Update or inject Structured Data Schema (JSON-LD) without creating duplicates
+    let schemaScript = document.getElementById('schema-jsonld') as HTMLScriptElement | null;
+    if (!schemaScript) {
+      schemaScript = document.querySelector('script[type="application/ld+json"]');
+    }
 
-    return () => {
-      // Cleanup dynamically injected schema on unmount
-      if (document.head.contains(script)) {
-        document.head.removeChild(script);
-      }
-    };
+    const schemaString = JSON.stringify(schema, null, 2);
+
+    if (schemaScript) {
+      schemaScript.id = 'schema-jsonld';
+      schemaScript.type = 'application/ld+json';
+      schemaScript.textContent = schemaString;
+    } else {
+      schemaScript = document.createElement('script');
+      schemaScript.id = 'schema-jsonld';
+      schemaScript.type = 'application/ld+json';
+      schemaScript.textContent = schemaString;
+      document.head.appendChild(schemaScript);
+    }
   }, [title, description, canonical, schema]);
 }

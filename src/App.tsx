@@ -16,6 +16,9 @@ import FloatingWhatsApp from '../sections/FloatingWhatsApp';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
 import CookiesPage from './pages/CookiesPage';
+import BlogHubPage from './pages/BlogHubPage';
+import ArticlePage from './pages/ArticlePage';
+import NotificationOptIn from './components/NotificationOptIn';
 
 import BookkeepingPage from './pages/services/BookkeepingPage';
 import ZakatTaxPage from './pages/services/ZakatTaxPage';
@@ -38,6 +41,7 @@ if (path === '/services/bookkeeping') {
         </main>
         <FooterSection />
         <FloatingWhatsApp />
+        <NotificationOptIn />
       </div>
     );
   }
@@ -50,6 +54,7 @@ if (path === '/services/zakat-tax') {
         </main>
         <FooterSection />
         <FloatingWhatsApp />
+        <NotificationOptIn />
       </div>
     );
   }
@@ -62,6 +67,7 @@ if (path === '/services/financial-statements') {
         </main>
         <FooterSection />
         <FloatingWhatsApp />
+        <NotificationOptIn />
       </div>
     );
   }
@@ -74,6 +80,7 @@ if (path === '/services/financial-analysis') {
         </main>
         <FooterSection />
         <FloatingWhatsApp />
+        <NotificationOptIn />
       </div>
     );
   }
@@ -86,6 +93,7 @@ if (path === '/services/management-reports') {
         </main>
         <FooterSection />
         <FloatingWhatsApp />
+        <NotificationOptIn />
       </div>
     );
   }
@@ -98,6 +106,7 @@ if (path === '/services/budgeting') {
         </main>
         <FooterSection />
         <FloatingWhatsApp />
+        <NotificationOptIn />
       </div>
     );
   }
@@ -110,6 +119,7 @@ if (path === '/services/cash-flow') {
         </main>
         <FooterSection />
         <FloatingWhatsApp />
+        <NotificationOptIn />
       </div>
     );
   }
@@ -122,6 +132,7 @@ if (path === '/services/virtual-cfo') {
         </main>
         <FooterSection />
         <FloatingWhatsApp />
+        <NotificationOptIn />
       </div>
     );
   }
@@ -135,6 +146,7 @@ if (path === '/services/virtual-cfo') {
         </main>
         <FooterSection />
         <FloatingWhatsApp />
+        <NotificationOptIn />
       </div>
     );
   }
@@ -147,6 +159,7 @@ if (path === '/services/virtual-cfo') {
         </main>
         <FooterSection />
         <FloatingWhatsApp />
+        <NotificationOptIn />
       </div>
     );
   }
@@ -159,6 +172,34 @@ if (path === '/services/virtual-cfo') {
         </main>
         <FooterSection />
         <FloatingWhatsApp />
+        <NotificationOptIn />
+      </div>
+    );
+  }
+
+  if (path === '/blog') {
+    return (
+      <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
+        <main id="main-content" className="flex-grow">
+          <BlogHubPage />
+        </main>
+        <FooterSection />
+        <FloatingWhatsApp />
+        <NotificationOptIn />
+      </div>
+    );
+  }
+
+  if (path.startsWith('/blog/')) {
+    const slug = path.replace(/^\/blog\//, '').replace(/\/$/, '');
+    return (
+      <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
+        <main id="main-content" className="flex-grow">
+          <ArticlePage slug={slug} />
+        </main>
+        <FooterSection />
+        <FloatingWhatsApp />
+        <NotificationOptIn />
       </div>
     );
   }
@@ -179,6 +220,7 @@ if (path === '/services/virtual-cfo') {
       
       {/* Floating elements */}
       <FloatingWhatsApp />
+      <NotificationOptIn />
     </div>
   );
 }

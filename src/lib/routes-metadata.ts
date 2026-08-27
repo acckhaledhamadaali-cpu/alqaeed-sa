@@ -1,3 +1,5 @@
+import { BLOG_ARTICLES } from '../data/blogArticles';
+
 export interface RouteMeta {
   path: string;
   title: string;
@@ -592,5 +594,124 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
         "@id": "https://alqaeed-sa.netlify.app/#website"
       }
     }
+  },
+  '/blog': {
+    path: '/blog',
+    title: 'المكتبة المالية | القائد للإدارة المالية',
+    description: 'المكتبة المالية من القائد - أدلة ومعارف مالية ومحاسبية متخصصة تهدف لمساعدة أصحاب المنشآت والشركات في المملكة العربية السعودية على إدارة أعمالهم واتخاذ قرارات مالية صائبة.',
+    canonical: 'https://alqaeed-sa.netlify.app/blog',
+    ogTitle: 'المكتبة المالية | القائد للإدارة المالية',
+    ogDescription: 'المكتبة المالية من القائد - أدلة ومعارف مالية ومحاسبية متخصصة تهدف لمساعدة أصحاب المنشآت والشركات في المملكة العربية السعودية على إدارة أعمالهم واتخاذ قرارات مالية صائبة.',
+    ogUrl: 'https://alqaeed-sa.netlify.app/blog',
+    schema: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "@id": "https://alqaeed-sa.netlify.app/blog/#webpage",
+          "url": "https://alqaeed-sa.netlify.app/blog",
+          "name": "المكتبة المالية | القائد للإدارة المالية",
+          "description": "المكتبة المالية من القائد - أدلة ومعارف مالية ومحاسبية متخصصة تهدف لمساعدة أصحاب المنشآت والشركات في المملكة العربية السعودية على إدارة أعمالهم واتخاذ قرارات مالية صائبة.",
+          "primaryImageOfPage": {
+            "@id": "https://alqaeed-sa.netlify.app/#logo"
+          },
+          "inLanguage": "ar-SA",
+          "isPartOf": {
+            "@id": "https://alqaeed-sa.netlify.app/#website"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://alqaeed-sa.netlify.app/blog/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "الرئيسية",
+              "item": "https://alqaeed-sa.netlify.app/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "المكتبة المالية",
+              "item": "https://alqaeed-sa.netlify.app/blog"
+            }
+          ]
+        }
+      ]
+    }
   }
 };
+
+export function getRouteMetadata(path: string): RouteMeta {
+  const normalized = (path.endsWith('/') && path.length > 1) ? path.slice(0, -1) : path;
+  if (ROUTES_METADATA[normalized]) {
+    return ROUTES_METADATA[normalized];
+  }
+
+  if (normalized.startsWith('/blog/')) {
+    const slug = normalized.replace(/^\/blog\//, '');
+    const article = BLOG_ARTICLES.find((a) => a.slug === slug);
+    if (article) {
+      const url = `https://alqaeed-sa.netlify.app/blog/${article.slug}`;
+      return {
+        path: normalized,
+        title: `${article.title} | القائد للإدارة المالية`,
+        description: article.description,
+        canonical: url,
+        ogTitle: `${article.title} | القائد للإدارة المالية`,
+        ogDescription: article.description,
+        ogUrl: url,
+        schema: {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Article",
+              "@id": `${url}/#article`,
+              "headline": article.title,
+              "description": article.description,
+              "inLanguage": "ar-SA",
+              "author": {
+                "@type": "Person",
+                "name": article.author
+              },
+              "publisher": {
+                "@id": "https://alqaeed-sa.netlify.app/#organization"
+              },
+              "datePublished": article.publishedAt,
+              "dateModified": article.updatedAt || article.publishedAt,
+              "mainEntityOfPage": url
+            },
+            {
+              "@type": "BreadcrumbList",
+              "@id": `${url}/#breadcrumb`,
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "الرئيسية",
+                  "item": "https://alqaeed-sa.netlify.app/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "المكتبة المالية",
+                  "item": "https://alqaeed-sa.netlify.app/blog"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": article.title,
+                  "item": url
+                }
+              ]
+            }
+          ]
+        }
+      };
+    }
+  }
+
+  return ROUTES_METADATA['/'];
+}
+

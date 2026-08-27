@@ -23,9 +23,15 @@ async function prerender() {
     process.exit(1);
   }
 
-  const { render, ROUTES_METADATA } = await import(`file://${ssrBundlePath}`);
+  const { render, ROUTES_METADATA, BLOG_ARTICLES } = await import(`file://${ssrBundlePath}`);
 
-  const routes = Object.keys(ROUTES_METADATA);
+  // Base routes from metadata
+  const baseRoutes = Object.keys(ROUTES_METADATA);
+
+  // Dynamic article routes if any exist in verified BLOG_ARTICLES
+  const articleRoutes = (BLOG_ARTICLES || []).map((a) => `/blog/${a.slug}`);
+
+  const routes = [...baseRoutes, ...articleRoutes];
   console.log(`Starting SSG Pre-rendering for ${routes.length} routes...`);
 
   for (const route of routes) {
@@ -78,6 +84,23 @@ async function prerender() {
     const sizeKB = (Buffer.byteLength(html, 'utf8') / 1024).toFixed(2);
     console.log(`✓ [SSG] Generated: ${route} -> ${path.relative(process.cwd(), outFilePath)} (${sizeKB} KB)`);
   }
+
+  // Update/generate sitemap.xml in dist and public
+  const sitemapPath = path.resolve(distDir, 'sitemap.xml');
+  const publicSitemapPath = path.resolve(__dirname, 'public', 'sitemap.xml');
+  const sitemapEntries = routes.map((r) => {
+    const loc = r === '/' ? 'https://alqaeed-sa.netlify.app/' : `https://alqaeed-sa.netlify.app${r}`;
+    const priority = r === '/' ? '1.0' : r.startsWith('/services/') || r === '/blog' || r.startsWith('/blog/') ? '0.8' : '0.5';
+    const changefreq = r.startsWith('/privacy') || r.startsWith('/terms') || r.startsWith('/cookies') ? 'yearly' : 'monthly';
+    return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>2026-08-27</lastmod>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`;
+  }).join('\n');
+
+  const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapEntries}\n</urlset>\n`;
+  fs.writeFileSync(sitemapPath, sitemapContent, 'utf8');
+  if (fs.existsSync(path.dirname(publicSitemapPath))) {
+    fs.writeFileSync(publicSitemapPath, sitemapContent, 'utf8');
+  }
+  console.log(`✓ [Sitemap] Generated: sitemap.xml with ${routes.length} URLs (in dist and public)`);
 
   console.log('Static Site Pre-rendering completed successfully!');
 }
