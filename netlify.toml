@@ -36,6 +36,16 @@
     Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
+  for = "/*/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/*/*/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
   for = "/sitemap.xml"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
@@ -45,7 +55,10 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
+# SPA Fallback: Only applies when no static file exists (force = false)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = false
+

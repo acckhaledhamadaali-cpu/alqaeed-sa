@@ -26,8 +26,9 @@ import BudgetingPage from './pages/services/BudgetingPage';
 import CashFlowPage from './pages/services/CashFlowPage';
 import VirtualCfoPage from './pages/services/VirtualCfoPage';
 
-export default function App() {
-  const path = window.location.pathname;
+export default function App({ path: propPath }: { path?: string } = {}) {
+  const currentPath = propPath || (typeof window !== 'undefined' ? window.location.pathname : '/');
+  const path = (currentPath.endsWith('/') && currentPath.length > 1) ? currentPath.slice(0, -1) : currentPath;
 
 if (path === '/services/bookkeeping') {
     return (
