@@ -58,8 +58,8 @@ async function prerender() {
 
     // 7. Update JSON-LD Schema
     if (metadata.schema) {
-      const schemaScript = `<script type="application/ld+json">\n${JSON.stringify(metadata.schema, null, 2)}\n    </script>`;
-      html = html.replace(/<script\s+type="application\/ld\+json">[\s\S]*?<\/script>/i, schemaScript);
+      const schemaScript = `<script type="application/ld+json" id="schema-jsonld">\n${JSON.stringify(metadata.schema, null, 2)}\n    </script>`;
+      html = html.replace(/<script\s+type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/i, schemaScript);
     }
 
     // Determine output file location
