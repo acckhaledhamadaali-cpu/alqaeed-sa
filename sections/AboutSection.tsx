@@ -12,17 +12,15 @@ const STATISTICS: StatItem[] = [
   { value: "9+", label: "سنوات خبرة مهنية بالسعودية" },
   { value: "12", label: "قطاعاً تجارياً وصناعياً" },
   { value: "MBA", label: "ماجستير إدارة الأعمال" },
-  { value: "Virtual CFO", label: "إدارة مالية واستراتيجية عن بعد" }
+  { value: "Virtual CFO", label: "إدارة مالية عن بعد" }
 ];
 
-const OPENING_PARAGRAPH = "لأن أصحاب الشركات الواعدة لا يبحثون عن مجرد تسجيل روتيني للقيود، بل عن شريك مالي موثوق يساعدهم على قراءة الأرقام واتخاذ قرارات تدعم الربحية والنمو:";
+const OPENING_PARAGRAPH = "لأن أصحاب المنشآت لا يبحثون عن مجرد تسجيل روتيني للقيود، بل عن شريك مالي موثوق يساعدهم على قراءة الأرقام واتخاذ قرارات تدعم استقرار ونمو أعمالهم:";
 
 const BULLETS = [
-  "لا أكتفي بمسك الدفاتر المحاسبية، بل أؤسس نظاماً مالياً متكاملاً يمنحك السيطرة الكاملة على تدفقاتك النقدية ومصروفاتك.",
-  "أحول الأرقام والقوائم المالية الصامتة إلى تقارير إدارية وتحليلات تنفيذية واضحة تساعدك على اتخاذ القرارات باطمئنان.",
-  "أوظف أدوات التحليل المالي المتقدمة والنماذج المالية الرقمية لرفع كفاءة المعالجة ودقة التقارير التنفيذية.",
-  "أدمج بين المحاسبة المالية **Financial Accounting** والتحليل المالي **Financial Analysis** والتقارير الإدارية **Management Reporting** والإشراف المالي الاستراتيجي **Virtual CFO**.",
-  "أكثر من **9 سنوات** من الممارسة الميدانية مع ماجستير إدارة الأعمال **MBA** وخبرة عملية في أكثر من 12 قطاعاً داخل المملكة العربية السعودية."
+  "خبرة عملية وميدانية تزيد عن 9 سنوات في أكثر من 12 قطاعاً داخل المملكة العربية السعودية مع ماجستير إدارة الأعمال (MBA).",
+  "الجمع المتكامل بين المحاسبة المالية وإدارة السيولة والتحليل المالي والتقارير الإدارية والإشراف المالي عن بعد (Virtual CFO).",
+  "تحويل الأرقام والبيانات المحاسبية إلى تقارير إدارية ورؤى واضحة تساعد الإدارة على اتخاذ قرارات أفضل."
 ];
 
 const QUOTE: string = "الاستقرار المالي للمنشأة يبدأ عندما تتحول البيانات المحاسبية إلى قرارات إدارية مبنية على تقارير مالية واضحة.";
@@ -74,7 +72,7 @@ export default function AboutSection(props: HTMLAttributes<HTMLElement>) {
               >
                 <span 
                   id={`about-stat-value-${index}`} 
-                  className={`${stat.value === 'AI FINANCIAL' ? 'text-[10px] xs:text-xs sm:text-sm md:text-base font-bold font-sans leading-tight' : 'text-lg xs:text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight font-sans leading-none'} text-text-primary mb-1.5`}
+                  className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight font-sans leading-none text-text-primary mb-1.5"
                 >
                   {stat.value}
                 </span>

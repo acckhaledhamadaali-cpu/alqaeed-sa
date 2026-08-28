@@ -5,13 +5,7 @@ import SectionTitle from '../components/SectionTitle';
 import { MessageCircle } from 'lucide-react';
 
 const WHATSAPP_NUMBER = "966511294383";
-const WHATSAPP_MESSAGE = `السلام عليكم
-أرغب في حجز استشارة لبحث سبل تطوير الأداء المالي لمنشأتي
-اسم حضرتك الكريم  /
-اسم المنشأة / 
-نوع النشاط / 
-عدد الفروع / 
-هل يمكن تحديد موعد مناسب للبدء`;
+const WHATSAPP_MESSAGE = "السلام عليكم، أود مناقشة تنظيم حسابات منشأتي وبناء نظام مالي يدعم اتخاذ القرار.";
 
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
@@ -33,7 +27,7 @@ export default function FinalCTASection(props: HTMLAttributes<HTMLElement>) {
           
           {/* Title */}
           <SectionTitle id="final-cta-title" level={2} className="font-bold text-center max-w-xl text-sm sm:text-base md:text-lg font-arabic leading-relaxed">
-            إذا كنت تبحث عن تنظيم حسابات منشأتك وبناء نظام مالي يساعدك على اتخاذ قرارات أفضل فتواصل معي وسنناقش احتياج منشأتك
+            إذا كنت تبحث عن تنظيم حسابات منشأتك وبناء نظام مالي يساعدك على اتخاذ قرارات أفضل، تواصل معي لمناقشة احتياج منشأتك
           </SectionTitle>
 
           {/* Button - WhatsApp style */}
