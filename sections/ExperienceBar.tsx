@@ -2,13 +2,13 @@ import { HTMLAttributes } from 'react';
 import Container from '../components/Container';
 
 const ITEMS = [
-  "+9 Years Experience",
-  "MBA",
-  "Financial Accounting",
-  "Financial Analysis",
-  "Virtual CFO",
-  "IFRS",
-  "ERP Systems"
+  "+9 سنوات خبرة بالمملكة",
+  "ماجستير إدارة الأعمال (MBA)",
+  "محاسبة مالية وإدارة سيولة",
+  "تحليل مالي وتقارير إدارية",
+  "إدارة مالية عن بعد (Virtual CFO)",
+  "معايير التقارير المالية (IFRS)",
+  "أنظمة المحاسبة وERP"
 ];
 
 export default function ExperienceBar(props: HTMLAttributes<HTMLElement>) {

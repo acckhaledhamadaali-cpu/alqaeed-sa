@@ -55,6 +55,17 @@ export default function ServicesSection(props: HTMLAttributes<HTMLElement>) {
             </ul>
           </div>
 
+          {/* Subtle link to Financial Library */}
+          <div id="services-blog-link" className="pt-1">
+            <a 
+              href="/blog" 
+              className="inline-flex items-center gap-x-1.5 text-xs sm:text-sm text-text-secondary hover:text-primary font-arabic font-medium transition-colors"
+            >
+              <span>استكشف المكتبة المالية — أدلة عملية لأصحاب المنشآت</span>
+              <span className="text-secondary text-base leading-none">←</span>
+            </a>
+          </div>
+
         </div>
       </Container>
     </SectionWrapper>

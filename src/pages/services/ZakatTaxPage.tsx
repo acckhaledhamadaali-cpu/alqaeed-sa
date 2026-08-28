@@ -2,12 +2,10 @@ import { useSEO } from '../../hooks/useSEO';
 import SectionWrapper from '../../../components/SectionWrapper';
 import Container from '../../../components/Container';
 import { TYPOGRAPHY } from '../../lib/tokens';
+import { MessageCircle } from 'lucide-react';
 
 const WHATSAPP_NUMBER = "966511294383";
-const WHATSAPP_MESSAGE = `السلام عليكم
-أرغب في حجز استشارة لخدمة الزكاة والضريبة
-اسم حضرتك الكريم  /
-اسم المنشأة / نوع النشاط / عدد الفروع / هل يمكن تحديد موعد مناسب للبدء`;
+const WHATSAPP_MESSAGE = "السلام عليكم، أرغب في مناقشة خدمة الزكاة والضريبة وإعداد الإقرارات لمنشأتي.";
 const WHATSAPP_URL = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(WHATSAPP_MESSAGE);
 
 export default function ZakatTaxPage() {
@@ -101,43 +99,72 @@ export default function ZakatTaxPage() {
 
           <div className="text-sm md:text-[15px] text-text-secondary leading-loose space-y-4">
             <p>
-              تُعد الزكاة والضريبة من الالتزامات الأساسية على الشركات والمؤسسات في المملكة العربية السعودية، ويضمن الالتزام بها تجنب الغرامات والمخالفات والوفاء بمتطلبات هيئة الزكاة والضريبة والجمارك. كما تساعد مراجعة البيانات المالية وإعداد الإقرارات بدقة على تنظيم أعمال منشأتك واتخاذ قرارات مالية أكثر وضوحًا.
+              تُعد الزكاة والضريبة من الالتزامات التنظيمية الأساسية على المنشآت والشركات في المملكة العربية السعودية. ويساعد الالتزام الصحيح بمتطلبات هيئة الزكاة والضريبة والجمارك (ZATCA) والتدقيق المستمر للسجلات المحاسبية على الحد من مخاطر المخالفات والغرامات، وتوفير وضوح مالي يساعدك على إدارة أعمالك باطمئنان وتجنب أي تعثر إداري أو مالي.
             </p>
 
             <h2 className="text-lg font-bold text-primary mt-6 mb-2 border-r-2 border-primary pr-3">
               كيف أساعدك في إدارة الزكاة والضريبة؟
             </h2>
             <p>
-              أقدم خدمات الزكاة والضريبة بما يتوافق مع الأنظمة المعمول بها في المملكة العربية السعودية، مع مراجعة بياناتك المالية قبل تقديم الإقرارات لضمان دقتها. وتشمل الخدمة:
+              أقدم خدمات تنظيم ومراجعة البيانات المالية وإعداد الإقرارات الزكوية والضريبية وفق الأنظمة واللوائح المعمول بها في المملكة العربية السعودية، مع التدقيق المحاسبي للقيود والفواتير للحد من أي تعارضات أو أخطاء محتملة. وتشمل الخدمة:
             </p>
 
             <ul className="list-disc list-inside space-y-1 pr-4">
-              <li>تسجيل المنشأة في ضريبة القيمة المضافة.</li>
-              <li>إعداد وتقديم إقرارات ضريبة القيمة المضافة.</li>
-              <li>احتساب الزكاة وفق الأنظمة المعتمدة.</li>
-              <li>مراجعة الفواتير والقيود المحاسبية.</li>
-              <li>متابعة الالتزامات الزكوية والضريبية.</li>
-              <li>دعم المنشأة عند طلب بيانات أو مستندات من الهيئة.</li>
-              <li>تقديم الاستشارات المتعلقة بالزكاة والضريبة.</li>
+              <li>تسجيل المنشأة وتحديث بياناتها في ضريبة القيمة المضافة.</li>
+              <li>إعداد ومراجعة إقرارات ضريبة القيمة المضافة (VAT Returns).</li>
+              <li>احتساب الوعاء الزكوي وإعداد الإقرارات الزكوية السنوية.</li>
+              <li>مراجعة الفواتير والقيود المحاسبية للتأكد من اكتمالها ومطابقتها.</li>
+              <li>متابعة المواعيد النظامية للالتزامات الزكوية والضريبية.</li>
+              <li>المساعدة في معالجة الاستفسارات وتجهيز المستندات المطلوبة للهيئة.</li>
+              <li>تقديم التوجيه المحاسبي لدعم الالتزام بالأنظمة وتجنب الغرامات المالية.</li>
             </ul>
 
             <h2 className="text-lg font-bold text-primary mt-6 mb-2 border-r-2 border-primary pr-3">
               لماذا تعد هذه الخدمة مهمة لمنشأتك؟
             </h2>
             <p>
-              الإدارة الصحيحة للزكاة والضريبة لا تقتصر على تقديم الإقرارات في موعدها، بل تساعد على رفع جودة السجلات المحاسبية، وتقليل الأخطاء، وتعزيز التزام منشأتك بالأنظمة، مما يمنحك الثقة في إدارة أعمالك ويجنبك المشكلات المستقبلية.
+              الإدارة الصحيحة للزكاة والضريبة لا تقتصر على مجرد تقديم الإقرارات في مواعيدها، بل تسهم في رفع جودة السجلات المحاسبية، وتفادي الفروقات المالية غير المبررة، وحماية السجل النظامي لأعمالك أمام البنوك والجهات الرسمية، مما يمنحك الاستقرار وراحة البال.
             </p>
 
             <h2 className="text-lg font-bold text-primary mt-6 mb-2 border-r-2 border-primary pr-3">
-              ابدأ اليوم
+              ابدأ بتنظيم ملفك الزكوي والضريبي
             </h2>
             <p>
-              إذا كنت تبحث عن محاسب مالي يساعدك في إدارة الزكاة والضريبة وإعداد الإقرارات الضريبية ومراجعة حسابات منشأتك، فأنا جاهز لتقديم خدمة احترافية تناسب طبيعة نشاطك وتساعدك على الالتزام بالأنظمة بثقة.
+              إذا كنت تبحث عن محاسب مالي يساعدك في إدارة الزكاة والضريبة وإعداد الإقرارات ومراجعة حسابات منشأتك بدقة وموثوقية، فأنا جاهز لتقديم خدمة احترافية تمنحك الاطمئنان والدقة في كافة تعاملاتك النظامية.
             </p>
           </div>
 
+          {/* Service CTA Card */}
+          <div className="my-8 p-6 bg-surface-subtle/60 border border-border-subtle rounded-2xl text-center">
+            <h3 className="text-base md:text-lg font-bold text-text-primary mb-2">
+              هل تحتاج إلى تجهيز بياناتك المالية للزكاة والضريبة؟
+            </h3>
+            <p className="text-xs md:text-sm text-text-secondary mb-4 max-w-xl mx-auto leading-relaxed">
+              أساعدك في مراجعة القيود والفواتير وإعداد الإقرارات بما يتوافق مع متطلبات هيئة الزكاة والضريبة والجمارك (ZATCA).
+            </p>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-x-2 px-6 py-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs md:text-sm font-semibold rounded-xl transition-all shadow-sm duration-200 hover:scale-[1.02] active:scale-[0.98]"
+            >
+              <MessageCircle className="w-4 h-4" />
+              <span>تواصل معي عبر واتساب</span>
+            </a>
+          </div>
+
+          {/* Related Article Guide Link */}
+          <div className="mb-8 p-4 bg-primary/5 border border-primary/15 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs md:text-sm">
+            <span className="text-text-secondary font-medium">
+              💡 دليل تخصصي من المكتبة المالية: <a href="/blog/zakat-tax-financial-data-organization" className="text-primary font-bold hover:underline">تنظيم البيانات المالية للزكاة والضريبة</a>
+            </span>
+            <a href="/blog/zakat-tax-financial-data-organization" className="text-primary font-semibold hover:underline shrink-0">
+              قراءة الدليل ←
+            </a>
+          </div>
+
           {/* Related Services Internal Linking */}
-          <div className="mt-10 pt-6 border-t border-border-subtle">
+          <div className="mt-6 pt-6 border-t border-border-subtle">
             <h2 className="text-base md:text-lg font-bold text-text-primary mb-4 font-arabic">
               خدمات مالية مرتبطة قد تحتاجها منشأتك
             </h2>

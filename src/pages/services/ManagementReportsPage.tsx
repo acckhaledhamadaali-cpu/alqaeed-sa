@@ -2,12 +2,10 @@ import { useSEO } from '../../hooks/useSEO';
 import SectionWrapper from '../../../components/SectionWrapper';
 import Container from '../../../components/Container';
 import { TYPOGRAPHY } from '../../lib/tokens';
+import { MessageCircle } from 'lucide-react';
 
 const WHATSAPP_NUMBER = "966511294383";
-const WHATSAPP_MESSAGE = `السلام عليكم
-أرغب في حجز استشارة لخدمة التقارير الإدارية
-اسم حضرتك الكريم  /
-اسم المنشأة / نوع النشاط / عدد الفروع / هل يمكن تحديد موعد مناسب للبدء`;
+const WHATSAPP_MESSAGE = "السلام عليكم، أرغب في مناقشة إعداد التقارير المالية والإدارية لمنشأتي.";
 const WHATSAPP_URL = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(WHATSAPP_MESSAGE);
 
 export default function ManagementReportsPage() {
@@ -137,8 +135,37 @@ export default function ManagementReportsPage() {
             </p>
           </div>
 
+          {/* Service CTA Card */}
+          <div className="my-8 p-6 bg-surface-subtle/60 border border-border-subtle rounded-2xl text-center">
+            <h3 className="text-base md:text-lg font-bold text-text-primary mb-2">
+              هل تحتاج إلى تقارير مالية تساعدك في متابعة أداء منشأتك؟
+            </h3>
+            <p className="text-xs md:text-sm text-text-secondary mb-4 max-w-xl mx-auto leading-relaxed">
+              تقارير إدارية ولوحات مؤشرات دورية مصممة خصيصاً لمساعدة الإدارة التنفيذية على اتخاذ القرارات اليومية.
+            </p>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-x-2 px-6 py-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs md:text-sm font-semibold rounded-xl transition-all shadow-sm duration-200 hover:scale-[1.02] active:scale-[0.98]"
+            >
+              <MessageCircle className="w-4 h-4" />
+              <span>تواصل معي عبر واتساب</span>
+            </a>
+          </div>
+
+          {/* Related Article Guide Link */}
+          <div className="mb-8 p-4 bg-primary/5 border border-primary/15 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs md:text-sm">
+            <span className="text-text-secondary font-medium">
+              💡 دليل تخصصي من المكتبة المالية: <a href="/blog/7-signs-company-needs-remote-financial-management" className="text-primary font-bold hover:underline">7 علامات لحاجة شركتك لإدارة مالية عن بعد</a>
+            </span>
+            <a href="/blog/7-signs-company-needs-remote-financial-management" className="text-primary font-semibold hover:underline shrink-0">
+              قراءة الدليل ←
+            </a>
+          </div>
+
           {/* Related Services Internal Linking */}
-          <div className="mt-10 pt-6 border-t border-border-subtle">
+          <div className="mt-6 pt-6 border-t border-border-subtle">
             <h2 className="text-base md:text-lg font-bold text-text-primary mb-4 font-arabic">
               خدمات مالية مرتبطة قد تحتاجها منشأتك
             </h2>
