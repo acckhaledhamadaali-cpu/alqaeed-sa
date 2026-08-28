@@ -18,7 +18,7 @@ export default function HowIWorkSection(props: HTMLAttributes<HTMLElement>) {
             </SectionTitle>
 
             <SectionDescription id="how-i-work-description" className="text-center">
-              خطوات واضحة وبسيطة نمر بها معاً لنضمن دقة حساباتك ووضوح أرقامك المالية.
+              منهجية عمل واضحة لتنظيم حساباتك وبناء نظامك المالي.
             </SectionDescription>
           </div>
 

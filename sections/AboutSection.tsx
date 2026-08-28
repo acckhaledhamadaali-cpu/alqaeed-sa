@@ -3,33 +3,19 @@ import SectionWrapper from '../components/SectionWrapper';
 import Container from '../components/Container';
 import SectionTitle from '../components/SectionTitle';
 
-interface StatItem {
-  value: string;
-  label: string;
-}
-
-const STATISTICS: StatItem[] = [
-  { value: "9+", label: "سنوات خبرة مهنية بالسعودية" },
-  { value: "12", label: "قطاعاً تجارياً وصناعياً" },
-  { value: "MBA", label: "ماجستير إدارة الأعمال" },
-  { value: "Virtual CFO", label: "إدارة مالية عن بعد" }
-];
-
 const OPENING_PARAGRAPH = "لأن أصحاب المنشآت يبحثون عن شريك مالي موثوق يساعدهم على قراءة الأرقام واتخاذ قرارات تدعم استقرار ونمو أعمالهم:";
 
 const BULLETS = [
-  "خبرة عملية وميدانية تزيد عن 9 سنوات في أكثر من 12 قطاعاً داخل المملكة العربية السعودية مع ماجستير إدارة الأعمال (MBA).",
-  "فهم مالي شامل يتجاوز التسجيل المحاسبي الروتيني إلى التحليل وإدارة السيولة وإصدار التقارير الإدارية لدعم القرار.",
-  "نموذج عمل مرن عن بعد (Virtual CFO) يمنح المنشأة إشرافاً مالياً واستراتيجياً متقدماً دون تحمل أعباء التوظيف الثابت الكامل."
+  "خبرة عملية لأكثر من 9 سنوات في قطاعات تجارية وصناعية وخدمية داخل المملكة مع ماجستير إدارة الأعمال (MBA).",
+  "رؤية مالية متكاملة تتجاوز التسجيل الروتيني إلى التحليل المالي وإدارة السيولة وإصدار التقارير الإدارية لدعم القرار.",
+  "نموذج عمل مرن عن بعد (Virtual CFO) يمنح المنشأة إشرافاً مالياً واستراتيجياً متقدماً دون أعباء التوظيف الثابت الكامل."
 ];
-
-const QUOTE: string = "الاستقرار المالي للمنشأة يبدأ عندما تتحول البيانات المحاسبية إلى قرارات إدارية مبنية على تقارير مالية واضحة.";
 
 export default function AboutSection(props: HTMLAttributes<HTMLElement>) {
   return (
     <SectionWrapper id="about-section-wrapper" variant="white" spacing="dense" itemScope itemType="https://schema.org/Person" {...props}>
       <Container id="about-container">
-        <div id="about-content" className="flex flex-col space-y-5 md:space-y-6 text-right max-w-4xl mx-auto">
+        <div id="about-content" className="flex flex-col space-y-4 md:space-y-5 text-right max-w-3xl mx-auto">
           
           {/* Section Title */}
           <div id="about-header" className="w-full text-center">
@@ -47,7 +33,7 @@ export default function AboutSection(props: HTMLAttributes<HTMLElement>) {
 
           {/* Bullet List */}
           <div id="about-bullets-container" className="text-right py-1">
-            <ul className="flex flex-col space-y-3.5">
+            <ul className="flex flex-col space-y-3">
               {BULLETS.map((bullet, index) => (
                 <li 
                   key={index}
@@ -55,46 +41,12 @@ export default function AboutSection(props: HTMLAttributes<HTMLElement>) {
                 >
                   <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-secondary mt-2.5" aria-hidden="true" />
                   <span className="font-arabic">
-                    {bullet.split('**').map((part, i) => i % 2 === 1 ? <strong key={i} className="font-bold text-text-primary">{part}</strong> : part)}
+                    {bullet}
                   </span>
                 </li>
               ))}
             </ul>
           </div>
-
-          {/* Statistics Grid */}
-          <div id="about-statistics" className="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-4 md:gap-6 w-full items-stretch pt-2">
-            {STATISTICS.map((stat, index) => (
-              <div 
-                key={index} 
-                id={`about-stat-item-${index}`}
-                className="border border-white p-3 sm:p-5 rounded-xl bg-white flex flex-col items-center justify-center text-center h-full min-h-[100px] sm:min-h-[130px] transition-all duration-200 hover:border-secondary/30 shadow-[0_2px_8px_rgba(0,0,0,0.01)]"
-              >
-                <span 
-                  id={`about-stat-value-${index}`} 
-                  className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight font-sans leading-none text-text-primary mb-1.5"
-                >
-                  {stat.value}
-                </span>
-                <span 
-                  id={`about-stat-label-${index}`} 
-                  className="text-[8px] xs:text-[9px] sm:text-[10px] md:text-xs font-medium leading-snug text-text-secondary font-arabic"
-                >
-                  {stat.label}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          {/* Quote Blockquote */}
-          <blockquote 
-            id="about-quote" 
-            className="border-r-4 border-secondary bg-surface-muted/40 pr-5 pl-4 py-3.5 sm:py-4 rounded-l-lg text-right max-w-2xl mx-auto w-full"
-          >
-            <p className="text-sm sm:text-base font-semibold text-text-primary font-arabic leading-relaxed text-center">
-              "{QUOTE}"
-            </p>
-          </blockquote>
 
         </div>
       </Container>
