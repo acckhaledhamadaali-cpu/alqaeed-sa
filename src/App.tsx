@@ -212,8 +212,8 @@ if (path === '/services/virtual-cfo') {
         <ExperienceBar />
         <ChallengesSection />
         <ServicesSection />
-        <HowIWorkSection />
         <AboutSection />
+        <HowIWorkSection />
         <FinalCTASection />
       </main>
       <FooterSection />
