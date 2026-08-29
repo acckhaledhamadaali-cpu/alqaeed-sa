@@ -74,12 +74,16 @@ export default function SocialMedia() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.name}
+              title={social.name}
               className={`flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-surface-primary border border-border-subtle text-text-secondary transition-all duration-300 ease-out hover:scale-105 ${social.hoverClass} group relative`}
             >
               {social.isInsta ? (
                 <>
-                  <Icon className="w-4 h-4 md:w-5 md:h-5 z-10 transition-colors duration-300 group-hover:fill-[url(#insta-grad)]" />
-                  <svg width="0" height="0">
+                  <Icon 
+                    aria-hidden="true"
+                    className="w-4 h-4 md:w-5 md:h-5 z-10 transition-colors duration-300 group-hover:fill-[url(#insta-grad)]" 
+                  />
+                  <svg width="0" height="0" aria-hidden="true" focusable="false">
                     <linearGradient id="insta-grad" x1="0%" y1="100%" x2="100%" y2="0%">
                       <stop offset="0%" stopColor="#f09433" />
                       <stop offset="25%" stopColor="#e6683c" />
@@ -90,7 +94,10 @@ export default function SocialMedia() {
                   </svg>
                 </>
               ) : (
-                <Icon className="w-4 h-4 md:w-5 md:h-5" />
+                <Icon 
+                  aria-hidden="true"
+                  className="w-4 h-4 md:w-5 md:h-5" 
+                />
               )}
             </a>
           );

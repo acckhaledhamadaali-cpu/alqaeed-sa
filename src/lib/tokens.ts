@@ -47,16 +47,16 @@ export const TYPOGRAPHY = {
     l: 'text-lg sm:text-xl md:text-2xl font-bold tracking-tight font-arabic leading-tight',
   },
   heading: {
-    h1: 'text-lg md:text-xl font-semibold font-arabic leading-snug',
-    h2: 'text-base md:text-lg font-semibold font-arabic leading-snug',
-    h3: 'text-sm md:text-base font-medium font-arabic leading-normal',
+    h1: 'text-lg md:text-xl font-bold font-arabic leading-snug',
+    h2: 'text-base md:text-lg font-bold font-arabic leading-snug',
+    h3: 'text-sm md:text-base font-bold font-arabic leading-normal',
   },
   body: {
-    large: 'text-sm font-normal leading-relaxed text-text-secondary font-arabic',
-    normal: 'text-xs font-normal leading-relaxed text-text-secondary font-arabic',
-    small: 'text-[10px] font-normal leading-normal text-text-muted font-arabic',
+    large: 'text-sm font-bold leading-relaxed text-text-secondary font-arabic',
+    normal: 'text-xs font-bold leading-relaxed text-text-secondary font-arabic',
+    small: 'text-[10px] font-bold leading-normal text-text-muted font-arabic',
   },
-  caption: 'text-[8px] font-medium tracking-wider text-text-muted font-arabic uppercase',
+  caption: 'text-[8px] font-bold tracking-wider text-text-muted font-arabic uppercase',
 };
 
 export const RADIUS = {

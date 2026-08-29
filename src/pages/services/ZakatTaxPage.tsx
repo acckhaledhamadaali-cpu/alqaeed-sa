@@ -148,7 +148,7 @@ export default function ZakatTaxPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-x-2 px-6 py-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs md:text-sm font-semibold rounded-xl transition-all shadow-sm duration-200 hover:scale-[1.02] active:scale-[0.98]"
             >
-              <MessageCircle className="w-4 h-4" />
+              <MessageCircle className="w-4 h-4" aria-hidden="true" />
               <span>تواصل معي عبر واتساب</span>
             </a>
           </div>

@@ -34,7 +34,7 @@ export default function FloatingWhatsApp(props: HTMLAttributes<HTMLAnchorElement
       aria-label="تواصل عبر واتساب"
       id="floating-whatsapp-btn"
     >
-      <MessageCircle className="w-7 h-7" />
+      <MessageCircle className="w-7 h-7" aria-hidden="true" />
     </a>
   );
 }

@@ -40,7 +40,7 @@ export default function FinalCTASection(props: HTMLAttributes<HTMLElement>) {
               className="inline-flex items-center gap-x-2 px-5 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs sm:text-sm font-semibold shadow-md transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
               id="final-cta-whatsapp-btn"
             >
-              <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
+              <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
               <span>تواصل معي عبر واتساب</span>
             </a>
           </div>

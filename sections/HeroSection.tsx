@@ -75,7 +75,7 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
                   id="hero-primary-cta"
                   className="inline-flex items-center gap-x-2 px-5 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs sm:text-sm font-semibold shadow-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
                 >
-                  <MessageCircle className="w-4 h-4" />
+                  <MessageCircle className="w-4 h-4" aria-hidden="true" />
                   <span>تواصل معي عبر واتساب</span>
                 </a>
                 <a 

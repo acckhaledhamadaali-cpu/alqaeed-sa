@@ -33,4 +33,15 @@
   --transition-slow: all 500ms ease-in-out;
 }
 
+/* Global Bold Typography across the whole website */
+html,
+body,
+#root {
+  font-weight: 700;
+}
+
+body * {
+  font-weight: 700;
+}
+
 
