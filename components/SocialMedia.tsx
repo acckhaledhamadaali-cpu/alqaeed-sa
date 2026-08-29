@@ -80,7 +80,8 @@ export default function SocialMedia() {
               {social.isInsta ? (
                 <>
                   <Icon 
-                    aria-hidden="true"
+                    title={social.name}
+                    aria-label={social.name}
                     className="w-4 h-4 md:w-5 md:h-5 z-10 transition-colors duration-300 group-hover:fill-[url(#insta-grad)]" 
                   />
                   <svg width="0" height="0" aria-hidden="true" focusable="false">
@@ -95,7 +96,8 @@ export default function SocialMedia() {
                 </>
               ) : (
                 <Icon 
-                  aria-hidden="true"
+                  title={social.name}
+                  aria-label={social.name}
                   className="w-4 h-4 md:w-5 md:h-5" 
                 />
               )}
