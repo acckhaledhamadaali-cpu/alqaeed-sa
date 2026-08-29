@@ -3,12 +3,21 @@ import SectionWrapper from '../components/SectionWrapper';
 import Container from '../components/Container';
 import SectionTitle from '../components/SectionTitle';
 
-const OPENING_PARAGRAPH = "لأن أصحاب المنشآت يبحثون عن شريك مالي موثوق يساعدهم على قراءة الأرقام واتخاذ قرارات تدعم استقرار ونمو أعمالهم:";
+const OPENING_PARAGRAPH = "لأن الإدارة المالية الجيدة لا تتوقف عند تسجيل الأرقام، بل تحولها إلى صورة واضحة تساعدك على إدارة منشأتك واتخاذ قرارات أفضل.";
 
 const BULLETS = [
-  "خبرة عملية وميدانية في قطاعات تجارية وصناعية وخدمية داخل المملكة مع ماجستير إدارة الأعمال (MBA).",
-  "رؤية مالية متكاملة تتجاوز التسجيل الروتيني إلى التحليل المالي وإدارة السيولة وإصدار التقارير الإدارية لدعم القرار.",
-  "نموذج عمل مرن عن بعد (Virtual CFO) يمنح المنشأة إشرافاً مالياً واستراتيجياً متقدماً دون أعباء التوظيف الثابت الكامل."
+  {
+    title: "وضوح مالي أكبر",
+    text: "تنظيم البيانات والتقارير لتكوين صورة واضحة عن الأداء، الالتزامات والسيولة."
+  },
+  {
+    title: "رؤية تتجاوز المحاسبة",
+    text: "تحليل الأرقام وربطها بأداء المنشأة لمساعدة الإدارة على فهم الوضع المالي وتحديد ما يحتاج إلى متابعة."
+  },
+  {
+    title: "خبرة مالية عند الحاجة",
+    text: "دعم مالي واستشاري عن بُعد وفق احتياج المنشأة، دون الحاجة إلى توظيف مدير مالي بدوام كامل."
+  }
 ];
 
 export default function AboutSection(props: HTMLAttributes<HTMLElement>) {
@@ -20,7 +29,7 @@ export default function AboutSection(props: HTMLAttributes<HTMLElement>) {
           {/* Section Title */}
           <div id="about-header" className="w-full text-center">
             <SectionTitle id="about-title" level={2} className="font-bold">
-              لماذا يختارني أصحاب المنشآت
+              لماذا يختارني أصحاب المنشآت؟
             </SectionTitle>
           </div>
 
@@ -33,16 +42,19 @@ export default function AboutSection(props: HTMLAttributes<HTMLElement>) {
 
           {/* Bullet List */}
           <div id="about-bullets-container" className="text-right py-1">
-            <ul className="flex flex-col space-y-3">
+            <ul className="flex flex-col space-y-3.5">
               {BULLETS.map((bullet, index) => (
                 <li 
                   key={index}
-                  className="flex items-start gap-x-3 text-xs md:text-sm text-text-secondary leading-relaxed"
+                  className="flex flex-col space-y-1 text-xs md:text-sm leading-relaxed"
                 >
-                  <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-secondary mt-2.5" aria-hidden="true" />
-                  <span className="font-arabic">
-                    {bullet}
-                  </span>
+                  <div className="flex items-center gap-x-2 font-bold text-text-primary font-arabic">
+                    <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-secondary" aria-hidden="true" />
+                    <span>{bullet.title}</span>
+                  </div>
+                  <p className="text-text-secondary pr-3.5 font-arabic">
+                    {bullet.text}
+                  </p>
                 </li>
               ))}
             </ul>

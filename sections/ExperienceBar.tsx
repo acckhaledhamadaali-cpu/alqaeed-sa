@@ -2,12 +2,10 @@ import { HTMLAttributes } from 'react';
 import Container from '../components/Container';
 
 const ITEMS = [
-  "+9 سنوات خبرة بالمملكة",
   "ماجستير إدارة الأعمال (MBA)",
   "محاسبة مالية وإدارة سيولة",
   "تحليل مالي وتقارير إدارية",
   "إدارة مالية عن بعد (Virtual CFO)",
-  "معايير التقارير المالية (IFRS)",
   "أنظمة المحاسبة وERP"
 ];
 
