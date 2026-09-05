@@ -7,23 +7,23 @@ export default function TermsPage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://alqaeed-sa.netlify.app/terms/#webpage",
-    "url": "https://alqaeed-sa.netlify.app/terms",
+    "@id": "https://alqaeed-sa.pages.dev/terms/#webpage",
+    "url": "https://alqaeed-sa.pages.dev/terms",
     "name": "الشروط والأحكام | القائد",
     "description": "اقرأ الشروط والأحكام المتعلقة باستخدام موقع القائد لخدمات الإدارة المالية والاستشارات. توضح هذه الصفحة القواعد المطبقة على خدماتنا.",
     "primaryImageOfPage": {
-          "@id": "https://alqaeed-sa.netlify.app/#logo"
+          "@id": "https://alqaeed-sa.pages.dev/#logo"
         },
         "inLanguage": "ar-SA",
         "isPartOf": {
-      "@id": "https://alqaeed-sa.netlify.app/#website"
+      "@id": "https://alqaeed-sa.pages.dev/#website"
     }
   };
 
   useSEO({
     title: "الشروط والأحكام | القائد",
     description: "اقرأ الشروط والأحكام المتعلقة باستخدام موقع القائد لخدمات الإدارة المالية والاستشارات. توضح هذه الصفحة القواعد المطبقة على خدماتنا.",
-    canonical: "https://alqaeed-sa.netlify.app/terms",
+    canonical: "https://alqaeed-sa.pages.dev/terms",
     schema
   });
 

@@ -215,7 +215,7 @@ export default function ServicePageTemplate({
   whatWeOffer,
   benefits
 }: ServicePageProps) {
-  const url = \`https://alqaeed-sa.netlify.app/services/\${slug}\`;
+  const url = \`https://alqaeed-sa.pages.dev/services/\${slug}\`;
   
   const schema = {
     "@context": "https://schema.org",
@@ -227,7 +227,7 @@ export default function ServicePageTemplate({
         "name": metaTitle,
         "description": metaDesc,
         "isPartOf": {
-          "@id": "https://alqaeed-sa.netlify.app/#website"
+          "@id": "https://alqaeed-sa.pages.dev/#website"
         }
       },
       {
@@ -236,7 +236,7 @@ export default function ServicePageTemplate({
         "name": name,
         "description": metaDesc,
         "provider": {
-          "@id": "https://alqaeed-sa.netlify.app/#organization"
+          "@id": "https://alqaeed-sa.pages.dev/#organization"
         },
         "areaServed": "SA"
       },
@@ -248,7 +248,7 @@ export default function ServicePageTemplate({
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://alqaeed-sa.netlify.app/"
+            "item": "https://alqaeed-sa.pages.dev/"
           },
           {
             "@type": "ListItem",
@@ -424,7 +424,7 @@ console.log('App.tsx updated');
 let sitemap = fs.readFileSync(path.join(__dirname, 'public/sitemap.xml'), 'utf8');
 const sitemapUrls = services.map(s => `
   <url>
-    <loc>https://alqaeed-sa.netlify.app/services/${s.slug}</loc>
+    <loc>https://alqaeed-sa.pages.dev/services/${s.slug}</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

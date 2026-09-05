@@ -152,7 +152,7 @@ export default function ${componentName}() {
   const slug = "${data.slug}";
   const metaTitle = "${data.metaTitle}";
   const metaDesc = "${data.metaDesc}";
-  const url = "https://alqaeed-sa.netlify.app/services/" + slug;
+  const url = "https://alqaeed-sa.pages.dev/services/" + slug;
   
   const schema = {
     "@context": "https://schema.org",
@@ -164,7 +164,7 @@ export default function ${componentName}() {
         "name": metaTitle,
         "description": metaDesc,
         "isPartOf": {
-          "@id": "https://alqaeed-sa.netlify.app/#website"
+          "@id": "https://alqaeed-sa.pages.dev/#website"
         }
       },
       {
@@ -173,7 +173,7 @@ export default function ${componentName}() {
         "name": name,
         "description": metaDesc,
         "provider": {
-          "@id": "https://alqaeed-sa.netlify.app/#organization"
+          "@id": "https://alqaeed-sa.pages.dev/#organization"
         },
         "areaServed": "SA"
       },
@@ -185,7 +185,7 @@ export default function ${componentName}() {
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://alqaeed-sa.netlify.app/"
+            "item": "https://alqaeed-sa.pages.dev/"
           },
           {
             "@type": "ListItem",

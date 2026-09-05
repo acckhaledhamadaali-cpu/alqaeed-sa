@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alqaeed-sa.netlify.app/sitemap.xml
+Sitemap: https://alqaeed-sa.pages.dev/sitemap.xml

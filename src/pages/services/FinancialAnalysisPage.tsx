@@ -13,7 +13,7 @@ export default function FinancialAnalysisPage() {
   const slug = "financial-analysis";
   const metaTitle = "التحليل المالي للشركات وتقييم الأداء | القائد للإدارة المالية";
   const metaDesc = "حول الأرقام الصامتة إلى استراتيجيات ناجحة. خدمات التحليل المالي الاحترافية لمساعدتك في فهم مؤشرات السيولة والربحية واكتشاف فرص النمو لمنشأتك.";
-  const url = "https://alqaeed-sa.netlify.app/services/" + slug;
+  const url = "https://alqaeed-sa.pages.dev/services/" + slug;
   
   const schema = {
     "@context": "https://schema.org",
@@ -25,11 +25,11 @@ export default function FinancialAnalysisPage() {
         "name": metaTitle,
         "description": metaDesc,
         "primaryImageOfPage": {
-          "@id": "https://alqaeed-sa.netlify.app/#logo"
+          "@id": "https://alqaeed-sa.pages.dev/#logo"
         },
         "inLanguage": "ar-SA",
         "isPartOf": {
-          "@id": "https://alqaeed-sa.netlify.app/#website"
+          "@id": "https://alqaeed-sa.pages.dev/#website"
         }
       },
       {
@@ -38,7 +38,7 @@ export default function FinancialAnalysisPage() {
         "name": metaTitle,
         "description": metaDesc,
         "provider": {
-          "@id": "https://alqaeed-sa.netlify.app/#organization"
+          "@id": "https://alqaeed-sa.pages.dev/#organization"
         },
         "areaServed": "Saudi Arabia"
       },
@@ -50,7 +50,7 @@ export default function FinancialAnalysisPage() {
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://alqaeed-sa.netlify.app/"
+            "item": "https://alqaeed-sa.pages.dev/"
           },
           {
             "@type": "ListItem",

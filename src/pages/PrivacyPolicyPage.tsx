@@ -7,23 +7,23 @@ export default function PrivacyPolicyPage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://alqaeed-sa.netlify.app/privacy-policy/#webpage",
-    "url": "https://alqaeed-sa.netlify.app/privacy-policy",
+    "@id": "https://alqaeed-sa.pages.dev/privacy-policy/#webpage",
+    "url": "https://alqaeed-sa.pages.dev/privacy-policy",
     "name": "سياسة الخصوصية | القائد",
     "description": "توضح سياسة الخصوصية كيفية تعاملنا مع بياناتك في القائد لخدمات الإدارة المالية عن بعد. نحن نلتزم بحماية سرية معلوماتك.",
     "primaryImageOfPage": {
-          "@id": "https://alqaeed-sa.netlify.app/#logo"
+          "@id": "https://alqaeed-sa.pages.dev/#logo"
         },
         "inLanguage": "ar-SA",
         "isPartOf": {
-      "@id": "https://alqaeed-sa.netlify.app/#website"
+      "@id": "https://alqaeed-sa.pages.dev/#website"
     }
   };
 
   useSEO({
     title: "سياسة الخصوصية | القائد",
     description: "توضح سياسة الخصوصية كيفية تعاملنا مع بياناتك في القائد لخدمات الإدارة المالية عن بعد. نحن نلتزم بحماية سرية معلوماتك.",
-    canonical: "https://alqaeed-sa.netlify.app/privacy-policy",
+    canonical: "https://alqaeed-sa.pages.dev/privacy-policy",
     schema
   });
 

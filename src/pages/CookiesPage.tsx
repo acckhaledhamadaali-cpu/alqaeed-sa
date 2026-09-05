@@ -7,23 +7,23 @@ export default function CookiesPage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://alqaeed-sa.netlify.app/cookies/#webpage",
-    "url": "https://alqaeed-sa.netlify.app/cookies",
+    "@id": "https://alqaeed-sa.pages.dev/cookies/#webpage",
+    "url": "https://alqaeed-sa.pages.dev/cookies",
     "name": "سياسة ملفات تعريف الارتباط | القائد",
     "description": "تعرف على كيفية استخدامنا لملفات تعريف الارتباط (Cookies) لتحسين تجربتك على موقع القائد وتحليل أداء الموقع.",
     "primaryImageOfPage": {
-          "@id": "https://alqaeed-sa.netlify.app/#logo"
+          "@id": "https://alqaeed-sa.pages.dev/#logo"
         },
         "inLanguage": "ar-SA",
         "isPartOf": {
-      "@id": "https://alqaeed-sa.netlify.app/#website"
+      "@id": "https://alqaeed-sa.pages.dev/#website"
     }
   };
 
   useSEO({
     title: "سياسة ملفات تعريف الارتباط | القائد",
     description: "تعرف على كيفية استخدامنا لملفات تعريف الارتباط (Cookies) لتحسين تجربتك على موقع القائد وتحليل أداء الموقع.",
-    canonical: "https://alqaeed-sa.netlify.app/cookies",
+    canonical: "https://alqaeed-sa.pages.dev/cookies",
     schema
   });
 

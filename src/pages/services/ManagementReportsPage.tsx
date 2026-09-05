@@ -13,7 +13,7 @@ export default function ManagementReportsPage() {
   const slug = "management-reports";
   const metaTitle = "إعداد التقارير الإدارية المالية للشركات | القائد للإدارة المالية";
   const metaDesc = "ابقَ على اطلاع دائم بأداء منشأتك عبر تقارير إدارية ولوحات قياس دقيقة تصمم خصيصاً لتمنح الإدارة العليا القدرة على اتخاذ قرارات سريعة وصائبة.";
-  const url = "https://alqaeed-sa.netlify.app/services/" + slug;
+  const url = "https://alqaeed-sa.pages.dev/services/" + slug;
   
   const schema = {
     "@context": "https://schema.org",
@@ -25,11 +25,11 @@ export default function ManagementReportsPage() {
         "name": metaTitle,
         "description": metaDesc,
         "primaryImageOfPage": {
-          "@id": "https://alqaeed-sa.netlify.app/#logo"
+          "@id": "https://alqaeed-sa.pages.dev/#logo"
         },
         "inLanguage": "ar-SA",
         "isPartOf": {
-          "@id": "https://alqaeed-sa.netlify.app/#website"
+          "@id": "https://alqaeed-sa.pages.dev/#website"
         }
       },
       {
@@ -38,7 +38,7 @@ export default function ManagementReportsPage() {
         "name": metaTitle,
         "description": metaDesc,
         "provider": {
-          "@id": "https://alqaeed-sa.netlify.app/#organization"
+          "@id": "https://alqaeed-sa.pages.dev/#organization"
         },
         "areaServed": "Saudi Arabia"
       },
@@ -50,7 +50,7 @@ export default function ManagementReportsPage() {
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://alqaeed-sa.netlify.app/"
+            "item": "https://alqaeed-sa.pages.dev/"
           },
           {
             "@type": "ListItem",

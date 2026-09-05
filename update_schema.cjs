@@ -26,9 +26,9 @@ const sameAsLinks = [
 let org = graph.find(n => n['@type'] === 'Organization');
 org.name = "القائد";
 org.legalName = "مؤسسة خالد القائد للخدمات التجارية"; // Using a placeholder or just his name? Actually, "مؤسسة القائد" maybe? Wait, let's use "القائد" as legalName if we don't have it, or "خالد القائد". Let's just use "القائد".
-org.url = "https://alqaeed-sa.netlify.app/";
-org.logo = { "@id": "https://alqaeed-sa.netlify.app/#logo" };
-org.image = { "@id": "https://alqaeed-sa.netlify.app/#logo" };
+org.url = "https://alqaeed-sa.pages.dev/";
+org.logo = { "@id": "https://alqaeed-sa.pages.dev/#logo" };
+org.image = { "@id": "https://alqaeed-sa.pages.dev/#logo" };
 org.email = "alqaeed.sa@gmail.com";
 org.telephone = "+966511294383";
 org.addressCountry = "SA";
@@ -47,11 +47,11 @@ org.contactPoint = {
 let person = graph.find(n => n['@type'] === 'Person');
 person.name = "خالد القائد";
 person.jobTitle = "مؤسس القائد ومتخصص في الإدارة المالية المتكاملة عن بعد للمنشآت";
-person.worksFor = { "@id": "https://alqaeed-sa.netlify.app/#organization" };
+person.worksFor = { "@id": "https://alqaeed-sa.pages.dev/#organization" };
 // knowsAbout is already there, let's keep it
-person.image = { "@id": "https://alqaeed-sa.netlify.app/#logo" };
+person.image = { "@id": "https://alqaeed-sa.pages.dev/#logo" };
 person.sameAs = sameAsLinks;
-person.url = "https://alqaeed-sa.netlify.app/";
+person.url = "https://alqaeed-sa.pages.dev/";
 
 // 3. ProfessionalService
 let profService = graph.find(n => n['@type'] === 'ProfessionalService');
@@ -83,9 +83,9 @@ profService.hasOfferCatalog = {
 let webpage = graph.find(n => n['@type'] === 'WebPage');
 webpage.name = "القائد | الإدارة المالية المتكاملة عن بعد للمنشآت";
 webpage.description = "القائد - الإدارة المالية المتكاملة عن بعد للمنشآت. حلول مالية متكاملة لدعم اتخاذ القرار وتحسين الأداء المالي للمنشآت في السعودية.";
-webpage.primaryImageOfPage = { "@id": "https://alqaeed-sa.netlify.app/#logo" };
+webpage.primaryImageOfPage = { "@id": "https://alqaeed-sa.pages.dev/#logo" };
 webpage.inLanguage = "ar-SA";
-webpage.isPartOf = { "@id": "https://alqaeed-sa.netlify.app/#website" };
+webpage.isPartOf = { "@id": "https://alqaeed-sa.pages.dev/#website" };
 
 // 5. BreadcrumbList (validate)
 let breadcrumb = graph.find(n => n['@type'] === 'BreadcrumbList');

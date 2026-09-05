@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useSEO } from '../hooks/useSEO';
 import SectionWrapper from '../../components/SectionWrapper';
 import Container from '../../components/Container';
@@ -136,77 +137,91 @@ function parseContentToElements(content: string): React.ReactNode[] {
   return elements;
 }
 
+function ArticleNotFound() {
+  useEffect(() => {
+    document.title = "المقال غير متوفر | المكتبة المالية | القائد";
+
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', "المقال المطلوب قيد الإعداد أو غير متوفر حالياً في المكتبة المالية للقائد للإدارة المالية.");
+    }
+
+    const canonicalTag = document.querySelector('link[rel="canonical"]');
+    if (canonicalTag) {
+      canonicalTag.setAttribute('href', 'https://alqaeed-sa.pages.dev/blog');
+    }
+
+    let robotsTag = document.querySelector('meta[name="robots"]');
+    if (!robotsTag) {
+      robotsTag = document.createElement('meta');
+      robotsTag.setAttribute('name', 'robots');
+      document.head.appendChild(robotsTag);
+    }
+    robotsTag.setAttribute('content', 'noindex, nofollow');
+
+    const schemaScript = document.getElementById('schema-jsonld') || document.querySelector('script[type="application/ld+json"]');
+    if (schemaScript) {
+      schemaScript.remove();
+    }
+
+    return () => {
+      const currentRobots = document.querySelector('meta[name="robots"]');
+      if (currentRobots) {
+        currentRobots.setAttribute('content', 'index, follow');
+      }
+    };
+  }, []);
+
+  return (
+    <SectionWrapper id="article-not-found-section" variant="white" spacing="default">
+      <Container>
+        <div className="max-w-3xl mx-auto py-12 text-right font-arabic">
+          <nav aria-label="مسار التنقل" className="mb-4 text-xs text-text-muted">
+            <a href="/" className="hover:text-primary transition-colors">الرئيسية</a>
+            <span className="mx-2 text-border-subtle">/</span>
+            <a href="/blog" className="hover:text-primary transition-colors">المكتبة المالية</a>
+            <span className="mx-2 text-border-subtle">/</span>
+            <span className="text-text-secondary">المقال غير متوفر</span>
+          </nav>
+
+          <div className="border border-border-subtle bg-surface-subtle/30 rounded-2xl p-8 text-center my-8">
+            <h1 className={`${TYPOGRAPHY.heading.h2} font-bold text-text-primary mb-3`}>
+              المقال غير متوفر حالياً
+            </h1>
+            <p className="text-sm text-text-secondary mb-6 max-w-md mx-auto leading-relaxed">
+              المقال الذي تبحث عنه لا يزال قيد الإعداد والمراجعة من قبل فريق القائد للإدارة المالية، أو تم نقله.
+            </p>
+            <div className="flex flex-wrap gap-3 justify-center text-sm">
+              <a
+                href="/blog"
+                className="px-5 py-2.5 bg-primary text-white rounded-xl hover:bg-primary/90 transition-colors font-medium"
+              >
+                العودة إلى المكتبة المالية
+              </a>
+              <a
+                href="/"
+                className="px-5 py-2.5 bg-white border border-border-subtle text-text-primary rounded-xl hover:border-primary transition-colors font-medium"
+              >
+                الرئيسية
+              </a>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </SectionWrapper>
+  );
+}
+
 export default function ArticlePage({ slug }: { slug: string }) {
   const article = BLOG_ARTICLES.find((a) => a.slug === slug);
 
   if (!article) {
-    const fallbackTitle = "المقال غير متوفر | المكتبة المالية | القائد";
-    const fallbackDesc = "المقال المطلوب قيد الإعداد أو غير متوفر حالياً في المكتبة المالية للقائد للإدارة المالية.";
-    const fallbackUrl = `https://alqaeed-sa.netlify.app/blog/${slug}`;
-
-    const fallbackSchema = {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "@id": `${fallbackUrl}/#webpage`,
-      "url": fallbackUrl,
-      "name": fallbackTitle,
-      "description": fallbackDesc,
-      "inLanguage": "ar-SA",
-      "isPartOf": {
-        "@id": "https://alqaeed-sa.netlify.app/#website"
-      }
-    };
-
-    useSEO({
-      title: fallbackTitle,
-      description: fallbackDesc,
-      canonical: fallbackUrl,
-      schema: fallbackSchema
-    });
-
-    return (
-      <SectionWrapper id="article-not-found-section" variant="white" spacing="default">
-        <Container>
-          <div className="max-w-3xl mx-auto py-12 text-right font-arabic">
-            <nav aria-label="مسار التنقل" className="mb-4 text-xs text-text-muted">
-              <a href="/" className="hover:text-primary transition-colors">الرئيسية</a>
-              <span className="mx-2 text-border-subtle">/</span>
-              <a href="/blog" className="hover:text-primary transition-colors">المكتبة المالية</a>
-              <span className="mx-2 text-border-subtle">/</span>
-              <span className="text-text-secondary">المقال غير متوفر</span>
-            </nav>
-
-            <div className="border border-border-subtle bg-surface-subtle/30 rounded-2xl p-8 text-center my-8">
-              <h1 className={`${TYPOGRAPHY.heading.h2} font-bold text-text-primary mb-3`}>
-                المقال غير متوفر حالياً
-              </h1>
-              <p className="text-sm text-text-secondary mb-6 max-w-md mx-auto leading-relaxed">
-                المقال الذي تبحث عنه لا يزال قيد الإعداد والمراجعة من قبل فريق القائد للإدارة المالية، أو تم نقله.
-              </p>
-              <div className="flex flex-wrap gap-3 justify-center text-sm">
-                <a
-                  href="/blog"
-                  className="px-5 py-2.5 bg-primary text-white rounded-xl hover:bg-primary/90 transition-colors font-medium"
-                >
-                  العودة إلى المكتبة المالية
-                </a>
-                <a
-                  href="/"
-                  className="px-5 py-2.5 bg-white border border-border-subtle text-text-primary rounded-xl hover:border-primary transition-colors font-medium"
-                >
-                  الرئيسية
-                </a>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </SectionWrapper>
-    );
+    return <ArticleNotFound />;
   }
 
   const metaTitle = `${article.title} | القائد للإدارة المالية`;
   const metaDesc = article.description;
-  const url = `https://alqaeed-sa.netlify.app/blog/${article.slug}`;
+  const url = `https://alqaeed-sa.pages.dev/blog/${article.slug}`;
 
   const schema = {
     "@context": "https://schema.org",
@@ -216,13 +231,15 @@ export default function ArticlePage({ slug }: { slug: string }) {
         "@id": `${url}/#article`,
         "headline": article.title,
         "description": article.description,
+        "image": `https://alqaeed-sa.pages.dev/images/blog/${article.slug}.webp`,
         "inLanguage": "ar-SA",
         "author": {
           "@type": "Person",
-          "name": article.author
+          "@id": "https://alqaeed-sa.pages.dev/#person",
+          "name": "خالد القائد"
         },
         "publisher": {
-          "@id": "https://alqaeed-sa.netlify.app/#organization"
+          "@id": "https://alqaeed-sa.pages.dev/#organization"
         },
         "datePublished": article.publishedAt,
         "dateModified": article.updatedAt || article.publishedAt,
@@ -236,13 +253,13 @@ export default function ArticlePage({ slug }: { slug: string }) {
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://alqaeed-sa.netlify.app/"
+            "item": "https://alqaeed-sa.pages.dev/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "المكتبة المالية",
-            "item": "https://alqaeed-sa.netlify.app/blog"
+            "item": "https://alqaeed-sa.pages.dev/blog"
           },
           {
             "@type": "ListItem",

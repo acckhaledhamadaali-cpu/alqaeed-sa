@@ -13,7 +13,7 @@ export default function VirtualCfoPage() {
   const slug = "virtual-cfo";
   const metaTitle = "المدير المالي عن بعد (Virtual CFO) | القائد للإدارة المالية";
   const metaDesc = "احصل على خبرات القيادة المالية الاستراتيجية بتكلفة مرنة. خدمة المدير المالي عن بعد تدعم نمو منشأتك وتوفر لك استشارات مالية متقدمة لقراراتك الحاسمة.";
-  const url = "https://alqaeed-sa.netlify.app/services/" + slug;
+  const url = "https://alqaeed-sa.pages.dev/services/" + slug;
   
   const schema = {
     "@context": "https://schema.org",
@@ -25,11 +25,11 @@ export default function VirtualCfoPage() {
         "name": metaTitle,
         "description": metaDesc,
         "primaryImageOfPage": {
-          "@id": "https://alqaeed-sa.netlify.app/#logo"
+          "@id": "https://alqaeed-sa.pages.dev/#logo"
         },
         "inLanguage": "ar-SA",
         "isPartOf": {
-          "@id": "https://alqaeed-sa.netlify.app/#website"
+          "@id": "https://alqaeed-sa.pages.dev/#website"
         }
       },
       {
@@ -38,7 +38,7 @@ export default function VirtualCfoPage() {
         "name": metaTitle,
         "description": metaDesc,
         "provider": {
-          "@id": "https://alqaeed-sa.netlify.app/#organization"
+          "@id": "https://alqaeed-sa.pages.dev/#organization"
         },
         "areaServed": "Saudi Arabia"
       },
@@ -50,7 +50,7 @@ export default function VirtualCfoPage() {
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://alqaeed-sa.netlify.app/"
+            "item": "https://alqaeed-sa.pages.dev/"
           },
           {
             "@type": "ListItem",

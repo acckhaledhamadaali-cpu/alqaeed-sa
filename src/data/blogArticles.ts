@@ -138,7 +138,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
       'خدمات محاسبية عن بعد',
       'محاسبة المنشآت الصغيرة والمتوسطة'
     ],
-    canonicalUrl: 'https://alqaeed-sa.netlify.app/blog/remote-accountant-saudi-companies',
+    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/remote-accountant-saudi-companies',
     relatedService: {
       title: 'تنظيم الحسابات ومسك الدفاتر',
       url: '/services/bookkeeping',
@@ -230,7 +230,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
       'استشارات مالية للشركات',
       'تخطيط مالي'
     ],
-    canonicalUrl: 'https://alqaeed-sa.netlify.app/blog/what-is-virtual-cfo-and-when-needed',
+    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/what-is-virtual-cfo-and-when-needed',
     relatedService: {
       title: 'المدير المالي عن بعد (Virtual CFO)',
       url: '/services/virtual-cfo',
@@ -314,7 +314,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
       'إدارة مالية للشركات',
       'الهيكل المالي للمنشأة'
     ],
-    canonicalUrl: 'https://alqaeed-sa.netlify.app/blog/difference-between-accountant-and-cfo',
+    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/difference-between-accountant-and-cfo',
     relatedService: {
       title: 'المدير المالي عن بعد (Virtual CFO)',
       url: '/services/virtual-cfo',
@@ -394,7 +394,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
       'التنبؤ بالسيولة النقدية',
       'التحصيل والذمم المدينة'
     ],
-    canonicalUrl: 'https://alqaeed-sa.netlify.app/blog/cash-flow-management-avoid-financial-crisis',
+    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/cash-flow-management-avoid-financial-crisis',
     relatedService: {
       title: 'إدارة التدفقات النقدية',
       url: '/services/cash-flow',
@@ -481,7 +481,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
       'الميزانية العمومية',
       'اتخاذ القرارات المالية'
     ],
-    canonicalUrl: 'https://alqaeed-sa.netlify.app/blog/financial-statements-importance-decision-making',
+    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/financial-statements-importance-decision-making',
     relatedService: {
       title: 'إعداد القوائم المالية',
       url: '/services/financial-statements',
@@ -563,7 +563,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
       'معدل العائد على الاستثمار',
       'نسب السيولة السريعة'
     ],
-    canonicalUrl: 'https://alqaeed-sa.netlify.app/blog/financial-analysis-key-ratios-business-owners',
+    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/financial-analysis-key-ratios-business-owners',
     relatedService: {
       title: 'التحليل المالي وتقييم الأداء',
       url: '/services/financial-analysis',
@@ -636,7 +636,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
       'مراقبة المصاريف',
       'تحليل الانحرافات المالية'
     ],
-    canonicalUrl: 'https://alqaeed-sa.netlify.app/blog/budgeting-planning-revenues-expenses',
+    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/budgeting-planning-revenues-expenses',
     relatedService: {
       title: 'إعداد الموازنات',
       url: '/services/budgeting',
@@ -721,7 +721,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
       'الترحيل المحاسبي',
       'إدارة الحسابات'
     ],
-    canonicalUrl: 'https://alqaeed-sa.netlify.app/blog/bookkeeping-importance-organized-accounting',
+    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/bookkeeping-importance-organized-accounting',
     relatedService: {
       title: 'تنظيم الحسابات ومسك الدفاتر',
       url: '/services/bookkeeping',
@@ -795,7 +795,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
       'الامتثال المالي للشركات',
       'سجلات محاسبية منتظمة'
     ],
-    canonicalUrl: 'https://alqaeed-sa.netlify.app/blog/zakat-tax-financial-data-organization',
+    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/zakat-tax-financial-data-organization',
     relatedService: {
       title: 'الزكاة والضريبة',
       url: '/services/zakat-tax',
@@ -868,7 +868,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
       'تطوير الإدارة المالية',
       'Virtual CFO'
     ],
-    canonicalUrl: 'https://alqaeed-sa.netlify.app/blog/7-signs-company-needs-remote-financial-management',
+    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/7-signs-company-needs-remote-financial-management',
     relatedService: {
       title: 'المدير المالي عن بعد (Virtual CFO)',
       url: '/services/virtual-cfo',

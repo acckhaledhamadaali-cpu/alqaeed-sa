@@ -16,7 +16,7 @@ export default function BlogHubPage() {
 
   const metaTitle = "المكتبة المالية | القائد للإدارة المالية";
   const metaDesc = "المكتبة المالية من القائد - أدلة ومعارف مالية ومحاسبية متخصصة تهدف لمساعدة أصحاب المنشآت والشركات في المملكة العربية السعودية على إدارة أعمالهم واتخاذ قرارات مالية صائبة.";
-  const url = "https://alqaeed-sa.netlify.app/blog";
+  const url = "https://alqaeed-sa.pages.dev/blog";
 
   const schema = {
     "@context": "https://schema.org",
@@ -28,11 +28,11 @@ export default function BlogHubPage() {
         "name": metaTitle,
         "description": metaDesc,
         "primaryImageOfPage": {
-          "@id": "https://alqaeed-sa.netlify.app/#logo"
+          "@id": "https://alqaeed-sa.pages.dev/#logo"
         },
         "inLanguage": "ar-SA",
         "isPartOf": {
-          "@id": "https://alqaeed-sa.netlify.app/#website"
+          "@id": "https://alqaeed-sa.pages.dev/#website"
         }
       },
       {
@@ -43,7 +43,7 @@ export default function BlogHubPage() {
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://alqaeed-sa.netlify.app/"
+            "item": "https://alqaeed-sa.pages.dev/"
           },
           {
             "@type": "ListItem",

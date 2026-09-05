@@ -23,7 +23,7 @@ for (const file of files) {
     if (!schemaStr.includes('"primaryImageOfPage"')) {
       schemaStr = schemaStr.replace(
         /"isPartOf": \{/g, 
-        '"primaryImageOfPage": {\n          "@id": "https://alqaeed-sa.netlify.app/#logo"\n        },\n        "inLanguage": "ar-SA",\n        "isPartOf": {'
+        '"primaryImageOfPage": {\n          "@id": "https://alqaeed-sa.pages.dev/#logo"\n        },\n        "inLanguage": "ar-SA",\n        "isPartOf": {'
       );
     }
 
@@ -37,7 +37,7 @@ for (const file of files) {
         "name": metaTitle,
         "description": metaDesc,
         "provider": {
-          "@id": "https://alqaeed-sa.netlify.app/#organization"
+          "@id": "https://alqaeed-sa.pages.dev/#organization"
         },
         "areaServed": "Saudi Arabia"
       }`);
@@ -57,13 +57,13 @@ for (const file of files) {
             "@type": "ListItem",
             "position": 1,
             "name": "الرئيسية",
-            "item": "https://alqaeed-sa.netlify.app/"
+            "item": "https://alqaeed-sa.pages.dev/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "الخدمات",
-            "item": "https://alqaeed-sa.netlify.app/#services"
+            "item": "https://alqaeed-sa.pages.dev/#services"
           },
           {
             "@type": "ListItem",

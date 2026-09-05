@@ -4,18 +4,24 @@
       "@graph": [
         {
           "@type": "Person",
-          "@id": "https://alqaeed-sa.netlify.app/#person",
+          "@id": "https://alqaeed-sa.pages.dev/#person",
           "name": "خالد القائد",
           "jobTitle": "مؤسس القائد ومتخصص في الإدارة المالية المتكاملة عن بعد للمنشآت",
-          "url": "https://alqaeed-sa.netlify.app/",
-          "image": "https://alqaeed-sa.netlify.app/images/khaled.webp",
+          "url": "https://alqaeed-sa.pages.dev/",
+          "image": "https://alqaeed-sa.pages.dev/images/khaled.webp",
           "description": "خالد القائد، مؤسس القائد. متخصص في الإدارة المالية المتكاملة، التقارير المالية، التحليل المالي، والزكاة والضرائب لتقديم رؤى دقيقة تدعم اتخاذ القرار وتحسن الأداء المالي للمنشآت.",
           "email": "alqaeed.sa@gmail.com",
           "telephone": "+966511294383",
-          "alumniOf": {
-            "@type": "EducationalOrganization",
-            "name": "ماجستير إدارة الأعمال MBA وبكالوريوس التجارة شعبة المحاسبة"
-          },
+          "hasCredential": [
+            {
+              "@type": "EducationalOccupationalCredential",
+              "name": "ماجستير إدارة الأعمال MBA"
+            },
+            {
+              "@type": "EducationalOccupationalCredential",
+              "name": "بكالوريوس التجارة شعبة المحاسبة"
+            }
+          ],
           "knowsAbout": [
             "الإدارة المالية",
             "الإدارة المالية عن بعد",
@@ -53,16 +59,16 @@
             "addressRegion": "المملكة العربية السعودية"
           },
           "worksFor": {
-            "@id": "https://alqaeed-sa.netlify.app/#organization"
+            "@id": "https://alqaeed-sa.pages.dev/#organization"
           }
         },
         {
           "@type": "ProfessionalService",
-          "@id": "https://alqaeed-sa.netlify.app/#service",
+          "@id": "https://alqaeed-sa.pages.dev/#service",
           "name": "القائد",
-          "url": "https://alqaeed-sa.netlify.app/",
-          "logo": "https://alqaeed-sa.netlify.app/images/khaled.webp",
-          "image": "https://alqaeed-sa.netlify.app/images/khaled.webp",
+          "url": "https://alqaeed-sa.pages.dev/",
+          "logo": "https://alqaeed-sa.pages.dev/images/khaled.webp",
+          "image": "https://alqaeed-sa.pages.dev/images/khaled.webp",
           "description": "القائد - الإدارة المالية المتكاملة عن بعد للمنشآت. أقدم حلولاً مالية شاملة للمنشآت الصغيرة والمتوسطة لضمان الامتثال المالي وتحسين الأداء.",
           "address": {
             "@type": "PostalAddress",
@@ -72,7 +78,7 @@
           "telephone": "+966511294383",
           "priceRange": "$$",
           "provider": {
-            "@id": "https://alqaeed-sa.netlify.app/#person"
+            "@id": "https://alqaeed-sa.pages.dev/#person"
           },
           "areaServed": {
             "@type": "Country",
@@ -135,10 +141,10 @@
         },
         {
           "@type": "Organization",
-          "@id": "https://alqaeed-sa.netlify.app/#organization",
+          "@id": "https://alqaeed-sa.pages.dev/#organization",
           "name": "القائد",
-          "url": "https://alqaeed-sa.netlify.app/",
-          "logo": "https://alqaeed-sa.netlify.app/images/khaled.webp",
+          "url": "https://alqaeed-sa.pages.dev/",
+          "logo": "https://alqaeed-sa.pages.dev/images/khaled.webp",
           "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+966511294383",
@@ -149,36 +155,36 @@
         },
         {
           "@type": "WebSite",
-          "@id": "https://alqaeed-sa.netlify.app/#website",
-          "url": "https://alqaeed-sa.netlify.app/",
+          "@id": "https://alqaeed-sa.pages.dev/#website",
+          "url": "https://alqaeed-sa.pages.dev/",
           "name": "القائد | الإدارة المالية المتكاملة عن بعد للمنشآت",
           "description": "القائد - الإدارة المالية المتكاملة عن بعد للمنشآت. حلول مالية متكاملة لدعم اتخاذ القرار وتحسين الأداء المالي للمنشآت في السعودية.",
           "publisher": {
-            "@id": "https://alqaeed-sa.netlify.app/#organization"
+            "@id": "https://alqaeed-sa.pages.dev/#organization"
           }
         },
         {
           "@type": "WebPage",
-          "@id": "https://alqaeed-sa.netlify.app/#webpage",
-          "url": "https://alqaeed-sa.netlify.app/",
+          "@id": "https://alqaeed-sa.pages.dev/#webpage",
+          "url": "https://alqaeed-sa.pages.dev/",
           "name": "القائد | الإدارة المالية المتكاملة عن بعد للمنشآت",
           "description": "القائد - الإدارة المالية المتكاملة عن بعد للمنشآت. حلول مالية متكاملة لدعم اتخاذ القرار وتحسين الأداء المالي للمنشآت في السعودية.",
           "isPartOf": {
-            "@id": "https://alqaeed-sa.netlify.app/#website"
+            "@id": "https://alqaeed-sa.pages.dev/#website"
           },
           "about": {
-            "@id": "https://alqaeed-sa.netlify.app/#organization"
+            "@id": "https://alqaeed-sa.pages.dev/#organization"
           }
         },
         {
           "@type": "BreadcrumbList",
-          "@id": "https://alqaeed-sa.netlify.app/#breadcrumb",
+          "@id": "https://alqaeed-sa.pages.dev/#breadcrumb",
           "itemListElement": [
             {
               "@type": "ListItem",
               "position": 1,
               "name": "الرئيسية",
-              "item": "https://alqaeed-sa.netlify.app/"
+              "item": "https://alqaeed-sa.pages.dev/"
             }
           ]
         }
