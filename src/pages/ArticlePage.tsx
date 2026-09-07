@@ -125,6 +125,33 @@ function parseContentToElements(content: string): React.ReactNode[] {
       continue;
     }
 
+    // Markdown image syntax: ![alt](url)
+    const imgMatch = trimmed.match(/^!\[(.*?)\]\((.*?)\)$/);
+    if (imgMatch) {
+      flushList();
+      const altText = imgMatch[1];
+      const imgSrc = imgMatch[2];
+      elements.push(
+        <div key={`img-wrap-${elementIndex++}`} className="my-6">
+          <img
+            src={imgSrc}
+            alt={altText}
+            loading="lazy"
+            decoding="async"
+            width={1280}
+            height={720}
+            className="w-full h-auto rounded-xl border border-border-subtle shadow-sm object-cover"
+          />
+          {altText && (
+            <p className="text-center text-xs text-text-muted mt-2 font-normal">
+              {altText}
+            </p>
+          )}
+        </div>
+      );
+      continue;
+    }
+
     flushList();
     elements.push(
       <p key={`p-${elementIndex++}`} className="text-text-secondary text-sm md:text-base leading-relaxed mb-4">
@@ -318,9 +345,22 @@ export default function ArticlePage({ slug }: { slug: string }) {
             <h1 className={`${TYPOGRAPHY.heading.h1} font-bold text-text-primary mb-4 leading-tight`}>
               {article.title}
             </h1>
-            <p className="text-sm md:text-base text-text-secondary leading-relaxed font-normal">
+            <p className="text-sm md:text-base text-text-secondary leading-relaxed font-normal mb-6">
               {article.description}
             </p>
+
+            {/* Featured Article Image (Below the fold on mobile/desktop, with lazy loading) */}
+            <div className="rounded-2xl overflow-hidden border border-border-subtle bg-surface-subtle shadow-sm aspect-video">
+              <img
+                src={`/images/blog/${article.slug}.webp`}
+                alt={article.title}
+                loading="lazy"
+                decoding="async"
+                width={1280}
+                height={720}
+                className="w-full h-full object-cover"
+              />
+            </div>
           </header>
 
           {/* Article Content Body */}

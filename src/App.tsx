@@ -12,6 +12,7 @@ import AboutSection from '../sections/AboutSection';
 import FinalCTASection from '../sections/FinalCTASection';
 import FooterSection from '../sections/FooterSection';
 import FloatingWhatsApp from '../sections/FloatingWhatsApp';
+import SoftwareIntegrations from './components/SoftwareIntegrations';
 
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
@@ -29,9 +30,15 @@ import BudgetingPage from './pages/services/BudgetingPage';
 import CashFlowPage from './pages/services/CashFlowPage';
 import VirtualCfoPage from './pages/services/VirtualCfoPage';
 
+import LogoAssetsPage from './pages/admin/LogoAssetsPage';
+
 export default function App({ path: propPath }: { path?: string } = {}) {
   const currentPath = propPath || (typeof window !== 'undefined' ? window.location.pathname : '/');
   const path = (currentPath.endsWith('/') && currentPath.length > 1) ? currentPath.slice(0, -1) : currentPath;
+
+  if (path === '/logo-assets') {
+    return <LogoAssetsPage />;
+  }
 
 if (path === '/services/bookkeeping') {
     return (
@@ -213,6 +220,7 @@ if (path === '/services/virtual-cfo') {
         <ChallengesSection />
         <ServicesSection />
         <AboutSection />
+        <SoftwareIntegrations />
         <HowIWorkSection />
         <FinalCTASection />
       </main>

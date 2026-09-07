@@ -3,6 +3,7 @@ import SectionWrapper from '../../../components/SectionWrapper';
 import Container from '../../../components/Container';
 import { TYPOGRAPHY } from '../../lib/tokens';
 import { MessageCircle } from 'lucide-react';
+import PdfLeadMagnet from '../../components/PdfLeadMagnet';
 
 const WHATSAPP_NUMBER = "966511294383";
 const WHATSAPP_MESSAGE = "السلام عليكم، أرغب في مناقشة خدمة الزكاة والضريبة وإعداد الإقرارات لمنشأتي.";
@@ -133,6 +134,108 @@ export default function ZakatTaxPage() {
               إذا كنت تبحث عن محاسب مالي يساعدك في إدارة الزكاة والضريبة وإعداد الإقرارات ومراجعة حسابات منشأتك بدقة وموثوقية، فأنا جاهز لتقديم خدمة احترافية تمنحك الاطمئنان والدقة في كافة تعاملاتك النظامية.
             </p>
           </div>
+
+          <PdfLeadMagnet 
+            title="" 
+            subtitle="" 
+            reportName="نموذج الإقرار الضريبي (VAT Return)" 
+            whatsappUrl={WHATSAPP_URL}
+            documentContent={
+              <div className="flex flex-col h-full bg-white text-gray-800 text-[10px] md:text-xs font-sans">
+                {/* PDF Header */}
+                <div className="border-b-2 border-green-800 pb-3 mb-4 flex justify-between items-end">
+                  <div>
+                    <h2 className="text-lg md:text-xl font-bold text-gray-900 font-arabic mb-1">إقرار ضريبة القيمة المضافة</h2>
+                    <p className="text-gray-500">للفترة: الربع الثالث (يوليو - سبتمبر 2024)</p>
+                  </div>
+                  <div className="text-left text-[9px] md:text-[10px] text-gray-400">
+                    <p>الرقم الضريبي: 30XXXXXXXXXX3</p>
+                    <p>مستخرج من: النظام المحاسبي</p>
+                  </div>
+                </div>
+
+                {/* Table Content */}
+                <div className="flex-grow">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-right mb-6 border-collapse min-w-[500px]">
+                      <thead>
+                        <tr className="bg-gray-100 border-y border-gray-300">
+                          <th className="py-2 px-2 font-semibold text-gray-700 w-12">الرقم</th>
+                          <th className="py-2 px-2 font-semibold text-gray-700">البيان</th>
+                          <th className="py-2 px-2 font-semibold text-gray-700 w-32 text-left">المبلغ (غير شامل الضريبة)</th>
+                          <th className="py-2 px-2 font-semibold text-gray-700 w-24 text-left">مبلغ الضريبة (SAR)</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-100">
+                        {/* Sales */}
+                        <tr className="bg-green-50/50">
+                          <td colSpan={4} className="py-2 px-2 font-bold text-green-900">المبيعات (المخرجات)</td>
+                        </tr>
+                        <tr>
+                          <td className="py-2 px-2 text-gray-500 text-center">1</td>
+                          <td className="py-2 px-2 font-medium text-gray-800">المبيعات الخاضعة للنسبة الأساسية (15%)</td>
+                          <td className="py-2 px-2 text-left">450,000.00</td>
+                          <td className="py-2 px-2 text-left text-gray-900">67,500.00</td>
+                        </tr>
+                        <tr>
+                          <td className="py-2 px-2 text-gray-500 text-center">2</td>
+                          <td className="py-2 px-2 font-medium text-gray-800">المبيعات للمواطنين (خدمات صحية/تعليمية/عقار)</td>
+                          <td className="py-2 px-2 text-left">0.00</td>
+                          <td className="py-2 px-2 text-left text-gray-900">0.00</td>
+                        </tr>
+                        <tr>
+                          <td className="py-2 px-2 text-gray-500 text-center">3</td>
+                          <td className="py-2 px-2 font-medium text-gray-800">المبيعات الخاضعة للنسبة الصفرية (0%)</td>
+                          <td className="py-2 px-2 text-left">25,000.00</td>
+                          <td className="py-2 px-2 text-left text-gray-900">0.00</td>
+                        </tr>
+                        <tr className="border-t border-gray-300 bg-gray-50">
+                          <td colSpan={2} className="py-2 px-2 font-bold text-gray-900 text-left">إجمالي ضريبة المخرجات:</td>
+                          <td colSpan={2} className="py-2 px-2 text-left font-bold text-gray-900">67,500.00</td>
+                        </tr>
+                        
+                        {/* Purchases */}
+                        <tr className="bg-green-50/50 mt-2">
+                          <td colSpan={4} className="py-2 px-2 font-bold text-green-900 pt-4">المشتريات (المدخلات)</td>
+                        </tr>
+                        <tr>
+                          <td className="py-2 px-2 text-gray-500 text-center">4</td>
+                          <td className="py-2 px-2 font-medium text-gray-800">المشتريات الخاضعة للنسبة الأساسية (15%)</td>
+                          <td className="py-2 px-2 text-left">280,000.00</td>
+                          <td className="py-2 px-2 text-left text-gray-900">42,000.00</td>
+                        </tr>
+                        <tr>
+                          <td className="py-2 px-2 text-gray-500 text-center">5</td>
+                          <td className="py-2 px-2 font-medium text-gray-800">الاستيرادات الخاضعة للنسبة الأساسية المستحقة للبيان الجمركي</td>
+                          <td className="py-2 px-2 text-left">50,000.00</td>
+                          <td className="py-2 px-2 text-left text-gray-900">7,500.00</td>
+                        </tr>
+                        <tr className="border-t border-gray-300 bg-gray-50">
+                          <td colSpan={2} className="py-2 px-2 font-bold text-gray-900 text-left">إجمالي ضريبة المدخلات القابلة للخصم:</td>
+                          <td colSpan={2} className="py-2 px-2 text-left font-bold text-gray-900">49,500.00</td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr className="bg-green-100 border-t-2 border-green-800 font-bold">
+                          <td colSpan={2} className="py-3 px-2 text-green-900">صافي الضريبة المستحقة (المستردة)</td>
+                          <td colSpan={2} className="py-3 px-2 text-left text-green-900">18,000.00</td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                  
+                  <div className="bg-gray-50 border border-gray-200 p-3 rounded text-[10px] md:text-[11px] text-gray-600 font-medium">
+                    <p className="flex items-start gap-1">
+                      <span className="w-2 h-2 rounded-full bg-green-500 inline-block mt-1 shrink-0"></span>
+                      <span>
+                        تمت مطابقة هذا التقرير مع ميزان المراجعة ودفتر الأستاذ العام لضريبة القيمة المضافة. الفواتير متوافقة مع متطلبات الفوترة الإلكترونية (المرحلة الثانية).
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            }
+          />
 
           {/* Service CTA Card */}
           <div className="my-8 p-6 bg-surface-subtle/60 border border-border-subtle rounded-2xl text-center">

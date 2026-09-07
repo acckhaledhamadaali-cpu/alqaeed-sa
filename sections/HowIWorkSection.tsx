@@ -14,11 +14,11 @@ export default function HowIWorkSection(props: HTMLAttributes<HTMLElement>) {
           {/* Section Header Area */}
           <div id="how-i-work-header" className="flex flex-col space-y-2 md:space-y-3 text-center items-center max-w-3xl">
             <SectionTitle id="how-i-work-title" level={2} className="font-bold">
-              كيف ننظم مالية منشأتك خطوة بخطوة؟
+              كيف أنظم حسابات منشأتك خطوة بخطوة؟
             </SectionTitle>
 
             <SectionDescription id="how-i-work-description" className="text-center">
-              منهجية عمل واضحة لتنظيم حساباتك وبناء نظامك المالي.
+              خطوات بسيطة وشفافة لبدء العمل معاً وضمان نجاح الإدارة المالية لمنشأتك.
             </SectionDescription>
           </div>
 

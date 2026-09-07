@@ -33,6 +33,18 @@
   --transition-slow: all 500ms ease-in-out;
 }
 
+@theme {
+  --animate-marquee: marquee 30s linear infinite;
+  @keyframes marquee {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
 /* Global Bold Typography across the whole website */
 html,
 body,

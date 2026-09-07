@@ -3,6 +3,7 @@ import SectionWrapper from '../../../components/SectionWrapper';
 import Container from '../../../components/Container';
 import { TYPOGRAPHY } from '../../lib/tokens';
 import { MessageCircle } from 'lucide-react';
+import PdfLeadMagnet from '../../components/PdfLeadMagnet';
 
 const WHATSAPP_NUMBER = "966511294383";
 const WHATSAPP_MESSAGE = "السلام عليكم، أرغب في مناقشة احتياج منشأتي لخدمة المدير المالي عن بعد (Virtual CFO).";
@@ -136,6 +137,142 @@ export default function VirtualCfoPage() {
               إذا كنت تبحث عن مدير مالي عن بعد (Virtual CFO) يساعدك في التخطيط المالي، وتحليل الأداء، وإدارة السيولة، ودعم قرارات الإدارة، فأنا جاهز للعمل معك كشريك مالي يساعدك على بناء نظام مالي قوي يدعم نمو منشأتك واستدامة أعمالها.
             </p>
           </div>
+
+          {/* PDF Lead Magnet Mockup - CFO Dashboard */}
+          <PdfLeadMagnet 
+            title=""
+            subtitle=""
+            reportName="CFO_Cashflow_Forecast"
+            whatsappUrl={WHATSAPP_URL}
+            documentContent={
+              <div className="w-full font-sans text-gray-800 bg-white">
+                
+                {/* Odoo-style Header */}
+                <div className="border-t-[6px] border-[#3B2C35] pt-3 sm:pt-4 pb-3 flex justify-between items-start mb-4">
+                  <div>
+                    <h2 className="text-sm sm:text-xl font-bold text-[#3B2C35] mb-0.5 sm:mb-1">لوحة تحكم المدير المالي (CFO Dashboard)</h2>
+                    <span className="text-[9px] sm:text-xs text-gray-500 font-bold">التدفقات النقدية والتنبؤ المالي (Cash Flow Forecast)</span>
+                  </div>
+                  <div className="text-left text-[8px] sm:text-[11px] text-gray-500 space-y-0.5">
+                    <div>تاريخ التقرير: <span className="font-mono text-gray-800">30/09/2026</span></div>
+                    <div>فترة التنبؤ: <span className="font-mono text-gray-800">Q4 2026</span></div>
+                  </div>
+                </div>
+
+                {/* ERP KPI Grid (2x2 on Mobile) */}
+                <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-4 sm:mb-6">
+                  {/* KPI 1 */}
+                  <div className="bg-[#F9F9F9] p-2 sm:p-3 border-l-[3px] border-[#017E84] rounded-r-sm">
+                    <div className="text-[9px] sm:text-xs text-gray-500 mb-0.5">الرصيد النقدي المتاح</div>
+                    <div className="text-xs sm:text-base font-bold text-gray-900 font-mono">1,240,500 <span className="text-[8px] sm:text-[10px] text-gray-500 font-sans">SAR</span></div>
+                    <div className="text-[8px] sm:text-[10px] text-emerald-600 mt-1 flex items-center font-bold">▲ يغطي 4.5 أشهر تشغيلية</div>
+                  </div>
+                  
+                  {/* KPI 2 */}
+                  <div className="bg-[#F9F9F9] p-2 sm:p-3 border-l-[3px] border-[#714B67] rounded-r-sm">
+                    <div className="text-[9px] sm:text-xs text-gray-500 mb-0.5">معدل حرق النقد الشهري (Burn Rate)</div>
+                    <div className="text-xs sm:text-base font-bold text-gray-900 font-mono">275,000 <span className="text-[8px] sm:text-[10px] text-gray-500 font-sans">SAR</span></div>
+                    <div className="text-[8px] sm:text-[10px] text-emerald-600 mt-1 flex items-center font-bold">▼ انخفاض 12% عن الربع السابق</div>
+                  </div>
+
+                  {/* KPI 3 */}
+                  <div className="bg-[#F9F9F9] p-2 sm:p-3 border-l-[3px] border-amber-500 rounded-r-sm">
+                    <div className="text-[9px] sm:text-xs text-gray-500 mb-0.5">أيام التحصيل (DSO)</div>
+                    <div className="text-xs sm:text-base font-bold text-gray-900 font-mono">42 <span className="text-[8px] sm:text-[10px] text-gray-500 font-sans">يوماً</span></div>
+                    <div className="text-[8px] sm:text-[10px] text-amber-600 mt-1 flex items-center font-bold">● يحتاج تسريع دورة التحصيل</div>
+                  </div>
+
+                  {/* KPI 4 */}
+                  <div className="bg-[#F9F9F9] p-2 sm:p-3 border-l-[3px] border-[#017E84] rounded-r-sm">
+                    <div className="text-[9px] sm:text-xs text-gray-500 mb-0.5">العائد على الاستثمار (ROI)</div>
+                    <div className="text-xs sm:text-base font-bold text-gray-900 font-mono">18.4%</div>
+                    <div className="text-[8px] sm:text-[10px] text-emerald-600 mt-1 flex items-center font-bold">▲ أعلى من المستهدف بـ 3.4%</div>
+                  </div>
+                </div>
+
+                {/* CSS Charts Section: Cash In vs Cash Out Trend */}
+                <div className="mb-4 sm:mb-6 border border-gray-100 rounded-sm p-2 sm:p-4 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.02)]">
+                  <h3 className="text-[10px] sm:text-sm font-bold text-gray-700 mb-3 border-b border-gray-100 pb-1.5">تحليل التدفق النقدي التشغيلي - الربع الثالث (Operating Cash Flow)</h3>
+                  <div className="flex items-end h-20 sm:h-28 gap-2 sm:gap-4 mt-4 px-2">
+                    {/* Month 1 */}
+                    <div className="flex-1 flex justify-center items-end gap-1 relative group">
+                      <div className="w-1/2 bg-[#017E84] rounded-t-sm" style={{ height: '70%' }}></div>
+                      <div className="w-1/2 bg-[#714B67] rounded-t-sm" style={{ height: '40%' }}></div>
+                      <span className="absolute -bottom-5 text-[8px] sm:text-[10px] font-bold text-gray-600">يوليو</span>
+                    </div>
+                    {/* Month 2 */}
+                    <div className="flex-1 flex justify-center items-end gap-1 relative group">
+                      <div className="w-1/2 bg-[#017E84] rounded-t-sm" style={{ height: '60%' }}></div>
+                      <div className="w-1/2 bg-[#714B67] rounded-t-sm" style={{ height: '55%' }}></div>
+                      <span className="absolute -bottom-5 text-[8px] sm:text-[10px] font-bold text-gray-600">أغسطس</span>
+                    </div>
+                    {/* Month 3 */}
+                    <div className="flex-1 flex justify-center items-end gap-1 relative group">
+                      <div className="w-1/2 bg-[#017E84] rounded-t-sm" style={{ height: '90%' }}></div>
+                      <div className="w-1/2 bg-[#714B67] rounded-t-sm" style={{ height: '45%' }}></div>
+                      <span className="absolute -bottom-5 text-[8px] sm:text-[10px] font-bold text-gray-600">سبتمبر</span>
+                    </div>
+                  </div>
+                  <div className="flex justify-center gap-4 mt-8 pt-2 border-t border-gray-50 text-[8px] sm:text-[10px]">
+                    <div className="flex items-center gap-1.5"><div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#017E84] rounded-sm"></div><span>المقبوضات (Cash In)</span></div>
+                    <div className="flex items-center gap-1.5"><div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#714B67] rounded-sm"></div><span>المدفوعات (Cash Out)</span></div>
+                  </div>
+                </div>
+
+                {/* ERP Data Table - Cash Flow Forecast */}
+                <div className="mb-4">
+                  <h3 className="text-[10px] sm:text-sm font-bold text-gray-700 mb-2 border-b border-gray-100 pb-1.5">التنبؤ المالي للربع القادم (Q4 Forecast)</h3>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-right text-[8px] sm:text-[11px] border-collapse">
+                      <thead>
+                        <tr className="bg-[#F9F9F9] text-gray-600 border-y border-gray-200">
+                          <th className="py-1.5 px-1 sm:p-2 font-normal">البيان المالي</th>
+                          <th className="py-1.5 px-1 sm:p-2 font-normal text-center">أكتوبر (تقديري)</th>
+                          <th className="py-1.5 px-1 sm:p-2 font-normal text-center">نوفمبر (تقديري)</th>
+                          <th className="py-1.5 px-1 sm:p-2 font-normal text-center">ديسمبر (تقديري)</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-100 font-mono text-[9px] sm:text-xs">
+                        <tr className="hover:bg-gray-50">
+                          <td className="py-1.5 px-1 sm:p-2 font-sans text-gray-800">رصيد أول المدة</td>
+                          <td className="py-1.5 px-1 sm:p-2 text-center text-gray-700">1,240,500</td>
+                          <td className="py-1.5 px-1 sm:p-2 text-center text-gray-700">1,390,500</td>
+                          <td className="py-1.5 px-1 sm:p-2 text-center text-gray-700">1,485,500</td>
+                        </tr>
+                        <tr className="hover:bg-gray-50 text-emerald-700 bg-emerald-50/30">
+                          <td className="py-1.5 px-1 sm:p-2 font-sans">إجمالي المقبوضات النقدية</td>
+                          <td className="py-1.5 px-1 sm:p-2 text-center">+ 450,000</td>
+                          <td className="py-1.5 px-1 sm:p-2 text-center">+ 380,000</td>
+                          <td className="py-1.5 px-1 sm:p-2 text-center">+ 520,000</td>
+                        </tr>
+                        <tr className="hover:bg-gray-50 text-red-700 bg-red-50/30">
+                          <td className="py-1.5 px-1 sm:p-2 font-sans">إجمالي المدفوعات التشغيلية</td>
+                          <td className="py-1.5 px-1 sm:p-2 text-center">- (300,000)</td>
+                          <td className="py-1.5 px-1 sm:p-2 text-center">- (285,000)</td>
+                          <td className="py-1.5 px-1 sm:p-2 text-center">- (310,000)</td>
+                        </tr>
+                        <tr className="font-bold border-t-[3px] border-[#3B2C35]">
+                          <td className="py-2 px-1 sm:p-2 font-sans text-[#3B2C35]">رصيد النقد المتوقع (آخر المدة)</td>
+                          <td className="py-2 px-1 sm:p-2 text-center text-[#3B2C35]">1,390,500</td>
+                          <td className="py-2 px-1 sm:p-2 text-center text-[#3B2C35]">1,485,500</td>
+                          <td className="py-2 px-1 sm:p-2 text-center text-[#3B2C35]">1,695,500</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                {/* CFO Actionable Advice */}
+                <div className="mt-4 sm:mt-6 bg-[#F9F9F9] border-r-4 border-[#3B2C35] p-2 sm:p-3 text-[9px] sm:text-xs">
+                  <strong className="block font-bold text-gray-800 mb-1">توجيهات المدير المالي (Strategic Action):</strong>
+                  <span className="text-gray-600 leading-relaxed text-justify block">
+                    يوجد فائض نقدي متوقع بقيمة 450,000 ريال بحلول نهاية العام لا يحقق عائداً. نوصي بتخصيص 50% منه في ودائع مرابحة قصيرة الأجل (3 أشهر)، وتوجيه 50% لتمويل حملة المبيعات للربع الأول بدلاً من استخدام السحب على المكشوف.
+                  </span>
+                </div>
+
+              </div>
+            }
+          />
 
           {/* Service CTA Card */}
           <div className="my-8 p-6 bg-surface-subtle/60 border border-border-subtle rounded-2xl text-center">

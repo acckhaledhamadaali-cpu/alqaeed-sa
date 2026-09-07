@@ -3,6 +3,7 @@ import SectionWrapper from '../../../components/SectionWrapper';
 import Container from '../../../components/Container';
 import { TYPOGRAPHY } from '../../lib/tokens';
 import { MessageCircle } from 'lucide-react';
+import PdfLeadMagnet from '../../components/PdfLeadMagnet';
 
 const WHATSAPP_NUMBER = "966511294383";
 const WHATSAPP_MESSAGE = "السلام عليكم، أرغب في مناقشة إعداد الموازنة التقديرية لمنشأتي.";
@@ -134,6 +135,116 @@ export default function BudgetingPage() {
               إذا كنت تبحث عن محاسب مالي يساعدك في إعداد الموازنات التقديرية وتحليل الأداء المالي ومتابعة تنفيذ الخطط، فأنا جاهز لتقديم خدمة احترافية تساعدك على إدارة موارد منشأتك بكفاءة واتخاذ قرارات مبنية على بيانات مالية دقيقة.
             </p>
           </div>
+
+          <PdfLeadMagnet 
+            title="" 
+            subtitle="" 
+            reportName="تقرير متابعة الموازنة وتحليل الانحرافات" 
+            whatsappUrl={WHATSAPP_URL}
+            documentContent={
+              <div className="flex flex-col h-full bg-white text-gray-800 text-[10px] md:text-xs font-sans">
+                {/* PDF Header */}
+                <div className="border-b-2 border-gray-800 pb-3 mb-4 flex justify-between items-end">
+                  <div>
+                    <h2 className="text-lg md:text-xl font-bold text-gray-900 font-arabic mb-1">Budget vs. Actual Report</h2>
+                    <p className="text-gray-500">الربع الثالث - Q3 2024</p>
+                  </div>
+                  <div className="text-left text-[9px] md:text-[10px] text-gray-400">
+                    <p>Department: Corporate</p>
+                    <p>Currency: SAR</p>
+                  </div>
+                </div>
+
+                {/* Table Content */}
+                <div className="flex-grow">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-right mb-6 border-collapse min-w-[500px]">
+                      <thead>
+                        <tr className="bg-gray-100 border-y border-gray-300">
+                          <th className="py-2 px-2 font-semibold text-gray-700">البند (Item)</th>
+                          <th className="py-2 px-2 font-semibold text-gray-700 w-24 text-left">الفعلي (Actual)</th>
+                          <th className="py-2 px-2 font-semibold text-gray-700 w-24 text-left">المعتمد (Budget)</th>
+                          <th className="py-2 px-2 font-semibold text-gray-700 w-24 text-left">الانحراف (Variance)</th>
+                          <th className="py-2 px-2 font-semibold text-gray-700 w-16 text-center">%</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-100">
+                        {/* Revenues */}
+                        <tr className="bg-gray-50/50">
+                          <td colSpan={5} className="py-2 px-2 font-bold text-gray-900">الإيرادات (Revenues)</td>
+                        </tr>
+                        <tr>
+                          <td className="py-2 px-2 font-medium text-gray-800">إيرادات العقود</td>
+                          <td className="py-2 px-2 text-left">1,250,000</td>
+                          <td className="py-2 px-2 text-left">1,100,000</td>
+                          <td className="py-2 px-2 text-left text-green-600">+150,000</td>
+                          <td className="py-2 px-2 text-center text-green-600 bg-green-50">+13.6%</td>
+                        </tr>
+                        <tr>
+                          <td className="py-2 px-2 font-medium text-gray-800">إيرادات استشارية</td>
+                          <td className="py-2 px-2 text-left">280,000</td>
+                          <td className="py-2 px-2 text-left">300,000</td>
+                          <td className="py-2 px-2 text-left text-red-500">-20,000</td>
+                          <td className="py-2 px-2 text-center text-red-500 bg-red-50">-6.6%</td>
+                        </tr>
+                        <tr className="border-t border-gray-300 bg-gray-50">
+                          <td className="py-2 px-2 font-bold text-gray-900">إجمالي الإيرادات</td>
+                          <td className="py-2 px-2 text-left font-bold text-gray-900">1,530,000</td>
+                          <td className="py-2 px-2 text-left font-bold text-gray-900">1,400,000</td>
+                          <td className="py-2 px-2 text-left font-bold text-green-600">+130,000</td>
+                          <td className="py-2 px-2 text-center font-bold text-green-600">+9.2%</td>
+                        </tr>
+                        
+                        {/* Expenses */}
+                        <tr className="bg-gray-50/50 mt-2">
+                          <td colSpan={5} className="py-2 px-2 font-bold text-gray-900 pt-4">المصروفات (Expenses)</td>
+                        </tr>
+                        <tr>
+                          <td className="py-2 px-2 font-medium text-gray-800">تكلفة المبيعات (COGS)</td>
+                          <td className="py-2 px-2 text-left">510,000</td>
+                          <td className="py-2 px-2 text-left">480,000</td>
+                          <td className="py-2 px-2 text-left text-red-500">(30,000)</td>
+                          <td className="py-2 px-2 text-center text-red-500 bg-red-50">+6.2%</td>
+                        </tr>
+                        <tr>
+                          <td className="py-2 px-2 font-medium text-gray-800">الرواتب والأجور</td>
+                          <td className="py-2 px-2 text-left">320,000</td>
+                          <td className="py-2 px-2 text-left">325,000</td>
+                          <td className="py-2 px-2 text-left text-green-600">5,000</td>
+                          <td className="py-2 px-2 text-center text-green-600 bg-green-50">-1.5%</td>
+                        </tr>
+                        <tr>
+                          <td className="py-2 px-2 font-medium text-gray-800">التسويق والإعلانات</td>
+                          <td className="py-2 px-2 text-left">95,000</td>
+                          <td className="py-2 px-2 text-left">80,000</td>
+                          <td className="py-2 px-2 text-left text-red-500">(15,000)</td>
+                          <td className="py-2 px-2 text-center text-red-500 bg-red-50">+18.7%</td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr className="bg-gray-100 border-y-2 border-gray-800 font-bold">
+                          <td className="py-3 px-2 text-gray-900">صافي الربح التشغيلي</td>
+                          <td className="py-3 px-2 text-left">605,000</td>
+                          <td className="py-3 px-2 text-left">515,000</td>
+                          <td className="py-3 px-2 text-left text-green-700">+90,000</td>
+                          <td className="py-3 px-2 text-center text-green-700">+17.4%</td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                  
+                  <div className="bg-amber-50 border border-amber-100 p-3 rounded text-[10px] md:text-[11px] text-amber-800 font-medium">
+                    <p className="flex items-start gap-1">
+                      <span className="w-2 h-2 rounded-full bg-amber-500 inline-block mt-1 shrink-0"></span>
+                      <span>
+                        <strong>توصية الإدارة المالية:</strong> تجاوز ملحوظ في بند التسويق بنسبة 18.7%، يقابله زيادة في الإيرادات بنسبة 9.2%. يُنصح بمراجعة العائد على الاستثمار للحملات الإعلانية (ROAS) في الربع القادم.
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            }
+          />
 
           {/* Service CTA Card */}
           <div className="my-8 p-6 bg-surface-subtle/60 border border-border-subtle rounded-2xl text-center">

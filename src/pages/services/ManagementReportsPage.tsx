@@ -3,9 +3,10 @@ import SectionWrapper from '../../../components/SectionWrapper';
 import Container from '../../../components/Container';
 import { TYPOGRAPHY } from '../../lib/tokens';
 import { MessageCircle } from 'lucide-react';
+import PdfLeadMagnet from '../../components/PdfLeadMagnet';
 
 const WHATSAPP_NUMBER = "966511294383";
-const WHATSAPP_MESSAGE = "السلام عليكم، أرغب في مناقشة إعداد التقارير المالية والإدارية لمنشأتي.";
+const WHATSAPP_MESSAGE = "السلام عليكم، أرغب في مناقشة إعداد التقارير المالية والإدارية لمنشأتي والحصول على النموذج الاسترشادي.";
 const WHATSAPP_URL = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(WHATSAPP_MESSAGE);
 
 export default function ManagementReportsPage() {
@@ -134,6 +135,162 @@ export default function ManagementReportsPage() {
               إذا كنت تبحث عن محاسب مالي يساعدك في إعداد التقارير الإدارية وتصميم لوحات مؤشرات الأداء (Dashboards) التي تدعم قراراتك، فأنا جاهز لتقديم تقارير احترافية تمنحك رؤية واضحة تساعدك على إدارة أعمالك بثقة.
             </p>
           </div>
+
+          {/* PDF Lead Magnet Mockup */}
+          <PdfLeadMagnet 
+            title=""
+            subtitle=""
+            reportName="Branch_Performance_Analytics"
+            whatsappUrl={WHATSAPP_URL}
+            documentContent={
+              <div className="w-full font-sans text-gray-800 bg-white">
+                
+                {/* Odoo-style Header */}
+                <div className="border-t-[6px] border-[#714B67] pt-3 sm:pt-4 pb-3 flex justify-between items-start mb-4">
+                  <div>
+                    <h2 className="text-sm sm:text-xl font-bold text-[#714B67] mb-0.5 sm:mb-1">تحليل الأداء الشامل (Dashboard)</h2>
+                    <span className="text-[9px] sm:text-xs text-gray-500 font-bold">شركة منشأة تجزئة وخدمات</span>
+                  </div>
+                  <div className="text-left text-[8px] sm:text-[11px] text-gray-500 space-y-0.5">
+                    <div>التاريخ: <span className="font-mono text-gray-800">30/09/2026</span></div>
+                    <div>العملة: <span className="font-mono text-gray-800">SAR</span></div>
+                  </div>
+                </div>
+
+                {/* ERP KPI Grid (2x2 on Mobile) */}
+                <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-4 sm:mb-6">
+                  {/* KPI 1 */}
+                  <div className="bg-[#F9F9F9] p-2 sm:p-3 border-l-[3px] border-[#714B67] rounded-r-sm">
+                    <div className="text-[9px] sm:text-xs text-gray-500 mb-0.5">إجمالي الإيرادات</div>
+                    <div className="text-xs sm:text-base font-bold text-gray-900 font-mono">1,650,000</div>
+                    <div className="text-[8px] sm:text-[10px] text-emerald-600 mt-1 flex items-center font-bold">▲ +12.4% (الربع السابق)</div>
+                  </div>
+                  
+                  {/* KPI 2 */}
+                  <div className="bg-[#F9F9F9] p-2 sm:p-3 border-l-[3px] border-[#017E84] rounded-r-sm">
+                    <div className="text-[9px] sm:text-xs text-gray-500 mb-0.5">مجمل الربح</div>
+                    <div className="text-xs sm:text-base font-bold text-gray-900 font-mono">948,000</div>
+                    <div className="text-[8px] sm:text-[10px] text-emerald-600 mt-1 flex items-center font-bold">▲ +5.2% (تحسن هامش)</div>
+                  </div>
+
+                  {/* KPI 3 */}
+                  <div className="bg-[#F9F9F9] p-2 sm:p-3 border-l-[3px] border-[#017E84] rounded-r-sm">
+                    <div className="text-[9px] sm:text-xs text-gray-500 mb-0.5">صافي الربح التشغيلي</div>
+                    <div className="text-xs sm:text-base font-bold text-gray-900 font-mono">653,000</div>
+                    <div className="text-[8px] sm:text-[10px] text-emerald-600 mt-1 flex items-center font-bold">▲ +8.1% (نمو مستدام)</div>
+                  </div>
+
+                  {/* KPI 4 */}
+                  <div className="bg-[#F9F9F9] p-2 sm:p-3 border-l-[3px] border-amber-500 rounded-r-sm">
+                    <div className="text-[9px] sm:text-xs text-gray-500 mb-0.5">المصاريف التشغيلية</div>
+                    <div className="text-xs sm:text-base font-bold text-gray-900 font-mono">295,000</div>
+                    <div className="text-[8px] sm:text-[10px] text-amber-600 mt-1 flex items-center font-bold">▼ وفر إداري (-3.5%)</div>
+                  </div>
+                </div>
+
+                {/* CSS Charts Section */}
+                <div className="mb-4 sm:mb-6 border border-gray-100 rounded-sm p-2 sm:p-4 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.02)]">
+                  <h3 className="text-[10px] sm:text-sm font-bold text-gray-700 mb-3 border-b border-gray-100 pb-1.5">توزيع الإيرادات والربحية حسب الفروع (Visual Analytics)</h3>
+                  <div className="space-y-3 sm:space-y-4">
+                    {/* Branch 1 */}
+                    <div>
+                      <div className="flex justify-between text-[9px] sm:text-[11px] mb-1">
+                        <span className="font-bold text-gray-800">فرع الرياض (الرئيسي)</span>
+                        <span className="font-mono text-[#714B67] font-bold">51.5%</span>
+                      </div>
+                      <div className="w-full bg-gray-100 h-1.5 sm:h-2 rounded-full overflow-hidden flex">
+                        <div className="bg-[#714B67] h-full" style={{ width: '51.5%' }}></div>
+                      </div>
+                    </div>
+                    {/* Branch 2 */}
+                    <div>
+                      <div className="flex justify-between text-[9px] sm:text-[11px] mb-1">
+                        <span className="font-bold text-gray-800">فرع جدة</span>
+                        <span className="font-mono text-[#017E84] font-bold">25.5%</span>
+                      </div>
+                      <div className="w-full bg-gray-100 h-1.5 sm:h-2 rounded-full overflow-hidden flex">
+                        <div className="bg-[#017E84] h-full" style={{ width: '25.5%' }}></div>
+                      </div>
+                    </div>
+                    {/* Branch 3 */}
+                    <div>
+                      <div className="flex justify-between text-[9px] sm:text-[11px] mb-1">
+                        <span className="font-bold text-gray-800">فرع الدمام</span>
+                        <span className="font-mono text-emerald-600 font-bold">23.0%</span>
+                      </div>
+                      <div className="w-full bg-gray-100 h-1.5 sm:h-2 rounded-full overflow-hidden flex">
+                        <div className="bg-emerald-600 h-full" style={{ width: '23.0%' }}></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* ERP Data Table */}
+                <div className="mb-4">
+                  <h3 className="text-[10px] sm:text-sm font-bold text-gray-700 mb-2 border-b border-gray-100 pb-1.5">تحليل قائمة الدخل الموحدة (Income Statement)</h3>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-right text-[8px] sm:text-[11px] border-collapse">
+                      <thead>
+                        <tr className="bg-[#F9F9F9] text-gray-600 border-y border-gray-200">
+                          <th className="py-1.5 px-1 sm:p-2 font-normal">البند المحاسبي</th>
+                          <th className="py-1.5 px-1 sm:p-2 font-normal text-center">الرياض</th>
+                          <th className="py-1.5 px-1 sm:p-2 font-normal text-center">جدة</th>
+                          <th className="py-1.5 px-1 sm:p-2 font-normal text-center">الدمام</th>
+                          <th className="py-1.5 px-1 sm:p-2 font-bold text-gray-900 text-left">الإجمالي الموحد</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-100 font-mono text-[9px] sm:text-xs">
+                        <tr className="hover:bg-gray-50">
+                          <td className="py-1.5 px-1 sm:p-2 font-sans text-gray-800">إيرادات المبيعات</td>
+                          <td className="py-1.5 px-1 sm:p-2 text-center text-gray-700">850,000</td>
+                          <td className="py-1.5 px-1 sm:p-2 text-center text-gray-700">420,000</td>
+                          <td className="py-1.5 px-1 sm:p-2 text-center text-gray-700">380,000</td>
+                          <td className="py-1.5 px-1 sm:p-2 font-bold text-gray-900 text-left bg-gray-50/50">1,650,000</td>
+                        </tr>
+                        <tr className="hover:bg-gray-50">
+                          <td className="py-1.5 px-1 sm:p-2 font-sans text-gray-600">تكلفة المبيعات</td>
+                          <td className="py-1.5 px-1 sm:p-2 text-center text-gray-500">(340,000)</td>
+                          <td className="py-1.5 px-1 sm:p-2 text-center text-gray-500">(210,000)</td>
+                          <td className="py-1.5 px-1 sm:p-2 text-center text-gray-500">(152,000)</td>
+                          <td className="py-1.5 px-1 sm:p-2 font-bold text-gray-900 text-left bg-gray-50/50">(702,000)</td>
+                        </tr>
+                        <tr className="bg-gray-50/80 font-bold border-y border-gray-200">
+                          <td className="py-1.5 px-1 sm:p-2 font-sans text-[#714B67]">مجمل الربح</td>
+                          <td className="py-1.5 px-1 sm:p-2 text-center text-[#714B67]">510,000</td>
+                          <td className="py-1.5 px-1 sm:p-2 text-center text-[#714B67]">210,000</td>
+                          <td className="py-1.5 px-1 sm:p-2 text-center text-[#714B67]">228,000</td>
+                          <td className="py-1.5 px-1 sm:p-2 text-[#714B67] text-left">948,000</td>
+                        </tr>
+                        <tr className="hover:bg-gray-50">
+                          <td className="py-1.5 px-1 sm:p-2 font-sans text-gray-600">المصاريف التشغيلية</td>
+                          <td className="py-1.5 px-1 sm:p-2 text-center text-gray-500">(120,000)</td>
+                          <td className="py-1.5 px-1 sm:p-2 text-center text-gray-500">(95,000)</td>
+                          <td className="py-1.5 px-1 sm:p-2 text-center text-gray-500">(80,000)</td>
+                          <td className="py-1.5 px-1 sm:p-2 font-bold text-gray-900 text-left bg-gray-50/50">(295,000)</td>
+                        </tr>
+                        <tr className="font-bold border-t-[3px] border-[#017E84]">
+                          <td className="py-2 px-1 sm:p-2 font-sans text-[#017E84]">صافي الربح التشغيلي</td>
+                          <td className="py-2 px-1 sm:p-2 text-center text-[#017E84]">390,000</td>
+                          <td className="py-2 px-1 sm:p-2 text-center text-[#017E84]">115,000</td>
+                          <td className="py-2 px-1 sm:p-2 text-center text-[#017E84]">148,000</td>
+                          <td className="py-2 px-1 sm:p-2 text-[#017E84] text-left text-[10px] sm:text-sm">653,000</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                {/* Insight Box */}
+                <div className="mt-4 sm:mt-6 bg-[#F9F9F9] border-r-4 border-[#017E84] p-2 sm:p-3 text-[9px] sm:text-xs">
+                  <strong className="block font-bold text-gray-800 mb-1">ملاحظة النظام (Auto-Insight):</strong>
+                  <span className="text-gray-600 leading-relaxed text-justify block">
+                    مؤشر الربحية لفرع جدة أقل من المعدل المعياري بنسبة 4.2% بسبب ارتفاع التكاليف المباشرة. يُنصح بمراجعة عقود التوريد لتحسين هامش المساهمة خلال الربع القادم.
+                  </span>
+                </div>
+
+              </div>
+            }
+          />
 
           {/* Service CTA Card */}
           <div className="my-8 p-6 bg-surface-subtle/60 border border-border-subtle rounded-2xl text-center">

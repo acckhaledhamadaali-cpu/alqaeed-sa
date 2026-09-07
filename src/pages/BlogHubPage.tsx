@@ -160,26 +160,41 @@ export default function BlogHubPage() {
                 {filteredArticles.map((article) => (
                   <article
                     key={article.slug}
-                    className="border border-border-subtle rounded-xl p-6 bg-white hover:shadow-md transition-shadow flex flex-col justify-between"
+                    className="border border-border-subtle rounded-xl overflow-hidden bg-white hover:shadow-md transition-shadow flex flex-col justify-between"
                   >
                     <div>
-                      <div className="flex items-center justify-between text-xs text-text-muted mb-3">
-                        <span className="bg-primary/10 text-primary font-medium px-2.5 py-1 rounded-md">
-                          {getCategoryName(article.category)}
-                        </span>
-                        <span>{article.readingTime}</span>
+                      {/* Blog Card Thumbnail with Lazy Loading & Aspect Ratio */}
+                      <a href={`/blog/${article.slug}`} className="block overflow-hidden bg-surface-subtle aspect-video border-b border-border-subtle">
+                        <img
+                          src={`/images/blog/${article.slug}.webp`}
+                          alt={article.title}
+                          loading="lazy"
+                          decoding="async"
+                          width={640}
+                          height={360}
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        />
+                      </a>
+
+                      <div className="p-6 pb-2">
+                        <div className="flex items-center justify-between text-xs text-text-muted mb-3">
+                          <span className="bg-primary/10 text-primary font-medium px-2.5 py-1 rounded-md">
+                            {getCategoryName(article.category)}
+                          </span>
+                          <span>{article.readingTime}</span>
+                        </div>
+                        <h3 className="font-bold text-text-primary text-lg mb-2 leading-snug hover:text-primary transition-colors">
+                          <a href={`/blog/${article.slug}`}>
+                            {article.title}
+                          </a>
+                        </h3>
+                        <p className="text-xs md:text-sm text-text-secondary leading-relaxed line-clamp-2 mb-4">
+                          {article.description}
+                        </p>
                       </div>
-                      <h3 className="font-bold text-text-primary text-lg mb-2 leading-snug hover:text-primary transition-colors">
-                        <a href={`/blog/${article.slug}`}>
-                          {article.title}
-                        </a>
-                      </h3>
-                      <p className="text-xs md:text-sm text-text-secondary leading-relaxed line-clamp-3 mb-4">
-                        {article.description}
-                      </p>
                     </div>
 
-                    <div className="pt-4 border-t border-border-subtle flex items-center justify-between text-xs text-text-muted">
+                    <div className="px-6 py-4 border-t border-border-subtle flex items-center justify-between text-xs text-text-muted">
                       <span>{article.author}</span>
                       <a
                         href={`/blog/${article.slug}`}
