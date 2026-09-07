@@ -1,6 +1,4 @@
 import React from 'react';
-import SectionTitle from './SectionTitle';
-import SectionDescription from './SectionDescription';
 import AccountingLogoMarquee from './AccountingLogoMarquee';
 
 export default function SoftwareIntegrations() {

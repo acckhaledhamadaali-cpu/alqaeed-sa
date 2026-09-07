@@ -23,7 +23,7 @@ export default function LogoAssetsPage() {
   const handleDragStart = (e: React.DragEvent, index: number) => {
     setDraggedIdx(index);
     e.dataTransfer.effectAllowed = 'move';
-    e.dataTransfer.setData('text/html', e.currentTarget.parentNode as string);
+    e.dataTransfer.setData('text/plain', String(index));
     // Optional: make the dragged item slightly transparent
     setTimeout(() => {
       if (e.target instanceof HTMLElement) {
