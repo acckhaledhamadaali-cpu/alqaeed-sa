@@ -312,8 +312,8 @@ export default function ArticlePage({ slug }: { slug: string }) {
   };
 
   const whatsappMessage = `السلام عليكم
-أطلعت على مقال: "${article.title}" في المكتبة المالية للقائد.
-أود استشارة مخصصة لمنشأتي حول هذا الموضوع.`;
+أطلعت على مقال: "${article.title}" في موقع القائد للإدارة المالية.
+أرغب في مناقشة احتياج منشأتي حول هذا الموضوع.`;
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
@@ -433,9 +433,9 @@ export default function ArticlePage({ slug }: { slug: string }) {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-2.5 bg-primary text-white text-xs md:text-sm font-semibold rounded-xl hover:bg-primary/90 transition-colors shadow-sm"
+              className="inline-block px-6 py-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs md:text-sm font-semibold rounded-xl transition-all shadow-sm duration-200 hover:scale-[1.02] active:scale-[0.98]"
             >
-              استشارة مباشرة عبر واتساب
+              ناقش احتياج منشأتك عبر واتساب
             </a>
           </div>
 

@@ -272,7 +272,7 @@ export default function FinancialAssessmentSection() {
     const liquidity = answers[7] || 'غير محدد';
 
     const text = [
-      'السلام عليكم أ. خالد، قمت بإجراء التقييم المالي السريع لمنشأتي على موقع القائد:',
+      'السلام عليكم أ. خالد، قمت بإجراء التقييم المالي وأرغب في الحصول على تقييم أولي ومناقشة احتياج منشأتي:',
       `• نوع النشاط: ${activity}`,
       `• حجم المنشأة: ${size}`,
       `• النظام المحاسبي: ${system}`,
@@ -283,7 +283,7 @@ export default function FinancialAssessmentSection() {
       `• النتيجة المقترحة: ${diagnosis.headline}`,
       `• الباقة الملائمة: ${diagnosis.recommendedPackage}`,
       '',
-      'أرغب في مناقشة هذا التقييم وخطة العمل المناسبة لمنشأتي.'
+      'أود مناقشة هذا التقييم الأولي وخطة العمل الأنسب لمنشأتي.'
     ].join('\n');
 
     return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
@@ -420,7 +420,7 @@ export default function FinancialAssessmentSection() {
                       : 'bg-surface-muted text-text-muted cursor-not-allowed opacity-60'
                   }`}
                 >
-                  <span>{currentStep === totalQuestions - 1 ? 'عرض النتيجة والتشخيص' : 'التالي'}</span>
+                  <span>{currentStep === totalQuestions - 1 ? 'احصل على تقييم أولي' : 'التالي'}</span>
                   <ArrowLeft className="w-4 h-4" />
                 </button>
               </div>
@@ -540,7 +540,7 @@ export default function FinancialAssessmentSection() {
                   className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-sm font-semibold shadow-sm transition-all duration-200 hover:scale-[1.01] active:scale-[0.99] text-center"
                 >
                   <MessageCircle className="w-5 h-5" />
-                  <span>مناقشة نتيجة التقييم عبر واتساب</span>
+                  <span>احصل على تقييم أولي لمنشأتك عبر واتساب</span>
                 </a>
 
                 <button

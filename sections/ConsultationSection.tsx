@@ -26,7 +26,7 @@ export default function ConsultationSection() {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const message = [
-      'السلام عليكم، أرغب في حجز استشارة لتطوير الإدارة المالية لمنشأتي.',
+      'السلام عليكم، أرغب في مناقشة احتياج منشأتي في مجال الإدارة المالية.',
       `اسم المنشأة: ${businessName || 'لم يُذكر'}`,
       `نوع النشاط: ${businessType || 'لم يُذكر'}`,
       `الخدمة المطلوبة: ${service || 'لم تُحدد'}`,
@@ -60,7 +60,7 @@ export default function ConsultationSection() {
               <input value={branchCount} onChange={(event) => setBranchCount(event.target.value)} inputMode="numeric" placeholder="مثال: فرع واحد" className="w-full rounded-xl border border-border-subtle bg-white px-3 py-2.5 text-sm font-normal outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20" />
             </label>
             <div className="sm:col-span-2 flex flex-col items-center gap-3 pt-2">
-              <button type="submit" className="inline-flex items-center justify-center gap-x-2 rounded-xl bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:scale-[1.02] hover:bg-[#20ba5a] focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"><MessageCircle className="w-5 h-5" aria-hidden="true" />إرسال طلب الاستشارة عبر واتساب</button>
+              <button type="submit" className="inline-flex items-center justify-center gap-x-2 rounded-xl bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:scale-[1.02] hover:bg-[#20ba5a] focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"><MessageCircle className="w-5 h-5" aria-hidden="true" />ناقش احتياج منشأتك عبر واتساب</button>
               <p className="flex items-center gap-1.5 text-center text-xs font-normal text-text-secondary"><ShieldCheck className="w-4 h-4 text-secondary" aria-hidden="true" />لا تُحفَظ هذه البيانات في الموقع؛ تُضاف فقط إلى رسالتك في واتساب.</p>
             </div>
           </form>

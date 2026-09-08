@@ -5,7 +5,7 @@ import { TYPOGRAPHY } from '../src/lib/tokens';
 import { MessageCircle, ClipboardCheck } from 'lucide-react';
 
 const WHATSAPP_NUMBER = "966511294383";
-const HERO_WHATSAPP_MESSAGE = "السلام عليكم، اطلعت على موقع القائد للإدارة المالية وأرغب في مناقشة احتياج منشأتي من الخدمات المالية والمحاسبية.";
+const HERO_WHATSAPP_MESSAGE = "السلام عليكم، أرغب في مناقشة احتياج منشأتي في مجال الإدارة المالية والمحاسبة.";
 const HERO_WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(HERO_WHATSAPP_MESSAGE)}`;
 
 export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
@@ -69,20 +69,22 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
               {/* Hero Actions (CTA) */}
               <div id="hero-cta-actions" className="flex flex-wrap items-center justify-center md:justify-start gap-3 pt-2">
                 <a 
-                  href="#consultation-section"
-                  id="hero-primary-cta"
-                  className="inline-flex items-center gap-x-2 px-5 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs sm:text-sm font-semibold shadow-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
-                >
-                  <MessageCircle className="w-4 h-4" aria-hidden="true" />
-                  <span>تواصل معي عبر واتساب</span>
-                </a>
-                <a 
                   href="#financial-assessment"
                   id="hero-assessment-cta"
-                  className="inline-flex items-center gap-x-1.5 px-4 py-2.5 rounded-xl bg-secondary/10 border border-secondary/25 hover:border-secondary text-secondary text-xs sm:text-sm font-semibold transition-all duration-200 hover:bg-secondary/15"
+                  className="inline-flex items-center gap-x-2 px-5 py-2.5 rounded-xl bg-primary hover:bg-primary-light text-white text-xs sm:text-sm font-semibold shadow-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                 >
                   <ClipboardCheck className="w-4 h-4" />
-                  <span>قيّم احتياجك المالي (60 ثانية)</span>
+                  <span>ابدأ بتقييم احتياج منشأتك</span>
+                </a>
+                <a 
+                  href={HERO_WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  id="hero-whatsapp-cta"
+                  className="inline-flex items-center gap-x-2 px-4 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs sm:text-sm font-semibold shadow-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
+                >
+                  <MessageCircle className="w-4 h-4" aria-hidden="true" />
+                  <span>ناقش احتياجك المالي عبر واتساب</span>
                 </a>
                 <a 
                   href="#services-section-wrapper"

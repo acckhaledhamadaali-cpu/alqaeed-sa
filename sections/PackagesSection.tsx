@@ -54,7 +54,7 @@ const PACKAGES: PackageItem[] = [
       'تجهيز ملف الزكاة الشرعية وتقديم الإقرار لهيئة ZATCA',
       'إعداد القوائم المالية الدورية والسنوية وفق المعايير المعتمدة'
     ],
-    whatsappMessage: 'السلام عليكم، أرغب في الاستفسار وطلب تقييم مالي بخصوص باقة المحاسبة والالتزام (Accounting & Compliance) لمنشأتي.',
+    whatsappMessage: 'السلام عليكم، أرغب في مناقشة احتياج منشأتي في باقة المحاسبة والالتزام (Accounting & Compliance).',
     consultationTopic: 'باقة المحاسبة والالتزام'
   },
   {
@@ -66,7 +66,7 @@ const PACKAGES: PackageItem[] = [
     icon: TrendingUp,
     targetAudience: 'المنشآت القائمة التي تمتلك حسابات مسجلة ومحاسباً، لكنها تفتقر إلى التحليل المالي المتخصص والتقارير الدورية التي توضح أين تذهب الأموال وكيفية حماية السيولة.',
     problems: [
-      'أرقام مسجلة في الدفاتر لكن دون وضوح لهوامش الربحية ونقاط التعادل',
+      'أرقام مسجلة في الدفاتر لكن دون ووضوح لهوامش الربحية ونقاط التعادل',
       'أزمات نقص السيولة المفاجئة رغم تحقيق مبيعات جيدة في القوائم',
       'غياب الموازنات التقديرية والتخبط في قرارات التسعير والتحكم بالمصاريف'
     ],
@@ -78,7 +78,7 @@ const PACKAGES: PackageItem[] = [
       'لوحة قياس مؤشرات الأداء المالي الرئيسية (Financial KPIs)'
     ],
     isHighlighted: true,
-    whatsappMessage: 'السلام عليكم، أرغب في الاستفسار وطلب تقييم مالي بخصوص باقة الإدارة المالية والمتابعة (Financial Management) لمنشأتي.',
+    whatsappMessage: 'السلام عليكم، أرغب في مناقشة احتياج منشأتي في باقة الإدارة المالية والمتابعة (Financial Management).',
     consultationTopic: 'باقة الإدارة المالية والمتابعة'
   },
   {
@@ -101,7 +101,7 @@ const PACKAGES: PackageItem[] = [
       'المشاركة في اجتماعات الإدارة ومجلس الشركاء لتقديم المشورة المالية',
       'إشراف استراتيجي على فريق الحسابات وتطوير اللوائح الرقابية الداخلية'
     ],
-    whatsappMessage: 'السلام عليكم، أرغب في الاستفسار وحجز جلسة استكشافية بخصوص باقة المدير المالي عن بعد (Virtual CFO) لمنشأتي.',
+    whatsappMessage: 'السلام عليكم، أرغب في مناقشة احتياج منشأتي في باقة المدير المالي عن بعد (Virtual CFO).',
     consultationTopic: 'باقة المدير المالي عن بعد'
   }
 ];
@@ -248,7 +248,7 @@ export default function PackagesSection(props: HTMLAttributes<HTMLElement>) {
                       className="w-full inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg text-xs font-bold text-text-secondary hover:text-secondary hover:bg-surface-muted/70 transition-colors"
                     >
                       <MessageCircle className="w-4 h-4 text-[#25D366]" aria-hidden="true" />
-                      <span>تحدث معي عبر واتساب</span>
+                      <span>{pkg.id === 'package-virtual-cfo' ? 'ناقش احتياجك المالي' : 'ناقش احتياج منشأتك'}</span>
                     </a>
                   </div>
                 </div>

@@ -6,7 +6,7 @@ import { MessageCircle } from 'lucide-react';
 import PdfLeadMagnet from '../../components/PdfLeadMagnet';
 
 const WHATSAPP_NUMBER = "966511294383";
-const WHATSAPP_MESSAGE = "السلام عليكم، أرغب في مناقشة خدمة تنظيم الحسابات ومسك الدفاتر لمنشأتي.";
+const WHATSAPP_MESSAGE = "السلام عليكم، أرغب في مناقشة احتياج منشأتي في مجال تنظيم الحسابات ومسك الدفاتر.";
 const WHATSAPP_URL = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(WHATSAPP_MESSAGE);
 
 export default function BookkeepingPage() {
@@ -240,7 +240,7 @@ export default function BookkeepingPage() {
               هل تحتاج إلى تنظيم حسابات منشأتك؟
             </h3>
             <p className="text-xs md:text-sm text-text-secondary mb-4 max-w-xl mx-auto leading-relaxed">
-              تواصل معي مباشرة لمناقشة وضع حساباتك الحالية وتحديد خطة العمل المناسبة لنشاطك.
+              ناقش وضع حساباتك الحالية مباشرة لتحديد خطة العمل المناسبة لنشاطك.
             </p>
             <a
               href={WHATSAPP_URL}
@@ -249,7 +249,7 @@ export default function BookkeepingPage() {
               className="inline-flex items-center gap-x-2 px-6 py-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs md:text-sm font-semibold rounded-xl transition-all shadow-sm duration-200 hover:scale-[1.02] active:scale-[0.98]"
             >
               <MessageCircle className="w-4 h-4" aria-hidden="true" />
-              <span>تواصل معي عبر واتساب</span>
+              <span>ناقش احتياج منشأتك</span>
             </a>
           </div>
 

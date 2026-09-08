@@ -3,13 +3,10 @@ import { MessageCircle } from 'lucide-react';
 import { Z_INDEX } from '../src/lib/tokens';
 
 const WHATSAPP_NUMBER = "966511294383";
-const WHATSAPP_MESSAGE = `السلام عليكم
-أرغب في حجز استشارة لبحث سبل تطوير الأداء المالي لمنشأتي
-اسم حضرتك الكريم  /
-اسم المنشأة / 
-نوع النشاط / 
-عدد الفروع / 
-هل يمكن تحديد موعد مناسب للبدء`;
+const WHATSAPP_MESSAGE = `السلام عليكم، أرغب في مناقشة احتياج منشأتي في مجال الإدارة المالية والمحاسبة.
+• اسم المنشأة: 
+• نوع النشاط: 
+• الخدمة المطلوبة: `;
 
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 

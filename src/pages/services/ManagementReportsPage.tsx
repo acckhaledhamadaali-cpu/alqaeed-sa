@@ -6,7 +6,7 @@ import { MessageCircle } from 'lucide-react';
 import PdfLeadMagnet from '../../components/PdfLeadMagnet';
 
 const WHATSAPP_NUMBER = "966511294383";
-const WHATSAPP_MESSAGE = "السلام عليكم، أرغب في مناقشة إعداد التقارير المالية والإدارية لمنشأتي والحصول على النموذج الاسترشادي.";
+const WHATSAPP_MESSAGE = "السلام عليكم، أرغب في مناقشة احتياج منشأتي في مجال التقارير الإدارية والمالية الدورية.";
 const WHATSAPP_URL = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(WHATSAPP_MESSAGE);
 
 export default function ManagementReportsPage() {
@@ -307,7 +307,7 @@ export default function ManagementReportsPage() {
               className="inline-flex items-center gap-x-2 px-6 py-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs md:text-sm font-semibold rounded-xl transition-all shadow-sm duration-200 hover:scale-[1.02] active:scale-[0.98]"
             >
               <MessageCircle className="w-4 h-4" aria-hidden="true" />
-              <span>تواصل معي عبر واتساب</span>
+              <span>ناقش احتياج منشأتك</span>
             </a>
           </div>
 
