@@ -61,10 +61,20 @@ export default function ServicesSection(props: HTMLAttributes<HTMLElement>) {
             </ul>
           </div>
 
-          {/* Subtle link to Financial Library */}
-          <div id="services-blog-link" className="pt-1">
+          {/* Links to Packages and Financial Library */}
+          <div id="services-footer-links" className="pt-2 flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm">
+            <a 
+              href="#packages-section" 
+              id="services-to-packages-link"
+              className="inline-flex items-center gap-x-1.5 px-3.5 py-1.5 rounded-full bg-secondary/10 text-secondary hover:bg-secondary/20 font-arabic font-medium transition-colors"
+            >
+              <span>اختر باقة مالية جاهزة لمنشأتك</span>
+              <span className="text-secondary text-base leading-none">↓</span>
+            </a>
+            <span className="text-text-muted hidden sm:inline">•</span>
             <a 
               href="/blog" 
+              id="services-blog-link"
               className="inline-flex items-center gap-x-1.5 text-xs sm:text-sm text-text-secondary hover:text-primary font-arabic font-medium transition-colors"
             >
               <span>استكشف المكتبة المالية — أدلة عملية لأصحاب المنشآت</span>

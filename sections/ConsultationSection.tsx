@@ -6,7 +6,16 @@ import SectionTitle from '../components/SectionTitle';
 import SectionDescription from '../components/SectionDescription';
 
 const WHATSAPP_NUMBER = '966511294383';
-const SERVICES = ['تنظيم الحسابات ومسك الدفاتر', 'الزكاة والضريبة', 'إعداد القوائم والتقارير المالية', 'التحليل المالي وإدارة التدفقات النقدية', 'المدير المالي عن بُعد', 'لست متأكدًا وأحتاج إلى توجيه'];
+const SERVICES = [
+  'باقة المحاسبة والالتزام (Accounting & Compliance)',
+  'باقة الإدارة المالية والمتابعة (Financial Management)',
+  'باقة المدير المالي عن بعد (Virtual CFO)',
+  'تنظيم الحسابات ومسك الدفاتر',
+  'الزكاة والضريبة',
+  'إعداد القوائم والتقارير المالية',
+  'التحليل المالي وإدارة التدفقات النقدية',
+  'لست متأكدًا وأحتاج إلى توجيه'
+];
 
 export default function ConsultationSection() {
   const [businessName, setBusinessName] = useState('');

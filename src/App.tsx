@@ -8,6 +8,7 @@ import ExperienceBar from '../sections/ExperienceBar';
 import HowIWorkSection from '../sections/HowIWorkSection';
 import ChallengesSection from '../sections/ChallengesSection';
 import ServicesSection from '../sections/ServicesSection';
+import PackagesSection from '../sections/PackagesSection';
 import AboutSection from '../sections/AboutSection';
 import FinalCTASection from '../sections/FinalCTASection';
 import ConsultationSection from '../sections/ConsultationSection';
@@ -220,6 +221,7 @@ if (path === '/services/virtual-cfo') {
         <ExperienceBar />
         <ChallengesSection />
         <ServicesSection />
+        <PackagesSection />
         <AboutSection />
         <SoftwareIntegrations />
         <HowIWorkSection />
