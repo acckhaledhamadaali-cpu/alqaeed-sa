@@ -2,42 +2,6 @@
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <script>
-      (function() {
-        try {
-          var originalFetch = window.fetch;
-          var currentFetch = originalFetch;
-          Object.defineProperty(window, 'fetch', {
-            get: function() {
-              return currentFetch;
-            },
-            set: function(fn) {
-              currentFetch = fn;
-            },
-            configurable: true,
-            enumerable: true
-          });
-        } catch (e) {
-          try {
-            var proto = Object.getPrototypeOf(window) || (typeof Window !== 'undefined' && Window.prototype);
-            if (proto) {
-              var origFetch = proto.fetch || window.fetch;
-              var curFetch = origFetch;
-              Object.defineProperty(proto, 'fetch', {
-                get: function() {
-                  return curFetch;
-                },
-                set: function(fn) {
-                  curFetch = fn;
-                },
-                configurable: true,
-                enumerable: true
-              });
-            }
-          } catch (err) {}
-        }
-      })();
-    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="IvFOKYmrfdg6a8N2Ke4gZGWWOzYd1w0i3G55eem5BMo" />
     <!-- Performance Optimization: Preconnect to Google Fonts -->
