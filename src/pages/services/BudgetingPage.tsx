@@ -2,20 +2,41 @@ import { useSEO } from '../../hooks/useSEO';
 import SectionWrapper from '../../../components/SectionWrapper';
 import Container from '../../../components/Container';
 import { TYPOGRAPHY } from '../../lib/tokens';
-import { MessageCircle } from 'lucide-react';
+import { MessageCircle, CheckCircle2, AlertTriangle, Users, Briefcase, FileCheck, ArrowRight } from 'lucide-react';
 import PdfLeadMagnet from '../../components/PdfLeadMagnet';
+import ServiceFaqAccordion, { FAQItem } from '../../components/ServiceFaqAccordion';
+import SupportedSystemsSection from '../../components/SupportedSystemsSection';
 
 const WHATSAPP_NUMBER = "966511294383";
 const WHATSAPP_MESSAGE = "السلام عليكم، أرغب في مناقشة احتياج منشأتي في مجال إعداد الموازنات التقديرية والتخطيط المالي.";
 const WHATSAPP_URL = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(WHATSAPP_MESSAGE);
 
 export default function BudgetingPage() {
-  const name = "إعداد الموازنات";
+  const name = "إعداد الموازنات التقديرية";
   const slug = "budgeting";
-  const metaTitle = "إعداد الموازنات التقديرية والتخطيط المالي | القائد للإدارة المالية";
-  const metaDesc = "خطط لنجاحك المالي بثقة. خدمة إعداد الموازنات التقديرية تساعدك على وضع أهداف مالية واضحة ومراقبة الانحرافات لضمان تحقيق رؤية منشأتك.";
+  const metaTitle = "إعداد الموازنات التقديرية والتخطيط المالي للشركات | القائد";
+  const metaDesc = "انقل منشأتك من الصرف العشوائي إلى التخطيط المالي المحكم. نبني موازنات تقديرية سنوية وشهرية تقارن الفعلي بالمخطط لمنع التجاوزات وحماية السيولة.";
   const url = "https://alqaeed-sa.pages.dev/services/" + slug;
-  
+
+  const faqs: FAQItem[] = [
+    {
+      question: "ما الفرق بين الموازنة التقديرية (Budget) والميزانية العمومية (Balance Sheet)؟",
+      answer: "الموازنة التقديرية (Budget) هي خطة مستقبلية لما تتوقع المنشأة إنفاقه وتحصيله خلال الفترة القادمة (أداة تخطيط ورقابة). أما الميزانية العمومية (Balance Sheet) فهي تقرير محاسبي تاريخي يظهر أصول المنشأة والتزاماتها وحقوق ملكيتها في لحظة زمنية معينة."
+    },
+    {
+      question: "كيف نبني موازنة دقيقة في ظل تقلبات السوق والأسعار؟",
+      answer: "نستخدم منهجية السيناريوهات المتعددة (السيناريو الواقعي، والسيناريو المتحفظ، والسيناريو المتفائل) مع وضع هوامش مرونة مالية وبنود طوارئ تتيح للمنشأة امتصاص التغيرات دون الإخلال بهيكلها المالي."
+    },
+    {
+      question: "هل يمكن تعديل أرقام الموازنة خلال العام إذا استجدت ظروف قاهرة؟",
+      answer: "نعم، نقوم بإجراء مراجعة ربع سنوية (Quarterly Forecast) لتحديث التوقعات وتعديل الاعتمادات بين البنود وفق ما تقتضيه المصلحة التشغيلية والفرص الاستثمارية الطارئة."
+    },
+    {
+      question: "ما هو تحليل الانحرافات (Variance Analysis) وما فائدته الشهرية؟",
+      answer: "هو تقرير يقارن المصروفات والإيرادات الفعلية بما كان مخططاً له في الموازنة. فائدته أنه ينبه الإدارة فوراً إلى أي بند مصروف بدأ يتضخم بشكل غير طبيعي قبل فوات الأوان."
+    }
+  ];
+
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -25,9 +46,6 @@ export default function BudgetingPage() {
         "url": url,
         "name": metaTitle,
         "description": metaDesc,
-        "primaryImageOfPage": {
-          "@id": "https://alqaeed-sa.pages.dev/#logo"
-        },
         "inLanguage": "ar-SA",
         "isPartOf": {
           "@id": "https://alqaeed-sa.pages.dev/#website"
@@ -42,6 +60,18 @@ export default function BudgetingPage() {
           "@id": "https://alqaeed-sa.pages.dev/#organization"
         },
         "areaServed": "Saudi Arabia"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": url + "/#faq",
+        "mainEntity": faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
       },
       {
         "@type": "BreadcrumbList",
@@ -93,171 +123,238 @@ export default function BudgetingPage() {
             <span className="text-text-secondary">{name}</span>
           </nav>
 
-          <h1 className={`${TYPOGRAPHY.heading.h1} font-bold text-text-primary mb-6 leading-tight`}>
-            {name}
+          <h1 className={`${TYPOGRAPHY.heading.h1} font-bold text-text-primary mb-3 leading-tight`}>
+            إعداد الموازنات التقديرية والتخطيط المالي
           </h1>
-          <div className="w-16 h-1 bg-primary mb-6 rounded-full"></div>
+          <p className="text-sm md:text-base text-text-secondary mb-6 leading-relaxed">
+            خارطة طريق مالية منضبطة تضع سقفاً للمصاريف وأهدافاً واضحة للإيرادات، وتمنع المفاجآت النقدية وتجاوزات الميزانية.
+          </p>
+          <div className="w-16 h-1 bg-primary mb-8 rounded-full"></div>
 
-          <div className="text-sm md:text-[15px] text-text-secondary leading-loose space-y-4">
-            <p>
-              تساعد الموازنات التقديرية (Budgeting) الشركات على التخطيط المالي وتحديد الإيرادات والمصروفات المتوقعة قبل بداية الفترة المالية. ومن خلال إعداد موازنة دقيقة، تستطيع متابعة أداء منشأتك، وإدارة مواردها بكفاءة، ومقارنة النتائج الفعلية بالمستهدف، مما يساعد على اتخاذ قرارات مالية أكثر دقة وتحقيق أهداف النمو.
+          {/* 1. المشكلة التي يحلها الحل */}
+          <div className="mb-8 p-5 sm:p-6 bg-amber-50/70 border border-amber-200/80 rounded-2xl">
+            <div className="flex items-center gap-2 mb-3 text-amber-900">
+              <AlertTriangle className="w-5 h-5 text-amber-700 shrink-0" aria-hidden="true" />
+              <h2 className="text-base md:text-lg font-bold">
+                المشكلة: الإنفاق العشوائي والصدمات المالية في منتصف العام
+              </h2>
+            </div>
+            <p className="text-xs md:text-sm text-amber-950 leading-relaxed mb-3">
+              بدون موازنة مالية معتمدة ومراقبة، تقع الكثير من المنشآت في فخاخ مكلفة:
             </p>
-
-            <h2 className="text-lg font-bold text-primary mt-6 mb-2 border-r-2 border-primary pr-3">
-              ماذا تتضمن خدمة إعداد الموازنات؟
-            </h2>
-            <p>
-              أقوم بإعداد موازنات مالية تتناسب مع طبيعة نشاط منشأتك، مع الاعتماد على بياناتك المالية وخططك المستقبلية، وتشمل الخدمة:
-            </p>
-
-            <ul className="list-disc list-inside space-y-1 pr-4">
-              <li>إعداد الموازنة التشغيلية (Operating Budget).</li>
-              <li>إعداد الموازنة النقدية (Cash Budget).</li>
-              <li>إعداد موازنة الإيرادات والمصروفات.</li>
-              <li>إعداد موازنة التدفقات النقدية (Cash Flow Forecast).</li>
-              <li>إعداد الموازنة الرأسمالية (Capital Budget).</li>
-              <li>مقارنة الأداء الفعلي بالموازنة (Budget vs Actual Analysis).</li>
-              <li>تحليل الانحرافات (Variance Analysis).</li>
-              <li>تقديم تقارير تساعد على متابعة تنفيذ الموازنة واتخاذ القرارات.</li>
+            <ul className="space-y-1.5 text-xs md:text-sm text-amber-900 list-disc list-inside pr-1">
+              <li>تضخم المصروفات التشغيلية والتسويقية تدريجياً دون وعي حتى تلتهم كامل هوامش الربح.</li>
+              <li>العجز المفاجئ عن سداد التزامات كبرى متوقعة (تجديد عقود إيجار، مكافآت، دفعات موردين رئيسيين).</li>
+              <li>غياب معيار رقابي واضح يحاسب الإدارات أو الفروع على إنفاقها وتجاوزاتها المالية.</li>
             </ul>
-
-            <h2 className="text-lg font-bold text-primary mt-6 mb-2 border-r-2 border-primary pr-3">
-              لماذا تعد الموازنة مهمة لمنشأتك؟
-            </h2>
-            <p>
-              الموازنة ليست مجرد توقع للأرقام، بل هي أداة تساعدك على التخطيط للمستقبل، والتحكم في المصروفات، وإدارة السيولة، وتحديد الأهداف المالية بشكل واقعي. كما تمنحك القدرة على اكتشاف الانحرافات مبكرًا، واتخاذ الإجراءات المناسبة قبل أن تؤثر على نتائج أعمالك.
-            </p>
-
-            <h2 className="text-lg font-bold text-primary mt-6 mb-2 border-r-2 border-primary pr-3">
-              ابدأ بالتخطيط المالي لمنشأتك
-            </h2>
-            <p>
-              إذا كنت تبحث عن محاسب مالي يساعدك في إعداد الموازنات التقديرية وتحليل الأداء المالي ومتابعة تنفيذ الخطط، فأنا جاهز لتقديم خدمة احترافية تساعدك على إدارة موارد منشأتك بكفاءة واتخاذ قرارات مبنية على بيانات مالية دقيقة.
-            </p>
           </div>
 
+          {/* 2. لمن هذه الخدمة */}
+          <div className="mb-8 p-5 sm:p-6 bg-surface-subtle/50 border border-border-subtle rounded-2xl">
+            <div className="flex items-center gap-2 mb-3 text-text-primary">
+              <Users className="w-5 h-5 text-secondary shrink-0" aria-hidden="true" />
+              <h2 className="text-base md:text-lg font-bold">
+                لمن هذه الخدمة؟
+              </h2>
+            </div>
+            <p className="text-xs md:text-sm text-text-secondary mb-4 leading-relaxed">
+              خدمة أساسية لكل منشأة تريد التخطيط المالي الاحترافي:
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs md:text-sm">
+              <div className="p-3 bg-white border border-border-subtle rounded-xl flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
+                <span><strong>الشركات التي تستعد لعام مالي جديد:</strong> لوضع موازنة سنوية مقسمة شهرياً تغطي كافة أوجه النشاط.</span>
+              </div>
+              <div className="p-3 bg-white border border-border-subtle rounded-xl flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
+                <span><strong>المنشآت التي تعاني من تجاوزات المصاريف:</strong> لوضع أسقف إنفاق ملزمة لكل قسم ومحاسبة المسؤولين.</span>
+              </div>
+              <div className="p-3 bg-white border border-border-subtle rounded-xl flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
+                <span><strong>الشركات في مرحلة توسع:</strong> لحساب التكاليف الرأسمالية والتشغيلية قبل افتتاح فروع جديدة.</span>
+              </div>
+              <div className="p-3 bg-white border border-border-subtle rounded-xl flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
+                <span><strong>الشركاء ومجالس الإدارة:</strong> لربط أهداف النمو والأرباح بأرقام واقعية وقابلة للقياس والمتابعة.</span>
+              </div>
+            </div>
+          </div>
+
+          {/* 3. ماذا نقدم */}
+          <div className="mb-8">
+            <div className="flex items-center gap-2 mb-3">
+              <Briefcase className="w-5 h-5 text-primary shrink-0" aria-hidden="true" />
+              <h2 className="text-base md:text-lg font-bold text-text-primary">
+                ماذا نقدم في خدمة إعداد الموازنات؟
+              </h2>
+            </div>
+            <p className="text-xs md:text-sm text-text-secondary mb-4 leading-relaxed">
+              منظومة تخطيط ورقابة مالية متكاملة تشمل:
+            </p>
+            <ul className="space-y-2 text-xs md:text-sm text-text-secondary pr-2">
+              <li className="flex items-start gap-2">
+                <span className="text-secondary font-bold">•</span>
+                <span><strong>الموازنة التشغيلية الشاملة (Operating Budget):</strong> تقدير الإيرادات المتوقعة وتكاليف البضاعة المباعة والمصاريف التشغيلية.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-secondary font-bold">•</span>
+                <span><strong>الموازنة الرأسمالية (Capex Budget):</strong> تخطيط وجدولة الإنفاق على الأصول والمعدات وتجهيز الفروع.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-secondary font-bold">•</span>
+                <span><strong>موازنات الإدارات والأقسام:</strong> توزيع المخصصات المالية على التسويق، الرواتب، التشغيل، وتقنية المعلومات.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-secondary font-bold">•</span>
+                <span><strong>تقارير تحليل الانحرافات الشهرية (Variance Analysis):</strong> كشف الفارق بين الإنفاق الفعلي والمخطط وتحديد مسبباته.</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* 4. ماذا يحصل العميل */}
+          <div className="mb-8 p-5 sm:p-6 bg-emerald-50/60 border border-emerald-200/80 rounded-2xl">
+            <div className="flex items-center gap-2 mb-3 text-emerald-900">
+              <FileCheck className="w-5 h-5 text-emerald-700 shrink-0" aria-hidden="true" />
+              <h2 className="text-base md:text-lg font-bold">
+                ماذا يحصل صاحب المنشأة؟ (المخرجات الملموسة)
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs md:text-sm text-emerald-950">
+              <div className="p-3 bg-white/80 rounded-xl border border-emerald-100">
+                <strong>انضباط مالي صارم:</strong> سقف محدد وواضح لكل ريال يتم صرفه داخل المنشأة.
+              </div>
+              <div className="p-3 bg-white/80 rounded-xl border border-emerald-100">
+                <strong>إنذار مبكر ضد الانحرافات:</strong> تنبيه فوري عند اقتراب أي قسم من تجاوز موازنته المخصصة.
+              </div>
+              <div className="p-3 bg-white/80 rounded-xl border border-emerald-100">
+                <strong>حماية السيولة النقدية:</strong> تخصيص الاحتياطيات المالية لمواجهة الالتزامات الكبرى في مواعيدها.
+              </div>
+              <div className="p-3 bg-white/80 rounded-xl border border-emerald-100">
+                <strong>وضوح الأهداف التنافسية:</strong> مستهدف مبيعات وأرباح واقعي يوجه جهود كامل فريق العمل.
+              </div>
+            </div>
+          </div>
+
+          {/* 5. كيف نعمل */}
+          <div className="mb-8">
+            <h2 className="text-base md:text-lg font-bold text-text-primary mb-4">
+              كيف نعمل؟ (3 خطوات لبناء ومتابعة الموازنة)
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs md:text-sm">
+              <div className="p-4 bg-surface-subtle/60 border border-border-subtle rounded-xl">
+                <div className="w-7 h-7 rounded-full bg-primary text-white font-bold flex items-center justify-center mb-2">1</div>
+                <h3 className="font-bold text-text-primary mb-1">دراسة الأداء والأهداف</h3>
+                <p className="text-text-secondary leading-relaxed">تحليل البيانات التاريخية للعام السابق ومناقشة طموحات النمو والخطط التوسعية مع الإدارة.</p>
+              </div>
+              <div className="p-4 bg-surface-subtle/60 border border-border-subtle rounded-xl">
+                <div className="w-7 h-7 rounded-full bg-primary text-white font-bold flex items-center justify-center mb-2">2</div>
+                <h3 className="font-bold text-text-primary mb-1">صياغة وتوزيع الموازنة</h3>
+                <p className="text-text-secondary leading-relaxed">بناء الجداول التقديرية وتوزيعها على الشهور والأقسام واعتمادها رسمياً من الشركاء.</p>
+              </div>
+              <div className="p-4 bg-surface-subtle/60 border border-border-subtle rounded-xl">
+                <div className="w-7 h-7 rounded-full bg-primary text-white font-bold flex items-center justify-center mb-2">3</div>
+                <h3 className="font-bold text-text-primary mb-1">الرقابة ومتابعة الانحرافات</h3>
+                <p className="text-text-secondary leading-relaxed">إصدار تقرير شهري يقارن الأرقام الفعلية بالمخطط ويوصي بالتعديلات التشغيلية اللازمة.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* 6. الأنظمة التي يمكن العمل عليها عند الحاجة */}
+          <SupportedSystemsSection 
+            subtitle="نقوم بإدخال أرقام الموازنة المعتمدة مباشرة في نظامك المحاسبي (مثل قيود، دفترة، Odoo، Zoho Books، QuickBooks، ERPNext) لتفعيل الرقابة اللحظية على المصروفات."
+          />
+
+          {/* نموذج موازنة تقديرية استرشادي */}
           <PdfLeadMagnet 
             title="" 
             subtitle="" 
-            reportName="تقرير متابعة الموازنة وتحليل الانحرافات" 
+            reportName="تقرير الموازنة التقديرية السنوية وتحليل الانحراف (Annual Budget & Variance)" 
             whatsappUrl={WHATSAPP_URL}
             documentContent={
               <div className="flex flex-col h-full bg-white text-gray-800 text-[10px] md:text-xs font-sans">
-                {/* PDF Header */}
-                <div className="border-b-2 border-gray-800 pb-3 mb-4 flex justify-between items-end">
+                <div className="border-b-2 border-primary pb-3 mb-4 flex justify-between items-end">
                   <div>
-                    <h2 className="text-lg md:text-xl font-bold text-gray-900 font-arabic mb-1">Budget vs. Actual Report</h2>
-                    <p className="text-gray-500">الربع الثالث - Q3 2024</p>
+                    <h2 className="text-lg md:text-xl font-bold text-gray-900 font-arabic mb-1">الموازنة التقديرية - الربع الثاني</h2>
+                    <p className="text-gray-500 font-arabic">Operational Budget & Variance Analysis</p>
                   </div>
                   <div className="text-left text-[9px] md:text-[10px] text-gray-400">
-                    <p>Department: Corporate</p>
-                    <p>Currency: SAR</p>
+                    <p>Status: Approved</p>
+                    <p>Control: Active</p>
                   </div>
                 </div>
 
-                {/* Table Content */}
-                <div className="flex-grow">
+                <div className="flex-grow space-y-3">
                   <div className="overflow-x-auto">
-                    <table className="w-full text-right mb-6 border-collapse min-w-[500px]">
+                    <table className="w-full text-right border-collapse min-w-[400px]">
                       <thead>
                         <tr className="bg-gray-100 border-y border-gray-300">
-                          <th className="py-2 px-2 font-semibold text-gray-700">البند (Item)</th>
-                          <th className="py-2 px-2 font-semibold text-gray-700 w-24 text-left">الفعلي (Actual)</th>
-                          <th className="py-2 px-2 font-semibold text-gray-700 w-24 text-left">المعتمد (Budget)</th>
-                          <th className="py-2 px-2 font-semibold text-gray-700 w-24 text-left">الانحراف (Variance)</th>
-                          <th className="py-2 px-2 font-semibold text-gray-700 w-16 text-center">%</th>
+                          <th className="py-2 px-2 font-semibold text-gray-700">بند الموازنة</th>
+                          <th className="py-2 px-2 font-semibold text-gray-700 text-left">المخطط (SAR)</th>
+                          <th className="py-2 px-2 font-semibold text-gray-700 text-left">الفعلي (SAR)</th>
+                          <th className="py-2 px-2 font-semibold text-gray-700 text-left">الانحراف (Variance)</th>
                         </tr>
                       </thead>
-                      <tbody className="divide-y divide-gray-100">
-                        {/* Revenues */}
-                        <tr className="bg-gray-50/50">
-                          <td colSpan={5} className="py-2 px-2 font-bold text-gray-900">الإيرادات (Revenues)</td>
+                      <tbody className="divide-y divide-gray-100 font-arabic">
+                        <tr className="bg-green-50/40">
+                          <td className="py-1.5 px-2 font-medium text-gray-800">إيرادات المبيعات والخدمات</td>
+                          <td className="py-1.5 px-2 text-left font-mono">350,000</td>
+                          <td className="py-1.5 px-2 text-left font-mono font-bold text-emerald-800">378,000</td>
+                          <td className="py-1.5 px-2 text-left text-emerald-700 font-bold">+8.0% (إيجابي)</td>
                         </tr>
                         <tr>
-                          <td className="py-2 px-2 font-medium text-gray-800">إيرادات العقود</td>
-                          <td className="py-2 px-2 text-left">1,250,000</td>
-                          <td className="py-2 px-2 text-left">1,100,000</td>
-                          <td className="py-2 px-2 text-left text-green-600">+150,000</td>
-                          <td className="py-2 px-2 text-center text-green-600 bg-green-50">+13.6%</td>
+                          <td className="py-1.5 px-2 font-medium text-gray-800">تكلفة البضاعة المباعة (COGS)</td>
+                          <td className="py-1.5 px-2 text-left font-mono">140,000</td>
+                          <td className="py-1.5 px-2 text-left font-mono">145,000</td>
+                          <td className="py-1.5 px-2 text-left text-amber-700 font-bold">+3.5% (زيادة طفيفة)</td>
                         </tr>
                         <tr>
-                          <td className="py-2 px-2 font-medium text-gray-800">إيرادات استشارية</td>
-                          <td className="py-2 px-2 text-left">280,000</td>
-                          <td className="py-2 px-2 text-left">300,000</td>
-                          <td className="py-2 px-2 text-left text-red-500">-20,000</td>
-                          <td className="py-2 px-2 text-center text-red-500 bg-red-50">-6.6%</td>
-                        </tr>
-                        <tr className="border-t border-gray-300 bg-gray-50">
-                          <td className="py-2 px-2 font-bold text-gray-900">إجمالي الإيرادات</td>
-                          <td className="py-2 px-2 text-left font-bold text-gray-900">1,530,000</td>
-                          <td className="py-2 px-2 text-left font-bold text-gray-900">1,400,000</td>
-                          <td className="py-2 px-2 text-left font-bold text-green-600">+130,000</td>
-                          <td className="py-2 px-2 text-center font-bold text-green-600">+9.2%</td>
-                        </tr>
-                        
-                        {/* Expenses */}
-                        <tr className="bg-gray-50/50 mt-2">
-                          <td colSpan={5} className="py-2 px-2 font-bold text-gray-900 pt-4">المصروفات (Expenses)</td>
+                          <td className="py-1.5 px-2 font-medium text-gray-800">مصروفات التسويق والحملات</td>
+                          <td className="py-1.5 px-2 text-left font-mono">30,000</td>
+                          <td className="py-1.5 px-2 text-left font-mono">38,500</td>
+                          <td className="py-1.5 px-2 text-left text-red-600 font-bold">+28.3% (تجاوز ملحوظ)</td>
                         </tr>
                         <tr>
-                          <td className="py-2 px-2 font-medium text-gray-800">تكلفة المبيعات (COGS)</td>
-                          <td className="py-2 px-2 text-left">510,000</td>
-                          <td className="py-2 px-2 text-left">480,000</td>
-                          <td className="py-2 px-2 text-left text-red-500">(30,000)</td>
-                          <td className="py-2 px-2 text-center text-red-500 bg-red-50">+6.2%</td>
-                        </tr>
-                        <tr>
-                          <td className="py-2 px-2 font-medium text-gray-800">الرواتب والأجور</td>
-                          <td className="py-2 px-2 text-left">320,000</td>
-                          <td className="py-2 px-2 text-left">325,000</td>
-                          <td className="py-2 px-2 text-left text-green-600">5,000</td>
-                          <td className="py-2 px-2 text-center text-green-600 bg-green-50">-1.5%</td>
-                        </tr>
-                        <tr>
-                          <td className="py-2 px-2 font-medium text-gray-800">التسويق والإعلانات</td>
-                          <td className="py-2 px-2 text-left">95,000</td>
-                          <td className="py-2 px-2 text-left">80,000</td>
-                          <td className="py-2 px-2 text-left text-red-500">(15,000)</td>
-                          <td className="py-2 px-2 text-center text-red-500 bg-red-50">+18.7%</td>
+                          <td className="py-1.5 px-2 font-medium text-gray-800">الرواتب والأجور التشغيلية</td>
+                          <td className="py-1.5 px-2 text-left font-mono">85,000</td>
+                          <td className="py-1.5 px-2 text-left font-mono">85,000</td>
+                          <td className="py-1.5 px-2 text-left text-emerald-700 font-bold">0.0% (مطابق تماماً)</td>
                         </tr>
                       </tbody>
                       <tfoot>
-                        <tr className="bg-gray-100 border-y-2 border-gray-800 font-bold">
-                          <td className="py-3 px-2 text-gray-900">صافي الربح التشغيلي</td>
-                          <td className="py-3 px-2 text-left">605,000</td>
-                          <td className="py-3 px-2 text-left">515,000</td>
-                          <td className="py-3 px-2 text-left text-green-700">+90,000</td>
-                          <td className="py-3 px-2 text-center text-green-700">+17.4%</td>
+                        <tr className="bg-gray-50 border-t-2 border-primary font-bold">
+                          <td className="py-2 px-2 text-primary">صافي الربح التقديري مقابل الفعلي</td>
+                          <td className="py-2 px-2 text-left font-mono text-gray-700">95,000</td>
+                          <td className="py-2 px-2 text-left font-mono text-emerald-700 text-sm">109,500</td>
+                          <td className="py-2 px-2 text-left text-emerald-700">+15.2% (فائض محقق)</td>
                         </tr>
                       </tfoot>
                     </table>
                   </div>
-                  
-                  <div className="bg-amber-50 border border-amber-100 p-3 rounded text-[10px] md:text-[11px] text-amber-800 font-medium">
-                    <p className="flex items-start gap-1">
-                      <span className="w-2 h-2 rounded-full bg-amber-500 inline-block mt-1 shrink-0"></span>
-                      <span>
-                        <strong>توصية الإدارة المالية:</strong> تجاوز ملحوظ في بند التسويق بنسبة 18.7%، يقابله زيادة في الإيرادات بنسبة 9.2%. يُنصح بمراجعة العائد على الاستثمار للحملات الإعلانية (ROAS) في الربع القادم.
-                      </span>
-                    </p>
+
+                  <div className="p-2.5 bg-amber-50 border border-amber-200 rounded text-[10px] text-amber-900 leading-relaxed font-arabic">
+                    <strong>تنبيه الانحراف الرقابي:</strong> لوحظ تجاوز موازنة الحملات التسويقية بنسبة 28.3%، ورغم زيادة الإيرادات، يوصى بوضع سقف تدقيق صارم قبل اعتماد أي حملة إعلانية إضافية للشهر القادم.
                   </div>
                 </div>
               </div>
             }
           />
 
-          {/* Service CTA Card */}
+          {/* 7. FAQ */}
+          <ServiceFaqAccordion faqs={faqs} />
+
+          {/* 8. CTA واضح */}
           <div className="my-8 p-6 bg-surface-subtle/60 border border-border-subtle rounded-2xl text-center">
             <h3 className="text-base md:text-lg font-bold text-text-primary mb-2">
-              هل تريد بناء موازنة مالية واقعية لمنشأتك؟
+              هل تريد وضع خطة مالية واضحة تمنع تجاوزات الصرف وتحدد أهداف منشأتك؟
             </h3>
             <p className="text-xs md:text-sm text-text-secondary mb-4 max-w-xl mx-auto leading-relaxed">
-              تخطيط دقيق للإيرادات والمصروفات ومراقبة الانحرافات لضمان تحقيق الأهداف المالية المستهدفة.
+              ناقش احتياج منشأتك وابدأ في بناء موازنة تقديرية تحمي سيولتك وتدعم نموك بثقة.
             </p>
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={trackWhatsAppClick}
               className="inline-flex items-center gap-x-2 px-6 py-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs md:text-sm font-semibold rounded-xl transition-all shadow-sm duration-200 hover:scale-[1.02] active:scale-[0.98]"
             >
               <MessageCircle className="w-4 h-4" aria-hidden="true" />
@@ -268,9 +365,9 @@ export default function BudgetingPage() {
           {/* Related Article Guide Link */}
           <div className="mb-8 p-4 bg-primary/5 border border-primary/15 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs md:text-sm">
             <span className="text-text-secondary font-medium">
-              💡 دليل تخصصي من المكتبة المالية: <a href="/blog/budgeting-planning-revenues-expenses" className="text-primary font-bold hover:underline">الموازنات التقديرية والتخطيط المالي</a>
+              💡 دليل تخصصي من المكتبة المالية: <a href="/blog/cash-flow-management-financial-safety" className="text-primary font-bold hover:underline">كيف تدير التدفقات النقدية وتحمي منشأتك من التعثر المالي</a>
             </span>
-            <a href="/blog/budgeting-planning-revenues-expenses" className="text-primary font-semibold hover:underline shrink-0">
+            <a href="/blog/cash-flow-management-financial-safety" className="text-primary font-semibold hover:underline shrink-0">
               قراءة الدليل ←
             </a>
           </div>
@@ -285,22 +382,22 @@ export default function BudgetingPage() {
                 href="/services/cash-flow"
                 className="p-3 bg-surface-subtle/50 hover:bg-surface-subtle border border-border-subtle rounded-lg text-xs md:text-sm font-medium text-text-primary hover:text-primary transition-all flex items-center justify-between"
               >
-                <span>إدارة التدفقات النقدية والسيولة</span>
-                <span className="text-secondary text-base">←</span>
-              </a>
-              <a
-                href="/services/financial-analysis"
-                className="p-3 bg-surface-subtle/50 hover:bg-surface-subtle border border-border-subtle rounded-lg text-xs md:text-sm font-medium text-text-primary hover:text-primary transition-all flex items-center justify-between"
-              >
-                <span>التحليل المالي وتقييم الأداء</span>
-                <span className="text-secondary text-base">←</span>
+                <span>إدارة وتوقع التدفقات النقدية</span>
+                <ArrowRight className="w-4 h-4 text-secondary rotate-180" />
               </a>
               <a
                 href="/services/management-reports"
                 className="p-3 bg-surface-subtle/50 hover:bg-surface-subtle border border-border-subtle rounded-lg text-xs md:text-sm font-medium text-text-primary hover:text-primary transition-all flex items-center justify-between"
               >
-                <span>إعداد التقارير الإدارية</span>
-                <span className="text-secondary text-base">←</span>
+                <span>التقارير المالية الدورية</span>
+                <ArrowRight className="w-4 h-4 text-secondary rotate-180" />
+              </a>
+              <a
+                href="/services/virtual-cfo"
+                className="p-3 bg-surface-subtle/50 hover:bg-surface-subtle border border-border-subtle rounded-lg text-xs md:text-sm font-medium text-text-primary hover:text-primary transition-all flex items-center justify-between"
+              >
+                <span>المدير المالي عن بعد (Virtual CFO)</span>
+                <ArrowRight className="w-4 h-4 text-secondary rotate-180" />
               </a>
             </div>
           </div>
