@@ -69,9 +69,7 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
               {/* Hero Actions (CTA) */}
               <div id="hero-cta-actions" className="flex flex-wrap items-center justify-center md:justify-start gap-3 pt-2">
                 <a 
-                  href={HERO_WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#consultation-section"
                   id="hero-primary-cta"
                   className="inline-flex items-center gap-x-2 px-5 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs sm:text-sm font-semibold shadow-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
                 >

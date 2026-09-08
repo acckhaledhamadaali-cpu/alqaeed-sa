@@ -10,6 +10,7 @@ import ChallengesSection from '../sections/ChallengesSection';
 import ServicesSection from '../sections/ServicesSection';
 import AboutSection from '../sections/AboutSection';
 import FinalCTASection from '../sections/FinalCTASection';
+import ConsultationSection from '../sections/ConsultationSection';
 import FooterSection from '../sections/FooterSection';
 import FloatingWhatsApp from '../sections/FloatingWhatsApp';
 import SoftwareIntegrations from './components/SoftwareIntegrations';
@@ -222,6 +223,7 @@ if (path === '/services/virtual-cfo') {
         <AboutSection />
         <SoftwareIntegrations />
         <HowIWorkSection />
+        <ConsultationSection />
         <FinalCTASection />
       </main>
       <FooterSection />
