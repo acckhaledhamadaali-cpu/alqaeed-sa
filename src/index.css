@@ -48,6 +48,25 @@
 /* Global Bold Typography across the whole website */
 html,
 body,
+
+@keyframes integration-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.integration-card {
+  animation: integration-float 4.8s ease-in-out infinite;
+  animation-delay: var(--integration-delay, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .integration-card {
+    animation: none;
+  }
 #root {
   font-weight: 700;
 }
