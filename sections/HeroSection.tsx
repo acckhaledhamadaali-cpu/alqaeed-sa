@@ -2,7 +2,7 @@ import { HTMLAttributes } from 'react';
 import SectionWrapper from '../components/SectionWrapper';
 import Container from '../components/Container';
 import { TYPOGRAPHY } from '../src/lib/tokens';
-import { MessageCircle } from 'lucide-react';
+import { MessageCircle, ClipboardCheck } from 'lucide-react';
 
 const WHATSAPP_NUMBER = "966511294383";
 const HERO_WHATSAPP_MESSAGE = "السلام عليكم، اطلعت على موقع القائد للإدارة المالية وأرغب في مناقشة احتياج منشأتي من الخدمات المالية والمحاسبية.";
@@ -75,6 +75,14 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
                 >
                   <MessageCircle className="w-4 h-4" aria-hidden="true" />
                   <span>تواصل معي عبر واتساب</span>
+                </a>
+                <a 
+                  href="#financial-assessment"
+                  id="hero-assessment-cta"
+                  className="inline-flex items-center gap-x-1.5 px-4 py-2.5 rounded-xl bg-secondary/10 border border-secondary/25 hover:border-secondary text-secondary text-xs sm:text-sm font-semibold transition-all duration-200 hover:bg-secondary/15"
+                >
+                  <ClipboardCheck className="w-4 h-4" />
+                  <span>قيّم احتياجك المالي (60 ثانية)</span>
                 </a>
                 <a 
                   href="#services-section-wrapper"

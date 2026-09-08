@@ -12,6 +12,7 @@ import PackagesSection from '../sections/PackagesSection';
 import MonthlyDeliverablesSection from '../sections/MonthlyDeliverablesSection';
 import QualificationSection from '../sections/QualificationSection';
 import SectorsSection from '../sections/SectorsSection';
+import FinancialAssessmentSection from '../sections/FinancialAssessmentSection';
 import AboutSection from '../sections/AboutSection';
 import FinalCTASection from '../sections/FinalCTASection';
 import ConsultationSection from '../sections/ConsultationSection';
@@ -228,6 +229,7 @@ if (path === '/services/virtual-cfo') {
         <MonthlyDeliverablesSection />
         <QualificationSection />
         <SectorsSection />
+        <FinancialAssessmentSection />
         <HowIWorkSection />
         <SoftwareIntegrations />
         <AboutSection />
