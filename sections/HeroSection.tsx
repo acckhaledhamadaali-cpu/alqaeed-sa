@@ -63,7 +63,7 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
                 id="hero-trust-line"
                 className="text-xs md:text-sm text-text-secondary font-arabic font-normal leading-relaxed mt-1"
               >
-                أكثر من 6 سنوات من الخبرة في المحاسبة والإدارة المالية والتحليل المالي للمنشآت داخل المملكة العربية السعودية.
+                ممارسة مهنية متخصصة في المحاسبة المالية، التحليل المالي، إعداد القوائم، والتقارير الإدارية للمنشآت في السوق السعودي.
               </p>
 
               {/* Hero Actions (CTA) */}
