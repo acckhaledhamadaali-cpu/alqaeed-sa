@@ -31,7 +31,17 @@ async function prerender() {
   // Dynamic article routes if any exist in verified BLOG_ARTICLES
   const articleRoutes = (BLOG_ARTICLES || []).map((a) => `/blog/${a.slug}`);
 
-  const routes = [...baseRoutes, ...articleRoutes];
+  // Sector detail pages are dynamic in App.tsx, so explicitly prerender them.
+  const sectorRoutes = [
+    '/sectors/restaurants-cafes',
+    '/sectors/contracting',
+    '/sectors/trade-retail',
+    '/sectors/pharmacies-health',
+    '/sectors/services-professions',
+    '/sectors/startups-growing',
+  ];
+
+  const routes = [...new Set([...baseRoutes, ...articleRoutes, ...sectorRoutes])];
   console.log(`Starting SSG Pre-rendering for ${routes.length} routes...`);
 
   for (const route of routes) {
@@ -90,9 +100,9 @@ async function prerender() {
   const publicSitemapPath = path.resolve(__dirname, 'public', 'sitemap.xml');
   const sitemapEntries = routes.map((r) => {
     const loc = r === '/' ? 'https://alqaeed-sa.pages.dev/' : `https://alqaeed-sa.pages.dev${r}`;
-    const priority = r === '/' ? '1.0' : r.startsWith('/services/') || r === '/blog' || r.startsWith('/blog/') ? '0.8' : '0.5';
+    const priority = r === '/' ? '1.0' : r.startsWith('/services/') || r === '/blog' || r.startsWith('/blog/') ? '0.8' : r.startsWith('/sectors/') ? '0.8' : '0.5';
     const changefreq = r.startsWith('/privacy') || r.startsWith('/terms') || r.startsWith('/cookies') ? 'yearly' : 'monthly';
-    return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>2026-08-27</lastmod>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`;
+    return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>2026-09-09</lastmod>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`;
   }).join('\n');
 
   const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapEntries}\n</urlset>\n`;
