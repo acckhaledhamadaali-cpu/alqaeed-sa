@@ -1,7 +1,7 @@
 import { LogoAsset } from '../types/logo';
 
-// Lightweight brand marks. QuickBooks, Xero and Odoo use their recognizable brand marks;
-// Qoyod, Daftra and SMACC load the current mark from each product's own domain.
+// Curated lightweight brand assets for the accounting systems section.
+// Use stable image URLs instead of favicons, which can fail or render as broken images.
 const INITIAL_LOGOS: LogoAsset[] = [
   {
     id: 'quickbooks',
@@ -22,7 +22,7 @@ const INITIAL_LOGOS: LogoAsset[] = [
   {
     id: 'qoyod',
     name: 'Qoyod',
-    imageUrl: 'https://www.qoyod.com/favicon.ico',
+    imageUrl: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e1/53/8a/e1538a52-df73-0a98-aa97-6bb8383096b7/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg',
     enabled: true,
     sortOrder: 2,
     createdAt: 0,
@@ -30,7 +30,7 @@ const INITIAL_LOGOS: LogoAsset[] = [
   {
     id: 'daftra',
     name: 'Daftra',
-    imageUrl: 'https://www.daftra.com/favicon.ico',
+    imageUrl: 'https://www.daftra.com/themed/multi_language/images/logos/daftra-ar.svg',
     enabled: true,
     sortOrder: 3,
     createdAt: 0,
@@ -46,7 +46,7 @@ const INITIAL_LOGOS: LogoAsset[] = [
   {
     id: 'smacc',
     name: 'SMACC',
-    imageUrl: 'https://smacc.com/favicon.ico',
+    imageUrl: 'https://pbs.twimg.com/profile_images/1846465311026880512/ndqJmzxh.jpg',
     enabled: true,
     sortOrder: 5,
     createdAt: 0,
@@ -56,7 +56,6 @@ const INITIAL_LOGOS: LogoAsset[] = [
 export const getLogos = (): LogoAsset[] => INITIAL_LOGOS;
 
 // Kept for compatibility with the admin logo screen.
-// The homepage marquee intentionally uses the curated brand list above.
 export const saveLogos = (logos: LogoAsset[]) => {
   try {
     localStorage.setItem('accounting_logo_assets_v1', JSON.stringify(logos));
