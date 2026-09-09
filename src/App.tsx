@@ -5,6 +5,7 @@
 
 import HeroSection from '../sections/HeroSection';
 import ExperienceBar from '../sections/ExperienceBar';
+import SectorsSection from '../sections/SectorsSection';
 import HowIWorkSection from '../sections/HowIWorkSection';
 import ChallengesSection from '../sections/ChallengesSection';
 import ServicesSection from '../sections/ServicesSection';
@@ -20,6 +21,7 @@ import CookiesPage from './pages/CookiesPage';
 import BlogHubPage from './pages/BlogHubPage';
 import ArticlePage from './pages/ArticlePage';
 import NotificationOptIn from './components/NotificationOptIn';
+import SectorDetailPage from './pages/sectors/SectorDetailPage';
 
 import BookkeepingPage from './pages/services/BookkeepingPage';
 import ZakatTaxPage from './pages/services/ZakatTaxPage';
@@ -40,7 +42,21 @@ export default function App({ path: propPath }: { path?: string } = {}) {
     return <LogoAssetsPage />;
   }
 
-if (path === '/services/bookkeeping') {
+  if (path.startsWith('/sectors/')) {
+    const slug = path.replace(/^\/sectors\//, '').replace(/\/$/, '');
+    return (
+      <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
+        <main id="main-content" className="flex-grow">
+          <SectorDetailPage slug={slug} />
+        </main>
+        <FooterSection />
+        <FloatingWhatsApp />
+        <NotificationOptIn />
+      </div>
+    );
+  }
+
+  if (path === '/services/bookkeeping') {
     return (
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
@@ -53,7 +69,7 @@ if (path === '/services/bookkeeping') {
     );
   }
 
-if (path === '/services/zakat-tax') {
+  if (path === '/services/zakat-tax') {
     return (
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
@@ -66,7 +82,7 @@ if (path === '/services/zakat-tax') {
     );
   }
 
-if (path === '/services/financial-statements') {
+  if (path === '/services/financial-statements') {
     return (
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
@@ -79,7 +95,7 @@ if (path === '/services/financial-statements') {
     );
   }
 
-if (path === '/services/financial-analysis') {
+  if (path === '/services/financial-analysis') {
     return (
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
@@ -92,7 +108,7 @@ if (path === '/services/financial-analysis') {
     );
   }
 
-if (path === '/services/management-reports') {
+  if (path === '/services/management-reports') {
     return (
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
@@ -105,7 +121,7 @@ if (path === '/services/management-reports') {
     );
   }
 
-if (path === '/services/budgeting') {
+  if (path === '/services/budgeting') {
     return (
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
@@ -118,7 +134,7 @@ if (path === '/services/budgeting') {
     );
   }
 
-if (path === '/services/cash-flow') {
+  if (path === '/services/cash-flow') {
     return (
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
@@ -131,7 +147,7 @@ if (path === '/services/cash-flow') {
     );
   }
 
-if (path === '/services/virtual-cfo') {
+  if (path === '/services/virtual-cfo') {
     return (
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
@@ -143,7 +159,6 @@ if (path === '/services/virtual-cfo') {
       </div>
     );
   }
-
 
   if (path === '/privacy-policy') {
     return (
@@ -217,6 +232,7 @@ if (path === '/services/virtual-cfo') {
         {/* Structural sections in order */}
         <HeroSection />
         <ExperienceBar />
+        <SectorsSection />
         <ChallengesSection />
         <ServicesSection />
         <AboutSection />
