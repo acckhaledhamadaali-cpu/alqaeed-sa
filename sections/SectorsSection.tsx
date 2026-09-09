@@ -52,10 +52,7 @@ export default function SectorsSection() {
     <SectionWrapper id="sectors-section-wrapper" variant="subtle" spacing="default">
       <Container id="sectors-container">
         <div className="mx-auto max-w-3xl text-center mb-8 md:mb-10">
-          <span className="inline-flex items-center rounded-full bg-secondary/10 px-4 py-2 text-xs sm:text-sm font-bold text-secondary">
-            اختر نشاطك
-          </span>
-          <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-text-primary">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-text-primary">
             نفهم طبيعة نشاطك وندعم نموه
           </h2>
           <p className="mt-3 text-sm sm:text-base leading-7 text-text-secondary">
@@ -81,7 +78,7 @@ export default function SectorsSection() {
                     decoding="async"
                     className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute bottom-2 right-2 flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-white shadow-md sm:bottom-3 sm:right-3 sm:h-11 sm:w-11">
+                  <div className="absolute bottom-2 right-2 flex h-9 w-9 items-center justify-center rounded-xl bg-white/90 text-primary shadow-md backdrop-blur-sm sm:bottom-3 sm:right-3 sm:h-11 sm:w-11">
                     <Icon className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden="true" />
                   </div>
                 </div>
@@ -95,7 +92,7 @@ export default function SectorsSection() {
                   </p>
                   <a
                     href={`/sectors/${sector.slug}`}
-                    className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-3 py-2.5 text-[11px] sm:text-sm font-bold text-white transition hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                    className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-[#f8f6ef] px-3 py-2.5 text-[11px] font-bold text-slate-800 transition hover:bg-[#f1eee3] focus:outline-none focus:ring-2 focus:ring-slate-300 focus:ring-offset-2 sm:text-sm"
                   >
                     <span>تفاصيل القطاع</span>
                     <ArrowLeft className="h-4 w-4" aria-hidden="true" />
