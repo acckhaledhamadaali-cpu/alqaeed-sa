@@ -4,6 +4,7 @@ import SectionWrapper from '../../components/SectionWrapper';
 import Container from '../../components/Container';
 import { TYPOGRAPHY } from '../lib/tokens';
 import { BLOG_ARTICLES, BLOG_CATEGORIES } from '../data/blogArticles';
+import { getBlogImage, getBlogImageSrcSet } from '../data/blogImages';
 import { BlogCategoryType } from '../types/blog';
 
 const WHATSAPP_NUMBER = "966511294383";
@@ -125,7 +126,6 @@ function parseContentToElements(content: string): React.ReactNode[] {
       continue;
     }
 
-    // Markdown image syntax: ![alt](url)
     const imgMatch = trimmed.match(/^!\[(.*?)\]\((.*?)\)$/);
     if (imgMatch) {
       flushList();
@@ -219,18 +219,8 @@ function ArticleNotFound() {
               المقال الذي تبحث عنه لا يزال قيد الإعداد والمراجعة من قبل فريق القائد للإدارة المالية، أو تم نقله.
             </p>
             <div className="flex flex-wrap gap-3 justify-center text-sm">
-              <a
-                href="/blog"
-                className="px-5 py-2.5 bg-primary text-white rounded-xl hover:bg-primary/90 transition-colors font-medium"
-              >
-                العودة إلى المكتبة المالية
-              </a>
-              <a
-                href="/"
-                className="px-5 py-2.5 bg-white border border-border-subtle text-text-primary rounded-xl hover:border-primary transition-colors font-medium"
-              >
-                الرئيسية
-              </a>
+              <a href="/blog" className="px-5 py-2.5 bg-primary text-white rounded-xl hover:bg-primary/90 transition-colors font-medium">العودة إلى المكتبة المالية</a>
+              <a href="/" className="px-5 py-2.5 bg-white border border-border-subtle text-text-primary rounded-xl hover:border-primary transition-colors font-medium">الرئيسية</a>
             </div>
           </div>
         </div>
@@ -242,13 +232,13 @@ function ArticleNotFound() {
 export default function ArticlePage({ slug }: { slug: string }) {
   const article = BLOG_ARTICLES.find((a) => a.slug === slug);
 
-  if (!article) {
-    return <ArticleNotFound />;
-  }
+  if (!article) return <ArticleNotFound />;
 
   const metaTitle = `${article.title} | القائد للإدارة المالية`;
   const metaDesc = article.description;
   const url = `https://alqaeed-sa.pages.dev/blog/${article.slug}`;
+  const articleImage = getBlogImage(article.slug);
+  const articleImageSrcSet = getBlogImageSrcSet(article.slug);
 
   const schema = {
     "@context": "https://schema.org",
@@ -258,16 +248,10 @@ export default function ArticlePage({ slug }: { slug: string }) {
         "@id": `${url}/#article`,
         "headline": article.title,
         "description": article.description,
-        "image": `https://alqaeed-sa.pages.dev/images/blog/${article.slug}.webp`,
+        "image": articleImage,
         "inLanguage": "ar-SA",
-        "author": {
-          "@type": "Person",
-          "@id": "https://alqaeed-sa.pages.dev/#person",
-          "name": "خالد القائد"
-        },
-        "publisher": {
-          "@id": "https://alqaeed-sa.pages.dev/#organization"
-        },
+        "author": { "@type": "Person", "@id": "https://alqaeed-sa.pages.dev/#person", "name": "خالد القائد" },
+        "publisher": { "@id": "https://alqaeed-sa.pages.dev/#organization" },
         "datePublished": article.publishedAt,
         "dateModified": article.updatedAt || article.publishedAt,
         "mainEntityOfPage": url
@@ -276,52 +260,28 @@ export default function ArticlePage({ slug }: { slug: string }) {
         "@type": "BreadcrumbList",
         "@id": `${url}/#breadcrumb`,
         "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "الرئيسية",
-            "item": "https://alqaeed-sa.pages.dev/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "المكتبة المالية",
-            "item": "https://alqaeed-sa.pages.dev/blog"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": article.title,
-            "item": url
-          }
+          { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://alqaeed-sa.pages.dev/" },
+          { "@type": "ListItem", "position": 2, "name": "المكتبة المالية", "item": "https://alqaeed-sa.pages.dev/blog" },
+          { "@type": "ListItem", "position": 3, "name": article.title, "item": url }
         ]
       }
     ]
   };
 
-  useSEO({
-    title: metaTitle,
-    description: metaDesc,
-    canonical: url,
-    schema
-  });
+  useSEO({ title: metaTitle, description: metaDesc, canonical: url, schema });
 
   const getCategoryName = (catId: BlogCategoryType) => {
     const found = BLOG_CATEGORIES.find((c) => c.id === catId);
     return found ? found.name : 'مالية ومحاسبة';
   };
 
-  const whatsappMessage = `السلام عليكم
-أطلعت على مقال: "${article.title}" في المكتبة المالية للقائد.
-أود استشارة مخصصة لمنشأتي حول هذا الموضوع.`;
+  const whatsappMessage = `السلام عليكم\nأطلعت على مقال: "${article.title}" في المكتبة المالية للقائد.\nأود استشارة مخصصة لمنشأتي حول هذا الموضوع.`;
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <SectionWrapper id={`article-${article.slug}-section`} variant="white" spacing="default">
       <Container>
         <article className="max-w-3xl mx-auto py-4 md:py-8 text-right font-arabic">
-
-          {/* Breadcrumb Navigation */}
           <nav aria-label="مسار التنقل" className="mb-4 text-xs text-text-muted">
             <a href="/" className="hover:text-primary transition-colors">الرئيسية</a>
             <span className="mx-2 text-border-subtle">/</span>
@@ -330,31 +290,26 @@ export default function ArticlePage({ slug }: { slug: string }) {
             <span className="text-text-secondary">{article.title}</span>
           </nav>
 
-          {/* Article Header */}
           <header className="mb-8 border-b border-border-subtle pb-6">
             <div className="flex flex-wrap items-center gap-2 mb-3 text-xs">
-              <span className="bg-primary/10 text-primary font-semibold px-3 py-1 rounded-md">
-                {getCategoryName(article.category)}
-              </span>
+              <span className="bg-primary/10 text-primary font-semibold px-3 py-1 rounded-md">{getCategoryName(article.category)}</span>
               <span className="text-text-muted">•</span>
               <span className="text-text-secondary">{article.readingTime}</span>
               <span className="text-text-muted">•</span>
               <span className="text-text-secondary">بقلم: {article.author}</span>
             </div>
 
-            <h1 className={`${TYPOGRAPHY.heading.h1} font-bold text-text-primary mb-4 leading-tight`}>
-              {article.title}
-            </h1>
-            <p className="text-sm md:text-base text-text-secondary leading-relaxed font-normal mb-6">
-              {article.description}
-            </p>
+            <h1 className={`${TYPOGRAPHY.heading.h1} font-bold text-text-primary mb-4 leading-tight`}>{article.title}</h1>
+            <p className="text-sm md:text-base text-text-secondary leading-relaxed font-normal mb-6">{article.description}</p>
 
-            {/* Featured Article Image (Below the fold on mobile/desktop, with lazy loading) */}
             <div className="rounded-2xl overflow-hidden border border-border-subtle bg-surface-subtle shadow-sm aspect-video">
               <img
-                src={`/images/blog/${article.slug}.webp`}
+                src={articleImage}
+                srcSet={articleImageSrcSet || undefined}
+                sizes="(max-width: 768px) calc(100vw - 32px), 768px"
                 alt={article.title}
-                loading="lazy"
+                loading="eager"
+                fetchPriority="high"
                 decoding="async"
                 width={1280}
                 height={720}
@@ -363,82 +318,42 @@ export default function ArticlePage({ slug }: { slug: string }) {
             </div>
           </header>
 
-          {/* Article Content Body */}
           <div className="prose prose-lg max-w-none text-text-primary text-sm md:text-base leading-relaxed mb-12">
             {parseContentToElements(article.content)}
           </div>
 
-          {/* Related Articles Section (Internal SEO Linking) */}
           {article.relatedArticles && article.relatedArticles.length > 0 && (
             <section aria-labelledby="related-articles-heading" className="border-t border-border-subtle pt-8 mb-8">
-              <h3 id="related-articles-heading" className="text-base md:text-lg font-bold text-text-primary mb-4">
-                مقالات ذات صلة في المكتبة المالية:
-              </h3>
+              <h3 id="related-articles-heading" className="text-base md:text-lg font-bold text-text-primary mb-4">مقالات ذات صلة في المكتبة المالية:</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {article.relatedArticles.map((rel) => (
-                  <a
-                    key={rel.slug}
-                    href={`/blog/${rel.slug}`}
-                    className="p-4 rounded-xl border border-border-subtle bg-surface-subtle/40 hover:border-primary/50 hover:bg-surface-subtle transition-all text-right group block"
-                  >
+                  <a key={rel.slug} href={`/blog/${rel.slug}`} className="p-4 rounded-xl border border-border-subtle bg-surface-subtle/40 hover:border-primary/50 hover:bg-surface-subtle transition-all text-right group block">
                     <span className="text-xs text-primary font-medium mb-1 block">مقال مقترح ←</span>
-                    <h4 className="text-sm font-bold text-text-primary group-hover:text-primary transition-colors leading-snug">
-                      {rel.title}
-                    </h4>
+                    <h4 className="text-sm font-bold text-text-primary group-hover:text-primary transition-colors leading-snug">{rel.title}</h4>
                   </a>
                 ))}
               </div>
             </section>
           )}
 
-          {/* Related Commercial Service Card (Internal Linking) */}
           {article.relatedService && (
-            <aside
-              aria-label="الخدمة المرتبطة بالمقال"
-              className="bg-surface-subtle/60 border border-border-subtle rounded-2xl p-6 md:p-8 mb-8"
-            >
+            <aside aria-label="الخدمة المرتبطة بالمقال" className="bg-surface-subtle/60 border border-border-subtle rounded-2xl p-6 md:p-8 mb-8">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div>
-                  <span className="text-xs text-primary font-bold uppercase tracking-wider block mb-1">
-                    حلول مالية مرتبطة
-                  </span>
-                  <h3 className="text-base md:text-lg font-bold text-text-primary mb-1">
-                    {article.relatedService.title}
-                  </h3>
-                  {article.relatedService.description && (
-                    <p className="text-xs md:text-sm text-text-secondary leading-relaxed max-w-xl">
-                      {article.relatedService.description}
-                    </p>
-                  )}
+                  <span className="text-xs text-primary font-bold uppercase tracking-wider block mb-1">حلول مالية مرتبطة</span>
+                  <h3 className="text-base md:text-lg font-bold text-text-primary mb-1">{article.relatedService.title}</h3>
+                  {article.relatedService.description && <p className="text-xs md:text-sm text-text-secondary leading-relaxed max-w-xl">{article.relatedService.description}</p>}
                 </div>
-                <a
-                  href={article.relatedService.url}
-                  className="whitespace-nowrap px-5 py-2.5 bg-primary text-white text-xs md:text-sm font-semibold rounded-xl hover:bg-primary/90 transition-colors shadow-sm"
-                >
-                  تفاصيل الخدمة ←
-                </a>
+                <a href={article.relatedService.url} className="whitespace-nowrap px-5 py-2.5 bg-primary text-white text-xs md:text-sm font-semibold rounded-xl hover:bg-primary/90 transition-colors shadow-sm">تفاصيل الخدمة ←</a>
               </div>
             </aside>
           )}
 
-          {/* WhatsApp Direct Consultation */}
           <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 text-center">
-            <h3 className="text-base font-bold text-text-primary mb-2">
-              هل تواجه تحدياً في تطبيق هذه المعايير في منشأتك؟
-            </h3>
-            <p className="text-xs md:text-sm text-text-secondary leading-relaxed mb-4 max-w-lg mx-auto">
-              فريق القائد للإدارة المالية جاهز لتقديم الدعم التخصصي والتحليل المالي المتكامل لنشاطك.
-            </p>
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-6 py-2.5 bg-primary text-white text-xs md:text-sm font-semibold rounded-xl hover:bg-primary/90 transition-colors shadow-sm"
-            >
-              استشارة مباشرة عبر واتساب
-            </a>
+            <h3 className="text-base font-bold text-text-primary mb-2">هل تواجه تحدياً في تطبيق هذه المعايير في منشأتك؟</h3>
+            <p className="text-xs md:text-sm text-text-secondary leading-relaxed mb-4 max-w-lg mx-auto">فريق القائد للإدارة المالية جاهز لتقديم الدعم التخصصي والتحليل المالي المتكامل لنشاطك.</p>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-2.5 bg-primary text-white text-xs md:text-sm font-semibold rounded-xl hover:bg-primary/90 transition-colors shadow-sm">استشارة مباشرة عبر واتساب</a>
           </div>
-
         </article>
       </Container>
     </SectionWrapper>
