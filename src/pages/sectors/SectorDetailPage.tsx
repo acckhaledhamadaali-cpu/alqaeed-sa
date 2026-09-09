@@ -1,373 +1,144 @@
-import { ArrowRight, CheckCircle2, MessageCircle, TrendingDown, TrendingUp } from 'lucide-react';
+import { ArrowRight, MessageCircle, TrendingDown, TrendingUp } from 'lucide-react';
 import Container from '../../../components/Container';
-import SectionWrapper from '../../../components/SectionWrapper';
 
-type KPI = {
-  label: string;
-  value: string;
-  note: string;
-  trend?: 'up' | 'down';
-};
+type ReportRow = { label: string; value: string; change: string; direction?: 'up' | 'down'; width: string };
+type Meaning = { metric: string; meaning: string; decision: string };
+type Sector = { title: string; question: string; image: string; problems: string[]; reportTitle: string; reportRows: ReportRow[]; meanings: Meaning[]; outputs: string[]; message: string };
 
-type Meaning = {
-  number: string;
-  title: string;
-  text: string;
-  decision: string;
-};
-
-type Sector = {
-  slug: string;
-  title: string;
-  question: string;
-  image: string;
-  problems: string[];
-  kpis: KPI[];
-  meanings: Meaning[];
-  outputs: string[];
-  message: string;
-};
-
-const commonProcess = [
-  'تواصل معنا',
-  'نفهم المشكلة واحتياج المنشأة',
-  'نطلب المستندات والبيانات اللازمة',
-  'التقييم الأولي للوضع المالي',
-  'ربط النظام والبيانات المطلوبة',
-  'بدء التسجيل والتنظيم والمتابعة',
-  'إصدار التقرير الأول بصورة واضحة',
-  'متابعة يومية للأرقام والتغيرات',
-];
+const commonProcess = ['تواصل معنا','نحدد المشكلة','نطلب البيانات والمستندات','التقييم الأولي','ربط النظام','بدء التسجيل والمتابعة','التقرير الأول','متابعة يومية'];
 
 const sectors: Record<string, Sector> = {
   'restaurants-cafes': {
-    slug: 'restaurants-cafes',
-    title: 'الإدارة المالية للمطاعم والكافيهات',
-    question: 'هل مطعمك يحقق ربحًا فعليًا؟',
-    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=3840&q=90',
-    problems: [
-      'المبيعات جيدة لكن صافي الربح أقل من المتوقع.',
-      'تكلفة الطعام والهدر والمخزون تستهلك جزءًا كبيرًا من الربح.',
-      'بعض الأصناف تحقق مبيعات عالية لكن هامش ربحها ضعيف.',
-      'المصروفات ترتفع ولا توجد صورة واضحة عن أثرها على الربحية.',
-      'صعوبة معرفة السيولة المتاحة وما يمكن إنفاقه أو استثماره.',
+    title:'الإدارة المالية للمطاعم والكافيهات', question:'هل تعرف أين يذهب ربح مطعمك؟',
+    image:'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2400&q=85',
+    problems:['المبيعات جيدة لكن الربح الفعلي أقل من المتوقع.','تكلفة الطعام والهدر ترتفع دون معرفة السبب.','المخزون يستهلك السيولة وبعض الأصناف بطيئة الحركة.','لا توجد صورة واضحة عن ربحية الأصناف أو الفروع.'],
+    reportTitle:'تقرير مالي مختصر — مثال توضيحي',
+    reportRows:[['المبيعات','285,000 ر.س','+8.4%','up','86%'],['تكلفة الطعام','112,000 ر.س','39.3%','down','63%'],['المصروفات التشغيلية','84,000 ر.س','+4.1%','up','47%'],['صافي الربح','89,000 ر.س','31.2%','up','58%'],['التدفق النقدي','42,000 ر.س','متاح',undefined,'34%'],['المخزون','67,000 ر.س','يحتاج متابعة','down','42%']].map(([label,value,change,direction,width])=>({label,value,change,direction:direction as 'up'|'down'|undefined,width})),
+    meanings:[
+      {metric:'تكلفة الطعام 39.3%',meaning:'كل ارتفاع بسيط في التكلفة يؤثر مباشرة في هامش الربح.',decision:'مراجعة الشراء والوصفات والحصص والهدر.'},
+      {metric:'المخزون 67K',meaning:'جزء من رأس المال موجود داخل المخزون وليس نقدًا.',decision:'تحديد الأصناف البطيئة وضبط دورة الشراء.'},
+      {metric:'التدفق 42K',meaning:'الربح المحاسبي لا يعني أن النقدية المتاحة بنفس القيمة.',decision:'ترتيب الإنفاق والالتزامات وفق السيولة الفعلية.'}
     ],
-    kpis: [
-      { label: 'المبيعات', value: '285,000 ر.س', note: 'مثال توضيحي' },
-      { label: 'تكلفة المبيعات', value: '112,000 ر.س', note: 'مثال توضيحي', trend: 'up' },
-      { label: 'هامش الربح', value: '39.3%', note: 'مثال توضيحي', trend: 'down' },
-      { label: 'المصروفات', value: '84,000 ر.س', note: 'مثال توضيحي' },
-      { label: 'صافي الربح', value: '89,000 ر.س', note: 'مثال توضيحي', trend: 'up' },
-      { label: 'التدفق النقدي', value: '42,000 ر.س', note: 'مثال توضيحي' },
-      { label: 'المخزون', value: '67,000 ر.س', note: 'مثال توضيحي' },
-      { label: 'الهدر', value: '8,500 ر.س', note: 'مثال توضيحي', trend: 'up' },
-    ],
-    meanings: [
-      { number: '39%', title: 'تكلفة الطعام', text: 'ارتفاع التكلفة قد يشير إلى مشكلة في أسعار الشراء أو الوصفات أو الحصص أو الهدر.', decision: 'نحدد سبب الارتفاع ونقيس أثر الإجراء على هامش الربح.' },
-      { number: '67K', title: 'المخزون', text: 'المخزون ليس مجرد كمية؛ هو أموال مرتبطة بالنشاط وقد يكون جزء منه بطيء الحركة.', decision: 'نحدد الأصناف التي تحتاج إلى مراجعة ونربط الشراء بالحاجة الفعلية.' },
-      { number: '42K', title: 'التدفق النقدي', text: 'وجود ربح محاسبي لا يعني بالضرورة توفر نفس المبلغ نقدًا.', decision: 'نراقب السيولة والتزامات المنشأة قبل اتخاذ قرارات الإنفاق.' },
-    ],
-    outputs: ['قائمة مالية واضحة ومفهومة', 'لوحة مؤشرات للمبيعات والتكلفة والربح والسيولة', 'تحليل تكلفة الطعام والهدر والمخزون', 'تحليل ربحية الأصناف والنشاط', 'تقارير تساعد على التسعير والشراء وضبط المصروفات', 'متابعة يومية للتغيرات والأرقام المهمة'],
-    message: 'السلام عليكم، أريد معرفة الأرقام والمؤشرات التي يجب متابعتها في مطعمي أو الكافيه.',
+    outputs:['قائمة دخل واضحة','تقرير تكلفة الطعام والهدر','تحليل ربحية الأصناف والفروع','تقرير السيولة والمخزون','مؤشرات تساعدك على التسعير والشراء وضبط المصروفات'],
+    message:'السلام عليكم، أريد معرفة الوضع المالي الحقيقي لمطعمي والمؤشرات التي يجب متابعتها.'
   },
   contracting: {
-    slug: 'contracting',
-    title: 'الإدارة المالية لقطاع المقاولات',
-    question: 'هل تعرف ربحية كل مشروع قبل أن تنتهي منه؟',
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=3840&q=90',
-    problems: ['المشروع يبدو مربحًا لكن التكلفة الفعلية غير واضحة.', 'المصاريف والتكاليف موزعة ولا يمكن معرفة تكلفة كل مشروع بدقة.', 'التدفقات النقدية لا تتوافق دائمًا مع حجم الأعمال المنفذة.', 'تأخر المستخلصات والتحصيل يضغط على السيولة.', 'صعوبة معرفة أثر أي تأخير أو زيادة تكلفة على ربحية المشروع.'],
-    kpis: [
-      { label: 'قيمة العقود', value: '1.80M ر.س', note: 'مثال توضيحي' },
-      { label: 'تكلفة منفذة', value: '1.02M ر.س', note: 'مثال توضيحي' },
-      { label: 'نسبة الإنجاز', value: '62%', note: 'مثال توضيحي' },
-      { label: 'الربحية المتوقعة', value: '18.4%', note: 'مثال توضيحي' },
-      { label: 'المستحق للتحصيل', value: '265K ر.س', note: 'مثال توضيحي', trend: 'up' },
-      { label: 'التدفق النقدي', value: '118K ر.س', note: 'مثال توضيحي' },
-      { label: 'التزامات قريبة', value: '174K ر.س', note: 'مثال توضيحي' },
-      { label: 'انحراف التكلفة', value: '+7.2%', note: 'مثال توضيحي', trend: 'up' },
+    title:'الإدارة المالية لقطاع المقاولات', question:'هل تعرف ربحية مشروعك قبل أن ينتهي؟',
+    image:'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2400&q=85',
+    problems:['تكلفة المشروع الفعلية لا تظهر بوضوح.','زيادة التكاليف قد تمر قبل اكتشاف أثرها على الربح.','المستخلصات والتحصيل تضغط على السيولة.','صعوبة مقارنة نسبة الإنجاز بالتكلفة والربحية المتوقعة.'],
+    reportTitle:'تقرير المشروع المالي — مثال توضيحي',
+    reportRows:[['قيمة العقود','1.80M ر.س','إجمالي',undefined,'92%'],['التكلفة المنفذة','1.02M ر.س','56.7%','up','57%'],['نسبة الإنجاز','62%','مقابل التكلفة',undefined,'62%'],['الربحية المتوقعة','18.4%','مستهدف','up','49%'],['المستحق للتحصيل','265K ر.س','ضغط سيولة','down','39%'],['انحراف التكلفة','+7.2%','تحذير','up','28%']].map(([label,value,change,direction,width])=>({label,value,change,direction:direction as 'up'|'down'|undefined,width})),
+    meanings:[
+      {metric:'انحراف التكلفة +7.2%',meaning:'الزيادة قد تقلل هامش المشروع إذا استمرت.',decision:'تحديد مصدر الانحراف وإعادة تقدير ربحية المشروع.'},
+      {metric:'إنجاز 62%',meaning:'لا يكفي معرفة الإنجاز دون ربطه بالتكلفة والتحصيل.',decision:'مقارنة الإنجاز بالتكلفة والإيراد والمستخلصات.'},
+      {metric:'تحصيل 265K',meaning:'الأرباح لا تحل مشكلة السيولة إذا تأخر التحصيل.',decision:'ترتيب التحصيل والالتزامات حسب الأولوية.'}
     ],
-    meanings: [
-      { number: '+7.2%', title: 'انحراف التكلفة', text: 'زيادة التكلفة عن الخطة قد تقلل هامش المشروع إذا لم يتم اكتشافها مبكرًا.', decision: 'نحدد مصدر الانحراف ونراجع أثره على الربحية المتوقعة.' },
-      { number: '62%', title: 'نسبة الإنجاز', text: 'نسبة الإنجاز وحدها لا تكفي؛ يجب مقارنتها بالتكلفة والإيراد والتحصيل.', decision: 'نربط تقدم المشروع بالأرقام لنكشف مبكرًا عن أي ضغط مالي.' },
-      { number: '265K', title: 'المستحق للتحصيل', text: 'المبلغ المستحق قد يكون سببًا رئيسيًا في ضغط السيولة حتى مع وجود ربح.', decision: 'نحدد الأولويات ونربط التحصيل بالتزامات المشروع.' },
-    ],
-    outputs: ['ربحية واضحة لكل مشروع', 'متابعة تكاليف المشروع مقابل الخطة', 'تحليل الإنجاز والتكلفة والربحية', 'متابعة المستخلصات والتحصيل والسيولة', 'تقارير تساعد الإدارة على اكتشاف الانحرافات مبكرًا', 'متابعة يومية للأرقام المؤثرة في القرار'],
-    message: 'السلام عليكم، أريد معرفة كيفية متابعة ربحية مشاريعي وتكاليفها وسيولتها.',
+    outputs:['ربحية كل مشروع','تقرير تكلفة مقابل الإنجاز','متابعة المستخلصات والتحصيل','توقع التدفق النقدي','كشف مبكر لانحرافات التكلفة'],
+    message:'السلام عليكم، أريد معرفة ربحية مشاريعي والتكاليف والسيولة بشكل واضح.'
   },
   'trade-retail': {
-    slug: 'trade-retail',
-    title: 'الإدارة المالية للتجارة والتجزئة',
-    question: 'هل مبيعاتك المرتفعة تتحول فعلًا إلى ربح؟',
-    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=3840&q=90',
-    problems: ['ارتفاع المبيعات دون وضوح في هامش الربح الحقيقي.', 'المخزون يستهلك السيولة وقد يحتوي على أصناف بطيئة الحركة.', 'تغير أسعار الشراء يؤثر على الربحية دون ملاحظة سريعة.', 'صعوبة معرفة المنتجات أو الفروع الأكثر ربحية.', 'قرارات الشراء والتسعير تتم أحيانًا دون صورة مالية متكاملة.'],
-    kpis: [
-      { label: 'المبيعات', value: '420K ر.س', note: 'مثال توضيحي' },
-      { label: 'تكلفة المبيعات', value: '276K ر.س', note: 'مثال توضيحي', trend: 'up' },
-      { label: 'الهامش', value: '34.3%', note: 'مثال توضيحي' },
-      { label: 'المخزون', value: '310K ر.س', note: 'مثال توضيحي' },
-      { label: 'الأصناف البطيئة', value: '14%', note: 'مثال توضيحي', trend: 'up' },
-      { label: 'المصروفات', value: '82K ر.س', note: 'مثال توضيحي' },
-      { label: 'صافي الربح', value: '62K ر.س', note: 'مثال توضيحي', trend: 'up' },
-      { label: 'السيولة', value: '95K ر.س', note: 'مثال توضيحي' },
+    title:'الإدارة المالية للتجارة والتجزئة', question:'هل المبيعات المرتفعة تتحول فعلًا إلى ربح؟',
+    image:'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=2400&q=85',
+    problems:['ارتفاع المبيعات دون وضوح في الهامش الحقيقي.','المخزون يجمّد جزءًا كبيرًا من رأس المال.','تغير تكلفة الشراء يؤثر على الربح بسرعة.','صعوبة معرفة المنتجات أو الفروع الأكثر ربحية.'],
+    reportTitle:'تقرير المبيعات والربحية — مثال توضيحي',
+    reportRows:[['المبيعات','420K ر.س','+12.5%','up','90%'],['تكلفة المبيعات','276K ر.س','65.7%','down','66%'],['هامش الربح','34.3%','تحت المتابعة',undefined,'43%'],['المخزون','310K ر.س','مرتفع','down','72%'],['أصناف بطيئة','14%','تحتاج قرار','down','28%'],['صافي الربح','62K ر.س','14.8%','up','34%']].map(([label,value,change,direction,width])=>({label,value,change,direction:direction as 'up'|'down'|undefined,width})),
+    meanings:[
+      {metric:'الهامش 34.3%',meaning:'المبيعات وحدها لا تكشف جودة الربح.',decision:'مراجعة تسعير المنتجات وتكلفة الشراء.'},
+      {metric:'المخزون 310K',meaning:'رأس مال كبير مرتبط ببضاعة لم تتحول بعد إلى نقد.',decision:'تحديد البطيء وربط الشراء بالدوران.'},
+      {metric:'أصناف بطيئة 14%',meaning:'السيولة معرضة للتجميد أو الخصم أو التلف.',decision:'تحديد الأصناف التي تحتاج تصرفًا سريعًا.'}
     ],
-    meanings: [
-      { number: '34%', title: 'هامش الربح', text: 'المبيعات المرتفعة لا تعني بالضرورة ربحًا مرتفعًا إذا كانت تكلفة الشراء تستهلك الهامش.', decision: 'نحدد المنتجات التي تحتاج إلى إعادة تسعير أو مراجعة تكلفة.' },
-      { number: '310K', title: 'المخزون', text: 'جزء من السيولة قد يكون مرتبطًا بمخزون لا يتحرك بالسرعة المطلوبة.', decision: 'نحدد المخزون البطيء ونربط قرارات الشراء بالدوران والطلب.' },
-      { number: '14%', title: 'أصناف بطيئة الحركة', text: 'بطء الحركة قد يعني تجميد رأس المال وارتفاع مخاطر الخصم أو التلف.', decision: 'نحدد الأصناف التي تحتاج إلى تصرف بدل استمرار تجميد السيولة.' },
-    ],
-    outputs: ['تحليل المبيعات وتكلفة المبيعات', 'متابعة هامش الربح حسب المنتج أو النشاط', 'تحليل المخزون وسرعة الدوران', 'متابعة المصروفات والسيولة', 'تقارير تدعم قرارات الشراء والتسعير', 'مؤشرات مالية واضحة للمتابعة اليومية'],
-    message: 'السلام عليكم، أريد معرفة هامش الربح والمخزون والسيولة في نشاطي التجاري.',
+    outputs:['قائمة دخل مختصرة','تحليل هامش المنتجات والفروع','تقرير المخزون والدوران','تحليل المصروفات والسيولة','مؤشرات تدعم قرارات الشراء والتسعير'],
+    message:'السلام عليكم، أريد تحليل مبيعاتي ومخزوني وهامش الربح لاتخاذ قرارات أفضل.'
   },
   'pharmacies-health': {
-    slug: 'pharmacies-health',
-    title: 'الإدارة المالية للصيدليات والأنشطة الصحية',
-    question: 'هل تعرف أين يذهب هامش ربح نشاطك الصحي؟',
-    image: 'https://images.unsplash.com/photo-1580281658223-9b93f18ae9ae?auto=format&fit=crop&w=3840&q=90',
-    problems: ['المبيعات لا تعكس وحدها الربحية الفعلية للنشاط.', 'المخزون قد يضم أصنافًا بطيئة الحركة أو يستهلك سيولة كبيرة.', 'ارتفاع المصروفات أو تكلفة المبيعات قد لا يظهر أثره سريعًا.', 'صعوبة متابعة ربحية النشاط مع كثرة العمليات اليومية.', 'الحاجة إلى مؤشرات مالية واضحة بدل الاعتماد على المبيعات فقط.'],
-    kpis: [
-      { label: 'المبيعات', value: '360K ر.س', note: 'مثال توضيحي' },
-      { label: 'تكلفة المبيعات', value: '248K ر.س', note: 'مثال توضيحي', trend: 'up' },
-      { label: 'الهامش', value: '31.1%', note: 'مثال توضيحي' },
-      { label: 'المخزون', value: '185K ر.س', note: 'مثال توضيحي' },
-      { label: 'بطيء الحركة', value: '11%', note: 'مثال توضيحي', trend: 'up' },
-      { label: 'المصروفات', value: '61K ر.س', note: 'مثال توضيحي' },
-      { label: 'صافي الربح', value: '51K ر.س', note: 'مثال توضيحي', trend: 'up' },
-      { label: 'السيولة', value: '73K ر.س', note: 'مثال توضيحي' },
+    title:'الإدارة المالية للصيدليات والمنشآت الصحية', question:'هل تعرف أي جزء من نشاطك يحقق الربح فعلًا؟',
+    image:'https://images.unsplash.com/photo-1580281658223-9b93f18ae9ae?auto=format&fit=crop&w=2400&q=85',
+    problems:['المبيعات لا تعكس وحدها الربحية الحقيقية.','المخزون والأصناف بطيئة الحركة تربط السيولة.','الخصومات وتغير تكلفة الشراء تضغط على الهامش.','صعوبة معرفة أثر المصروفات على ربحية النشاط.'],
+    reportTitle:'تقرير مالي للنشاط الصحي — مثال توضيحي',
+    reportRows:[['المبيعات','360K ر.س','+6.8%','up','82%'],['تكلفة المبيعات','258K ر.س','71.7%','down','72%'],['الهامش','28.3%','تحت المتابعة',undefined,'37%'],['المخزون','195K ر.س','مرتفع','down','61%'],['مصروفات التشغيل','54K ر.س','+3.2%','up','31%'],['صافي الربح','48K ر.س','13.3%','up','27%']].map(([label,value,change,direction,width])=>({label,value,change,direction:direction as 'up'|'down'|undefined,width})),
+    meanings:[
+      {metric:'الهامش 28.3%',meaning:'ارتفاع المبيعات مع انخفاض الهامش قد لا يحسن الربح.',decision:'تحليل تكلفة الشراء والخصومات وربحية الأصناف.'},
+      {metric:'المخزون 195K',meaning:'السيولة قد تكون مرتبطة بأصناف لا تتحرك بالسرعة المطلوبة.',decision:'متابعة الدوران والأصناف البطيئة.'},
+      {metric:'المصروفات 54K',meaning:'زيادة المصروفات تقلل ما يتبقى من الهامش.',decision:'مقارنة المصروفات بالعائد والأثر على الربحية.'}
     ],
-    meanings: [
-      { number: '31%', title: 'هامش الربح', text: 'الهامش يحتاج إلى القراءة مع تكلفة المشتريات والمصروفات والمخزون.', decision: 'نحدد مصادر الضغط على الربحية ونقيس أثر أي تعديل.' },
-      { number: '185K', title: 'المخزون', text: 'ارتفاع المخزون قد يعني أموالًا غير مستغلة بالشكل الأمثل.', decision: 'نراقب قيمة المخزون وحركته ونحدد نقاط المراجعة.' },
-      { number: '11%', title: 'بطيء الحركة', text: 'الأصناف البطيئة قد تجمد السيولة وتؤثر على كفاءة رأس المال العامل.', decision: 'نحدد الأصناف التي تستحق قرارًا بدل تركها دون متابعة.' },
-    ],
-    outputs: ['متابعة المبيعات والتكلفة والهامش', 'تحليل المخزون وحركته', 'متابعة المصروفات والسيولة', 'تقارير مالية وإدارية مفهومة', 'مؤشرات تساعد على ضبط الربحية ورأس المال العامل', 'متابعة مستمرة للأرقام المهمة'],
-    message: 'السلام عليكم، أريد معرفة أهم المؤشرات المالية التي يجب متابعتها في الصيدلية أو النشاط الصحي.',
+    outputs:['قائمة دخل واضحة','تحليل الهامش والتكلفة','تقرير المخزون والدوران','متابعة المصروفات والسيولة','مؤشرات تساعد على ضبط التسعير والشراء'],
+    message:'السلام عليكم، أريد معرفة ربحية نشاطي الصحي ومؤشرات المخزون والسيولة.'
   },
   'services-professions': {
-    slug: 'services-professions',
-    title: 'الإدارة المالية للخدمات والمهن',
-    question: 'أي خدمة تحقق لك أعلى ربح؟ وأين تذهب إيراداتك؟',
-    image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=3840&q=90',
-    problems: ['الإيرادات موجودة لكن ربحية كل خدمة غير واضحة.', 'تأخر التحصيل يضغط على السيولة.', 'المصروفات متفرقة ويصعب ربطها بالخدمات.', 'صعوبة معرفة تكلفة تقديم الخدمة وهامشها.', 'اتخاذ قرارات التسعير أو التوسع دون أرقام كافية.'],
-    kpis: [
-      { label: 'الإيرادات', value: '210K ر.س', note: 'مثال توضيحي' },
-      { label: 'تكلفة الخدمات', value: '78K ر.س', note: 'مثال توضيحي', trend: 'up' },
-      { label: 'هامش الربح', value: '62.9%', note: 'مثال توضيحي' },
-      { label: 'المصروفات', value: '69K ر.س', note: 'مثال توضيحي' },
-      { label: 'المستحق للتحصيل', value: '54K ر.س', note: 'مثال توضيحي', trend: 'up' },
-      { label: 'صافي الربح', value: '63K ر.س', note: 'مثال توضيحي', trend: 'up' },
-      { label: 'تكلفة الخدمة', value: '37%', note: 'مثال توضيحي' },
-      { label: 'السيولة', value: '48K ر.س', note: 'مثال توضيحي' },
+    title:'الإدارة المالية للخدمات والمهن', question:'هل تعرف تكلفة الخدمة التي تقدمها وربحيتها؟',
+    image:'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2400&q=85',
+    problems:['الإيرادات موجودة لكن تكلفة تقديم الخدمة غير واضحة.','المصروفات الثابتة والمتغيرة تقلل الربحية دون متابعة.','صعوبة معرفة الخدمات أو العملاء الأكثر ربحية.','التحصيل قد يتأخر رغم تسجيل الإيراد.'],
+    reportTitle:'تقرير ربحية الخدمات — مثال توضيحي',
+    reportRows:[['الإيرادات','240K ر.س','+10.2%','up','78%'],['تكلفة تقديم الخدمة','92K ر.س','38.3%','down','39%'],['المصروفات','71K ر.س','+5.6%','up','30%'],['هامش التشغيل','32.1%','تحت المتابعة',undefined,'45%'],['المستحق للتحصيل','58K ر.س','متأخر','down','24%'],['صافي الربح','77K ر.س','32.1%','up','31%']].map(([label,value,change,direction,width])=>({label,value,change,direction:direction as 'up'|'down'|undefined,width})),
+    meanings:[
+      {metric:'تكلفة الخدمة 38.3%',meaning:'ارتفاع التكلفة قد يعني أن بعض الخدمات لا تحقق الهامش المتوقع.',decision:'حساب ربحية كل خدمة ومراجعة التسعير والتكلفة.'},
+      {metric:'تحصيل 58K',meaning:'الإيراد المسجل لا يعني بالضرورة نقدية متاحة.',decision:'ترتيب التحصيل وربطه بالالتزامات.'},
+      {metric:'هامش التشغيل 32.1%',meaning:'المهم ليس حجم الإيراد فقط بل ما يتبقى بعد تكلفة التشغيل.',decision:'تركيز النمو على الخدمات والعملاء الأكثر ربحية.'}
     ],
-    meanings: [
-      { number: '63%', title: 'هامش الربح', text: 'ارتفاع الهامش لا يعني أن جميع الخدمات متساوية في الربحية.', decision: 'نقارن ربحية الخدمات لمعرفة أين يستحق الوقت والموارد أن تذهب.' },
-      { number: '54K', title: 'مستحق للتحصيل', text: 'الإيراد المسجل لا يصبح سيولة إلا بعد التحصيل.', decision: 'نحدد المبالغ التي تحتاج إلى متابعة ونربطها بالسيولة.' },
-      { number: '37%', title: 'تكلفة الخدمة', text: 'معرفة تكلفة تقديم الخدمة تساعد على التسعير والتوسع بصورة أكثر أمانًا.', decision: 'نقيس التكلفة ونحدد ما إذا كان السعر الحالي يحقق العائد المطلوب.' },
-    ],
-    outputs: ['تحليل ربحية الخدمات', 'متابعة الإيرادات والتحصيل', 'تحليل المصروفات وتكلفة تقديم الخدمة', 'تقارير مالية وإدارية واضحة', 'مؤشرات تساعد على التسعير والتوسع', 'متابعة مستمرة للسيولة والربحية'],
-    message: 'السلام عليكم، أريد معرفة ربحية خدماتي وتكلفة التشغيل والسيولة بشكل أوضح.',
+    outputs:['تحليل ربحية الخدمات','تقرير الإيرادات والتحصيل','متابعة المصروفات','مؤشرات تساعد على التسعير','صورة واضحة عن السيولة والربحية'],
+    message:'السلام عليكم، أريد معرفة ربحية خدماتي وتكلفة التشغيل والتحصيل.'
   },
   'startups-growing': {
-    slug: 'startups-growing',
-    title: 'الإدارة المالية للشركات الناشئة والمتنامية',
-    question: 'كم لديك من الوقت قبل أن تحتاج إلى تمويل أو خفض المصروفات؟',
-    image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=3840&q=90',
-    problems: ['النمو سريع لكن الصورة المالية لا تتطور بنفس السرعة.', 'معدل حرق النقد غير واضح بشكل مستمر.', 'صعوبة معرفة مدة بقاء السيولة الحالية.', 'المصروفات ترتفع قبل معرفة أثرها على المدرج النقدي.', 'الحاجة إلى ميزانية وتوقعات تساعد الإدارة على التخطيط.'],
-    kpis: [
-      { label: 'الإيرادات الشهرية', value: '320K ر.س', note: 'مثال توضيحي', trend: 'up' },
-      { label: 'المصروفات الشهرية', value: '410K ر.س', note: 'مثال توضيحي', trend: 'up' },
-      { label: 'حرق النقد', value: '90K ر.س', note: 'مثال توضيحي', trend: 'up' },
-      { label: 'السيولة', value: '1.08M ر.س', note: 'مثال توضيحي' },
-      { label: 'المدرج النقدي', value: '12 شهرًا', note: 'مثال توضيحي' },
-      { label: 'نمو الإيرادات', value: '18%', note: 'مثال توضيحي', trend: 'up' },
-      { label: 'المصروفات الثابتة', value: '230K ر.س', note: 'مثال توضيحي' },
-      { label: 'الربحية', value: '-90K ر.س', note: 'مثال توضيحي', trend: 'down' },
+    title:'الإدارة المالية للشركات الناشئة والمتنامية', question:'كم لديك من الوقت قبل أن تحتاج إلى تمويل جديد؟',
+    image:'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=2400&q=85',
+    problems:['النمو يحدث لكن الصورة المالية لا تواكب سرعة القرارات.','المصروفات ترتفع ولا توجد رؤية واضحة لمعدل الحرق.','صعوبة تقدير مدة بقاء السيولة المتاحة.','القرارات الاستثمارية والتوظيفية تحتاج إلى أرقام أدق.'],
+    reportTitle:'تقرير السيولة والنمو — مثال توضيحي',
+    reportRows:[['الإيرادات الشهرية','180K ر.س','+18.6%','up','72%'],['المصروفات الشهرية','145K ر.س','+11.4%','up','58%'],['صافي التدفق','+35K ر.س','موجب','up','36%'],['السيولة المتاحة','620K ر.س','مثال',undefined,'82%'],['معدل الحرق','0 ر.س','بحسب المثال',undefined,'18%'],['نقطة التعادل','≈ 150K','إيراد شهري',undefined,'51%']].map(([label,value,change,direction,width])=>({label,value,change,direction:direction as 'up'|'down'|undefined,width})),
+    meanings:[
+      {metric:'الإيرادات 180K',meaning:'النمو يصبح أكثر أمانًا عندما تعرف تكلفته وأثره على النقدية.',decision:'ربط النمو بالمصروفات والهامش والتدفق النقدي.'},
+      {metric:'المصروفات 145K',meaning:'زيادة الإنفاق قبل فهم أثره قد تسرع استهلاك السيولة.',decision:'تحديد المصروفات التي تدعم النمو وتلك التي يمكن ضبطها.'},
+      {metric:'نقطة التعادل 150K',meaning:'رقم واضح لما يجب تحقيقه شهريًا لتغطية التكاليف.',decision:'متابعة الاقتراب من التعادل قبل قرارات التوسع.'}
     ],
-    meanings: [
-      { number: '90K', title: 'حرق النقد الشهري', text: 'هذا الرقم يوضح سرعة استهلاك السيولة الحالية وليس مجرد حجم المصروفات.', decision: 'نراقب أسباب الحرق ونقيس أثر أي خفض أو استثمار جديد.' },
-      { number: '12 شهرًا', title: 'المدرج النقدي', text: 'يعطي الإدارة تصورًا عن المدة المتاحة قبل الحاجة إلى تغيير الخطة أو التمويل.', decision: 'نستخدمه للتخطيط بدل انتظار ضغط السيولة.' },
-      { number: '18%', title: 'نمو الإيرادات', text: 'النمو مهم، لكن يجب أن نعرف هل ينمو النشاط بطريقة صحية مقارنة بالتكلفة والسيولة.', decision: 'نقارن النمو بالمصروفات والحرق للوصول إلى صورة متوازنة.' },
-    ],
-    outputs: ['متابعة السيولة وحرق النقد', 'حساب المدرج النقدي والتوقعات', 'تقارير أداء مالية للإدارة', 'ميزانية وتخطيط مالي عملي', 'تحليل المصروفات والنمو والربحية', 'مؤشرات تساعد على قرارات التوسع والتمويل'],
-    message: 'السلام عليكم، أريد معرفة معدل حرق النقد والمدرج النقدي وأهم المؤشرات المالية لشركتي.',
-  },
+    outputs:['قائمة دخل مختصرة','تقرير التدفق النقدي','متابعة المصروفات ومعدل الحرق','نقطة التعادل ومؤشرات النمو','تقارير تساعد على قرارات التوسع والتمويل'],
+    message:'السلام عليكم، أريد معرفة وضع السيولة والنمو ومعدل الحرق ونقطة التعادل لشركتي.'
+  }
 };
 
-const whatsappNumber = '966511294383';
-
-function TrendIcon({ trend }: { trend?: KPI['trend'] }) {
-  if (!trend) return null;
-  const Icon = trend === 'up' ? TrendingUp : TrendingDown;
-  return <Icon className="h-4 w-4" aria-hidden="true" />;
-}
+const whatsappUrl = (message: string) => `https://wa.me/966511294383?text=${encodeURIComponent(message)}`;
 
 export default function SectorDetailPage({ slug }: { slug: string }) {
   const sector = sectors[slug];
+  if (!sector) return <main dir="rtl" className="min-h-screen py-16 text-center"><Container><h1 className="text-2xl font-bold">القطاع غير موجود</h1><a href="/" className="mt-4 inline-flex items-center gap-2 text-emerald-700"><ArrowRight className="h-4 w-4" /> العودة للرئيسية</a></Container></main>;
 
-  if (!sector) {
-    return (
-      <SectionWrapper variant="white" spacing="large">
-        <Container>
-          <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-3xl font-bold text-text-primary">القطاع غير موجود</h1>
-            <a href="/#sectors-section-wrapper" className="mt-6 inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-bold text-white">
-              العودة إلى القطاعات <ArrowRight className="h-4 w-4" />
-            </a>
-          </div>
-        </Container>
-      </SectionWrapper>
-    );
-  }
+  return <main dir="rtl" className="bg-white text-slate-900">
+    <section className="bg-slate-950 text-white">
+      <Container className="py-6 md:py-8">
+        <a href="/#sectors-section-wrapper" className="mb-3 inline-flex items-center gap-2 text-xs text-slate-300"><ArrowRight className="h-4 w-4" /> العودة إلى القطاعات</a>
+        <div className="grid items-center gap-5 lg:grid-cols-[1fr_300px]">
+          <div><p className="mb-1 text-xs text-emerald-300">الإدارة المالية حسب نشاطك</p><h1 className="text-2xl font-extrabold leading-tight md:text-4xl">{sector.question}</h1><p className="mt-1 text-sm text-slate-300">{sector.title}</p></div>
+          <img src={sector.image} alt={sector.title} className="h-32 w-full rounded-lg object-cover" />
+        </div>
+      </Container>
+    </section>
 
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(sector.message)}`;
+    <Container className="py-6 md:py-8">
+      <section className="border-b border-slate-200 pb-6">
+        <h2 className="text-lg font-bold md:text-xl">المشاكل التي قد تواجه نشاطك</h2>
+        <div className="mt-3 grid gap-x-8 gap-y-1 md:grid-cols-2">{sector.problems.map(p=><p key={p} className="text-sm leading-6 text-slate-600">{p}</p>)}</div>
+      </section>
 
-  return (
-    <div className="bg-white" dir="rtl">
-      <SectionWrapper variant="white" spacing="default">
-        <Container>
-          <a href="/#sectors-section-wrapper" className="mb-5 inline-flex items-center gap-2 text-sm font-semibold text-text-secondary hover:text-primary">
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            العودة إلى القطاعات
-          </a>
+      <section className="border-b border-slate-200 py-6">
+        <div className="flex flex-wrap items-end justify-between gap-2"><div><h2 className="text-lg font-bold md:text-xl">{sector.reportTitle}</h2><p className="mt-1 text-[11px] text-slate-500">الأرقام نموذج بصري وليست بيانات منشأة فعلية.</p></div><span className="text-[11px] text-slate-400">المبيعات · التكلفة · الربحية · السيولة</span></div>
+        <div className="mt-4 overflow-hidden border-y border-slate-200">
+          <div className="grid grid-cols-[1.35fr_1fr_90px] bg-slate-50 px-3 py-2 text-[11px] font-semibold text-slate-500"><span>المؤشر</span><span>المستوى</span><span>التغير</span></div>
+          {sector.reportRows.map((row,i)=><div key={row.label} className={`grid grid-cols-[1.35fr_1fr_90px] items-center gap-3 px-3 py-2.5 ${i<sector.reportRows.length-1?'border-b border-slate-100':''}`}>
+            <span className="text-sm font-medium text-slate-700">{row.label}</span>
+            <div className="flex items-center justify-between gap-2"><strong className="text-sm text-slate-950">{row.value}</strong><span className="h-1.5 w-16 overflow-hidden rounded-full bg-slate-100"><span className="block h-full rounded-full bg-emerald-500" style={{width:row.width}} /></span></div>
+            <span className={`flex items-center gap-1 text-[11px] ${row.direction==='down'?'text-amber-600':row.direction==='up'?'text-emerald-700':'text-slate-500'}`}>{row.direction==='down'?<TrendingDown className="h-3.5 w-3.5" />:row.direction==='up'?<TrendingUp className="h-3.5 w-3.5" />:null}{row.change}</span>
+          </div>)}
+        </div>
+      </section>
 
-          <div className="overflow-hidden rounded-3xl border border-border-subtle bg-white shadow-sm">
-            <div className="relative aspect-[16/7] min-h-[230px] overflow-hidden bg-surface-subtle md:min-h-[360px]">
-              <img
-                src={sector.image}
-                srcSet={`${sector.image.replace('w=3840', 'w=768')} 768w, ${sector.image.replace('w=3840', 'w=1280')} 1280w, ${sector.image.replace('w=3840', 'w=1920')} 1920w, ${sector.image} 3840w`}
-                sizes="100vw"
-                alt={sector.title}
-                fetchPriority="high"
-                decoding="async"
-                className="h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 p-5 sm:p-8 md:p-10">
-                <p className="mb-2 text-sm font-semibold text-white/85">القائد | الإدارة المالية المتكاملة عن بعد</p>
-                <h1 className="max-w-4xl text-2xl font-bold leading-tight text-white sm:text-3xl md:text-5xl">{sector.question}</h1>
-                <p className="mt-3 max-w-3xl text-sm leading-6 text-white/90 sm:text-base">{sector.title}</p>
-              </div>
-            </div>
+      <section className="border-b border-slate-200 py-6">
+        <h2 className="text-lg font-bold md:text-xl">ماذا تعني الأرقام لرب المال؟</h2>
+        <div className="mt-3 divide-y divide-slate-200 border-y border-slate-200">{sector.meanings.map(item=><div key={item.metric} className="grid gap-1.5 py-3.5 md:grid-cols-[210px_1fr_1fr] md:gap-5"><strong className="text-sm">{item.metric}</strong><p className="text-sm leading-6 text-slate-600">{item.meaning}</p><p className="text-sm font-semibold leading-6 text-emerald-800">القرار: {item.decision}</p></div>)}</div>
+      </section>
 
-            <section className="p-5 sm:p-8 md:p-10">
-              <div className="mx-auto max-w-4xl text-center">
-                <p className="text-sm font-bold text-primary">أولًا: هل تواجه هذه المشاكل؟</p>
-                <h2 className="mt-2 text-2xl font-bold text-text-primary sm:text-3xl">مشاكل تظهر في الأرقام قبل أن تظهر في النشاط</h2>
-              </div>
-              <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {sector.problems.map((item) => (
-                  <div key={item} className="rounded-2xl border border-border-subtle bg-surface-subtle p-4 text-sm leading-6 text-text-primary">
-                    <CheckCircle2 className="mb-2 h-5 w-5 text-primary" aria-hidden="true" />
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </section>
+      <section className="border-b border-slate-200 py-6"><div className="grid gap-4 md:grid-cols-[1fr_2fr]"><div><h2 className="text-lg font-bold md:text-xl">ماذا ستحصل عليه؟</h2><p className="mt-1 text-sm leading-6 text-slate-500">تقارير مالية مختصرة تساعدك على رؤية الوضع واتخاذ الخطوة التالية.</p></div><div className="grid gap-x-8 gap-y-1 md:grid-cols-2">{sector.outputs.map(o=><p key={o} className="text-sm leading-6 text-slate-700">{o}</p>)}</div></div></section>
 
-            <section className="border-y border-border-subtle bg-surface-subtle p-5 sm:p-8 md:p-10">
-              <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-                <div>
-                  <p className="text-sm font-bold text-primary">لوحة أرقام</p>
-                  <h2 className="mt-1 text-2xl font-bold text-text-primary">الأرقام التي تحتاج أن تراها</h2>
-                </div>
-                <span className="text-xs font-medium text-text-secondary">أمثلة توضيحية وليست بيانات منشأة فعلية</span>
-              </div>
-              <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4">
-                {sector.kpis.map((kpi) => (
-                  <div key={kpi.label} className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-black/5">
-                    <div className="flex items-center justify-between gap-2 text-xs font-semibold text-text-secondary">
-                      <span>{kpi.label}</span>
-                      <span className="text-primary"><TrendIcon trend={kpi.trend} /></span>
-                    </div>
-                    <div className="mt-2 text-lg font-extrabold tracking-tight text-text-primary sm:text-xl">{kpi.value}</div>
-                    <div className="mt-1 text-[11px] text-text-secondary">{kpi.note}</div>
-                  </div>
-                ))}
-              </div>
-            </section>
+      <section className="border-b border-slate-200 py-6"><h2 className="text-lg font-bold md:text-xl">كيف نعمل؟</h2><div className="mt-3 grid grid-cols-2 gap-x-5 gap-y-2 md:grid-cols-4">{commonProcess.map((step,i)=><div key={step} className="flex items-start gap-2"><span className="text-xs font-bold text-emerald-700">{String(i+1).padStart(2,'0')}</span><span className="text-sm text-slate-600">{step}</span></div>)}</div></section>
 
-            <section className="p-5 sm:p-8 md:p-10">
-              <div className="mx-auto max-w-4xl text-center">
-                <p className="text-sm font-bold text-primary">من الرقم إلى القرار</p>
-                <h2 className="mt-2 text-2xl font-bold text-text-primary sm:text-3xl">ماذا تعني الأرقام؟</h2>
-                <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-text-secondary">الهدف ليس جمع أرقام أكثر؛ الهدف أن تعرف ما الذي يحدث في منشأتك وما الخطوة التي تستحق أن تتخذها.</p>
-              </div>
-              <div className="mt-7 grid gap-4 lg:grid-cols-3">
-                {sector.meanings.map((item) => (
-                  <article key={item.number} className="rounded-2xl border border-border-subtle p-5">
-                    <div className="text-3xl font-extrabold text-primary">{item.number}</div>
-                    <h3 className="mt-2 text-lg font-bold text-text-primary">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-text-secondary">{item.text}</p>
-                    <div className="mt-4 rounded-xl bg-surface-subtle p-3 text-sm font-semibold leading-6 text-text-primary">
-                      <span className="text-primary">القرار المحتمل:</span> {item.decision}
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </section>
-
-            <section className="border-t border-border-subtle bg-surface-subtle p-5 sm:p-8 md:p-10">
-              <div className="mx-auto max-w-4xl text-center">
-                <p className="text-sm font-bold text-primary">مخرجات العمل</p>
-                <h2 className="mt-2 text-2xl font-bold text-text-primary sm:text-3xl">ماذا ستحصل عليه؟</h2>
-              </div>
-              <div className="mx-auto mt-7 grid max-w-5xl gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {sector.outputs.map((item) => (
-                  <div key={item} className="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-sm">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
-                    <span className="text-sm font-semibold leading-6 text-text-primary">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            <section className="p-5 sm:p-8 md:p-10">
-              <div className="mx-auto max-w-4xl text-center">
-                <p className="text-sm font-bold text-primary">طريقة العمل</p>
-                <h2 className="mt-2 text-2xl font-bold text-text-primary sm:text-3xl">كيف نعمل؟</h2>
-              </div>
-              <div className="mx-auto mt-8 grid max-w-5xl gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                {commonProcess.map((step, index) => (
-                  <div key={step} className="relative rounded-2xl border border-border-subtle bg-white p-4 shadow-sm">
-                    <div className="flex items-center gap-3">
-                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-extrabold text-white">{index + 1}</span>
-                      <span className="text-sm font-bold leading-6 text-text-primary">{step}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            <section className="border-t border-border-subtle bg-surface-subtle p-5 sm:p-8 md:p-10">
-              <div className="mx-auto max-w-3xl text-center">
-                <p className="text-sm font-bold text-primary">لماذا القائد؟</p>
-                <h2 className="mt-2 text-2xl font-bold text-text-primary sm:text-3xl">لأنك لا تحتاج أرقامًا أكثر... تحتاج أن تعرف ماذا تفعل بها.</h2>
-                <div className="mt-6 grid gap-3 text-right sm:grid-cols-2">
-                  {['نفهم طبيعة النشاط ونركز على أرقامه المهمة.', 'نحوّل البيانات إلى تقارير ومؤشرات مفهومة.', 'المتابعة مستمرة وليست مجرد إصدار تقرير.', 'الهدف النهائي قرارات أوضح مبنية على أرقام واضحة.'].map((item) => (
-                    <div key={item} className="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-sm">
-                      <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
-                      <span className="text-sm font-semibold leading-6 text-text-primary">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            <section className="bg-primary p-6 text-center sm:p-10">
-              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">هل تريد أن تعرف الوضع المالي الحقيقي لمنشأتك؟</h2>
-              <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-white/90">ناقشنا احتياج منشأتك، وسنحدد معك الأرقام والمؤشرات التي تستحق المتابعة.</p>
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-bold text-primary shadow-sm transition hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary"
-              >
-                <MessageCircle className="h-5 w-5" aria-hidden="true" />
-                ابدأ النقاش عبر واتساب
-              </a>
-            </section>
-          </div>
-        </Container>
-      </SectionWrapper>
-    </div>
-  );
+      <section className="py-6"><div className="flex flex-col items-start justify-between gap-4 rounded-xl bg-slate-950 px-5 py-5 text-white md:flex-row md:items-center"><div><p className="text-xs text-emerald-300">لماذا القائد؟</p><h2 className="mt-1 text-lg font-bold">الأرقام ليست للتسجيل فقط — هي أساس القرار.</h2><p className="mt-1 text-sm text-slate-300">تنظيم الأرقام وتحويلها إلى تقارير واضحة تساعد رب المال على معرفة وضع منشأته.</p></div><a href={whatsappUrl(sector.message)} target="_blank" rel="noreferrer" className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-emerald-500 px-5 py-2.5 text-sm font-bold text-white hover:bg-emerald-400"><MessageCircle className="h-4 w-4" /> ناقش وضع منشأتك</a></div></section>
+    </Container>
+  </main>;
 }
