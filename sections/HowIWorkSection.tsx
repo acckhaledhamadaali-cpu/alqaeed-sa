@@ -9,7 +9,7 @@ export default function HowIWorkSection(props: HTMLAttributes<HTMLElement>) {
   return (
     <SectionWrapper id="how-i-work-section-wrapper" variant="white" spacing="dense" {...props}>
       <Container id="how-i-work-container">
-        <div id="how-i-work-content" className="flex flex-col space-y-6 md:space-y-8 items-center">
+        <div id="how-i-work-content" className="flex flex-col space-y-5 md:space-y-6 items-center">
           
           {/* Section Header Area */}
           <div id="how-i-work-header" className="flex flex-col space-y-2 md:space-y-3 text-center items-center max-w-3xl">
@@ -23,7 +23,7 @@ export default function HowIWorkSection(props: HTMLAttributes<HTMLElement>) {
           </div>
 
           {/* Timeline Container */}
-          <Timeline id="how-i-work-timeline" className="w-full max-w-2xl md:max-w-5xl" />
+          <Timeline id="how-i-work-timeline" className="w-full max-w-2xl md:max-w-full" />
 
         </div>
       </Container>

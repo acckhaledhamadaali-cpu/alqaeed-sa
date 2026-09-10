@@ -14,8 +14,8 @@ export default function AboutSection(props: HTMLAttributes<HTMLElement>) {
       {...props}
     >
       <Container id="about-container">
-        <div id="about-content" className="w-full max-w-5xl mx-auto text-right">
-          <div id="about-header" className="w-full text-center mb-5 md:mb-6">
+        <div id="about-content" className="w-full md:max-w-full mx-auto text-right">
+          <div id="about-header" className="w-full text-center mb-4 md:mb-5">
             <SectionTitle id="about-title" level={2} className="font-bold">
               أنا خالد القائد، محاسب مالي
             </SectionTitle>

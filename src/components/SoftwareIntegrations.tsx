@@ -3,8 +3,8 @@ import AccountingLogoMarquee from './AccountingLogoMarquee';
 
 export default function SoftwareIntegrations() {
   return (
-    <div className="py-12 border-t border-b border-border-subtle bg-surface-subtle/30 overflow-hidden relative">
-      <div className="max-w-4xl mx-auto text-center px-4 mb-8">
+    <div className="py-6 md:py-8 border-t border-b border-border-subtle bg-surface-subtle/30 overflow-hidden relative">
+      <div className="max-w-4xl mx-auto text-center px-4 mb-5 md:mb-6">
         <h3 className="text-lg font-bold text-text-primary mb-2 font-arabic">
           أعمل على نظامك المحاسبي الحالي
         </h3>

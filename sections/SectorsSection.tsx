@@ -49,9 +49,9 @@ const sectors = [
 
 export default function SectorsSection() {
   return (
-    <SectionWrapper id="sectors-section-wrapper" variant="subtle" spacing="default">
+    <SectionWrapper id="sectors-section-wrapper" variant="subtle" spacing="dense">
       <Container id="sectors-container">
-        <div className="mx-auto max-w-3xl text-center mb-8 md:mb-10">
+        <div className="mx-auto max-w-3xl text-center mb-6 md:mb-8">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-text-primary">
             نفهم طبيعة نشاطك وندعم نموه
           </h2>
