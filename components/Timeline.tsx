@@ -33,7 +33,7 @@ export default function Timeline({ className = '', ...props }: TimelineProps) {
   return (
     <div 
       id="timeline-container" 
-      className={`flex flex-col ${className}`} 
+      className={`flex flex-col md:flex-row md:gap-6 ${className}`} 
       role="list"
       aria-label="خطوات ومنهجية العمل المحاسبي والمالي المشترك"
       {...props}
@@ -42,11 +42,11 @@ export default function Timeline({ className = '', ...props }: TimelineProps) {
         <div 
           key={index} 
           id={`timeline-step-${index}`} 
-          className="flex gap-4 md:gap-6 items-stretch"
+          className="flex gap-4 md:flex-col md:gap-3 items-stretch md:items-start md:flex-1"
           role="listitem"
         >
           {/* Vertical line and step number container */}
-          <div className="flex flex-col items-center flex-shrink-0">
+          <div className="flex flex-col md:flex-row items-center md:items-center flex-shrink-0 md:w-full">
             {/* Step Number Circle */}
             <div 
               id={`timeline-step-circle-${index}`} 
@@ -58,7 +58,7 @@ export default function Timeline({ className = '', ...props }: TimelineProps) {
             {index < STEPS.length - 1 && (
               <div 
                 id={`timeline-step-line-${index}`} 
-                className="w-[1.5px] bg-border-subtle flex-1 my-1 min-h-[16px] md:min-h-[24px]" 
+                className="w-[1.5px] md:w-full md:h-[1.5px] md:min-h-[1.5px] md:min-w-[16px] bg-border-subtle flex-1 my-1 md:my-0 md:mx-3 min-h-[16px]" 
               />
             )}
           </div>

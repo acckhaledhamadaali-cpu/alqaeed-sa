@@ -23,7 +23,7 @@ export default function HowIWorkSection(props: HTMLAttributes<HTMLElement>) {
           </div>
 
           {/* Timeline Container */}
-          <Timeline id="how-i-work-timeline" className="w-full max-w-2xl" />
+          <Timeline id="how-i-work-timeline" className="w-full max-w-2xl md:max-w-5xl" />
 
         </div>
       </Container>

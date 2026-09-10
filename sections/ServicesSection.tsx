@@ -19,7 +19,7 @@ export default function ServicesSection(props: HTMLAttributes<HTMLElement>) {
   return (
     <SectionWrapper id="services-section-wrapper" variant="white" spacing="dense" {...props}>
       <Container id="services-container">
-        <div id="services-content" className="flex flex-col space-y-5 max-w-3xl mx-auto text-center items-center">
+        <div id="services-content" className="flex flex-col space-y-5 md:max-w-6xl mx-auto text-center items-center w-full">
           
           {/* Section Header */}
           <div id="services-header" className="flex flex-col space-y-1.5 text-center items-center">
@@ -34,11 +34,11 @@ export default function ServicesSection(props: HTMLAttributes<HTMLElement>) {
           {/* Simple, lightweight list */}
           <div 
             id="services-list-container" 
-            className="w-full max-w-xl bg-surface-subtle/30 rounded-xl p-3 sm:p-4 border border-border-subtle"
+            className="w-full lg:max-w-full max-w-xl bg-surface-subtle/30 rounded-xl p-3 sm:p-4 border border-border-subtle"
           >
             <ul 
               id="services-list" 
-              className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-right w-full"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 text-right w-full"
             >
               {SERVICES.map((service, index) => (
                 <li key={index} id={`services-item-${index}`}>
