@@ -35,7 +35,7 @@ export default function ChallengesSection(props: HTMLAttributes<HTMLElement>) {
   return (
     <SectionWrapper id="challenges-section-wrapper" variant="white" spacing="dense" {...props}>
       <Container id="challenges-container">
-        <div id="challenges-content" className="flex flex-col space-y-4 max-w-2xl md:max-w-4xl mx-auto text-right">
+        <div id="challenges-content" className="flex flex-col space-y-4 max-w-2xl md:max-w-full mx-auto text-right">
           
           {/* Header */}
           <div id="challenges-header" className="text-right pb-1">
