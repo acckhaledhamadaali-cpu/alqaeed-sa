@@ -206,7 +206,7 @@ function ArticleNotFound() {
           <nav aria-label="مسار التنقل" className="mb-4 text-xs text-text-muted">
             <a href="/" className="hover:text-primary transition-colors">الرئيسية</a>
             <span className="mx-2 text-border-subtle">/</span>
-            <a href="/blog" className="hover:text-primary transition-colors">المكتبة المالية</a>
+            <a href="/blog/" className="hover:text-primary transition-colors">المكتبة المالية</a>
             <span className="mx-2 text-border-subtle">/</span>
             <span className="text-text-secondary">المقال غير متوفر</span>
           </nav>
@@ -219,7 +219,7 @@ function ArticleNotFound() {
               المقال الذي تبحث عنه لا يزال قيد الإعداد والمراجعة من قبل فريق القائد للإدارة المالية، أو تم نقله.
             </p>
             <div className="flex flex-wrap gap-3 justify-center text-sm">
-              <a href="/blog" className="px-5 py-2.5 bg-primary text-white rounded-xl hover:bg-primary/90 transition-colors font-medium">العودة إلى المكتبة المالية</a>
+              <a href="/blog/" className="px-5 py-2.5 bg-primary text-white rounded-xl hover:bg-primary/90 transition-colors font-medium">العودة إلى المكتبة المالية</a>
               <a href="/" className="px-5 py-2.5 bg-white border border-border-subtle text-text-primary rounded-xl hover:border-primary transition-colors font-medium">الرئيسية</a>
             </div>
           </div>
@@ -285,7 +285,7 @@ export default function ArticlePage({ slug }: { slug: string }) {
           <nav aria-label="مسار التنقل" className="mb-4 text-xs text-text-muted">
             <a href="/" className="hover:text-primary transition-colors">الرئيسية</a>
             <span className="mx-2 text-border-subtle">/</span>
-            <a href="/blog" className="hover:text-primary transition-colors">المكتبة المالية</a>
+            <a href="/blog/" className="hover:text-primary transition-colors">المكتبة المالية</a>
             <span className="mx-2 text-border-subtle">/</span>
             <span className="text-text-secondary">{article.title}</span>
           </nav>
@@ -327,7 +327,7 @@ export default function ArticlePage({ slug }: { slug: string }) {
               <h3 id="related-articles-heading" className="text-base md:text-lg font-bold text-text-primary mb-4">مقالات ذات صلة في المكتبة المالية:</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {article.relatedArticles.map((rel) => (
-                  <a key={rel.slug} href={`/blog/${rel.slug}`} className="p-4 rounded-xl border border-border-subtle bg-surface-subtle/40 hover:border-primary/50 hover:bg-surface-subtle transition-all text-right group block">
+                  <a key={rel.slug} href={`/blog/${rel.slug}/`} className="p-4 rounded-xl border border-border-subtle bg-surface-subtle/40 hover:border-primary/50 hover:bg-surface-subtle transition-all text-right group block">
                     <span className="text-xs text-primary font-medium mb-1 block">مقال مقترح ←</span>
                     <h4 className="text-sm font-bold text-text-primary group-hover:text-primary transition-colors leading-snug">{rel.title}</h4>
                   </a>

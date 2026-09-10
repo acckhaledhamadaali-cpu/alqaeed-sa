@@ -1,1 +1,4 @@
+http://alqaeed-sa.pages.dev/* https://alqaeed-sa.pages.dev/:splat 301
+https://www.alqaeed-sa.pages.dev/* https://alqaeed-sa.pages.dev/:splat 301
+http://www.alqaeed-sa.pages.dev/* https://alqaeed-sa.pages.dev/:splat 301
 /* /index.html 200

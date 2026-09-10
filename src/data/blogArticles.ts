@@ -138,10 +138,10 @@ export const BLOG_ARTICLES: BlogArticle[] = [
       'خدمات محاسبية عن بعد',
       'محاسبة المنشآت الصغيرة والمتوسطة'
     ],
-    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/remote-accountant-saudi-companies',
+    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/remote-accountant-saudi-companies/',
     relatedService: {
       title: 'تنظيم الحسابات ومسك الدفاتر',
-      url: '/services/bookkeeping',
+      url: '/services/bookkeeping/',
       description: 'تسجيل القيود اليومية، مطابقة الحسابات البنكية، وتنظيم العمليات المالية لمنشأتك بدقة واحترافية.'
     },
     relatedArticles: [
@@ -230,10 +230,10 @@ export const BLOG_ARTICLES: BlogArticle[] = [
       'استشارات مالية للشركات',
       'تخطيط مالي'
     ],
-    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/what-is-virtual-cfo-and-when-needed',
+    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/what-is-virtual-cfo-and-when-needed/',
     relatedService: {
       title: 'المدير المالي عن بعد (Virtual CFO)',
-      url: '/services/virtual-cfo',
+      url: '/services/virtual-cfo/',
       description: 'قيادة وتوجيه مالي استراتيجي لمنشأتك لدعم اتخاذ القرار وتطوير السياسات المالية والرقابة.'
     },
     relatedArticles: [
@@ -314,10 +314,10 @@ export const BLOG_ARTICLES: BlogArticle[] = [
       'إدارة مالية للشركات',
       'الهيكل المالي للمنشأة'
     ],
-    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/difference-between-accountant-and-cfo',
+    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/difference-between-accountant-and-cfo/',
     relatedService: {
       title: 'المدير المالي عن بعد (Virtual CFO)',
-      url: '/services/virtual-cfo',
+      url: '/services/virtual-cfo/',
       description: 'توجيه مالي استراتيجي يساعدك على اتخاذ قرارات مبنية على الأرقام وتحقيق أهداف المنشأة.'
     },
     relatedArticles: [
@@ -394,10 +394,10 @@ export const BLOG_ARTICLES: BlogArticle[] = [
       'التنبؤ بالسيولة النقدية',
       'التحصيل والذمم المدينة'
     ],
-    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/cash-flow-management-avoid-financial-crisis',
+    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/cash-flow-management-avoid-financial-crisis/',
     relatedService: {
       title: 'إدارة التدفقات النقدية',
-      url: '/services/cash-flow',
+      url: '/services/cash-flow/',
       description: 'مراقبة دقيقة للسيولة الداخلة والخارجة وبناء توقعات نقدية تضمن استمرارية منشأتك.'
     },
     relatedArticles: [
@@ -481,10 +481,10 @@ export const BLOG_ARTICLES: BlogArticle[] = [
       'الميزانية العمومية',
       'اتخاذ القرارات المالية'
     ],
-    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/financial-statements-importance-decision-making',
+    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/financial-statements-importance-decision-making/',
     relatedService: {
       title: 'إعداد القوائم المالية',
-      url: '/services/financial-statements',
+      url: '/services/financial-statements/',
       description: 'إعداد وتدقيق القوائم المالية الدورية والسنوية وفق المعايير المحاسبية المعتمدة في المملكة.'
     },
     relatedArticles: [
@@ -563,10 +563,10 @@ export const BLOG_ARTICLES: BlogArticle[] = [
       'معدل العائد على الاستثمار',
       'نسب السيولة السريعة'
     ],
-    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/financial-analysis-key-ratios-business-owners',
+    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/financial-analysis-key-ratios-business-owners/',
     relatedService: {
       title: 'التحليل المالي وتقييم الأداء',
-      url: '/services/financial-analysis',
+      url: '/services/financial-analysis/',
       description: 'تحليل تفصيلي لمؤشرات الأداء، هوامش الربحية، ونقاط القوة والضعف المالية لمنشأتك.'
     },
     relatedArticles: [
@@ -636,10 +636,10 @@ export const BLOG_ARTICLES: BlogArticle[] = [
       'مراقبة المصاريف',
       'تحليل الانحرافات المالية'
     ],
-    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/budgeting-planning-revenues-expenses',
+    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/budgeting-planning-revenues-expenses/',
     relatedService: {
       title: 'إعداد الموازنات',
-      url: '/services/budgeting',
+      url: '/services/budgeting/',
       description: 'بناء خطط مالية وموازنات تقديرية مدروسة تضبط النفقات وتقيس الأداء الفعلي مقابل المخطط.'
     },
     relatedArticles: [
@@ -721,10 +721,10 @@ export const BLOG_ARTICLES: BlogArticle[] = [
       'الترحيل المحاسبي',
       'إدارة الحسابات'
     ],
-    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/bookkeeping-importance-organized-accounting',
+    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/bookkeeping-importance-organized-accounting/',
     relatedService: {
       title: 'تنظيم الحسابات ومسك الدفاتر',
-      url: '/services/bookkeeping',
+      url: '/services/bookkeeping/',
       description: 'تسجيل القيود اليومية، تنظيم الفواتير، ومطابقة الحسابات لضمان دفاتر محاسبية خالية من الأخطاء.'
     },
     relatedArticles: [
@@ -795,10 +795,10 @@ export const BLOG_ARTICLES: BlogArticle[] = [
       'الامتثال المالي للشركات',
       'سجلات محاسبية منتظمة'
     ],
-    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/zakat-tax-financial-data-organization',
+    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/zakat-tax-financial-data-organization/',
     relatedService: {
       title: 'الزكاة والضريبة',
-      url: '/services/zakat-tax',
+      url: '/services/zakat-tax/',
       description: 'تنظيم وتجهيز الملفات والسجلات المالية وفق المتطلبات النظامية لتسهيل تقديم الإقرارات الدورية.'
     },
     relatedArticles: [
@@ -868,10 +868,10 @@ export const BLOG_ARTICLES: BlogArticle[] = [
       'تطوير الإدارة المالية',
       'Virtual CFO'
     ],
-    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/7-signs-company-needs-remote-financial-management',
+    canonicalUrl: 'https://alqaeed-sa.pages.dev/blog/7-signs-company-needs-remote-financial-management/',
     relatedService: {
       title: 'المدير المالي عن بعد (Virtual CFO)',
-      url: '/services/virtual-cfo',
+      url: '/services/virtual-cfo/',
       description: 'إدارة مالية استراتيجية مرنة تمنحك تحكماً كاملاً بأمورك المالية وتدعم أهداف نمو شركتك.'
     },
     relatedArticles: [

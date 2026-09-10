@@ -105,7 +105,7 @@ export default function BlogHubPage() {
                   return (
                     <article key={article.slug} className="border border-border-subtle rounded-xl overflow-hidden bg-white hover:shadow-md transition-shadow flex flex-col justify-between">
                       <div>
-                        <a href={`/blog/${article.slug}`} className="block overflow-hidden bg-surface-subtle aspect-video border-b border-border-subtle">
+                        <a href={`/blog/${article.slug}/`} className="block overflow-hidden bg-surface-subtle aspect-video border-b border-border-subtle">
                           <img
                             src={image}
                             srcSet={imageSrcSet || undefined}
@@ -124,14 +124,14 @@ export default function BlogHubPage() {
                             <span className="bg-primary/10 text-primary font-medium px-2.5 py-1 rounded-md">{getCategoryName(article.category)}</span>
                             <span>{article.readingTime}</span>
                           </div>
-                          <h3 className="font-bold text-text-primary text-lg mb-2 leading-snug hover:text-primary transition-colors"><a href={`/blog/${article.slug}`}>{article.title}</a></h3>
+                          <h3 className="font-bold text-text-primary text-lg mb-2 leading-snug hover:text-primary transition-colors"><a href={`/blog/${article.slug}/`}>{article.title}</a></h3>
                           <p className="text-xs md:text-sm text-text-secondary leading-relaxed line-clamp-2 mb-4">{article.description}</p>
                         </div>
                       </div>
 
                       <div className="px-6 py-4 border-t border-border-subtle flex items-center justify-between text-xs text-text-muted">
                         <span>{article.author}</span>
-                        <a href={`/blog/${article.slug}`} className="text-primary font-medium hover:underline inline-flex items-center gap-1">قراءة المقال ←</a>
+                        <a href={`/blog/${article.slug}/`} className="text-primary font-medium hover:underline inline-flex items-center gap-1">قراءة المقال ←</a>
                       </div>
                     </article>
                   );
@@ -145,10 +145,10 @@ export default function BlogHubPage() {
                 <div className="pt-6 border-t border-border-subtle max-w-2xl mx-auto">
                   <p className="text-xs font-semibold text-text-primary mb-3">يمكنك استكشاف حلولنا المالية المباشرة لأعمالك:</p>
                   <div className="flex flex-wrap gap-2 justify-center text-xs">
-                    <a href="/services/bookkeeping" className="px-3 py-1.5 bg-white border border-border-subtle rounded-lg text-text-primary hover:border-primary hover:text-primary transition-colors">تنظيم الحسابات ومسك الدفاتر</a>
-                    <a href="/services/financial-statements" className="px-3 py-1.5 bg-white border border-border-subtle rounded-lg text-text-primary hover:border-primary hover:text-primary transition-colors">إعداد القوائم المالية</a>
-                    <a href="/services/financial-analysis" className="px-3 py-1.5 bg-white border border-border-subtle rounded-lg text-text-primary hover:border-primary hover:text-primary transition-colors">التحليل المالي وتقييم الأداء</a>
-                    <a href="/services/virtual-cfo" className="px-3 py-1.5 bg-white border border-border-subtle rounded-lg text-text-primary hover:border-primary hover:text-primary transition-colors">المدير المالي عن بعد (Virtual CFO)</a>
+                    <a href="/services/bookkeeping/" className="px-3 py-1.5 bg-white border border-border-subtle rounded-lg text-text-primary hover:border-primary hover:text-primary transition-colors">تنظيم الحسابات ومسك الدفاتر</a>
+                    <a href="/services/financial-statements/" className="px-3 py-1.5 bg-white border border-border-subtle rounded-lg text-text-primary hover:border-primary hover:text-primary transition-colors">إعداد القوائم المالية</a>
+                    <a href="/services/financial-analysis/" className="px-3 py-1.5 bg-white border border-border-subtle rounded-lg text-text-primary hover:border-primary hover:text-primary transition-colors">التحليل المالي وتقييم الأداء</a>
+                    <a href="/services/virtual-cfo/" className="px-3 py-1.5 bg-white border border-border-subtle rounded-lg text-text-primary hover:border-primary hover:text-primary transition-colors">المدير المالي عن بعد (Virtual CFO)</a>
                   </div>
                 </div>
               </div>

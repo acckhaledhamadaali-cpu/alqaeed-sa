@@ -99,7 +99,7 @@ async function prerender() {
   const sitemapPath = path.resolve(distDir, 'sitemap.xml');
   const publicSitemapPath = path.resolve(__dirname, 'public', 'sitemap.xml');
   const sitemapEntries = routes.map((r) => {
-    const loc = r === '/' ? 'https://alqaeed-sa.pages.dev/' : `https://alqaeed-sa.pages.dev${r}`;
+    const loc = r === '/' ? 'https://alqaeed-sa.pages.dev/' : `https://alqaeed-sa.pages.dev${r}/`;
     const priority = r === '/' ? '1.0' : r.startsWith('/services/') || r === '/blog' || r.startsWith('/blog/') ? '0.8' : r.startsWith('/sectors/') ? '0.8' : '0.5';
     const changefreq = r.startsWith('/privacy') || r.startsWith('/terms') || r.startsWith('/cookies') ? 'yearly' : 'monthly';
     return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>2026-09-09</lastmod>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`;

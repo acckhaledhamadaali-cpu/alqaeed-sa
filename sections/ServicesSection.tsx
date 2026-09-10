@@ -5,14 +5,14 @@ import SectionTitle from '../components/SectionTitle';
 import SectionDescription from '../components/SectionDescription';
 
 const SERVICES = [
-  { name: "تنظيم الحسابات ومسك الدفاتر", link: "/services/bookkeeping" },
-  { name: "الزكاة والضريبة", link: "/services/zakat-tax" },
-  { name: "إعداد القوائم المالية", link: "/services/financial-statements" },
-  { name: "التحليل المالي", link: "/services/financial-analysis" },
-  { name: "التقارير الإدارية", link: "/services/management-reports" },
-  { name: "إعداد الموازنات", link: "/services/budgeting" },
-  { name: "إدارة التدفقات النقدية", link: "/services/cash-flow" },
-  { name: "المدير المالي عن بعد Virtual CFO", link: "/services/virtual-cfo" }
+  { name: "تنظيم الحسابات ومسك الدفاتر", link: "/services/bookkeeping/" },
+  { name: "الزكاة والضريبة", link: "/services/zakat-tax/" },
+  { name: "إعداد القوائم المالية", link: "/services/financial-statements/" },
+  { name: "التحليل المالي", link: "/services/financial-analysis/" },
+  { name: "التقارير الإدارية", link: "/services/management-reports/" },
+  { name: "إعداد الموازنات", link: "/services/budgeting/" },
+  { name: "إدارة التدفقات النقدية", link: "/services/cash-flow/" },
+  { name: "المدير المالي عن بعد Virtual CFO", link: "/services/virtual-cfo/" }
 ];
 
 export default function ServicesSection(props: HTMLAttributes<HTMLElement>) {
@@ -64,7 +64,7 @@ export default function ServicesSection(props: HTMLAttributes<HTMLElement>) {
           {/* Subtle link to Financial Library */}
           <div id="services-blog-link" className="pt-1">
             <a 
-              href="/blog" 
+              href="/blog/" 
               className="inline-flex items-center gap-x-1.5 text-xs sm:text-sm text-text-secondary hover:text-primary font-arabic font-medium transition-colors"
             >
               <span>استكشف المكتبة المالية — أدلة عملية لأصحاب المنشآت</span>

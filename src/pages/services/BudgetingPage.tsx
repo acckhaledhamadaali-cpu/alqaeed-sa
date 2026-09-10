@@ -268,9 +268,9 @@ export default function BudgetingPage() {
           {/* Related Article Guide Link */}
           <div className="mb-8 p-4 bg-primary/5 border border-primary/15 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs md:text-sm">
             <span className="text-text-secondary font-medium">
-              💡 دليل تخصصي من المكتبة المالية: <a href="/blog/budgeting-planning-revenues-expenses" className="text-primary font-bold hover:underline">الموازنات التقديرية والتخطيط المالي</a>
+              💡 دليل تخصصي من المكتبة المالية: <a href="/blog/budgeting-planning-revenues-expenses/" className="text-primary font-bold hover:underline">الموازنات التقديرية والتخطيط المالي</a>
             </span>
-            <a href="/blog/budgeting-planning-revenues-expenses" className="text-primary font-semibold hover:underline shrink-0">
+            <a href="/blog/budgeting-planning-revenues-expenses/" className="text-primary font-semibold hover:underline shrink-0">
               قراءة الدليل ←
             </a>
           </div>
@@ -282,21 +282,21 @@ export default function BudgetingPage() {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <a
-                href="/services/cash-flow"
+                href="/services/cash-flow/"
                 className="p-3 bg-surface-subtle/50 hover:bg-surface-subtle border border-border-subtle rounded-lg text-xs md:text-sm font-medium text-text-primary hover:text-primary transition-all flex items-center justify-between"
               >
                 <span>إدارة التدفقات النقدية والسيولة</span>
                 <span className="text-secondary text-base">←</span>
               </a>
               <a
-                href="/services/financial-analysis"
+                href="/services/financial-analysis/"
                 className="p-3 bg-surface-subtle/50 hover:bg-surface-subtle border border-border-subtle rounded-lg text-xs md:text-sm font-medium text-text-primary hover:text-primary transition-all flex items-center justify-between"
               >
                 <span>التحليل المالي وتقييم الأداء</span>
                 <span className="text-secondary text-base">←</span>
               </a>
               <a
-                href="/services/management-reports"
+                href="/services/management-reports/"
                 className="p-3 bg-surface-subtle/50 hover:bg-surface-subtle border border-border-subtle rounded-lg text-xs md:text-sm font-medium text-text-primary hover:text-primary transition-all flex items-center justify-between"
               >
                 <span>إعداد التقارير الإدارية</span>

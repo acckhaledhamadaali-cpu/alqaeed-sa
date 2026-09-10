@@ -91,7 +91,7 @@ export default function SectorsSection() {
                     {sector.question}
                   </p>
                   <a
-                    href={`/sectors/${sector.slug}`}
+                    href={`/sectors/${sector.slug}/`}
                     className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-[#f8f6ef] px-3 py-2.5 text-[11px] font-bold text-slate-800 transition hover:bg-[#f1eee3] focus:outline-none focus:ring-2 focus:ring-slate-300 focus:ring-offset-2 sm:text-sm"
                   >
                     <span>تفاصيل القطاع</span>

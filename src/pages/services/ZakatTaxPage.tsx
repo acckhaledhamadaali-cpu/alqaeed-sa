@@ -259,9 +259,9 @@ export default function ZakatTaxPage() {
           {/* Related Article Guide Link */}
           <div className="mb-8 p-4 bg-primary/5 border border-primary/15 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs md:text-sm">
             <span className="text-text-secondary font-medium">
-              💡 دليل تخصصي من المكتبة المالية: <a href="/blog/zakat-tax-financial-data-organization" className="text-primary font-bold hover:underline">تنظيم البيانات المالية للزكاة والضريبة</a>
+              💡 دليل تخصصي من المكتبة المالية: <a href="/blog/zakat-tax-financial-data-organization/" className="text-primary font-bold hover:underline">تنظيم البيانات المالية للزكاة والضريبة</a>
             </span>
-            <a href="/blog/zakat-tax-financial-data-organization" className="text-primary font-semibold hover:underline shrink-0">
+            <a href="/blog/zakat-tax-financial-data-organization/" className="text-primary font-semibold hover:underline shrink-0">
               قراءة الدليل ←
             </a>
           </div>
@@ -273,21 +273,21 @@ export default function ZakatTaxPage() {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <a
-                href="/services/bookkeeping"
+                href="/services/bookkeeping/"
                 className="p-3 bg-surface-subtle/50 hover:bg-surface-subtle border border-border-subtle rounded-lg text-xs md:text-sm font-medium text-text-primary hover:text-primary transition-all flex items-center justify-between"
               >
                 <span>تنظيم الحسابات ومسك الدفاتر</span>
                 <span className="text-secondary text-base">←</span>
               </a>
               <a
-                href="/services/financial-statements"
+                href="/services/financial-statements/"
                 className="p-3 bg-surface-subtle/50 hover:bg-surface-subtle border border-border-subtle rounded-lg text-xs md:text-sm font-medium text-text-primary hover:text-primary transition-all flex items-center justify-between"
               >
                 <span>إعداد القوائم المالية المعتمدة</span>
                 <span className="text-secondary text-base">←</span>
               </a>
               <a
-                href="/services/virtual-cfo"
+                href="/services/virtual-cfo/"
                 className="p-3 bg-surface-subtle/50 hover:bg-surface-subtle border border-border-subtle rounded-lg text-xs md:text-sm font-medium text-text-primary hover:text-primary transition-all flex items-center justify-between"
               >
                 <span>المدير المالي عن بعد (Virtual CFO)</span>
