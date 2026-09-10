@@ -235,9 +235,9 @@ export default function App({ path: propPath }: { path?: string } = {}) {
         <SectorsSection />
         <ChallengesSection />
         <ServicesSection />
+        <HowIWorkSection />
         <AboutSection />
         <SoftwareIntegrations />
-        <HowIWorkSection />
         <FinalCTASection />
       </main>
       <FooterSection />
