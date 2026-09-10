@@ -35,7 +35,7 @@ export default function ChallengesSection(props: HTMLAttributes<HTMLElement>) {
   return (
     <SectionWrapper id="challenges-section-wrapper" variant="white" spacing="dense" {...props}>
       <Container id="challenges-container">
-        <div id="challenges-content" className="flex flex-col space-y-4 max-w-2xl mx-auto text-right">
+        <div id="challenges-content" className="flex flex-col space-y-4 max-w-2xl md:max-w-4xl mx-auto text-right">
           
           {/* Header */}
           <div id="challenges-header" className="text-right pb-1">
@@ -45,12 +45,12 @@ export default function ChallengesSection(props: HTMLAttributes<HTMLElement>) {
           </div>
 
           {/* List of Challenges */}
-          <div id="challenges-list" className="flex flex-col space-y-3.5">
+          <div id="challenges-list" className="flex flex-col md:flex-row md:flex-wrap md:gap-x-8 gap-y-3.5">
             {CHALLENGES.map((item, index) => (
               <div 
                 key={index} 
                 id={`challenge-item-${index}`}
-                className="pb-3.5 last:pb-0 border-b border-slate-100 last:border-b-0 flex flex-col space-y-1 text-right"
+                className="w-full md:w-[calc(50%-1rem)] pb-3.5 last:pb-0 border-b border-slate-100 last:border-b-0 flex flex-col space-y-1 text-right"
               >
                 <div id={`challenge-prob-row-${index}`} className="flex items-start space-x-1.5 space-x-reverse">
                   <span id={`challenge-check-${index}`} className="text-secondary font-bold text-sm md:text-base select-none leading-none mt-0.5">✓</span>
