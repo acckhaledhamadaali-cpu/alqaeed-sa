@@ -89,7 +89,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
         {
           "@type": "WebPage",
           "@id": "https://alqaeed-sa.pages.dev/services/bookkeeping/#webpage",
-          "url": "https://alqaeed-sa.pages.dev/services/bookkeeping",
+          "url": "https://alqaeed-sa.pages.dev/services/bookkeeping/",
           "name": "خدمات مسك الدفاتر المحاسبية للشركات | القائد للإدارة المالية",
           "description": "نقدم خدمات تنظيم الحسابات ومسك الدفاتر الاحترافية. احصل على تقارير مالية دقيقة تساند نمو أعمالك وتضمن دقة قراراتك عبر أفضل البرامج المحاسبية.",
           "primaryImageOfPage": {
@@ -124,7 +124,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
               "@type": "ListItem",
               "position": 2,
               "name": "تنظيم الحسابات ومسك الدفاتر",
-              "item": "https://alqaeed-sa.pages.dev/services/bookkeeping"
+              "item": "https://alqaeed-sa.pages.dev/services/bookkeeping/"
             }
           ]
         }
@@ -145,7 +145,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
         {
           "@type": "WebPage",
           "@id": "https://alqaeed-sa.pages.dev/services/zakat-tax/#webpage",
-          "url": "https://alqaeed-sa.pages.dev/services/zakat-tax",
+          "url": "https://alqaeed-sa.pages.dev/services/zakat-tax/",
           "name": "خدمات الزكاة والضريبة للشركات | القائد للإدارة المالية",
           "description": "احمِ شركتك من المخالفات الضريبية. نقدم خدمات احترافية في إعداد ورفع الإقرارات الزكوية والضريبية بدقة واحترافية وفق متطلبات هيئة الزكاة والضريبة والجمارك.",
           "primaryImageOfPage": {
@@ -180,7 +180,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
               "@type": "ListItem",
               "position": 2,
               "name": "الزكاة والضريبة",
-              "item": "https://alqaeed-sa.pages.dev/services/zakat-tax"
+              "item": "https://alqaeed-sa.pages.dev/services/zakat-tax/"
             }
           ]
         }
@@ -201,7 +201,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
         {
           "@type": "WebPage",
           "@id": "https://alqaeed-sa.pages.dev/services/financial-statements/#webpage",
-          "url": "https://alqaeed-sa.pages.dev/services/financial-statements",
+          "url": "https://alqaeed-sa.pages.dev/services/financial-statements/",
           "name": "إعداد القوائم المالية المعتمدة للشركات | القائد للإدارة المالية",
           "description": "احصل على قوائم مالية دقيقة وشفافة تعكس الأداء الحقيقي لمنشأتك. نساعدك في إعداد ميزانيات احترافية تدعم قراراتك وتزيد ثقة البنوك والمستثمرين.",
           "primaryImageOfPage": {
@@ -236,7 +236,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
               "@type": "ListItem",
               "position": 2,
               "name": "إعداد القوائم المالية",
-              "item": "https://alqaeed-sa.pages.dev/services/financial-statements"
+              "item": "https://alqaeed-sa.pages.dev/services/financial-statements/"
             }
           ]
         }
@@ -257,7 +257,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
         {
           "@type": "WebPage",
           "@id": "https://alqaeed-sa.pages.dev/services/financial-analysis/#webpage",
-          "url": "https://alqaeed-sa.pages.dev/services/financial-analysis",
+          "url": "https://alqaeed-sa.pages.dev/services/financial-analysis/",
           "name": "التحليل المالي للشركات وتقييم الأداء | القائد للإدارة المالية",
           "description": "حول الأرقام الصامتة إلى استراتيجيات ناجحة. خدمات التحليل المالي الاحترافية لمساعدتك في فهم مؤشرات السيولة والربحية واكتشاف فرص النمو لمنشأتك.",
           "primaryImageOfPage": {
@@ -292,7 +292,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
               "@type": "ListItem",
               "position": 2,
               "name": "التحليل المالي",
-              "item": "https://alqaeed-sa.pages.dev/services/financial-analysis"
+              "item": "https://alqaeed-sa.pages.dev/services/financial-analysis/"
             }
           ]
         }
@@ -313,7 +313,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
         {
           "@type": "WebPage",
           "@id": "https://alqaeed-sa.pages.dev/services/management-reports/#webpage",
-          "url": "https://alqaeed-sa.pages.dev/services/management-reports",
+          "url": "https://alqaeed-sa.pages.dev/services/management-reports/",
           "name": "إعداد التقارير الإدارية المالية للشركات | القائد للإدارة المالية",
           "description": "ابقَ على اطلاع دائم بأداء منشأتك عبر تقارير إدارية ولوحات قياس دقيقة تصمم خصيصاً لتمنح الإدارة العليا القدرة على اتخاذ قرارات سريعة وصائبة.",
           "primaryImageOfPage": {
@@ -348,7 +348,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
               "@type": "ListItem",
               "position": 2,
               "name": "التقارير الإدارية",
-              "item": "https://alqaeed-sa.pages.dev/services/management-reports"
+              "item": "https://alqaeed-sa.pages.dev/services/management-reports/"
             }
           ]
         }
@@ -369,7 +369,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
         {
           "@type": "WebPage",
           "@id": "https://alqaeed-sa.pages.dev/services/budgeting/#webpage",
-          "url": "https://alqaeed-sa.pages.dev/services/budgeting",
+          "url": "https://alqaeed-sa.pages.dev/services/budgeting/",
           "name": "إعداد الموازنات التقديرية والتخطيط المالي | القائد للإدارة المالية",
           "description": "خطط لنجاحك المالي بثقة. خدمة إعداد الموازنات التقديرية تساعدك على وضع أهداف مالية واضحة ومراقبة الانحرافات لضمان تحقيق رؤية منشأتك.",
           "primaryImageOfPage": {
@@ -404,7 +404,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
               "@type": "ListItem",
               "position": 2,
               "name": "إعداد الموازنات",
-              "item": "https://alqaeed-sa.pages.dev/services/budgeting"
+              "item": "https://alqaeed-sa.pages.dev/services/budgeting/"
             }
           ]
         }
@@ -425,7 +425,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
         {
           "@type": "WebPage",
           "@id": "https://alqaeed-sa.pages.dev/services/cash-flow/#webpage",
-          "url": "https://alqaeed-sa.pages.dev/services/cash-flow",
+          "url": "https://alqaeed-sa.pages.dev/services/cash-flow/",
           "name": "إدارة التدفقات النقدية للشركات | القائد للإدارة المالية",
           "description": "حافظ على سيولة منشأتك وتجنب الأزمات المالية. نقدم خدمات تخطيط وإدارة التدفقات النقدية لضمان وفائك بالتزاماتك وتمويل نمو أعمالك بأمان.",
           "primaryImageOfPage": {
@@ -460,7 +460,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
               "@type": "ListItem",
               "position": 2,
               "name": "إدارة التدفقات النقدية",
-              "item": "https://alqaeed-sa.pages.dev/services/cash-flow"
+              "item": "https://alqaeed-sa.pages.dev/services/cash-flow/"
             }
           ]
         }
@@ -481,7 +481,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
         {
           "@type": "WebPage",
           "@id": "https://alqaeed-sa.pages.dev/services/virtual-cfo/#webpage",
-          "url": "https://alqaeed-sa.pages.dev/services/virtual-cfo",
+          "url": "https://alqaeed-sa.pages.dev/services/virtual-cfo/",
           "name": "المدير المالي عن بعد (Virtual CFO) | القائد للإدارة المالية",
           "description": "احصل على خبرات القيادة المالية الاستراتيجية بتكلفة مرنة. خدمة المدير المالي عن بعد تدعم نمو منشأتك وتوفر لك استشارات مالية متقدمة لقراراتك الحاسمة.",
           "primaryImageOfPage": {
@@ -516,7 +516,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
               "@type": "ListItem",
               "position": 2,
               "name": "المدير المالي عن بعد",
-              "item": "https://alqaeed-sa.pages.dev/services/virtual-cfo"
+              "item": "https://alqaeed-sa.pages.dev/services/virtual-cfo/"
             }
           ]
         }
@@ -535,7 +535,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "@id": "https://alqaeed-sa.pages.dev/privacy-policy/#webpage",
-      "url": "https://alqaeed-sa.pages.dev/privacy-policy",
+      "url": "https://alqaeed-sa.pages.dev/privacy-policy/",
       "name": "سياسة الخصوصية | القائد",
       "description": "توضح سياسة الخصوصية كيفية تعاملنا مع بياناتك في القائد لخدمات الإدارة المالية عن بعد. نحن نلتزم بحماية سرية معلوماتك.",
       "primaryImageOfPage": {
@@ -559,7 +559,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "@id": "https://alqaeed-sa.pages.dev/terms/#webpage",
-      "url": "https://alqaeed-sa.pages.dev/terms",
+      "url": "https://alqaeed-sa.pages.dev/terms/",
       "name": "الشروط والأحكام | القائد",
       "description": "اقرأ الشروط والأحكام المتعلقة باستخدام موقع القائد لخدمات الإدارة المالية والاستشارات. توضح هذه الصفحة القواعد المطبقة على خدماتنا.",
       "primaryImageOfPage": {
@@ -583,7 +583,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "@id": "https://alqaeed-sa.pages.dev/cookies/#webpage",
-      "url": "https://alqaeed-sa.pages.dev/cookies",
+      "url": "https://alqaeed-sa.pages.dev/cookies/",
       "name": "سياسة ملفات تعريف الارتباط | القائد",
       "description": "تعرف على كيفية استخدامنا لملفات تعريف الارتباط (Cookies) لتحسين تجربتك على موقع القائد وتحليل أداء الموقع.",
       "primaryImageOfPage": {
@@ -609,7 +609,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
         {
           "@type": "CollectionPage",
           "@id": "https://alqaeed-sa.pages.dev/blog/#webpage",
-          "url": "https://alqaeed-sa.pages.dev/blog",
+          "url": "https://alqaeed-sa.pages.dev/blog/",
           "name": "المكتبة المالية | القائد للإدارة المالية",
           "description": "المكتبة المالية من القائد - أدلة ومعارف مالية ومحاسبية متخصصة تهدف لمساعدة أصحاب المنشآت والشركات في المملكة العربية السعودية على إدارة أعمالهم واتخاذ قرارات مالية صائبة.",
           "primaryImageOfPage": {
@@ -634,13 +634,116 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
               "@type": "ListItem",
               "position": 2,
               "name": "المكتبة المالية",
-              "item": "https://alqaeed-sa.pages.dev/blog"
+              "item": "https://alqaeed-sa.pages.dev/blog/"
             }
           ]
         }
       ]
     }
   }
+
+  '/sectors/restaurants-cafes': {
+    path: '/sectors/restaurants-cafes',
+    title: 'الإدارة المالية للمطاعم والكافيهات | القائد للإدارة المالية',
+    description: 'إدارة مالية متخصصة للمطاعم والكافيهات تشمل متابعة المبيعات والتكاليف والمخزون والهدر والسيولة وربحية الفروع والأصناف.',
+    canonical: 'https://alqaeed-sa.pages.dev/sectors/restaurants-cafes/',
+    ogTitle: 'الإدارة المالية للمطاعم والكافيهات | القائد للإدارة المالية',
+    ogDescription: 'إدارة مالية متخصصة للمطاعم والكافيهات تشمل متابعة المبيعات والتكاليف والمخزون والهدر والسيولة وربحية الفروع والأصناف.',
+    ogUrl: 'https://alqaeed-sa.pages.dev/sectors/restaurants-cafes/',
+    schema: { "@context": "https://schema.org", "@graph": [
+      { "@type": "WebPage", "@id": "https://alqaeed-sa.pages.dev/sectors/restaurants-cafes/#webpage", "url": "https://alqaeed-sa.pages.dev/sectors/restaurants-cafes/", "name": "الإدارة المالية للمطاعم والكافيهات | القائد للإدارة المالية", "description": "إدارة مالية متخصصة للمطاعم والكافيهات تشمل متابعة المبيعات والتكاليف والمخزون والهدر والسيولة وربحية الفروع والأصناف.", "inLanguage": "ar-SA" },
+      { "@type": "BreadcrumbList", "@id": "https://alqaeed-sa.pages.dev/sectors/restaurants-cafes/#breadcrumb", "itemListElement": [
+        { "@type":"ListItem", "position":1, "name":"الرئيسية", "item":"https://alqaeed-sa.pages.dev/" },
+        { "@type":"ListItem", "position":2, "name":"القطاعات", "item":"https://alqaeed-sa.pages.dev/" },
+        { "@type":"ListItem", "position":3, "name":"المطاعم والكافيهات", "item":"https://alqaeed-sa.pages.dev/sectors/restaurants-cafes/" }
+      ] }
+    ] }
+  },
+  '/sectors/contracting': {
+    path: '/sectors/contracting',
+    title: 'الإدارة المالية لقطاع المقاولات | القائد للإدارة المالية',
+    description: 'إدارة مالية لقطاع المقاولات تركز على تكلفة المشاريع والإنجاز والربحية والمستخلصات والتحصيل والسيولة والانحرافات.',
+    canonical: 'https://alqaeed-sa.pages.dev/sectors/contracting/',
+    ogTitle: 'الإدارة المالية لقطاع المقاولات | القائد للإدارة المالية',
+    ogDescription: 'إدارة مالية لقطاع المقاولات تركز على تكلفة المشاريع والإنجاز والربحية والمستخلصات والتحصيل والسيولة والانحرافات.',
+    ogUrl: 'https://alqaeed-sa.pages.dev/sectors/contracting/',
+    schema: { "@context": "https://schema.org", "@graph": [
+      { "@type": "WebPage", "@id": "https://alqaeed-sa.pages.dev/sectors/contracting/#webpage", "url": "https://alqaeed-sa.pages.dev/sectors/contracting/", "name": "الإدارة المالية لقطاع المقاولات | القائد للإدارة المالية", "description": "إدارة مالية لقطاع المقاولات تركز على تكلفة المشاريع والإنجاز والربحية والمستخلصات والتحصيل والسيولة والانحرافات.", "inLanguage": "ar-SA" },
+      { "@type": "BreadcrumbList", "@id": "https://alqaeed-sa.pages.dev/sectors/contracting/#breadcrumb", "itemListElement": [
+        { "@type":"ListItem", "position":1, "name":"الرئيسية", "item":"https://alqaeed-sa.pages.dev/" },
+        { "@type":"ListItem", "position":2, "name":"القطاعات", "item":"https://alqaeed-sa.pages.dev/" },
+        { "@type":"ListItem", "position":3, "name":"المقاولات", "item":"https://alqaeed-sa.pages.dev/sectors/contracting/" }
+      ] }
+    ] }
+  },
+  '/sectors/trade-retail': {
+    path: '/sectors/trade-retail',
+    title: 'الإدارة المالية للتجارة والتجزئة | القائد للإدارة المالية',
+    description: 'إدارة مالية للتجارة والتجزئة تشمل تحليل المبيعات والهامش والمخزون ودوران الأصناف والشراء والتسعير والسيولة.',
+    canonical: 'https://alqaeed-sa.pages.dev/sectors/trade-retail/',
+    ogTitle: 'الإدارة المالية للتجارة والتجزئة | القائد للإدارة المالية',
+    ogDescription: 'إدارة مالية للتجارة والتجزئة تشمل تحليل المبيعات والهامش والمخزون ودوران الأصناف والشراء والتسعير والسيولة.',
+    ogUrl: 'https://alqaeed-sa.pages.dev/sectors/trade-retail/',
+    schema: { "@context": "https://schema.org", "@graph": [
+      { "@type": "WebPage", "@id": "https://alqaeed-sa.pages.dev/sectors/trade-retail/#webpage", "url": "https://alqaeed-sa.pages.dev/sectors/trade-retail/", "name": "الإدارة المالية للتجارة والتجزئة | القائد للإدارة المالية", "description": "إدارة مالية للتجارة والتجزئة تشمل تحليل المبيعات والهامش والمخزون ودوران الأصناف والشراء والتسعير والسيولة.", "inLanguage": "ar-SA" },
+      { "@type": "BreadcrumbList", "@id": "https://alqaeed-sa.pages.dev/sectors/trade-retail/#breadcrumb", "itemListElement": [
+        { "@type":"ListItem", "position":1, "name":"الرئيسية", "item":"https://alqaeed-sa.pages.dev/" },
+        { "@type":"ListItem", "position":2, "name":"القطاعات", "item":"https://alqaeed-sa.pages.dev/" },
+        { "@type":"ListItem", "position":3, "name":"التجارة والتجزئة", "item":"https://alqaeed-sa.pages.dev/sectors/trade-retail/" }
+      ] }
+    ] }
+  },
+  '/sectors/pharmacies-health': {
+    path: '/sectors/pharmacies-health',
+    title: 'الإدارة المالية للصيدليات والمنشآت الصحية | القائد للإدارة المالية',
+    description: 'إدارة مالية للصيدليات والمنشآت الصحية تركز على المبيعات وتكلفة المنتجات والمخزون والمصروفات والتحصيل والسيولة وربحية الأصناف.',
+    canonical: 'https://alqaeed-sa.pages.dev/sectors/pharmacies-health/',
+    ogTitle: 'الإدارة المالية للصيدليات والمنشآت الصحية | القائد للإدارة المالية',
+    ogDescription: 'إدارة مالية للصيدليات والمنشآت الصحية تركز على المبيعات وتكلفة المنتجات والمخزون والمصروفات والتحصيل والسيولة وربحية الأصناف.',
+    ogUrl: 'https://alqaeed-sa.pages.dev/sectors/pharmacies-health/',
+    schema: { "@context": "https://schema.org", "@graph": [
+      { "@type": "WebPage", "@id": "https://alqaeed-sa.pages.dev/sectors/pharmacies-health/#webpage", "url": "https://alqaeed-sa.pages.dev/sectors/pharmacies-health/", "name": "الإدارة المالية للصيدليات والمنشآت الصحية | القائد للإدارة المالية", "description": "إدارة مالية للصيدليات والمنشآت الصحية تركز على المبيعات وتكلفة المنتجات والمخزون والمصروفات والتحصيل والسيولة وربحية الأصناف.", "inLanguage": "ar-SA" },
+      { "@type": "BreadcrumbList", "@id": "https://alqaeed-sa.pages.dev/sectors/pharmacies-health/#breadcrumb", "itemListElement": [
+        { "@type":"ListItem", "position":1, "name":"الرئيسية", "item":"https://alqaeed-sa.pages.dev/" },
+        { "@type":"ListItem", "position":2, "name":"القطاعات", "item":"https://alqaeed-sa.pages.dev/" },
+        { "@type":"ListItem", "position":3, "name":"الصيدليات والمنشآت الصحية", "item":"https://alqaeed-sa.pages.dev/sectors/pharmacies-health/" }
+      ] }
+    ] }
+  },
+  '/sectors/services-professions': {
+    path: '/sectors/services-professions',
+    title: 'الإدارة المالية للخدمات والمهن | القائد للإدارة المالية',
+    description: 'إدارة مالية لقطاع الخدمات والمهن تشمل تحليل الإيرادات وتكلفة الخدمة وربحية العملاء والتحصيل والسيولة.',
+    canonical: 'https://alqaeed-sa.pages.dev/sectors/services-professions/',
+    ogTitle: 'الإدارة المالية للخدمات والمهن | القائد للإدارة المالية',
+    ogDescription: 'إدارة مالية لقطاع الخدمات والمهن تشمل تحليل الإيرادات وتكلفة الخدمة وربحية العملاء والتحصيل والسيولة.',
+    ogUrl: 'https://alqaeed-sa.pages.dev/sectors/services-professions/',
+    schema: { "@context": "https://schema.org", "@graph": [
+      { "@type": "WebPage", "@id": "https://alqaeed-sa.pages.dev/sectors/services-professions/#webpage", "url": "https://alqaeed-sa.pages.dev/sectors/services-professions/", "name": "الإدارة المالية للخدمات والمهن | القائد للإدارة المالية", "description": "إدارة مالية لقطاع الخدمات والمهن تشمل تحليل الإيرادات وتكلفة الخدمة وربحية العملاء والتحصيل والسيولة.", "inLanguage": "ar-SA" },
+      { "@type": "BreadcrumbList", "@id": "https://alqaeed-sa.pages.dev/sectors/services-professions/#breadcrumb", "itemListElement": [
+        { "@type":"ListItem", "position":1, "name":"الرئيسية", "item":"https://alqaeed-sa.pages.dev/" },
+        { "@type":"ListItem", "position":2, "name":"القطاعات", "item":"https://alqaeed-sa.pages.dev/" },
+        { "@type":"ListItem", "position":3, "name":"الخدمات والمهن", "item":"https://alqaeed-sa.pages.dev/sectors/services-professions/" }
+      ] }
+    ] }
+  },
+  '/sectors/startups-growing': {
+    path: '/sectors/startups-growing',
+    title: 'الإدارة المالية للشركات الناشئة والمتنامية | القائد للإدارة المالية',
+    description: 'إدارة مالية للشركات الناشئة والمتنامية تشمل التخطيط المالي والسيولة والموازنة والتحليل والاستعداد للتمويل والنمو.',
+    canonical: 'https://alqaeed-sa.pages.dev/sectors/startups-growing/',
+    ogTitle: 'الإدارة المالية للشركات الناشئة والمتنامية | القائد للإدارة المالية',
+    ogDescription: 'إدارة مالية للشركات الناشئة والمتنامية تشمل التخطيط المالي والسيولة والموازنة والتحليل والاستعداد للتمويل والنمو.',
+    ogUrl: 'https://alqaeed-sa.pages.dev/sectors/startups-growing/',
+    schema: { "@context": "https://schema.org", "@graph": [
+      { "@type": "WebPage", "@id": "https://alqaeed-sa.pages.dev/sectors/startups-growing/#webpage", "url": "https://alqaeed-sa.pages.dev/sectors/startups-growing/", "name": "الإدارة المالية للشركات الناشئة والمتنامية | القائد للإدارة المالية", "description": "إدارة مالية للشركات الناشئة والمتنامية تشمل التخطيط المالي والسيولة والموازنة والتحليل والاستعداد للتمويل والنمو.", "inLanguage": "ar-SA" },
+      { "@type": "BreadcrumbList", "@id": "https://alqaeed-sa.pages.dev/sectors/startups-growing/#breadcrumb", "itemListElement": [
+        { "@type":"ListItem", "position":1, "name":"الرئيسية", "item":"https://alqaeed-sa.pages.dev/" },
+        { "@type":"ListItem", "position":2, "name":"القطاعات", "item":"https://alqaeed-sa.pages.dev/" },
+        { "@type":"ListItem", "position":3, "name":"الشركات الناشئة والمتنامية", "item":"https://alqaeed-sa.pages.dev/sectors/startups-growing/" }
+      ] }
+    ] }
+  },
 };
 
 export function getRouteMetadata(path: string): RouteMeta {
@@ -667,7 +770,7 @@ export function getRouteMetadata(path: string): RouteMeta {
           "@graph": [
             {
               "@type": "Article",
-              "@id": `${url}/#article`,
+              "@id": `${url}#article`,
               "headline": article.title,
               "description": article.description,
               "image": `https://alqaeed-sa.pages.dev/images/blog/${article.slug}.webp`,
@@ -686,7 +789,7 @@ export function getRouteMetadata(path: string): RouteMeta {
             },
             {
               "@type": "BreadcrumbList",
-              "@id": `${url}/#breadcrumb`,
+              "@id": `${url}#breadcrumb`,
               "itemListElement": [
                 {
                   "@type": "ListItem",
@@ -698,7 +801,7 @@ export function getRouteMetadata(path: string): RouteMeta {
                   "@type": "ListItem",
                   "position": 2,
                   "name": "المكتبة المالية",
-                  "item": "https://alqaeed-sa.pages.dev/blog"
+                  "item": "https://alqaeed-sa.pages.dev/blog/"
                 },
                 {
                   "@type": "ListItem",
