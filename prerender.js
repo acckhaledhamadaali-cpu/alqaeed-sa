@@ -60,9 +60,10 @@ async function prerender() {
     html = html.replace(/<meta\s+name="description"\s+content="[^"]*"\s*\/?>/i, `<meta name="description" content="${metadata.description}" />`);
 
     // 4. Update OpenGraph Tags
-    html = html.replace(/<meta\s+property="og:title"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:title" content="${metadata.ogTitle}" />`);
-    html = html.replace(/<meta\s+property="og:description"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:description" content="${metadata.ogDescription}" />`);
-    html = html.replace(/<meta\s+property="og:url"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:url" content="${metadata.ogUrl}" />`);
+    html = html.replace(/<meta\s+property="og:type"\s+content="[^"]*"\s*\/?>(?=\n)/i, `<meta property="og:type" content="${route.startsWith('/blog/') ? 'article' : 'website'}" />`);
+    html = html.replace(/<meta\s+property="og:title"\s+content="[^"]*"\s*\/?>(?=\n)/i, `<meta property="og:title" content="${metadata.ogTitle}" />`);
+    html = html.replace(/<meta\s+property="og:description"\s+content="[^"]*"\s*\/?>(?=\n)/i, `<meta property="og:description" content="${metadata.ogDescription}" />`);
+    html = html.replace(/<meta\s+property="og:url"\s+content="[^"]*"\s*\/?>(?=\n)/i, `<meta property="og:url" content="${metadata.ogUrl}" />`);
 
     // 5. Update Twitter Card Tags
     html = html.replace(/<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/?>/i, `<meta name="twitter:title" content="${metadata.ogTitle}" />`);
