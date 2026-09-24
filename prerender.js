@@ -100,9 +100,14 @@ async function prerender() {
   const publicSitemapPath = path.resolve(__dirname, 'public', 'sitemap.xml');
   const sitemapEntries = routes.map((r) => {
     const loc = r === '/' ? 'https://alqaeed-sa.pages.dev/' : `https://alqaeed-sa.pages.dev${r}/`;
-    const priority = r === '/' ? '1.0' : r.startsWith('/services/') || r === '/blog' || r.startsWith('/blog/') ? '0.8' : r.startsWith('/sectors/') ? '0.8' : '0.5';
+    const normalized = r.endsWith('/') && r.length > 1 ? r.slice(0, -1) : r;
+    const articleSlug = normalized.startsWith('/blog/') ? normalized.replace(/^\/blog\//, '') : null;
+    const article = articleSlug ? (BLOG_ARTICLES || []).find((a) => a.slug === articleSlug) : null;
+    const lastmod = article?.updatedAt || article?.publishedAt || null;
+    const priority = r === '/' ? '1.0' : r.startsWith('/services/') || r === '/blog' || r.startsWith('/blog/') || r.startsWith('/sectors/') ? '0.8' : '0.5';
     const changefreq = r.startsWith('/privacy') || r.startsWith('/terms') || r.startsWith('/cookies') ? 'yearly' : 'monthly';
-    return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>2026-09-09</lastmod>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`;
+    const lastmodLine = lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : '';
+    return `  <url>\n    <loc>${loc}</loc>${lastmodLine}\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`;
   }).join('\n');
 
   const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapEntries}\n</urlset>\n`;
