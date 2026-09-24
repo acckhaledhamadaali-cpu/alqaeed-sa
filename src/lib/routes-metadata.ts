@@ -746,6 +746,19 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
   },
 };
 
+const BLOG_SEO_TITLES: Record<string, string> = {
+  'remote-accountant-saudi-companies': 'محاسب عن بعد للشركات في السعودية | القائد',
+  'difference-between-accountant-and-cfo': 'الفرق بين المحاسب والمدير المالي | القائد',
+  'financial-analysis-key-ratios-business-owners': 'التحليل المالي وأهم النسب المالية | القائد',
+  'zakat-tax-financial-data-organization': 'تنظيم البيانات المالية للزكاة والضريبة | القائد',
+  'cash-flow-management-avoid-financial-crisis': 'إدارة التدفقات النقدية وتجنب الأزمات | القائد',
+  'bookkeeping-importance-organized-accounting': 'أهمية مسك الدفاتر المحاسبية للشركات | القائد',
+  'what-is-virtual-cfo-and-when-needed': 'ما هو المدير المالي عن بعد Virtual CFO؟ | القائد',
+  'financial-statements-importance-decision-making': 'أهمية القوائم المالية في اتخاذ القرار | القائد',
+  '7-signs-company-needs-remote-financial-management': '7 علامات تحتاج معها لإدارة مالية عن بعد | القائد',
+  'budgeting-planning-revenues-expenses': 'الموازنة التقديرية وتخطيط الإيرادات والمصروفات | القائد'
+};
+
 export function getRouteMetadata(path: string): RouteMeta {
   const normalized = (path.endsWith('/') && path.length > 1) ? path.slice(0, -1) : path;
   if (ROUTES_METADATA[normalized]) {
@@ -759,10 +772,10 @@ export function getRouteMetadata(path: string): RouteMeta {
       const url = `https://alqaeed-sa.pages.dev/blog/${article.slug}/`;
       return {
         path: normalized,
-        title: `${article.title} | القائد للإدارة المالية`,
+        title: BLOG_SEO_TITLES[article.slug] || `${article.title} | القائد للإدارة المالية`,
         description: article.description,
         canonical: url,
-        ogTitle: `${article.title} | القائد للإدارة المالية`,
+        ogTitle: BLOG_SEO_TITLES[article.slug] || `${article.title} | القائد للإدارة المالية`,
         ogDescription: article.description,
         ogUrl: url,
         schema: {
