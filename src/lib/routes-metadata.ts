@@ -641,7 +641,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
       ]
     }
   }
-
+,
   '/sectors/restaurants-cafes': {
     path: '/sectors/restaurants-cafes',
     title: 'الإدارة المالية للمطاعم والكافيهات | القائد للإدارة المالية',
