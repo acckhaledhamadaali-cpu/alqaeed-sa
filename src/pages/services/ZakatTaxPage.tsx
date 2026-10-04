@@ -10,7 +10,7 @@ const WHATSAPP_MESSAGE = "السلام عليكم، أرغب في مناقشة �
 const WHATSAPP_URL = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(WHATSAPP_MESSAGE);
 
 export default function ZakatTaxPage() {
-  const name = "الزكاة والضريبة";
+  const name = "خدمات الزكاة والضريبة في السعودية";
   const slug = "zakat-tax";
   const metaTitle = "خدمات ضريبة القيمة المضافة والزكاة في السعودية | القائد";
   const metaDesc = "إعداد ومراجعة ورفع إقرارات ضريبة القيمة المضافة والزكاة للمنشآت في السعودية، مع مراجعة البيانات والفواتير والسجلات المحاسبية وفق متطلبات هيئة الزكاة والضريبة والجمارك (ZATCA).";
