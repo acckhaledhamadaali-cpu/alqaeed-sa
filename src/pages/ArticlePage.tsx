@@ -175,7 +175,7 @@ function ArticleNotFound() {
 
     const canonicalTag = document.querySelector('link[rel="canonical"]');
     if (canonicalTag) {
-      canonicalTag.setAttribute('href', 'https://alqaeed-sa.pages.dev/blog');
+      canonicalTag.setAttribute('href', 'https://alqaeed-sa.pages.dev/blog/');
     }
 
     let robotsTag = document.querySelector('meta[name="robots"]');
@@ -236,7 +236,7 @@ export default function ArticlePage({ slug }: { slug: string }) {
 
   const metaTitle = `${article.title} | القائد للإدارة المالية`;
   const metaDesc = article.description;
-  const url = `https://alqaeed-sa.pages.dev/blog/${article.slug}`;
+  const url = `https://alqaeed-sa.pages.dev/blog/${article.slug}/`;
   const articleImage = getBlogImage(article.slug);
   const articleImageSrcSet = getBlogImageSrcSet(article.slug);
 
@@ -245,7 +245,7 @@ export default function ArticlePage({ slug }: { slug: string }) {
     "@graph": [
       {
         "@type": "Article",
-        "@id": `${url}/#article`,
+        "@id": `${url}#article`,
         "headline": article.title,
         "description": article.description,
         "image": articleImage,
@@ -258,10 +258,10 @@ export default function ArticlePage({ slug }: { slug: string }) {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": `${url}/#breadcrumb`,
+        "@id": `${url}#breadcrumb`,
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://alqaeed-sa.pages.dev/" },
-          { "@type": "ListItem", "position": 2, "name": "المكتبة المالية", "item": "https://alqaeed-sa.pages.dev/blog" },
+          { "@type": "ListItem", "position": 2, "name": "المكتبة المالية", "item": "https://alqaeed-sa.pages.dev/blog/" },
           { "@type": "ListItem", "position": 3, "name": article.title, "item": url }
         ]
       }

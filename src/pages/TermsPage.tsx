@@ -4,11 +4,12 @@ import Container from '../../components/Container';
 import { TYPOGRAPHY } from '../lib/tokens';
 
 export default function TermsPage() {
+  const url = "https://alqaeed-sa.pages.dev/terms/";
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://alqaeed-sa.pages.dev/terms/#webpage",
-    "url": "https://alqaeed-sa.pages.dev/terms",
+    "@id": `${url}#webpage`,
+    "url": url,
     "name": "الشروط والأحكام | القائد",
     "description": "اقرأ الشروط والأحكام المتعلقة باستخدام موقع القائد لخدمات الإدارة المالية والاستشارات. توضح هذه الصفحة القواعد المطبقة على خدماتنا.",
     "primaryImageOfPage": {
@@ -23,7 +24,7 @@ export default function TermsPage() {
   useSEO({
     title: "الشروط والأحكام | القائد",
     description: "اقرأ الشروط والأحكام المتعلقة باستخدام موقع القائد لخدمات الإدارة المالية والاستشارات. توضح هذه الصفحة القواعد المطبقة على خدماتنا.",
-    canonical: "https://alqaeed-sa.pages.dev/terms",
+    canonical: url,
     schema
   });
 
