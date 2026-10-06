@@ -62,7 +62,7 @@ export default function CookiesPage() {
               </p>
               <ul className="list-disc list-inside mt-2 space-y-1 pr-4">
                 <li>
-                  <strong>تحليل الأداء (Analytics):</strong> نستخدم أدوات مثل Google Analytics و Microsoft Clarity لفهم كيفية تفاعل الزوار مع الموقع، مما يساعدنا في تحسين المحتوى وطريقة عرض خدماتنا (مثل خدمات التحليل المالي والمدير المالي عن بعد).
+                  <strong>تحليل الأداء والقياس (Analytics & Measurement):</strong> نستخدم أدوات مثل Google Analytics وMicrosoft Clarity وMeta Pixel لفهم كيفية تفاعل الزوار مع الموقع وقياس فعالية الحملات، مما يساعدنا في تحسين المحتوى وطريقة عرض خدماتنا.
                 </li>
                 <li>
                   <strong>تسهيل تجربة الاستخدام:</strong> لضمان عمل الموقع بشكل سريع وفعال على جميع الأجهزة.
