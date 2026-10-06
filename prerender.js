@@ -16,6 +16,9 @@ async function prerender() {
 
   const template = fs.readFileSync(templatePath, 'utf8');
 
+  // Legacy public route kept reachable, but excluded from search indexing.
+  const NOINDEX_ROUTES = new Set(['/services/virtual-cfo']);
+
   // Import SSR bundle
   const ssrBundlePath = path.resolve(__dirname, 'dist-ssr', 'entry-server.js');
   if (!fs.existsSync(ssrBundlePath)) {
@@ -73,7 +76,15 @@ async function prerender() {
     // 6. Update Canonical link
     html = html.replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/i, `<link rel="canonical" href="${metadata.canonical}" />`);
 
-    // 7. Update JSON-LD Schema
+    // 7. Update robots directive for legacy/deprioritized pages
+    const robotsContent = NOINDEX_ROUTES.has(route) ? 'noindex, follow' : 'index, follow';
+    if (/<meta\\s+name="robots"\\s+content="[^"]*"\\s*\\/?>/i.test(html)) {
+      html = html.replace(/<meta\\s+name="robots"\\s+content="[^"]*"\\s*\\/?>/i, `<meta name="robots" content="${robotsContent}" />`);
+    } else {
+      html = html.replace('</head>', `<meta name="robots" content="${robotsContent}" />\\n  </head>`);
+    }
+
+    // 8. Update JSON-LD Schema
     if (metadata.schema) {
       const schemaScript = `<script type="application/ld+json" id="schema-jsonld">\n${JSON.stringify(metadata.schema, null, 2)}\n    </script>`;
       html = html.replace(/<script\s+type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/i, schemaScript);
@@ -99,7 +110,7 @@ async function prerender() {
   // Update/generate sitemap.xml in dist and public
   const sitemapPath = path.resolve(distDir, 'sitemap.xml');
   const publicSitemapPath = path.resolve(__dirname, 'public', 'sitemap.xml');
-  const sitemapEntries = routes.map((r) => {
+  const sitemapEntries = routes.filter((r) => !NOINDEX_ROUTES.has(r)).map((r) => {
     const loc = r === '/' ? 'https://alqaeed-sa.pages.dev/' : `https://alqaeed-sa.pages.dev${r}/`;
     const normalized = r.endsWith('/') && r.length > 1 ? r.slice(0, -1) : r;
     const articleSlug = normalized.startsWith('/blog/') ? normalized.replace(/^\/blog\//, '') : null;
