@@ -38,8 +38,8 @@ export default function PdfLeadMagnet({ title, subtitle, reportName, whatsappUrl
             className="flex items-center gap-1.5 bg-secondary hover:bg-secondary/90 text-white px-3 py-1.5 rounded-lg text-xs font-bold transition-colors"
           >
             <Download className="w-4 h-4" />
-            <span className="hidden sm:inline">تحميل النموذج</span>
-            <span className="sm:hidden">تحميل</span>
+            <span className="hidden sm:inline">اطلب النموذج عبر واتساب</span>
+            <span className="sm:hidden">اطلب النموذج</span>
           </a>
         </div>
 
