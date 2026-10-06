@@ -43,8 +43,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
           "address": {
             "@type": "PostalAddress",
             "addressCountry": "SA",
-            "addressRegion": "Riyadh"
-          },
+            },
           "areaServed": [
             {
               "@type": "Country",
@@ -189,10 +188,10 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
   },
   '/services/financial-statements': {
     path: '/services/financial-statements',
-    title: 'إعداد القوائم المالية المعتمدة للشركات | القائد للإدارة المالية',
+    title: 'إعداد القوائم المالية للشركات | القائد للإدارة المالية',
     description: 'احصل على قوائم مالية دقيقة وشفافة تعكس الأداء الحقيقي لمنشأتك. نساعدك في إعداد ميزانيات احترافية تدعم قراراتك وتزيد ثقة البنوك والمستثمرين.',
     canonical: 'https://alqaeed-sa.pages.dev/services/financial-statements/',
-    ogTitle: 'إعداد القوائم المالية المعتمدة للشركات | القائد للإدارة المالية',
+    ogTitle: 'إعداد القوائم المالية للشركات | القائد للإدارة المالية',
     ogDescription: 'احصل على قوائم مالية دقيقة وشفافة تعكس الأداء الحقيقي لمنشأتك. نساعدك في إعداد ميزانيات احترافية تدعم قراراتك وتزيد ثقة البنوك والمستثمرين.',
     ogUrl: 'https://alqaeed-sa.pages.dev/services/financial-statements/',
     schema: {
@@ -202,7 +201,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
           "@type": "WebPage",
           "@id": "https://alqaeed-sa.pages.dev/services/financial-statements/#webpage",
           "url": "https://alqaeed-sa.pages.dev/services/financial-statements/",
-          "name": "إعداد القوائم المالية المعتمدة للشركات | القائد للإدارة المالية",
+          "name": "إعداد القوائم المالية للشركات | القائد للإدارة المالية",
           "description": "احصل على قوائم مالية دقيقة وشفافة تعكس الأداء الحقيقي لمنشأتك. نساعدك في إعداد ميزانيات احترافية تدعم قراراتك وتزيد ثقة البنوك والمستثمرين.",
           "primaryImageOfPage": {
             "@id": "https://alqaeed-sa.pages.dev/#logo"
@@ -215,7 +214,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
         {
           "@type": "Service",
           "@id": "https://alqaeed-sa.pages.dev/services/financial-statements/#service",
-          "name": "إعداد القوائم المالية المعتمدة للشركات | القائد للإدارة المالية",
+          "name": "إعداد القوائم المالية للشركات | القائد للإدارة المالية",
           "description": "احصل على قوائم مالية دقيقة وشفافة تعكس الأداء الحقيقي لمنشأتك. نساعدك في إعداد ميزانيات احترافية تدعم قراراتك وتزيد ثقة البنوك والمستثمرين.",
           "provider": {
             "@id": "https://alqaeed-sa.pages.dev/#organization"

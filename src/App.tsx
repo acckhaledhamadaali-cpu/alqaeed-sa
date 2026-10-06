@@ -20,7 +20,6 @@ import TermsPage from './pages/TermsPage';
 import CookiesPage from './pages/CookiesPage';
 import BlogHubPage from './pages/BlogHubPage';
 import ArticlePage from './pages/ArticlePage';
-import NotificationOptIn from './components/NotificationOptIn';
 import SectorDetailPage from './pages/sectors/SectorDetailPage';
 
 import BookkeepingPage from './pages/services/BookkeepingPage';
@@ -51,7 +50,6 @@ export default function App({ path: propPath }: { path?: string } = {}) {
         </main>
         <FooterSection />
         <FloatingWhatsApp />
-        <NotificationOptIn />
       </div>
     );
   }
@@ -64,7 +62,6 @@ export default function App({ path: propPath }: { path?: string } = {}) {
         </main>
         <FooterSection />
         <FloatingWhatsApp />
-        <NotificationOptIn />
       </div>
     );
   }
@@ -77,7 +74,6 @@ export default function App({ path: propPath }: { path?: string } = {}) {
         </main>
         <FooterSection />
         <FloatingWhatsApp />
-        <NotificationOptIn />
       </div>
     );
   }
@@ -90,7 +86,6 @@ export default function App({ path: propPath }: { path?: string } = {}) {
         </main>
         <FooterSection />
         <FloatingWhatsApp />
-        <NotificationOptIn />
       </div>
     );
   }
@@ -103,7 +98,6 @@ export default function App({ path: propPath }: { path?: string } = {}) {
         </main>
         <FooterSection />
         <FloatingWhatsApp />
-        <NotificationOptIn />
       </div>
     );
   }
@@ -116,7 +110,6 @@ export default function App({ path: propPath }: { path?: string } = {}) {
         </main>
         <FooterSection />
         <FloatingWhatsApp />
-        <NotificationOptIn />
       </div>
     );
   }
@@ -129,7 +122,6 @@ export default function App({ path: propPath }: { path?: string } = {}) {
         </main>
         <FooterSection />
         <FloatingWhatsApp />
-        <NotificationOptIn />
       </div>
     );
   }
@@ -142,7 +134,6 @@ export default function App({ path: propPath }: { path?: string } = {}) {
         </main>
         <FooterSection />
         <FloatingWhatsApp />
-        <NotificationOptIn />
       </div>
     );
   }
@@ -155,7 +146,6 @@ export default function App({ path: propPath }: { path?: string } = {}) {
         </main>
         <FooterSection />
         <FloatingWhatsApp />
-        <NotificationOptIn />
       </div>
     );
   }
@@ -168,7 +158,6 @@ export default function App({ path: propPath }: { path?: string } = {}) {
         </main>
         <FooterSection />
         <FloatingWhatsApp />
-        <NotificationOptIn />
       </div>
     );
   }
@@ -181,7 +170,6 @@ export default function App({ path: propPath }: { path?: string } = {}) {
         </main>
         <FooterSection />
         <FloatingWhatsApp />
-        <NotificationOptIn />
       </div>
     );
   }
@@ -194,7 +182,6 @@ export default function App({ path: propPath }: { path?: string } = {}) {
         </main>
         <FooterSection />
         <FloatingWhatsApp />
-        <NotificationOptIn />
       </div>
     );
   }
@@ -207,7 +194,6 @@ export default function App({ path: propPath }: { path?: string } = {}) {
         </main>
         <FooterSection />
         <FloatingWhatsApp />
-        <NotificationOptIn />
       </div>
     );
   }
@@ -221,7 +207,6 @@ export default function App({ path: propPath }: { path?: string } = {}) {
         </main>
         <FooterSection />
         <FloatingWhatsApp />
-        <NotificationOptIn />
       </div>
     );
   }
@@ -244,7 +229,6 @@ export default function App({ path: propPath }: { path?: string } = {}) {
       
       {/* Floating elements */}
       <FloatingWhatsApp />
-      <NotificationOptIn />
     </div>
   );
 }

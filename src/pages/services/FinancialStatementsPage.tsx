@@ -12,7 +12,7 @@ const WHATSAPP_URL = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURICo
 export default function FinancialStatementsPage() {
   const name = "إعداد القوائم المالية";
   const slug = "financial-statements";
-  const metaTitle = "إعداد القوائم المالية المعتمدة للشركات | القائد للإدارة المالية";
+  const metaTitle = "إعداد القوائم المالية للشركات | القائد للإدارة المالية";
   const metaDesc = "احصل على قوائم مالية دقيقة وشفافة تعكس الأداء الحقيقي لمنشأتك. نساعدك في إعداد ميزانيات احترافية تدعم قراراتك وتزيد ثقة البنوك والمستثمرين.";
   const url = "https://alqaeed-sa.pages.dev/services/" + slug;
   

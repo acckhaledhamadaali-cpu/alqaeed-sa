@@ -52,11 +52,11 @@ export const TYPOGRAPHY = {
     h3: 'text-sm md:text-base font-bold font-arabic leading-normal',
   },
   body: {
-    large: 'text-sm font-bold leading-relaxed text-text-secondary font-arabic',
-    normal: 'text-xs font-bold leading-relaxed text-text-secondary font-arabic',
-    small: 'text-[10px] font-bold leading-normal text-text-muted font-arabic',
+    large: 'text-sm font-medium leading-relaxed text-text-secondary font-arabic',
+    normal: 'text-xs font-normal leading-relaxed text-text-secondary font-arabic',
+    small: 'text-[10px] font-normal leading-normal text-text-muted font-arabic',
   },
-  caption: 'text-[8px] font-bold tracking-wider text-text-muted font-arabic uppercase',
+  caption: 'text-[8px] font-normal tracking-wider text-text-muted font-arabic uppercase',
 };
 
 export const RADIUS = {

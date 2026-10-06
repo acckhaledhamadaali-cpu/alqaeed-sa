@@ -12,7 +12,6 @@ const SERVICES = [
   { name: "التقارير الإدارية", link: "/services/management-reports/" },
   { name: "إعداد الموازنات", link: "/services/budgeting/" },
   { name: "إدارة التدفقات النقدية", link: "/services/cash-flow/" },
-  { name: "المدير المالي عن بعد Virtual CFO", link: "/services/virtual-cfo/" }
 ];
 
 export default function ServicesSection(props: HTMLAttributes<HTMLElement>) {

@@ -7,27 +7,38 @@ interface SEOProps {
   schema: object;
 }
 
+function setMeta(selector: string, content: string, attributeName: 'name' | 'property') {
+  let tag = document.querySelector(selector) as HTMLMetaElement | null;
+
+  if (!tag) {
+    tag = document.createElement('meta');
+    tag.setAttribute(attributeName, selector.match(new RegExp(attributeName + '="([^"]+)"'))?.[1] || '');
+    document.head.appendChild(tag);
+  }
+
+  tag.setAttribute('content', content);
+}
+
 export function useSEO({ title, description, canonical, schema }: SEOProps) {
   useEffect(() => {
-    // Update title
     document.title = title;
 
-    // Update meta description
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute('content', description);
-    }
+    setMeta('meta[name="description"]', description, 'name');
+    setMeta('meta[property="og:title"]', title, 'property');
+    setMeta('meta[property="og:description"]', description, 'property');
+    setMeta('meta[property="og:url"]', canonical, 'property');
+    setMeta('meta[name="twitter:title"]', title, 'name');
+    setMeta('meta[name="twitter:description"]', description, 'name');
+    setMeta('meta[name="twitter:url"]', canonical, 'name');
 
-    // Update canonical URL
     const canonicalTag = document.querySelector('link[rel="canonical"]');
     if (canonicalTag) {
       canonicalTag.setAttribute('href', canonical);
     }
 
-    // Update or inject Structured Data Schema (JSON-LD) without creating duplicates
     let schemaScript = document.getElementById('schema-jsonld') as HTMLScriptElement | null;
     if (!schemaScript) {
-      schemaScript = document.querySelector('script[type="application/ld+json"]');
+      schemaScript = document.querySelector('script[type="application/ld+json"]') as HTMLScriptElement | null;
     }
 
     const schemaString = JSON.stringify(schema, null, 2);
