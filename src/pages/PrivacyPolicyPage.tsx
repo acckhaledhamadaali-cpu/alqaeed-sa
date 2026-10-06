@@ -4,11 +4,12 @@ import Container from '../../components/Container';
 import { TYPOGRAPHY } from '../lib/tokens';
 
 export default function PrivacyPolicyPage() {
+  const url = "https://alqaeed-sa.pages.dev/privacy-policy/";
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://alqaeed-sa.pages.dev/privacy-policy/#webpage",
-    "url": "https://alqaeed-sa.pages.dev/privacy-policy",
+    "@id": `${url}#webpage`,
+    "url": url,
     "name": "سياسة الخصوصية | القائد",
     "description": "توضح سياسة الخصوصية كيفية تعاملنا مع بياناتك في القائد لخدمات الإدارة المالية عن بعد. نحن نلتزم بحماية سرية معلوماتك.",
     "primaryImageOfPage": {
@@ -23,7 +24,7 @@ export default function PrivacyPolicyPage() {
   useSEO({
     title: "سياسة الخصوصية | القائد",
     description: "توضح سياسة الخصوصية كيفية تعاملنا مع بياناتك في القائد لخدمات الإدارة المالية عن بعد. نحن نلتزم بحماية سرية معلوماتك.",
-    canonical: "https://alqaeed-sa.pages.dev/privacy-policy",
+    canonical: url,
     schema
   });
 

@@ -4,11 +4,12 @@ import Container from '../../components/Container';
 import { TYPOGRAPHY } from '../lib/tokens';
 
 export default function CookiesPage() {
+  const url = "https://alqaeed-sa.pages.dev/cookies/";
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://alqaeed-sa.pages.dev/cookies/#webpage",
-    "url": "https://alqaeed-sa.pages.dev/cookies",
+    "@id": `${url}#webpage`,
+    "url": url,
     "name": "سياسة ملفات تعريف الارتباط | القائد",
     "description": "تعرف على كيفية استخدامنا لملفات تعريف الارتباط (Cookies) لتحسين تجربتك على موقع القائد وتحليل أداء الموقع.",
     "primaryImageOfPage": {
@@ -23,7 +24,7 @@ export default function CookiesPage() {
   useSEO({
     title: "سياسة ملفات تعريف الارتباط | القائد",
     description: "تعرف على كيفية استخدامنا لملفات تعريف الارتباط (Cookies) لتحسين تجربتك على موقع القائد وتحليل أداء الموقع.",
-    canonical: "https://alqaeed-sa.pages.dev/cookies",
+    canonical: url,
     schema
   });
 
