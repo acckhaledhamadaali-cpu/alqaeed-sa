@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { useEffect } from 'react';
 import HeroSection from '../sections/HeroSection';
 import ExperienceBar from '../sections/ExperienceBar';
 import SectorsSection from '../sections/SectorsSection';
@@ -14,6 +15,7 @@ import FinalCTASection from '../sections/FinalCTASection';
 import FooterSection from '../sections/FooterSection';
 import FloatingWhatsApp from '../sections/FloatingWhatsApp';
 import SoftwareIntegrations from './components/SoftwareIntegrations';
+import { trackMetaContact, trackMetaLead, trackMetaPageView } from './lib/metaPixel';
 
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
@@ -36,6 +38,45 @@ import LogoAssetsPage from './pages/admin/LogoAssetsPage';
 export default function App({ path: propPath }: { path?: string } = {}) {
   const currentPath = propPath || (typeof window !== 'undefined' ? window.location.pathname : '/');
   const path = (currentPath.endsWith('/') && currentPath.length > 1) ? currentPath.slice(0, -1) : currentPath;
+
+  useEffect(() => {
+    trackMetaPageView(path);
+
+    const handleTrackedLinkClick = (event: MouseEvent) => {
+      const target = event.target;
+
+      if (!(target instanceof Element)) {
+        return;
+      }
+
+      const link = target.closest('a');
+
+      if (!link) {
+        return;
+      }
+
+      const href = link.getAttribute('href') || '';
+
+      if (!href) {
+        return;
+      }
+
+      if (href.startsWith('https://wa.me/') || href.includes('api.whatsapp.com')) {
+        trackMetaLead('WhatsApp', href);
+        return;
+      }
+
+      if (href.startsWith('mailto:') || href.startsWith('tel:')) {
+        trackMetaContact('Direct contact', href);
+      }
+    };
+
+    document.addEventListener('click', handleTrackedLinkClick);
+
+    return () => {
+      document.removeEventListener('click', handleTrackedLinkClick);
+    };
+  }, [path]);
 
   if (path === '/logo-assets') {
     return <LogoAssetsPage />;
