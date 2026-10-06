@@ -78,10 +78,10 @@ async function prerender() {
 
     // 7. Update robots directive for legacy/deprioritized pages
     const robotsContent = NOINDEX_ROUTES.has(route) ? 'noindex, follow' : 'index, follow';
-    if (/<meta\\s+name="robots"\\s+content="[^"]*"\\s*\\/?>/i.test(html)) {
-      html = html.replace(/<meta\\s+name="robots"\\s+content="[^"]*"\\s*\\/?>/i, `<meta name="robots" content="${robotsContent}" />`);
+    if (/<meta\s+name="robots"\s+content="[^"]*"\s*\/?>/i.test(html)) {
+      html = html.replace(/<meta\s+name="robots"\s+content="[^"]*"\s*\/?>/i, `<meta name="robots" content="${robotsContent}" />`);
     } else {
-      html = html.replace('</head>', `<meta name="robots" content="${robotsContent}" />\\n  </head>`);
+      html = html.replace('</head>', `<meta name="robots" content="${robotsContent}" />\n  </head>`);
     }
 
     // 8. Update JSON-LD Schema
