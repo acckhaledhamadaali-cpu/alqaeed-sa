@@ -31,15 +31,11 @@ import BudgetingPage from './pages/services/BudgetingPage';
 import CashFlowPage from './pages/services/CashFlowPage';
 import VirtualCfoPage from './pages/services/VirtualCfoPage';
 
-import LogoAssetsPage from './pages/admin/LogoAssetsPage';
 
 export default function App({ path: propPath }: { path?: string } = {}) {
   const currentPath = propPath || (typeof window !== 'undefined' ? window.location.pathname : '/');
   const path = (currentPath.endsWith('/') && currentPath.length > 1) ? currentPath.slice(0, -1) : currentPath;
 
-  if (path === '/logo-assets') {
-    return <LogoAssetsPage />;
-  }
 
   if (path.startsWith('/sectors/')) {
     const slug = path.replace(/^\/sectors\//, '').replace(/\/$/, '');
