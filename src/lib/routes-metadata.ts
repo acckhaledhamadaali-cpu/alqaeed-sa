@@ -39,7 +39,6 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
           "description": "الإدارة المالية المتكاملة عن بعد للمنشآت والشركات في المملكة العربية السعودية، تشمل مسك الدفاتر، إعداد القوائم المالية، التحليل المالي، وإدارة التدفقات النقدية.",
           "telephone": "+966511294383",
           "email": "alqaeed.sa@gmail.com",
-          "priceRange": "$$",
           "address": {
             "@type": "PostalAddress",
             "addressCountry": "SA",
@@ -132,11 +131,11 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
   },
   '/services/zakat-tax': {
     path: '/services/zakat-tax',
-    title: 'خدمات ضريبة القيمة المضافة والزكاة في السعودية | القائد',
-    description: 'إعداد ومراجعة ورفع إقرارات ضريبة القيمة المضافة والزكاة للمنشآت في السعودية، مع مراجعة البيانات والفواتير والسجلات المحاسبية وفق متطلبات هيئة الزكاة والضريبة والجمارك (ZATCA).',
+    title: 'خدمات الزكاة وضريبة القيمة المضافة في السعودية | القائد',
+    description: 'إعداد ومراجعة إقرارات الزكاة وضريبة القيمة المضافة، مع رفع الإقرار للهيئة عند طلب العميل. يُحدد السعر حسب حجم العمليات وعدد الفروع والخدمات المطلوبة.',
     canonical: 'https://alqaeed-sa.pages.dev/services/zakat-tax/',
-    ogTitle: 'خدمات ضريبة القيمة المضافة والزكاة في السعودية | القائد',
-    ogDescription: 'إعداد ومراجعة ورفع إقرارات ضريبة القيمة المضافة والزكاة للمنشآت في السعودية مع مراجعة البيانات والفواتير والسجلات المحاسبية.',
+    ogTitle: 'خدمات الزكاة وضريبة القيمة المضافة في السعودية | القائد',
+    ogDescription: 'إعداد ومراجعة إقرارات الزكاة وضريبة القيمة المضافة، مع رفع الإقرار للهيئة عند طلب العميل. يُحدد السعر حسب حجم العمليات وعدد الفروع والخدمات المطلوبة.',
     ogUrl: 'https://alqaeed-sa.pages.dev/services/zakat-tax/',
     schema: {
       "@context": "https://schema.org",
@@ -145,8 +144,8 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
           "@type": "WebPage",
           "@id": "https://alqaeed-sa.pages.dev/services/zakat-tax/#webpage",
           "url": "https://alqaeed-sa.pages.dev/services/zakat-tax/",
-          "name": "خدمات ضريبة القيمة المضافة والزكاة في السعودية | القائد",
-          "description": "إعداد ومراجعة ورفع إقرارات ضريبة القيمة المضافة والزكاة للمنشآت في السعودية، مع مراجعة البيانات والفواتير والسجلات المحاسبية وفق متطلبات هيئة الزكاة والضريبة والجمارك (ZATCA).",
+          "name": "خدمات الزكاة وضريبة القيمة المضافة في السعودية | القائد",
+          "description": "إعداد ومراجعة إقرارات الزكاة وضريبة القيمة المضافة، مع رفع الإقرار للهيئة عند طلب العميل. يُحدد السعر حسب حجم العمليات وعدد الفروع والخدمات المطلوبة.",
           "primaryImageOfPage": {
             "@id": "https://alqaeed-sa.pages.dev/#logo"
           },
@@ -158,8 +157,8 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
         {
           "@type": "Service",
           "@id": "https://alqaeed-sa.pages.dev/services/zakat-tax/#service",
-          "name": "خدمات ضريبة القيمة المضافة والزكاة في السعودية | القائد",
-          "description": "إعداد ومراجعة ورفع إقرارات ضريبة القيمة المضافة والزكاة للمنشآت في السعودية، مع مراجعة البيانات والفواتير والسجلات المحاسبية وفق متطلبات هيئة الزكاة والضريبة والجمارك (ZATCA).",
+          "name": "خدمات الزكاة وضريبة القيمة المضافة في السعودية | القائد",
+          "description": "إعداد ومراجعة إقرارات الزكاة وضريبة القيمة المضافة، مع رفع الإقرار للهيئة عند طلب العميل. يُحدد السعر حسب حجم العمليات وعدد الفروع والخدمات المطلوبة.",
           "provider": {
             "@id": "https://alqaeed-sa.pages.dev/#organization"
           },
@@ -790,7 +789,7 @@ export function getRouteMetadata(path: string): RouteMeta {
               "author": {
                 "@type": "Person",
                 "@id": "https://alqaeed-sa.pages.dev/#person",
-                "name": "خالد القائد"
+                "name": "خالد حمادة"
               },
               "publisher": {
                 "@id": "https://alqaeed-sa.pages.dev/#organization"
@@ -831,4 +830,3 @@ export function getRouteMetadata(path: string): RouteMeta {
 
   return ROUTES_METADATA['/'];
 }
-

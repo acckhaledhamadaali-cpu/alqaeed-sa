@@ -5,7 +5,7 @@ import SectionTitle from '../components/SectionTitle';
 import { MessageCircle } from 'lucide-react';
 
 const WHATSAPP_NUMBER = "966511294383";
-const WHATSAPP_MESSAGE = "السلام عليكم، أود مناقشة تنظيم حسابات منشأتي وبناء نظام مالي يدعم اتخاذ القرار.";
+const WHATSAPP_MESSAGE = "السلام عليكم، نشاط منشأتي [نوع النشاط] وعدد فروعها [العدد]، وأرغب في مناقشة [الخدمة المطلوبة] ومعرفة نطاقها وطريقة تحديد الأتعاب.";
 
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 

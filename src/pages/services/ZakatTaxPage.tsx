@@ -6,14 +6,14 @@ import { MessageCircle } from 'lucide-react';
 import PdfLeadMagnet from '../../components/PdfLeadMagnet';
 
 const WHATSAPP_NUMBER = "966511294383";
-const WHATSAPP_MESSAGE = "السلام عليكم، أرغب في مناقشة خدمة الزكاة والضريبة وإعداد الإقرارات لمنشأتي.";
+const WHATSAPP_MESSAGE = "السلام عليكم، أرغب في إعداد ومراجعة إقرار الزكاة أو ضريبة القيمة المضافة لمنشأتي، ورفعه للهيئة إذا طلبت ذلك. نشاطي [نوع النشاط] وعدد فروعه [العدد].";
 const WHATSAPP_URL = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(WHATSAPP_MESSAGE);
 
 export default function ZakatTaxPage() {
-  const name = "خدمات الزكاة والضريبة في السعودية";
+  const name = "خدمات الزكاة وضريبة القيمة المضافة في السعودية";
   const slug = "zakat-tax";
-  const metaTitle = "خدمات ضريبة القيمة المضافة والزكاة في السعودية | القائد";
-  const metaDesc = "إعداد ومراجعة ورفع إقرارات ضريبة القيمة المضافة والزكاة للمنشآت في السعودية، مع مراجعة البيانات والفواتير والسجلات المحاسبية وفق متطلبات هيئة الزكاة والضريبة والجمارك (ZATCA).";
+  const metaTitle = "خدمات الزكاة وضريبة القيمة المضافة في السعودية | القائد";
+  const metaDesc = "إعداد ومراجعة إقرارات الزكاة وضريبة القيمة المضافة، مع رفع الإقرار للهيئة عند طلب العميل. يُحدد السعر حسب حجم العمليات وعدد الفروع والخدمات المطلوبة.";
   const url = "https://alqaeed-sa.pages.dev/services/" + slug + "/";
   
   const schema = {
@@ -21,7 +21,7 @@ export default function ZakatTaxPage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": url + "/#webpage",
+        "@id": url + "#webpage",
         "url": url,
         "name": metaTitle,
         "description": metaDesc,
@@ -35,7 +35,7 @@ export default function ZakatTaxPage() {
       },
       {
         "@type": "Service",
-        "@id": url + "/#service",
+        "@id": url + "#service",
         "name": metaTitle,
         "description": metaDesc,
         "provider": {
@@ -45,7 +45,7 @@ export default function ZakatTaxPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": url + "/#breadcrumb",
+        "@id": url + "#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -107,12 +107,13 @@ export default function ZakatTaxPage() {
               خدمات الزكاة والضريبة التي أقدمها
             </h2>
             <p>
-              أقدم خدمات تنظيم ومراجعة البيانات المالية وإعداد الإقرارات الزكوية والضريبية وفق الأنظمة واللوائح المعمول بها في المملكة العربية السعودية، مع التدقيق المحاسبي للقيود والفواتير للحد من أي تعارضات أو أخطاء محتملة. وتشمل الخدمة:
+              أقدم خدمات تنظيم ومراجعة البيانات المالية وإعداد الإقرارات الزكوية والضريبية وفق الأنظمة واللوائح المعمول بها في المملكة العربية السعودية. ويمكنني رفع الإقرار للهيئة عند طلب العميل. وتشمل الخدمة:
             </p>
 
             <ul className="list-disc list-inside space-y-1 pr-4">
               <li>تسجيل المنشأة وتحديث بياناتها في ضريبة القيمة المضافة.</li>
               <li>إعداد ومراجعة إقرارات ضريبة القيمة المضافة (VAT Returns).</li>
+              <li>رفع الإقرار للهيئة عند طلب العميل.</li>
               <li>احتساب الوعاء الزكوي وإعداد الإقرارات الزكوية السنوية.</li>
               <li>مراجعة الفواتير والقيود المحاسبية للتأكد من اكتمالها ومطابقتها.</li>
               <li>متابعة المواعيد النظامية للالتزامات الزكوية والضريبية.</li>
@@ -131,10 +132,13 @@ export default function ZakatTaxPage() {
               ابدأ بتنظيم ملفك الزكوي والضريبي
             </h2>
             <p>
-              أقدم خدمة إعداد ومراجعة الإقرارات الزكوية والضريبية للمنشآت في السعودية، مع مراجعة البيانات والفواتير والسجلات المحاسبية قبل الرفع، بما يساعد على تقليل الأخطاء والفروقات وتحسين جاهزية الملف الضريبي.
+              أقدم خدمة إعداد ومراجعة الإقرارات الزكوية والضريبية للمنشآت في السعودية، ويمكنني رفع الإقرار للهيئة عند طلب العميل. وتشمل الخدمة مراجعة البيانات والفواتير والسجلات المحاسبية وتجهيز الملف الضريبي.
             </p>
           </div>
 
+          <div role="note" className="my-5 rounded-xl border border-amber-200 bg-amber-50 p-3 text-xs md:text-sm leading-6 text-amber-950">
+            <strong>مثال توضيحي:</strong> البيانات والأرقام افتراضية، وليست إقرارًا فعليًا أو بيانات عميل.
+          </div>
           <PdfLeadMagnet 
             title="" 
             subtitle="" 
@@ -146,7 +150,7 @@ export default function ZakatTaxPage() {
                 <div className="border-b-2 border-green-800 pb-3 mb-4 flex justify-between items-end">
                   <div>
                     <h2 className="text-lg md:text-xl font-bold text-gray-900 font-arabic mb-1">إقرار ضريبة القيمة المضافة</h2>
-                    <p className="text-gray-500">للفترة: الربع الثالث (يوليو - سبتمبر 2024)</p>
+                    <p className="text-gray-500">الفترة: ربع سنوي — بيانات افتراضية للتوضيح</p>
                   </div>
                   <div className="text-left text-[9px] md:text-[10px] text-gray-400">
                     <p>الرقم الضريبي: 30XXXXXXXXXX3</p>
@@ -228,7 +232,7 @@ export default function ZakatTaxPage() {
                     <p className="flex items-start gap-1">
                       <span className="w-2 h-2 rounded-full bg-green-500 inline-block mt-1 shrink-0"></span>
                       <span>
-                        تمت مطابقة هذا التقرير مع ميزان المراجعة ودفتر الأستاذ العام لضريبة القيمة المضافة. الفواتير متوافقة مع متطلبات الفوترة الإلكترونية (المرحلة الثانية).
+                        هذا نموذج توضيحي ببيانات افتراضية، ولا يمثل مطابقة فعلية لفواتير عميل. وتُراجع متطلبات الفوترة الإلكترونية عند تنفيذ الخدمة.
                       </span>
                     </p>
                   </div>
@@ -243,7 +247,7 @@ export default function ZakatTaxPage() {
               هل تحتاج إلى تجهيز بياناتك المالية للزكاة والضريبة؟
             </h3>
             <p className="text-xs md:text-sm text-text-secondary mb-4 max-w-xl mx-auto leading-relaxed">
-              أساعدك في مراجعة القيود والفواتير وإعداد الإقرارات بما يتوافق مع متطلبات هيئة الزكاة والضريبة والجمارك (ZATCA).
+              أساعدك في مراجعة القيود والفواتير وإعداد الإقرارات، ويمكنني رفعها للهيئة عند طلب العميل.
             </p>
             <a
               href={WHATSAPP_URL}

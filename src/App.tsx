@@ -33,6 +33,8 @@ import BudgetingPage from './pages/services/BudgetingPage';
 import CashFlowPage from './pages/services/CashFlowPage';
 import VirtualCfoPage from './pages/services/VirtualCfoPage';
 
+import ServicePricingNote from './components/ServicePricingNote';
+
 import LogoAssetsPage from './pages/admin/LogoAssetsPage';
 
 export default function App({ path: propPath }: { path?: string } = {}) {
@@ -100,6 +102,7 @@ export default function App({ path: propPath }: { path?: string } = {}) {
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
           <BookkeepingPage />
+          <ServicePricingNote />
         </main>
         <FooterSection />
         <FloatingWhatsApp />
@@ -112,6 +115,7 @@ export default function App({ path: propPath }: { path?: string } = {}) {
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
           <ZakatTaxPage />
+          <ServicePricingNote />
         </main>
         <FooterSection />
         <FloatingWhatsApp />
@@ -124,6 +128,7 @@ export default function App({ path: propPath }: { path?: string } = {}) {
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
           <FinancialStatementsPage />
+          <ServicePricingNote />
         </main>
         <FooterSection />
         <FloatingWhatsApp />
@@ -136,6 +141,7 @@ export default function App({ path: propPath }: { path?: string } = {}) {
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
           <FinancialAnalysisPage />
+          <ServicePricingNote />
         </main>
         <FooterSection />
         <FloatingWhatsApp />
@@ -148,6 +154,7 @@ export default function App({ path: propPath }: { path?: string } = {}) {
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
           <ManagementReportsPage />
+          <ServicePricingNote />
         </main>
         <FooterSection />
         <FloatingWhatsApp />
@@ -160,6 +167,7 @@ export default function App({ path: propPath }: { path?: string } = {}) {
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
           <BudgetingPage />
+          <ServicePricingNote />
         </main>
         <FooterSection />
         <FloatingWhatsApp />
@@ -172,6 +180,7 @@ export default function App({ path: propPath }: { path?: string } = {}) {
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
           <CashFlowPage />
+          <ServicePricingNote />
         </main>
         <FooterSection />
         <FloatingWhatsApp />
@@ -184,6 +193,7 @@ export default function App({ path: propPath }: { path?: string } = {}) {
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
           <VirtualCfoPage />
+          <ServicePricingNote />
         </main>
         <FooterSection />
         <FloatingWhatsApp />

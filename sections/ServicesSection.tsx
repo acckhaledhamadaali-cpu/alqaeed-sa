@@ -28,6 +28,9 @@ export default function ServicesSection(props: HTMLAttributes<HTMLElement>) {
             <SectionDescription id="services-description" className="text-center max-w-2xl text-text-secondary text-xs sm:text-sm">
               أتولى إدارة وتنظيم الجوانب المالية التي تحتاجها المنشآت لتصبح الحسابات واضحة والتقارير دقيقة والقرارات مبنية على أرقام فعلية.
             </SectionDescription>
+            <p className="max-w-2xl text-center text-xs sm:text-sm text-text-secondary leading-6">
+              تُحدَّد الأتعاب بعد معرفة حجم العمليات، وعدد الفروع، والخدمات المطلوبة.
+            </p>
           </div>
 
           {/* Simple, lightweight list */}

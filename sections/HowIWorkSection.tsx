@@ -24,10 +24,12 @@ export default function HowIWorkSection(props: HTMLAttributes<HTMLElement>) {
 
           {/* Timeline Container */}
           <Timeline id="how-i-work-timeline" className="w-full max-w-2xl md:max-w-full" />
+          <p className="max-w-2xl text-center text-xs md:text-sm leading-6 text-text-secondary">
+            نتفق معك على وسيلة مناسبة لتبادل الملفات، ونحذف ملفات العمل بعد انتهاء الخدمة.
+          </p>
 
         </div>
       </Container>
     </SectionWrapper>
   );
 }
-
