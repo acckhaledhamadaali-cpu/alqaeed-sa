@@ -5,23 +5,23 @@ import { TYPOGRAPHY } from '../src/lib/tokens';
 import { MessageCircle } from 'lucide-react';
 
 const WHATSAPP_NUMBER = "966511294383";
-const HERO_WHATSAPP_MESSAGE = "السلام عليكم، اطلعت على موقع القائد للإدارة المالية وأرغب في مناقشة احتياج منشأتي من الخدمات المالية والمحاسبية.";
+const HERO_WHATSAPP_MESSAGE = "السلام عليكم، نشاط منشأتي [نوع النشاط] وعدد فروعها [العدد]، وأرغب في مناقشة خدمة [اسم الخدمة].";
 const HERO_WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(HERO_WHATSAPP_MESSAGE)}`;
 
 export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
   return (
     <SectionWrapper id="hero-section-wrapper" variant="white" spacing="default" {...props}>
       <Container id="hero-container">
-        {/* Responsive layout: Grid where Image is top on Mobile, right on Desktop */}
+        {/* Responsive layout: Message first on mobile; profile image remains on the right on desktop. */}
         <div id="hero-grid-layout" className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-8 items-center">
           
-          {/* Profile Image Area (Top on Mobile, Right on Desktop - 5 columns) */}
-          <div id="hero-image-column" className="w-full md:col-span-5 flex justify-center order-1 md:order-2">
+          {/* Profile Image Area (After the message on mobile, right on desktop - 5 columns) */}
+          <div id="hero-image-column" className="w-full md:col-span-5 flex justify-center order-2 md:order-2">
             <img 
               src="/images/khaled.webp"
               srcSet="/images/khaled-400.webp 400w, /images/khaled-800.webp 800w, /images/khaled.webp 1023w"
               sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1023px"
-              alt="خالد القائد متخصص في الإدارة المالية المتكاملة عن بعد للمنشآت"
+              alt="خالد حمادة، محاسب مالي في القائد للإدارة المالية"
               loading="eager"
               fetchPriority="high"
               decoding="async"
@@ -33,15 +33,16 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
             />
           </div>
 
-          {/* Text Area (Bottom on Mobile, Left on Desktop - 7 columns) */}
+          {/* Text Area (First on mobile, left on desktop - 7 columns) */}
           <div 
             id="hero-text-column" 
-            className="md:col-span-7 flex flex-col items-center md:items-start text-center md:text-right space-y-4 md:space-y-5 order-2 md:order-1"
+            className="md:col-span-7 flex flex-col items-center md:items-start text-center md:text-right space-y-4 md:space-y-5 order-1 md:order-1"
           >
             
             <header id="hero-header" className="flex flex-col items-center md:items-start space-y-3.5 md:space-y-4 w-full text-center md:text-right">
               {/* Brand & Tagline Area */}
               <div id="hero-brand-area" className="flex flex-col items-center md:items-start space-y-1">
+                <p className="text-sm md:text-base font-semibold text-text-secondary">خالد حمادة | محاسب مالي</p>
                 <h1 id="hero-brand-name" className={`${TYPOGRAPHY.heading.h1} font-bold text-text-primary`}>
                   <span>القائد</span>
                   <span id="hero-brand-tagline" className={`block ${TYPOGRAPHY.body.large} text-secondary uppercase font-semibold mt-1`}>

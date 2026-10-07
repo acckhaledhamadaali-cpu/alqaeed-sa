@@ -250,7 +250,7 @@ export default function ArticlePage({ slug }: { slug: string }) {
         "description": article.description,
         "image": articleImage,
         "inLanguage": "ar-SA",
-        "author": { "@type": "Person", "@id": "https://alqaeed-sa.pages.dev/#person", "name": "خالد القائد" },
+        "author": { "@type": "Person", "@id": "https://alqaeed-sa.pages.dev/#person", "name": "خالد حمادة" },
         "publisher": { "@id": "https://alqaeed-sa.pages.dev/#organization" },
         "datePublished": article.publishedAt,
         "dateModified": article.updatedAt || article.publishedAt,

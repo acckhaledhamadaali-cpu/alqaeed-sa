@@ -5,11 +5,11 @@
         {
           "@type": "Person",
           "@id": "https://alqaeed-sa.pages.dev/#person",
-          "name": "خالد القائد",
-          "jobTitle": "مؤسس القائد ومتخصص في الإدارة المالية المتكاملة عن بعد للمنشآت",
+          "name": "خالد حمادة",
+          "jobTitle": "محاسب مالي ومؤسس القائد",
           "url": "https://alqaeed-sa.pages.dev/",
           "image": "https://alqaeed-sa.pages.dev/images/khaled.webp",
-          "description": "خالد القائد، مؤسس القائد. متخصص في الإدارة المالية المتكاملة، التقارير المالية، التحليل المالي، والزكاة والضرائب لتقديم رؤى دقيقة تدعم اتخاذ القرار وتحسن الأداء المالي للمنشآت.",
+          "description": "خالد حمادة، محاسب مالي ومؤسس القائد. متخصص في الإدارة المالية المتكاملة والتقارير والتحليل المالي والزكاة والضرائب للمنشآت.",
           "email": "alqaeed.sa@gmail.com",
           "telephone": "+966511294383",
           "hasCredential": [
@@ -76,7 +76,6 @@
             "addressRegion": "المملكة العربية السعودية"
           },
           "telephone": "+966511294383",
-          "priceRange": "$$",
           "provider": {
             "@id": "https://alqaeed-sa.pages.dev/#person"
           },
@@ -190,4 +189,3 @@
         }
       ]
     }
-    
