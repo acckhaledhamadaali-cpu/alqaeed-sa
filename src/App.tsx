@@ -268,9 +268,9 @@ export default function App({ path: propPath }: { path?: string } = {}) {
         {/* Structural sections in order */}
         <HeroSection />
         <ExperienceBar />
+        <ServicesSection />
         <SectorsSection />
         <ChallengesSection />
-        <ServicesSection />
         <HowIWorkSection />
         <AboutSection />
         <SoftwareIntegrations />

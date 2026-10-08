@@ -2,17 +2,36 @@
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <!-- Meta Pixel -->
+    <!-- Meta Pixel: queue events immediately, load the external library after intent or idle time. -->
     <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1358162632825916');
+      (function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = true;
+        n.version = '2.0';
+        n.queue = [];
+        n('init', '1358162632825916');
+
+        var requested = false;
+        function loadPixel() {
+          if (requested) return;
+          requested = true;
+          t = b.createElement(e);
+          t.async = true;
+          t.src = v;
+          s = b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t, s);
+        }
+
+        ['pointerdown', 'touchstart', 'keydown', 'scroll'].forEach(function (eventName) {
+          f.addEventListener(eventName, loadPixel, { once: true, passive: true, capture: true });
+        });
+        f.setTimeout(loadPixel, 8000);
+      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
     </script>
     <script>
       (function() {
@@ -53,27 +72,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="IvFOKYmrfdg6a8N2Ke4gZGWWOzYd1w0i3G55eem5BMo" />
     <meta name="msvalidate.01" content="7A404DD9E8922C791564C901C7726512" />
-    <!-- Performance Optimization: Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
-    
     <!-- Preload Hero Image -->
     <link rel="preload" as="image" href="/images/khaled-400.webp" imagesrcset="/images/khaled-400.webp 400w, /images/khaled-800.webp 800w, /images/khaled.webp 1023w" imagesizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1023px" fetchpriority="high" />
 
-    <title>القائد | الإدارة المالية المتكاملة عن بعد للمنشآت</title>
+    <title>خدمات محاسبية وإدارة مالية للمنشآت في السعودية | القائد</title>
     
     <!-- Primary Meta Tags -->
-    <meta name="title" content="القائد | الإدارة المالية المتكاملة عن بعد للمنشآت" />
-    <meta name="description" content="القائد - الإدارة المالية المتكاملة عن بعد للمنشآت. أقدم حلولاً مالية متكاملة لدعم اتخاذ القرار وتحسين الأداء المالي، من خلال مسك الدفاتر، التحليل المالي، التخطيط المالي، وإعداد الميزانيات للمنشآت في المملكة العربية السعودية." />
+    <meta name="title" content="خدمات محاسبية وإدارة مالية للمنشآت في السعودية | القائد" />
+    <meta name="description" content="خدمات مسك دفاتر، قوائم وتقارير مالية، تحليل مالي، وتخطيط للتدفقات النقدية للمنشآت في السعودية. اختر احتياجك واطلب تحديد النطاق والأتعاب عبر واتساب." />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="language" content="Arabic" />
 
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://alqaeed-sa.pages.dev/" />
-    <meta property="og:title" content="القائد | الإدارة المالية المتكاملة عن بعد للمنشآت" />
-    <meta property="og:description" content="القائد - الإدارة المالية المتكاملة عن بعد للمنشآت. حلول مالية متكاملة لدعم اتخاذ القرار وتحسين الأداء المالي للمنشآت في السعودية." />
+    <meta property="og:title" content="خدمات محاسبية وإدارة مالية للمنشآت في السعودية | القائد" />
+    <meta property="og:description" content="مسك دفاتر، قوائم وتقارير، تحليل مالي، وتخطيط للتدفقات النقدية. اختر الخدمة المناسبة لمنشأتك وناقش نطاقها وأتعابها عبر واتساب." />
     <meta property="og:image" content="https://alqaeed-sa.pages.dev/images/khaled.webp" />
     <meta property="og:image:alt" content="القائد - الإدارة المالية المتكاملة عن بعد للمنشآت" />
     <meta property="og:image:width" content="1023" />
@@ -85,15 +99,14 @@
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://alqaeed-sa.pages.dev/" />
-    <meta name="twitter:title" content="القائد | الإدارة المالية المتكاملة عن بعد للمنشآت" />
-    <meta name="twitter:description" content="القائد - الإدارة المالية المتكاملة عن بعد للمنشآت. حلول مالية متكاملة لدعم اتخاذ القرار وتحسين الأداء المالي للمنشآت في السعودية." />
+    <meta name="twitter:title" content="خدمات محاسبية وإدارة مالية للمنشآت في السعودية | القائد" />
+    <meta name="twitter:description" content="مسك دفاتر، قوائم وتقارير، تحليل مالي، وتخطيط للتدفقات النقدية. اختر الخدمة المناسبة لمنشأتك وناقش نطاقها وأتعابها عبر واتساب." />
     <meta name="twitter:image" content="https://alqaeed-sa.pages.dev/images/khaled.webp" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://alqaeed-sa.pages.dev/" />
 
     <!-- Favicons & Devices Theme Configuration -->
-    <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=4" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=4" />
     <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192x192.png?v=4" />
