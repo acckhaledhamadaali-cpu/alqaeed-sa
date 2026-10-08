@@ -5,7 +5,7 @@ import { TYPOGRAPHY } from '../src/lib/tokens';
 import { MessageCircle } from 'lucide-react';
 
 const WHATSAPP_NUMBER = "966511294383";
-const HERO_WHATSAPP_MESSAGE = "السلام عليكم، نشاط منشأتي [نوع النشاط] وعدد فروعها [العدد]، وأرغب في مناقشة خدمة [اسم الخدمة].";
+const HERO_WHATSAPP_MESSAGE = "السلام عليكم، نشاط منشأتي [نوع النشاط]، وعدد فروعها [العدد]. أحتاج [الخدمة أو التحدي]. أرجو توضيح نطاق الخدمة والمعلومات الأولية المطلوبة وطريقة تحديد الأتعاب.";
 const HERO_WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(HERO_WHATSAPP_MESSAGE)}`;
 
 export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
@@ -56,7 +56,7 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
                 id="hero-description" 
                 className={`${TYPOGRAPHY.body.large} max-w-xl`}
               >
-                أتولى تنظيم الحسابات ومسك الدفاتر وإعداد القوائم المالية وتحليل الأداء المالي وإصدار التقارير الإدارية لتكون أرقام منشأتك واضحة أمامك في كل وقت
+                أرتّب حسابات منشأتك وأجهّز القوائم والتقارير وأحلّل الأداء المالي. ابدأ باختيار احتياجك من الخيارات المختصرة أدناه، ثم أرسل معلومات نشاطك الأساسية لنناقش نطاق الخدمة والأتعاب.
               </p>
 
               {/* Short Trust Line */}
@@ -77,14 +77,14 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
                   className="inline-flex items-center gap-x-2 px-5 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs sm:text-sm font-semibold shadow-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
                 >
                   <MessageCircle className="w-4 h-4" aria-hidden="true" />
-                  <span>تواصل معي عبر واتساب</span>
+                  <span>ناقش احتياج منشأتك</span>
                 </a>
                 <a 
                   href="#services-section-wrapper"
                   id="hero-secondary-cta"
                   className="inline-flex items-center px-4 py-2.5 rounded-xl bg-surface-subtle border border-border-subtle hover:border-primary text-text-primary hover:text-primary text-xs sm:text-sm font-medium transition-all duration-200"
                 >
-                  استكشف الخدمات
+                  اعرف الخدمة المناسبة
                 </a>
               </div>
             </header>
