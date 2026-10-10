@@ -201,11 +201,11 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
   },
   '/services/zakat-tax': {
     path: '/services/zakat-tax',
-    title: 'خدمات الزكاة وضريبة القيمة المضافة في السعودية | القائد',
-    description: 'إعداد ومراجعة إقرارات الزكاة وضريبة القيمة المضافة، مع رفع الإقرار للهيئة عند طلب العميل. يُحدد السعر حسب حجم العمليات وعدد الفروع والخدمات المطلوبة.',
+    title: 'إقرار ضريبة القيمة المضافة والإقرار الزكوي | القائد',
+    description: 'خدمتان منفصلتان للمنشآت في السعودية: إعداد ومراجعة إقرار ضريبة القيمة المضافة أو الإقرار الزكوي، مع توضيح مستندات وخطوات كل خدمة.',
     canonical: 'https://alqaeed-sa.pages.dev/services/zakat-tax/',
-    ogTitle: 'خدمات الزكاة وضريبة القيمة المضافة في السعودية | القائد',
-    ogDescription: 'إعداد ومراجعة إقرارات الزكاة وضريبة القيمة المضافة، مع رفع الإقرار للهيئة عند طلب العميل. يُحدد السعر حسب حجم العمليات وعدد الفروع والخدمات المطلوبة.',
+    ogTitle: 'إقرار ضريبة القيمة المضافة والإقرار الزكوي | القائد',
+    ogDescription: 'خدمتان منفصلتان للمنشآت في السعودية: إعداد ومراجعة إقرار ضريبة القيمة المضافة أو الإقرار الزكوي، مع توضيح مستندات وخطوات كل خدمة.',
     ogUrl: 'https://alqaeed-sa.pages.dev/services/zakat-tax/',
     schema: {
       "@context": "https://schema.org",
@@ -214,8 +214,8 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
           "@type": "WebPage",
           "@id": "https://alqaeed-sa.pages.dev/services/zakat-tax/#webpage",
           "url": "https://alqaeed-sa.pages.dev/services/zakat-tax/",
-          "name": "خدمات الزكاة وضريبة القيمة المضافة في السعودية | القائد",
-          "description": "إعداد ومراجعة إقرارات الزكاة وضريبة القيمة المضافة، مع رفع الإقرار للهيئة عند طلب العميل. يُحدد السعر حسب حجم العمليات وعدد الفروع والخدمات المطلوبة.",
+          "name": "إقرار ضريبة القيمة المضافة والإقرار الزكوي | القائد",
+          "description": "خدمتان منفصلتان للمنشآت في السعودية: إعداد ومراجعة إقرار ضريبة القيمة المضافة أو الإقرار الزكوي، مع توضيح مستندات وخطوات كل خدمة.",
           "primaryImageOfPage": {
             "@id": "https://alqaeed-sa.pages.dev/#logo"
           },
@@ -226,9 +226,19 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
         },
         {
           "@type": "Service",
-          "@id": "https://alqaeed-sa.pages.dev/services/zakat-tax/#service",
-          "name": "خدمات الزكاة وضريبة القيمة المضافة في السعودية | القائد",
-          "description": "إعداد ومراجعة إقرارات الزكاة وضريبة القيمة المضافة، مع رفع الإقرار للهيئة عند طلب العميل. يُحدد السعر حسب حجم العمليات وعدد الفروع والخدمات المطلوبة.",
+          "@id": "https://alqaeed-sa.pages.dev/services/zakat-tax/#vat-service",
+          "name": "إعداد ومراجعة إقرار ضريبة القيمة المضافة",
+          "description": "خدمة مستقلة لإعداد ومراجعة إقرار ضريبة القيمة المضافة للمنشآت المسجلة، وفق بيانات الفترة ومستنداتها.",
+          "provider": {
+            "@id": "https://alqaeed-sa.pages.dev/#organization"
+          },
+          "areaServed": "Saudi Arabia"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://alqaeed-sa.pages.dev/services/zakat-tax/#zakat-service",
+          "name": "إعداد ومراجعة الإقرار الزكوي",
+          "description": "خدمة مستقلة لإعداد ومراجعة الإقرار الزكوي للمنشآت بحسب صفتها وسجلاتها ومستنداتها.",
           "provider": {
             "@id": "https://alqaeed-sa.pages.dev/#organization"
           },
@@ -247,7 +257,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
             {
               "@type": "ListItem",
               "position": 2,
-              "name": "الزكاة والضريبة",
+              "name": "إقرار ضريبة القيمة المضافة والإقرار الزكوي",
               "item": "https://alqaeed-sa.pages.dev/services/zakat-tax/"
             }
           ]
