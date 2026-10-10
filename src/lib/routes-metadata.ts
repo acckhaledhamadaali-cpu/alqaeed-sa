@@ -32,23 +32,86 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
           "logo": {
             "@type": "ImageObject",
             "@id": "https://alqaeed-sa.pages.dev/#logo",
-            "url": "https://alqaeed-sa.pages.dev/images/khaled.webp",
-            "caption": "القائد للإدارة المالية"
+            "url": "https://alqaeed-sa.pages.dev/favicon.png",
+            "contentUrl": "https://alqaeed-sa.pages.dev/favicon.png",
+            "caption": "القائد للإدارة المالية",
+            "width": 153,
+            "height": 154
           },
-          "image": "https://alqaeed-sa.pages.dev/images/khaled.webp",
+          "image": "https://alqaeed-sa.pages.dev/favicon.png",
           "description": "خدمات مسك الدفاتر، إعداد القوائم والتقارير المالية، التحليل المالي، وتخطيط التدفقات النقدية للمنشآت في المملكة العربية السعودية.",
           "telephone": "+966511294383",
           "email": "alqaeed.sa@gmail.com",
-          "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "SA",
-            },
+          "founder": {
+            "@id": "https://alqaeed-sa.pages.dev/#person"
+          },
           "areaServed": [
             {
               "@type": "Country",
               "name": "Saudi Arabia"
             }
+          ],
+          "sameAs": [
+            "https://www.tiktok.com/@alqaeed.sa1",
+            "https://www.instagram.com/alqaeed.sa",
+            "https://x.com/alqaeed_sa",
+            "https://www.youtube.com/@alqaeed-fin-Acc-tax-sa",
+            "https://www.facebook.com/share/1E5ttqMGB8/",
+            "https://www.linkedin.com/in/alqaeed-fin-acc-tax/"
           ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://alqaeed-sa.pages.dev/#person",
+          "name": "خالد القائد",
+          "jobTitle": "محاسب مالي ومؤسس القائد",
+          "url": "https://alqaeed-sa.pages.dev/",
+          "image": {
+            "@id": "https://alqaeed-sa.pages.dev/#person-image"
+          },
+          "description": "خالد القائد، محاسب مالي ومؤسس القائد. متخصص في الإدارة المالية المتكاملة والتقارير والتحليل المالي والزكاة والضرائب للمنشآت.",
+          "email": "alqaeed.sa@gmail.com",
+          "telephone": "+966511294383",
+          "hasCredential": [
+            {
+              "@type": "EducationalOccupationalCredential",
+              "name": "ماجستير إدارة الأعمال MBA"
+            },
+            {
+              "@type": "EducationalOccupationalCredential",
+              "name": "بكالوريوس التجارة شعبة المحاسبة"
+            }
+          ],
+          "knowsAbout": [
+            "الإدارة المالية",
+            "الإدارة المالية عن بعد",
+            "التحليل المالي",
+            "إعداد القوائم المالية",
+            "مسك الدفاتر",
+            "التقارير المالية",
+            "الزكاة",
+            "ضريبة القيمة المضافة"
+          ],
+          "worksFor": {
+            "@id": "https://alqaeed-sa.pages.dev/#organization"
+          },
+          "sameAs": [
+            "https://www.tiktok.com/@alqaeed.sa1",
+            "https://www.instagram.com/alqaeed.sa",
+            "https://x.com/alqaeed_sa",
+            "https://www.youtube.com/@alqaeed-fin-Acc-tax-sa",
+            "https://www.facebook.com/share/1E5ttqMGB8/",
+            "https://www.linkedin.com/in/alqaeed-fin-acc-tax/"
+          ]
+        },
+        {
+          "@type": "ImageObject",
+          "@id": "https://alqaeed-sa.pages.dev/#person-image",
+          "url": "https://alqaeed-sa.pages.dev/images/khaled.webp",
+          "contentUrl": "https://alqaeed-sa.pages.dev/images/khaled.webp",
+          "caption": "خالد القائد، محاسب مالي",
+          "width": 1023,
+          "height": 1537
         },
         {
           "@type": "WebSite",
@@ -66,6 +129,12 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
           "url": "https://alqaeed-sa.pages.dev/",
           "name": "خدمات محاسبية وإدارة مالية للمنشآت في السعودية | القائد",
           "description": "خدمات مسك دفاتر، قوائم وتقارير مالية، تحليل مالي، وتخطيط للتدفقات النقدية للمنشآت في السعودية.",
+          "about": {
+            "@id": "https://alqaeed-sa.pages.dev/#organization"
+          },
+          "primaryImageOfPage": {
+            "@id": "https://alqaeed-sa.pages.dev/#person-image"
+          },
           "isPartOf": {
             "@id": "https://alqaeed-sa.pages.dev/#website"
           },
