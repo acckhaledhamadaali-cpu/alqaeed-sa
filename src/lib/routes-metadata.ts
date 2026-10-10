@@ -790,7 +790,7 @@ export function getRouteMetadata(path: string): RouteMeta {
               "author": {
                 "@type": "Person",
                 "@id": "https://alqaeed-sa.pages.dev/#person",
-                "name": "خالد حمادة"
+                "name": "خالد القائد"
               },
               "publisher": {
                 "@id": "https://alqaeed-sa.pages.dev/#organization"

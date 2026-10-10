@@ -21,7 +21,7 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
               src="/images/khaled.webp"
               srcSet="/images/khaled-400.webp 400w, /images/khaled-800.webp 800w, /images/khaled.webp 1023w"
               sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1023px"
-              alt="خالد حمادة، محاسب مالي في القائد للإدارة المالية"
+              alt="خالد القائد، محاسب مالي في القائد للإدارة المالية"
               loading="eager"
               fetchPriority="high"
               decoding="async"
@@ -42,7 +42,7 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
             <header id="hero-header" className="flex flex-col items-center md:items-start space-y-3.5 md:space-y-4 w-full text-center md:text-right">
               {/* Brand & Tagline Area */}
               <div id="hero-brand-area" className="flex flex-col items-center md:items-start space-y-1">
-                <p className="text-sm md:text-base font-semibold text-text-secondary">خالد حمادة | محاسب مالي</p>
+                <p className="text-sm md:text-base font-semibold text-text-secondary">خالد القائد | محاسب مالي</p>
                 <h1 id="hero-brand-name" className={`${TYPOGRAPHY.heading.h1} font-bold text-text-primary`}>
                   <span>القائد</span>
                   <span id="hero-brand-tagline" className={`block ${TYPOGRAPHY.body.large} text-secondary uppercase font-semibold mt-1`}>

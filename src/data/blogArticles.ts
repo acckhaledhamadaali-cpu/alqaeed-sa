@@ -129,7 +129,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     category: 'accounting',
     publishedAt: '2026-08-27',
     updatedAt: '2026-08-27',
-    author: 'خالد حمادة',
+    author: 'خالد القائد',
     readingTime: '6 دقائق للقراءة',
     keywords: [
       'محاسب مالي عن بعد',
@@ -221,7 +221,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     category: 'cfo-advisory',
     publishedAt: '2026-08-27',
     updatedAt: '2026-08-27',
-    author: 'خالد حمادة',
+    author: 'خالد القائد',
     readingTime: '7 دقائق للقراءة',
     keywords: [
       'المدير المالي عن بعد',
@@ -305,7 +305,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     category: 'cfo-advisory',
     publishedAt: '2026-08-27',
     updatedAt: '2026-08-27',
-    author: 'خالد حمادة',
+    author: 'خالد القائد',
     readingTime: '5 دقائق للقراءة',
     keywords: [
       'الفرق بين المحاسب والمدير المالي',
@@ -385,7 +385,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     category: 'financial-management',
     publishedAt: '2026-08-27',
     updatedAt: '2026-08-27',
-    author: 'خالد حمادة',
+    author: 'خالد القائد',
     readingTime: '6 دقائق للقراءة',
     keywords: [
       'إدارة التدفقات النقدية',
@@ -472,7 +472,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     category: 'financial-management',
     publishedAt: '2026-08-27',
     updatedAt: '2026-08-27',
-    author: 'خالد حمادة',
+    author: 'خالد القائد',
     readingTime: '6 دقائق للقراءة',
     keywords: [
       'القوائم المالية للشركات',
@@ -554,7 +554,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     category: 'financial-management',
     publishedAt: '2026-08-27',
     updatedAt: '2026-08-27',
-    author: 'خالد حمادة',
+    author: 'خالد القائد',
     readingTime: '7 دقائق للقراءة',
     keywords: [
       'التحليل المالي للشركات',
@@ -627,7 +627,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     category: 'planning-budgeting',
     publishedAt: '2026-08-27',
     updatedAt: '2026-08-27',
-    author: 'خالد حمادة',
+    author: 'خالد القائد',
     readingTime: '6 دقائق للقراءة',
     keywords: [
       'الموازنة التقديرية للشركات',
@@ -712,7 +712,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     category: 'accounting',
     publishedAt: '2026-08-27',
     updatedAt: '2026-08-27',
-    author: 'خالد حمادة',
+    author: 'خالد القائد',
     readingTime: '5 دقائق للقراءة',
     keywords: [
       'مسك الدفاتر للشركات',
@@ -786,7 +786,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     category: 'tax-zakat',
     publishedAt: '2026-08-27',
     updatedAt: '2026-08-27',
-    author: 'خالد حمادة',
+    author: 'خالد القائد',
     readingTime: '6 دقائق للقراءة',
     keywords: [
       'تنظيم البيانات المالية للزكاة',
@@ -859,7 +859,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     category: 'financial-management',
     publishedAt: '2026-08-27',
     updatedAt: '2026-08-27',
-    author: 'خالد حمادة',
+    author: 'خالد القائد',
     readingTime: '6 دقائق للقراءة',
     keywords: [
       'إدارة مالية عن بعد',

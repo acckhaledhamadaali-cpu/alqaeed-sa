@@ -158,7 +158,7 @@ export default function BlogHubPage() {
           <section className="bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-right">
               <h3 className="text-base md:text-lg font-bold text-text-primary mb-1">هل تحتاج إلى استشارة مالية مخصصة لمنشأتك؟</h3>
-              <p className="text-xs md:text-sm text-text-secondary leading-relaxed">تواصل مباشرة مع الأستاذ خالد حمادة لمناقشة التحديات المالية لمنشأتك وحجز موعد للبدء.</p>
+              <p className="text-xs md:text-sm text-text-secondary leading-relaxed">تواصل مباشرة مع الأستاذ خالد القائد لمناقشة التحديات المالية لمنشأتك وحجز موعد للبدء.</p>
             </div>
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="whitespace-nowrap px-6 py-3 bg-primary text-white text-sm font-semibold rounded-xl hover:bg-primary/90 transition-colors shadow-sm">تواصل مباشرة عبر واتساب</a>
           </section>
