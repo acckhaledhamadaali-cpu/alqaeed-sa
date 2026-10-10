@@ -59,4 +59,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
+#root :where(*) {
+  font-weight: 700 !important;
+}
