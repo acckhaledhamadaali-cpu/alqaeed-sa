@@ -68,7 +68,11 @@ export default function SectorsSection() {
                 key={sector.slug}
                 className="group overflow-hidden rounded-2xl border border-border-subtle bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
-                <div className="relative aspect-[16/7] overflow-hidden bg-surface-subtle">
+                <a
+                  href={`/sectors/${sector.slug}/`}
+                  aria-label={`استكشف قطاع ${sector.title}`}
+                  className="relative block aspect-[16/7] overflow-hidden bg-surface-subtle focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary"
+                >
                   <img
                     src={`/images/sectors/${sector.slug}-640.webp`}
                     srcSet={`/images/sectors/${sector.slug}-320.webp 320w, /images/sectors/${sector.slug}-640.webp 640w`}
@@ -81,7 +85,7 @@ export default function SectorsSection() {
                   <div className="absolute bottom-2 right-2 flex h-9 w-9 items-center justify-center rounded-xl bg-white/90 text-primary shadow-md backdrop-blur-sm sm:bottom-3 sm:right-3 sm:h-11 sm:w-11">
                     <Icon className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden="true" />
                   </div>
-                </div>
+                </a>
 
                 <div className="p-3 sm:p-5">
                   <h3 className="text-sm sm:text-lg font-bold leading-6 text-text-primary">
