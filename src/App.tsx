@@ -269,8 +269,8 @@ export default function App({ path: propPath }: { path?: string } = {}) {
         <HeroSection />
         <ExperienceBar />
         <ChallengesSection />
-        <ServicesSection />
         <SectorsSection />
+        <ServicesSection />
         <HowIWorkSection />
         <AboutSection />
         <SoftwareIntegrations />
