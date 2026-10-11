@@ -3,16 +3,13 @@ import SectionWrapper from '../../../components/SectionWrapper';
 import Container from '../../../components/Container';
 import { TYPOGRAPHY } from '../../lib/tokens';
 import { MessageCircle } from 'lucide-react';
-import PdfLeadMagnet from '../../components/PdfLeadMagnet';
 
 const WHATSAPP_NUMBER = "966511294383";
 const VAT_WHATSAPP_MESSAGE = "السلام عليكم، أرغب في خدمة إعداد أو مراجعة إقرار ضريبة القيمة المضافة. الفترة الضريبية: [الفترة]، ونوع النشاط: [النشاط].";
-const ZAKAT_WHATSAPP_MESSAGE = "السلام عليكم، أرغب في خدمة إعداد أو مراجعة الإقرار الزكوي. السنة المالية: [السنة]، ونوع النشاط: [النشاط].";
-const BOTH_WHATSAPP_MESSAGE = "السلام عليكم، أحتاج إلى الخدمتين: إعداد أو مراجعة إقرار ضريبة القيمة المضافة والإقرار الزكوي لمنشأتي. النشاط: [النشاط].";
+const ZAKAT_WHATSAPP_MESSAGE = "السلام عليكم، أرغب في خدمة إعداد أو مراجعة الإقرار الزكوي. الفترة المالية: [الفترة]، ونوع النشاط: [النشاط].";
 const makeWhatsAppUrl = (message: string) => "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
 const VAT_WHATSAPP_URL = makeWhatsAppUrl(VAT_WHATSAPP_MESSAGE);
 const ZAKAT_WHATSAPP_URL = makeWhatsAppUrl(ZAKAT_WHATSAPP_MESSAGE);
-const BOTH_WHATSAPP_URL = makeWhatsAppUrl(BOTH_WHATSAPP_MESSAGE);
 
 export default function ZakatTaxPage() {
   const name = "إقرار ضريبة القيمة المضافة والإقرار الزكوي";
@@ -86,8 +83,8 @@ export default function ZakatTaxPage() {
     schema
   });
 
-  const trackWhatsAppClick = (service: "vat" | "zakat" | "both") => {
-    const linkUrl = service === "vat" ? VAT_WHATSAPP_URL : service === "zakat" ? ZAKAT_WHATSAPP_URL : BOTH_WHATSAPP_URL;
+  const trackWhatsAppClick = (service: "vat" | "zakat") => {
+    const linkUrl = service === "vat" ? VAT_WHATSAPP_URL : ZAKAT_WHATSAPP_URL;
     if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
       (window as any).gtag('event', 'whatsapp_click', {
         event_category: 'engagement',
@@ -114,314 +111,138 @@ export default function ZakatTaxPage() {
           </h1>
           <div className="w-16 h-1 bg-primary mb-6 rounded-full"></div>
 
-          <div className="text-sm md:text-[15px] text-text-secondary leading-loose space-y-4">
-            <p>
-              أقدم خدمتين منفصلتين للمنشآت في السعودية: إعداد ومراجعة إقرار ضريبة القيمة المضافة، وإعداد ومراجعة الإقرار الزكوي. تختلف بيانات كل إقرار ومستنداته وفترته؛ اختر الخدمة التي تحتاجها، أو تواصل بشأن الخدمتين معًا.
-            </p>
+          <div className="mb-6 rounded-xl border border-border-subtle bg-surface-subtle/40 p-4 text-sm md:text-[15px] text-text-secondary leading-relaxed">
+            <p>هذه الصفحة تجمع إقرارين مختلفين في النوع والمتطلبات: إقرار ضريبة القيمة المضافة، ثم الإقرار الزكوي. لكل إقرار قسم مستقل أدناه بمعلوماته ومستنداته وخطواته وروابطه الرسمية.</p>
+            <nav aria-label="انتقل إلى نوع الإقرار" className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <a href="#vat-return" className="rounded-lg border border-border-subtle bg-white p-3 font-bold text-primary hover:border-primary transition-colors">إقرار ضريبة القيمة المضافة ←</a>
+              <a href="#zakat-return" className="rounded-lg border border-border-subtle bg-white p-3 font-bold text-primary hover:border-primary transition-colors">الإقرار الزكوي ←</a>
+            </nav>
+          </div>
 
-            <h2 className="text-lg font-bold text-primary mt-6 mb-2 border-r-2 border-primary pr-3">
-              أولًا: خدمة إقرار ضريبة القيمة المضافة
-            </h2>
-            <p>
-              هذه الخدمة مخصصة للمنشآت المسجلة في ضريبة القيمة المضافة، وتركز على تجهيز ومراجعة بيانات المبيعات والمشتريات للفترة الضريبية، كلٌّ وفق تصنيفه ومستنداته.
-            </p>
-            <ul className="list-disc list-inside space-y-1 pr-4">
-              <li>مراجعة ملخص المبيعات والمشتريات والفواتير والإشعارات ذات الصلة بالفترة.</li>
-              <li>مطابقة بيانات الإقرار مع السجلات المحاسبية والمستندات المتاحة، وإبراز النواقص أو الفروقات.</li>
-              <li>إعداد بيانات الإقرار أو مراجعته قبل اعتماده من المنشأة.</li>
-              <li>رفع الإقرار عند طلبك وبعد اعتماد البيانات واستكمال الإجراء أو التفويض المناسب.</li>
-            </ul>
-            <a
-              href={VAT_WHATSAPP_URL}
-              onClick={() => trackWhatsAppClick("vat")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-x-2 px-5 py-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs md:text-sm font-semibold rounded-xl transition-all shadow-sm"
-            >
-              <MessageCircle className="w-4 h-4" aria-hidden="true" />
-              <span>استفسر عن إقرار ضريبة القيمة المضافة</span>
-            </a>
+          <section id="vat-return" aria-labelledby="vat-return-heading" className="mt-8 scroll-mt-24 rounded-2xl border border-border-subtle bg-white p-4 md:p-6 shadow-sm">
+            <div className="text-sm md:text-[15px] text-text-secondary leading-loose space-y-4">
+              <p className="text-xs font-bold uppercase tracking-wide text-primary">القسم الأول · ضريبة القيمة المضافة</p>
+              <h2 id="vat-return-heading" className="text-xl md:text-2xl font-bold text-text-primary">إقرار ضريبة القيمة المضافة</h2>
+              <p>هذا الإقرار يخص الأشخاص المسجلين في ضريبة القيمة المضافة. ويتضمن الإفصاح عن التعاملات الخاضعة للضريبة في المبيعات والمشتريات عن الفترة المعنية.</p>
 
-            <h2 className="text-lg font-bold text-primary mt-8 mb-2 border-r-2 border-primary pr-3">
-              ثانيًا: خدمة الإقرار الزكوي
-            </h2>
-            <p>
-              هذه خدمة مستقلة عن إقرار ضريبة القيمة المضافة. تتناول تجهيز ومراجعة البيانات المالية والسجلات ذات الصلة بالإقرار الزكوي السنوي، بحسب صفة المنشأة ومتطلباتها النظامية.
-            </p>
-            <ul className="list-disc list-inside space-y-1 pr-4">
-              <li>مراجعة القوائم المالية والسجلات والبيانات المؤيدة لعناصر الوعاء الزكوي.</li>
-              <li>تنظيم المستندات المرتبطة بالإيرادات والمصروفات والحسابات ذات العلاقة.</li>
-              <li>إعداد بيانات الإقرار أو مراجعته وشرح البنود التي تحتاج إلى استكمال أو تأكيد.</li>
-              <li>رفع الإقرار عند طلبك وبعد اعتماد البيانات واستكمال الإجراء أو التفويض المناسب.</li>
-            </ul>
-            <a
-              href={ZAKAT_WHATSAPP_URL}
-              onClick={() => trackWhatsAppClick("zakat")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-x-2 px-5 py-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs md:text-sm font-semibold rounded-xl transition-all shadow-sm"
-            >
-              <MessageCircle className="w-4 h-4" aria-hidden="true" />
-              <span>استفسر عن الإقرار الزكوي</span>
-            </a>
+              <h3 className="text-lg font-bold text-primary mt-6">ما الذي تتضمنه خدمتي في إقرار ضريبة القيمة المضافة؟</h3>
+              <ul className="list-disc list-inside space-y-1 pr-4">
+                <li>تنظيم إجماليات المبيعات والمشتريات للفترة ومراجعتها مقابل الفواتير والسجلات المتاحة.</li>
+                <li>مطابقة البيانات المحاسبية مع مستندات الفترة وتوضيح الفروقات أو البيانات الناقصة.</li>
+                <li>إعداد بيانات الإقرار أو مراجعته قبل اعتماد المنشأة للبيانات.</li>
+                <li>رفع الإقرار عند طلبك، بعد اعتمادك للبيانات واستكمال الصلاحية أو التفويض اللازم.</li>
+              </ul>
 
-            <h2 className="text-lg font-bold text-primary mt-6 mb-2 border-r-2 border-primary pr-3">
-              لماذا من المهم التمييز بين الإقرارين؟
-            </h2>
-            <p>
-              لكل خدمة فترة وبيانات ومستندات ومعالجة مختلفة. فصل الملفين من البداية يساعد على تجهيز المعلومات المناسبة لكل إقرار، وتوضيح النواقص قبل المراجعة أو التقديم؛ ولا يعني طلب إحدى الخدمتين تلقائيًا طلب الأخرى.
-            </p>
+              <h3 className="text-lg font-bold text-primary mt-6">بيانات ومستندات إقرار ضريبة القيمة المضافة</h3>
+              <p>للبدء، جهّز ملخص المبيعات والمشتريات للفترة. وقد تساعد المستندات الآتية بحسب معاملات منشأتك:</p>
+              <ul className="list-disc list-inside space-y-1 pr-4">
+                <li>الفواتير الضريبية الصادرة والواردة، وما يرتبط بها من إشعارات دائنة أو مدينة.</li>
+                <li>تقرير النظام المحاسبي أو دفتر الأستاذ وبيانات إجمالي المبيعات والمشتريات.</li>
+                <li>مستندات الاستيراد أو التصدير والعقود وكشوف الحساب عند ارتباطها بمعاملة تحتاج إلى توضيح.</li>
+                <li>الإقرار السابق إذا كانت الخدمة تشمل مراجعة فترة سابقة أو مقارنة البيانات.</li>
+              </ul>
+              <p>هذه قائمة تجهيز أولية وليست متطلبًا موحدًا لكل منشأة. كما أن وجود فاتورة مشتريات لا يعني تلقائيًا أن ضريبتها قابلة للخصم؛ تُراجع أهلية كل معاملة ومستنداتها وفق القواعد المنطبقة.</p>
 
-            <h2 className="text-lg font-bold text-primary mt-6 mb-2 border-r-2 border-primary pr-3">
-              مستندات كل خدمة
-            </h2>
-            <h3 className="font-bold text-text-primary mt-4 mb-1">إقرار ضريبة القيمة المضافة</h3>
-            <p>ابدأ بملخص للفترة الضريبية المطلوبة، وما يتوفر من المستندات التالية:</p>
-            <ul className="list-disc list-inside space-y-1 pr-4">
-              <li>بيان المبيعات والفواتير الضريبية الصادرة، بما فيها الإشعارات الدائنة أو المدينة ذات الصلة.</li>
-              <li>بيان المشتريات والفواتير الضريبية الواردة، ومستندات الاستيراد إن انطبقت على نشاط المنشأة.</li>
-              <li>تقرير من النظام المحاسبي أو دفتر الأستاذ، ونسخة من الإقرار السابق إذا كانت المراجعة تتطلب الرجوع إليه.</li>
-              <li>كشوف الحسابات البنكية أو العقود التي تساعد على توضيح عمليات مرتبطة بالفترة عند الحاجة.</li>
-            </ul>
-            <p>تُراجع أهلية ضريبة المدخلات للخصم بحسب كل معاملة ومستنداتها؛ فوجود فاتورة وحده لا يعني تلقائيًا أن مبلغ الضريبة قابل للخصم.</p>
+              <h3 className="text-lg font-bold text-primary mt-6">خطوات العمل على إقرار ضريبة القيمة المضافة</h3>
+              <ol className="list-decimal list-inside space-y-1 pr-4">
+                <li>تحديد الفترة المطلوبة والتأكد من حالة التسجيل ونوع الإقرار.</li>
+                <li>مراجعة بيانات المبيعات والمشتريات والفواتير والتسويات ذات الصلة.</li>
+                <li>مطابقة الإجماليات مع السجلات، وإرسال أي استفسار أو نقص لمراجعته معك.</li>
+                <li>تجهيز الإقرار أو مراجعته؛ والرفع عند طلبك بعد اعتماد البيانات واستكمال التفويض اللازم.</li>
+              </ol>
 
-            <h3 className="font-bold text-text-primary mt-4 mb-1">الإقرار الزكوي</h3>
-            <p>جهّز ما يتوفر من بيانات السنة المالية والسجلات المؤيدة، وقد تشمل:</p>
-            <ul className="list-disc list-inside space-y-1 pr-4">
-              <li>القوائم المالية والسجلات التجارية وميزان المراجعة أو التقارير المحاسبية ذات الصلة.</li>
-              <li>مستندات تؤيد الإيرادات والمصروفات، مثل الفواتير والعقود وكشوف الحسابات ذات العلاقة.</li>
-              <li>تفاصيل الحسابات أو البنود التي تحتاج إلى إيضاح بحسب نشاط المنشأة وبياناتها المالية.</li>
-              <li>القوائم المالية المدققة أو المرفقات الخاصة، متى كانت مطلوبة على فئة المكلف؛ فقد تنطبق استثناءات على بعض الحالات.</li>
-            </ul>
-            <p>القائمتان إرشاديتان وليستا متطلبات موحدة للجميع. نحدد المستندات المطلوبة لكل مسار بعد معرفة الفترة ونوع الإقرار وصفة المنشأة.</p>
+              <h3 className="text-lg font-bold text-primary mt-6">ما الذي تستلمه؟</h3>
+              <ul className="list-disc list-inside space-y-1 pr-4">
+                <li>بيانات الإقرار أو مسودته للمراجعة، وفق نطاق العمل المتفق عليه.</li>
+                <li>ملاحظات واضحة على الفروقات أو المستندات التي تحتاج إلى استكمال.</li>
+                <li>إشعار الاستلام أو مرجع التقديم إذا تم رفع الإقرار بطلبك.</li>
+              </ul>
 
-            <h2 className="text-lg font-bold text-primary mt-6 mb-2 border-r-2 border-primary pr-3">
-              خطوات كل خدمة
-            </h2>
-            <h3 className="font-bold text-text-primary mt-4 mb-1">خطوات إقرار ضريبة القيمة المضافة</h3>
-            <ol className="list-decimal list-inside space-y-1 pr-4">
-              <li>تحديد الفترة الضريبية ونوع النشاط وحالة التسجيل.</li>
-              <li>مراجعة بيانات المبيعات والمشتريات والفواتير والتسويات ذات الصلة.</li>
-              <li>مطابقة الأرقام وتجهيز بيانات الإقرار، ثم توضيح أي فرق أو مستند ناقص لك.</li>
-              <li>مراجعة المسودة واعتمادها، ثم الرفع عند طلبك وبعد استكمال الإجراء أو التفويض المناسب.</li>
-            </ol>
-            <h3 className="font-bold text-text-primary mt-4 mb-1">خطوات الإقرار الزكوي</h3>
-            <ol className="list-decimal list-inside space-y-1 pr-4">
-              <li>تحديد السنة المالية وصفة المنشأة ونطاق الإقرار المطلوب.</li>
-              <li>مراجعة القوائم والسجلات والمستندات المؤيدة للبنود ذات العلاقة.</li>
-              <li>إعداد بيانات الإقرار ومراجعة الملاحظات أو النواقص معك قبل الاعتماد.</li>
-              <li>الرفع عند طلبك وبعد اعتماد البيانات واستكمال الإجراء أو التفويض المناسب.</li>
-            </ol>
+              <h3 className="text-lg font-bold text-primary mt-6">أسئلة شائعة عن إقرار ضريبة القيمة المضافة</h3>
+              <h4 className="font-bold text-text-primary mt-3">هل كل فاتورة مشتريات تخفض الضريبة؟</h4>
+              <p>لا. تُراجع المعاملة والفاتورة وشروط الخصم قبل إدراج الضريبة ضمن المدخلات القابلة للخصم.</p>
+              <h4 className="font-bold text-text-primary mt-3">هل تضمن الخدمة قبول الإقرار أو نتيجة معينة؟</h4>
+              <p>لا يمكن ضمان قرار الهيئة. دوري هو إعداد البيانات أو مراجعتها على أساس السجلات والمستندات التي توفرها المنشأة؛ والبت النهائي للهيئة.</p>
 
-            <h2 className="text-lg font-bold text-primary mt-6 mb-2 border-r-2 border-primary pr-3">
-              مخرجات كل خدمة
-            </h2>
-            <h3 className="font-bold text-text-primary mt-4 mb-1">في خدمة ضريبة القيمة المضافة</h3>
-            <ul className="list-disc list-inside space-y-1 pr-4">
-              <li>ملخص بيانات المبيعات والمشتريات التي جرى تجهيزها ومراجعتها.</li>
-              <li>بيانات الإقرار أو مسودته للمراجعة، مع توضيح الفروقات والمستندات الناقصة.</li>
-              <li>إشعار الاستلام أو مرجع التقديم إذا تم رفع الإقرار بطلبك.</li>
-            </ul>
-            <h3 className="font-bold text-text-primary mt-4 mb-1">في خدمة الإقرار الزكوي</h3>
-            <ul className="list-disc list-inside space-y-1 pr-4">
-              <li>بيانات الإقرار أو مسودته للمراجعة وفق السجلات والمستندات المقدمة.</li>
-              <li>ملاحظات على البنود أو المرفقات التي تحتاج إلى استكمال أو إيضاح.</li>
-              <li>إشعار الاستلام أو مرجع التقديم إذا تم رفع الإقرار بطلبك.</li>
-            </ul>
-
-            <div role="note" className="rounded-xl border border-amber-200 bg-amber-50 p-3 text-xs md:text-sm leading-6 text-amber-950">
-              <strong>حماية بياناتك:</strong> لا ترسل كلمة مرور حساب الهيئة أو رمز التحقق لمرة واحدة عبر واتساب. إذا احتاجت الخدمة إلى إجراء عبر البوابة، ننسق طريقة الدخول أو التفويض المناسبة دون مشاركة رموزك السرية.
+              <h3 className="text-lg font-bold text-primary mt-6">روابط رسمية تخص ضريبة القيمة المضافة</h3>
+              <ul className="list-disc list-inside space-y-1 pr-4">
+                <li><a className="text-primary underline" href="https://zatca.gov.sa/ar/eServices/Pages/eServices-009.aspx" target="_blank" rel="noopener noreferrer">تقديم إقرار ضريبة القيمة المضافة — ZATCA</a></li>
+                <li><a className="text-primary underline" href="https://zatca.gov.sa/ar/HelpCenter/guidelines/Documents/Simplified_VAT_Filing_Guidelines.pdf" target="_blank" rel="noopener noreferrer">الدليل المبسط لرفع إقرار ضريبة القيمة المضافة</a></li>
+                <li><a className="text-primary underline" href="https://zatca.gov.sa/ar/HelpCenter/guidelines/Documents/Guideline-for-Tax-Invoicing-and-Records-under-VAT-Provisions.pdf" target="_blank" rel="noopener noreferrer">دليل الفواتير الضريبية وحفظ السجلات</a></li>
+              </ul>
             </div>
 
-            <h2 className="text-lg font-bold text-primary mt-6 mb-2 border-r-2 border-primary pr-3">
-              أسئلة شائعة عن ضريبة القيمة المضافة
-            </h2>
-            <h3 className="font-bold text-text-primary mt-4 mb-1">هل تشمل الخدمة تجهيز الإقرار ورفعه؟</h3>
-            <p>يمكن أن تشمل إعداد الإقرار ومراجعته، والرفع عند طلبك وبعد اعتماد البيانات واستكمال الإجراء المناسب.</p>
-            <h3 className="font-bold text-text-primary mt-4 mb-1">هل تُخصم ضريبة كل فاتورة مشتريات؟</h3>
-            <p>ليس بالضرورة؛ تُراجع كل معاملة ومستنداتها وفق طبيعتها ومتطلبات الهيئة قبل إدراجها ضمن ضريبة المدخلات القابلة للخصم.</p>
-
-            <h2 className="text-lg font-bold text-primary mt-6 mb-2 border-r-2 border-primary pr-3">
-              أسئلة شائعة عن الإقرار الزكوي
-            </h2>
-            <h3 className="font-bold text-text-primary mt-4 mb-1">هل تتطلب كل المنشآت القوائم المالية المدققة نفسها؟</h3>
-            <p>تختلف المتطلبات بحسب صفة المكلف والالتزامات النظامية المنطبقة، وقد توجد استثناءات. نراجع ما ينطبق على منشأتك بدل افتراض قائمة واحدة للجميع.</p>
-            <h3 className="font-bold text-text-primary mt-4 mb-1">هل تختلف مستندات الإقرار الزكوي عن مستندات VAT؟</h3>
-            <p>نعم. لكل إقرار بيانات ومستندات مرتبطة به؛ لذلك نجهز كل مسار على حدة، وقد تحتاج المنشأة إلى الخدمتين أو إلى إحداهما فقط.</p>
-
-            <h2 className="text-lg font-bold text-primary mt-6 mb-2 border-r-2 border-primary pr-3">
-              مراجع خدمة ضريبة القيمة المضافة
-            </h2>
-            <ul className="list-disc list-inside space-y-1 pr-4">
-              <li><a className="text-primary underline" href="https://zatca.gov.sa/ar/eServices/Pages/eServices-009.aspx" target="_blank" rel="noopener noreferrer">خدمة تقديم إقرار ضريبة القيمة المضافة</a></li>
-              <li><a className="text-primary underline" href="https://zatca.gov.sa/ar/HelpCenter/guidelines/Documents/Simplified_VAT_Filing_Guidelines.pdf" target="_blank" rel="noopener noreferrer">الدليل المبسط لرفع إقرار ضريبة القيمة المضافة</a></li>
-              <li><a className="text-primary underline" href="https://zatca.gov.sa/ar/HelpCenter/guidelines/Documents/Guideline-for-Tax-Invoicing-and-Records-under-VAT-Provisions.pdf" target="_blank" rel="noopener noreferrer">دليل الفواتير الضريبية وحفظ السجلات</a></li>
-            </ul>
-
-            <h2 className="text-lg font-bold text-primary mt-6 mb-2 border-r-2 border-primary pr-3">
-              مرجع خدمة الإقرار الزكوي
-            </h2>
-            <ul className="list-disc list-inside space-y-1 pr-4">
-              <li><a className="text-primary underline" href="https://zatca.gov.sa/ar/HelpCenter/guidelines/Documents/%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%86%D8%AF%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B2%D9%83%D9%88%D9%8A%D8%A9.pdf" target="_blank" rel="noopener noreferrer">دليل المستندات الزكوية</a></li>
-            </ul>
-            <p className="text-xs text-text-muted">
-              هذه الروابط للتوعية والرجوع إلى المصادر الرسمية؛ وتُراجع متطلبات كل إقرار بحسب حالة المنشأة قبل التقديم.
-            </p>
-
-            <h2 className="text-lg font-bold text-primary mt-6 mb-2 border-r-2 border-primary pr-3">
-              اختر الخدمة التي تحتاجها
-            </h2>
-            <p>
-              إقرار ضريبة القيمة المضافة والإقرار الزكوي مساران منفصلان. حدّد الخدمة في رسالة واتساب، أو اختر أنك تحتاج إلى الاستفسار عن الخدمتين معًا.
-            </p>
+          <div className="mt-6 rounded-xl border border-green-200 bg-green-50/60 p-4 text-center">
+            <p className="mb-3 text-sm text-text-secondary">للاستفسار عن إقرار ضريبة القيمة المضافة، أرسل الفترة الضريبية ونوع النشاط.</p>
+            <a href={VAT_WHATSAPP_URL} onClick={() => trackWhatsAppClick("vat")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-[#20ba5a]">
+              <MessageCircle className="h-4 w-4" aria-hidden="true" />
+              استفسر عن إقرار ضريبة القيمة المضافة عبر واتساب
+            </a>
           </div>
+          </section>
 
-          <div role="note" className="my-5 rounded-xl border border-amber-200 bg-amber-50 p-3 text-xs md:text-sm leading-6 text-amber-950">
-            <strong>مثال توضيحي:</strong> البيانات والأرقام افتراضية، وليست إقرارًا فعليًا أو بيانات عميل.
-          </div>
-          <PdfLeadMagnet 
-            title="" 
-            subtitle="" 
-            reportName="نموذج الإقرار الضريبي (VAT Return)" 
-            whatsappUrl={VAT_WHATSAPP_URL}
-            documentContent={
-              <div className="flex flex-col h-full bg-white text-gray-800 text-[10px] md:text-xs font-sans">
-                {/* PDF Header */}
-                <div className="border-b-2 border-green-800 pb-3 mb-4 flex justify-between items-end">
-                  <div>
-                    <h2 className="text-lg md:text-xl font-bold text-gray-900 font-arabic mb-1">إقرار ضريبة القيمة المضافة</h2>
-                    <p className="text-gray-500">الفترة: ربع سنوي — بيانات افتراضية للتوضيح</p>
-                  </div>
-                  <div className="text-left text-[9px] md:text-[10px] text-gray-400">
-                    <p>الرقم الضريبي: 30XXXXXXXXXX3</p>
-                    <p>مستخرج من: النظام المحاسبي</p>
-                  </div>
-                </div>
+          <section id="zakat-return" aria-labelledby="zakat-return-heading" className="mt-8 scroll-mt-24 rounded-2xl border border-border-subtle bg-surface-subtle/30 p-4 md:p-6 shadow-sm">
+            <div className="text-sm md:text-[15px] text-text-secondary leading-loose space-y-4">
+              <p className="text-xs font-bold uppercase tracking-wide text-primary">القسم الثاني · الزكاة</p>
+              <h2 id="zakat-return-heading" className="text-xl md:text-2xl font-bold text-text-primary">الإقرار الزكوي للمنشآت</h2>
+              <p>الإقرار الزكوي إقرار مستقل عن إقرار ضريبة القيمة المضافة. يخص المكلفين المسجلين في الزكاة، ويُعد عن الفترة المالية ونوع الإقرار المحددين في بوابة الهيئة. لذلك أتعامل مع ملفه وبياناته المالية بصورة مستقلة.</p>
 
-                {/* Table Content */}
-                <div className="flex-grow">
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-right mb-6 border-collapse min-w-[500px]">
-                      <thead>
-                        <tr className="bg-gray-100 border-y border-gray-300">
-                          <th className="py-2 px-2 font-semibold text-gray-700 w-12">الرقم</th>
-                          <th className="py-2 px-2 font-semibold text-gray-700">البيان</th>
-                          <th className="py-2 px-2 font-semibold text-gray-700 w-32 text-left">المبلغ (غير شامل الضريبة)</th>
-                          <th className="py-2 px-2 font-semibold text-gray-700 w-24 text-left">مبلغ الضريبة (SAR)</th>
-                        </tr>
-                      </thead>
-                      <tbody className="divide-y divide-gray-100">
-                        {/* Sales */}
-                        <tr className="bg-green-50/50">
-                          <td colSpan={4} className="py-2 px-2 font-bold text-green-900">المبيعات (المخرجات)</td>
-                        </tr>
-                        <tr>
-                          <td className="py-2 px-2 text-gray-500 text-center">1</td>
-                          <td className="py-2 px-2 font-medium text-gray-800">المبيعات الخاضعة للنسبة الأساسية (15%)</td>
-                          <td className="py-2 px-2 text-left">450,000.00</td>
-                          <td className="py-2 px-2 text-left text-gray-900">67,500.00</td>
-                        </tr>
-                        <tr>
-                          <td className="py-2 px-2 text-gray-500 text-center">2</td>
-                          <td className="py-2 px-2 font-medium text-gray-800">المبيعات للمواطنين (خدمات صحية/تعليمية/عقار)</td>
-                          <td className="py-2 px-2 text-left">0.00</td>
-                          <td className="py-2 px-2 text-left text-gray-900">0.00</td>
-                        </tr>
-                        <tr>
-                          <td className="py-2 px-2 text-gray-500 text-center">3</td>
-                          <td className="py-2 px-2 font-medium text-gray-800">المبيعات الخاضعة للنسبة الصفرية (0%)</td>
-                          <td className="py-2 px-2 text-left">25,000.00</td>
-                          <td className="py-2 px-2 text-left text-gray-900">0.00</td>
-                        </tr>
-                        <tr className="border-t border-gray-300 bg-gray-50">
-                          <td colSpan={2} className="py-2 px-2 font-bold text-gray-900 text-left">إجمالي ضريبة المخرجات:</td>
-                          <td colSpan={2} className="py-2 px-2 text-left font-bold text-gray-900">67,500.00</td>
-                        </tr>
-                        
-                        {/* Purchases */}
-                        <tr className="bg-green-50/50 mt-2">
-                          <td colSpan={4} className="py-2 px-2 font-bold text-green-900 pt-4">المشتريات (المدخلات)</td>
-                        </tr>
-                        <tr>
-                          <td className="py-2 px-2 text-gray-500 text-center">4</td>
-                          <td className="py-2 px-2 font-medium text-gray-800">المشتريات الخاضعة للنسبة الأساسية (15%)</td>
-                          <td className="py-2 px-2 text-left">280,000.00</td>
-                          <td className="py-2 px-2 text-left text-gray-900">42,000.00</td>
-                        </tr>
-                        <tr>
-                          <td className="py-2 px-2 text-gray-500 text-center">5</td>
-                          <td className="py-2 px-2 font-medium text-gray-800">الاستيرادات الخاضعة للنسبة الأساسية المستحقة للبيان الجمركي</td>
-                          <td className="py-2 px-2 text-left">50,000.00</td>
-                          <td className="py-2 px-2 text-left text-gray-900">7,500.00</td>
-                        </tr>
-                        <tr className="border-t border-gray-300 bg-gray-50">
-                          <td colSpan={2} className="py-2 px-2 font-bold text-gray-900 text-left">إجمالي ضريبة المدخلات القابلة للخصم:</td>
-                          <td colSpan={2} className="py-2 px-2 text-left font-bold text-gray-900">49,500.00</td>
-                        </tr>
-                      </tbody>
-                      <tfoot>
-                        <tr className="bg-green-100 border-t-2 border-green-800 font-bold">
-                          <td colSpan={2} className="py-3 px-2 text-green-900">صافي الضريبة المستحقة (المستردة)</td>
-                          <td colSpan={2} className="py-3 px-2 text-left text-green-900">18,000.00</td>
-                        </tr>
-                      </tfoot>
-                    </table>
-                  </div>
-                  
-                  <div className="bg-gray-50 border border-gray-200 p-3 rounded text-[10px] md:text-[11px] text-gray-600 font-medium">
-                    <p className="flex items-start gap-1">
-                      <span className="w-2 h-2 rounded-full bg-green-500 inline-block mt-1 shrink-0"></span>
-                      <span>
-                        هذا نموذج توضيحي ببيانات افتراضية، ولا يمثل مطابقة فعلية لفواتير عميل. وتُراجع متطلبات الفوترة الإلكترونية عند تنفيذ الخدمة.
-                      </span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            }
-          />
+              <h3 className="text-lg font-bold text-primary mt-6">ما الذي تتضمنه خدمتي في الإقرار الزكوي؟</h3>
+              <ul className="list-disc list-inside space-y-1 pr-4">
+                <li>مراجعة البيانات المالية والسجلات التي تقدمها المنشأة للفترة المعنية.</li>
+                <li>تنظيم المستندات المؤيدة للبنود المالية ذات الصلة، وطلب الإيضاح عند وجود نقص أو فرق.</li>
+                <li>إعداد بيانات الإقرار أو مراجعته معك قبل اعتمادها.</li>
+                <li>رفع الإقرار عند طلبك، بعد اعتماد البيانات واستكمال الإجراء أو التفويض المناسب.</li>
+              </ul>
 
-          {/* Service CTA Card */}
-          <div className="my-8 p-6 bg-surface-subtle/60 border border-border-subtle rounded-2xl text-center">
-            <h3 className="text-base md:text-lg font-bold text-text-primary mb-2">
-              ما الخدمة التي تحتاجها؟
-            </h3>
-            <p className="text-xs md:text-sm text-text-secondary mb-4 max-w-xl mx-auto leading-relaxed">
-              اختر الخدمة المناسبة لتبدأ محادثة واضحة حول الفترة ونوع الإقرار.
-            </p>
-            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3">
-              <a
-                href={VAT_WHATSAPP_URL}
-                onClick={() => trackWhatsAppClick("vat")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-x-2 px-5 py-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs md:text-sm font-semibold rounded-xl transition-all shadow-sm duration-200 hover:scale-[1.02] active:scale-[0.98]"
-              >
-                <MessageCircle className="w-4 h-4" aria-hidden="true" />
-                <span>إقرار ضريبة القيمة المضافة</span>
-              </a>
-              <a
-                href={ZAKAT_WHATSAPP_URL}
-                onClick={() => trackWhatsAppClick("zakat")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-x-2 px-5 py-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs md:text-sm font-semibold rounded-xl transition-all shadow-sm duration-200 hover:scale-[1.02] active:scale-[0.98]"
-              >
-                <MessageCircle className="w-4 h-4" aria-hidden="true" />
-                <span>الإقرار الزكوي</span>
-              </a>
-              <a
-                href={BOTH_WHATSAPP_URL}
-                onClick={() => trackWhatsAppClick("both")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-x-2 px-5 py-2.5 border border-[#25D366] text-text-primary hover:bg-green-50 text-xs md:text-sm font-semibold rounded-xl transition-all"
-              >
-                <MessageCircle className="w-4 h-4 text-[#25D366]" aria-hidden="true" />
-                <span>أحتاج إلى الخدمتين</span>
+              <h3 className="text-lg font-bold text-primary mt-6">بيانات ومستندات الإقرار الزكوي</h3>
+              <p>تختلف المستندات بحسب صفة المكلف ونوع الإقرار والفترة. وقد يبدأ التجهيز بما يتوفر من:</p>
+              <ul className="list-disc list-inside space-y-1 pr-4">
+                <li>بيانات المنشأة المسجلة ونوع الإقرار والفترة المالية المطلوب تقديمها.</li>
+                <li>القوائم المالية والسجلات التجارية وميزان المراجعة أو التقارير المحاسبية ذات الصلة، بحسب ما ينطبق على المنشأة.</li>
+                <li>مستندات مؤيدة للإيرادات والمصروفات والبنود محل المراجعة، مثل الفواتير أو العقود أو كشوف الحساب عند ارتباطها بها.</li>
+                <li>نماذج أو مرفقات إضافية عند انطباقها، مثل متطلبات تسعير المعاملات لبعض المكلفين.</li>
+              </ul>
+              <p>هذه أمثلة للتجهيز وليست قائمة إلزامية موحدة للجميع. كما أن إرفاق القوائم المالية المدققة يتوقف على الفئة والالتزامات والاستثناءات المنطبقة؛ لذا يُتحقق من حالة المنشأة بدل إعطاء حكم عام.</p>
+
+              <h3 className="text-lg font-bold text-primary mt-6">خطوات العمل على الإقرار الزكوي</h3>
+              <ol className="list-decimal list-inside space-y-1 pr-4">
+                <li>تحديد الفترة المالية ونوع الإقرار وصفة المكلف.</li>
+                <li>مراجعة السجلات والبيانات المالية والمستندات المؤيدة المتاحة.</li>
+                <li>إعداد بيانات الإقرار أو مراجعته وإيضاح النواقص أو البنود التي تحتاج إلى تأكيد.</li>
+                <li>اعتمادك للبيانات قبل الرفع، إذا طلبت تقديم الإقرار واستُكملت الصلاحية اللازمة.</li>
+              </ol>
+
+              <h3 className="text-lg font-bold text-primary mt-6">ما الذي تستلمه؟</h3>
+              <ul className="list-disc list-inside space-y-1 pr-4">
+                <li>بيانات الإقرار أو مسودته وفق المستندات ونطاق العمل المتفق عليه.</li>
+                <li>ملاحظات على البيانات أو المرفقات التي تحتاج إلى استكمال أو توضيح.</li>
+                <li>إشعار الاستلام أو مرجع التقديم إذا تم رفع الإقرار بطلبك.</li>
+              </ul>
+
+              <h3 className="text-lg font-bold text-primary mt-6">أسئلة شائعة عن الإقرار الزكوي</h3>
+              <h4 className="font-bold text-text-primary mt-3">هل الإقرار الزكوي هو نفسه إقرار ضريبة القيمة المضافة؟</h4>
+              <p>لا. هما إقراران مختلفان؛ لكل واحد بياناته ومتطلباته وفترته، ويُطلب كل منهما بحسب حالة المنشأة والتزاماتها.</p>
+              <h4 className="font-bold text-text-primary mt-3">هل كل منشأة مطالبة بالقوائم المدققة نفسها؟</h4>
+              <p>لا يصح تعميم ذلك. تختلف متطلبات الإرفاق بحسب صفة المنشأة وما ينطبق عليها من أحكام واستثناءات؛ ويُراجع ذلك قبل تجهيز الملف.</p>
+              <h4 className="font-bold text-text-primary mt-3">هل تضمن الخدمة قبول الإقرار أو قيمة زكاة محددة؟</h4>
+              <p>لا. أُعدّ أو أراجع البيانات بناءً على السجلات والمستندات التي توفرها المنشأة، أما التحقق والقرار النهائي فمن اختصاص الهيئة.</p>
+
+              <h3 className="text-lg font-bold text-primary mt-6">روابط رسمية تخص الإقرار الزكوي</h3>
+              <ul className="list-disc list-inside space-y-1 pr-4">
+                <li><a className="text-primary underline" href="https://zatca.gov.sa/ar/eServices/Pages/eServices-051.aspx" target="_blank" rel="noopener noreferrer">تقديم إقرار الزكاة للمنشآت — ZATCA</a></li>
+                <li><a className="text-primary underline" href="https://zatca.gov.sa/ar/HelpCenter/guidelines/Documents/%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%86%D8%AF%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B2%D9%83%D9%88%D9%8A%D8%A9.pdf" target="_blank" rel="noopener noreferrer">دليل المستندات الزكوية من ZATCA</a></li>
+              </ul>
+            </div>
+
+            <div className="mt-6 rounded-xl border border-green-200 bg-green-50/60 p-4 text-center">
+              <p className="mb-3 text-sm text-text-secondary">للاستفسار عن الإقرار الزكوي، أرسل الفترة المالية ونوع النشاط.</p>
+              <a href={ZAKAT_WHATSAPP_URL} onClick={() => trackWhatsAppClick("zakat")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-[#20ba5a]">
+                <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                استفسر عن الإقرار الزكوي عبر واتساب
               </a>
             </div>
-          </div>
+          </section>
 
           {/* Related Article Guide Link */}
           <div className="mb-8 p-4 bg-primary/5 border border-primary/15 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs md:text-sm">
