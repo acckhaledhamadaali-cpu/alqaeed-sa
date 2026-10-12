@@ -234,7 +234,7 @@ export default function ArticlePage({ slug }: { slug: string }) {
 
   if (!article) return <ArticleNotFound />;
 
-  const metaTitle = `${article.title} | القائد للإدارة المالية`;
+  const metaTitle = article.seoTitle || `${article.title} | القائد للإدارة المالية`;
   const metaDesc = article.description;
   const url = `https://alqaeed-sa.pages.dev/blog/${article.slug}/`;
   const articleImage = getBlogImage(article.slug);

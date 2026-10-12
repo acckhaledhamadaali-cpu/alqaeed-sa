@@ -8,6 +8,7 @@ const BLOG_IMAGE_SOURCES: Record<string, string> = {
   'budgeting-planning-revenues-expenses': 'https://images.unsplash.com/photo-1762427354397-854a52e0ded7?auto=format&fit=crop&w=3840&q=72&fm=webp',
   'bookkeeping-importance-organized-accounting': 'https://images.unsplash.com/photo-1766871138969-510e404f1293?auto=format&fit=crop&w=3840&q=72&fm=webp',
   'zakat-tax-financial-data-organization': 'https://images.unsplash.com/photo-1772588627499-baefc8ab0ce7?auto=format&fit=crop&w=3840&q=72&fm=webp',
+  'zakat-vat-return-guide-saudi-businesses': 'https://images.unsplash.com/photo-1772588627499-baefc8ab0ce7?auto=format&fit=crop&w=3840&q=72&fm=webp',
   '7-signs-company-needs-remote-financial-management': 'https://images.unsplash.com/photo-1758518729711-1cbacd55efdb?auto=format&fit=crop&w=3840&q=72&fm=webp',
 };
 

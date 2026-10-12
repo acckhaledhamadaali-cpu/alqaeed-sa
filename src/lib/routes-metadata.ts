@@ -1,4 +1,5 @@
 import { BLOG_ARTICLES } from '../data/blogArticles';
+import { getBlogImage } from '../data/blogImages';
 
 export interface RouteMeta {
   path: string;
@@ -202,10 +203,10 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
   '/services/zakat-tax': {
     path: '/services/zakat-tax',
     title: 'إقرار الزكاة وضريبة القيمة المضافة | القائد',
-    description: 'إعداد ومراجعة إقرار ضريبة القيمة المضافة والإقرار الزكوي للمنشآت السعودية عن بُعد، مع توضيح البيانات والمستندات وخطوات كل خدمة.',
+    description: 'إعداد ومراجعة الإقرار الزكوي وإقرار ضريبة القيمة المضافة للمنشآت السعودية عن بُعد. تعرّف على البيانات المطلوبة ودورية الإقرار والمستندات بحسب حالة المكلف.',
     canonical: 'https://alqaeed-sa.pages.dev/services/zakat-tax/',
     ogTitle: 'إقرار الزكاة وضريبة القيمة المضافة | القائد',
-    ogDescription: 'إعداد ومراجعة إقرار ضريبة القيمة المضافة والإقرار الزكوي للمنشآت السعودية عن بُعد، مع توضيح البيانات والمستندات وخطوات كل خدمة.',
+    ogDescription: 'إعداد ومراجعة الإقرار الزكوي وإقرار ضريبة القيمة المضافة للمنشآت السعودية عن بُعد. تعرّف على البيانات المطلوبة ودورية الإقرار والمستندات بحسب حالة المكلف.',
     ogUrl: 'https://alqaeed-sa.pages.dev/services/zakat-tax/',
     schema: {
       "@context": "https://schema.org",
@@ -215,7 +216,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
           "@id": "https://alqaeed-sa.pages.dev/services/zakat-tax/#webpage",
           "url": "https://alqaeed-sa.pages.dev/services/zakat-tax/",
           "name": "إقرار الزكاة وضريبة القيمة المضافة | القائد",
-          "description": "إعداد ومراجعة إقرار ضريبة القيمة المضافة والإقرار الزكوي للمنشآت السعودية عن بُعد، مع توضيح البيانات والمستندات وخطوات كل خدمة.",
+          "description": "إعداد ومراجعة الإقرار الزكوي وإقرار ضريبة القيمة المضافة للمنشآت السعودية عن بُعد. تعرّف على البيانات المطلوبة ودورية الإقرار والمستندات بحسب حالة المكلف.",
           "primaryImageOfPage": {
             "@id": "https://alqaeed-sa.pages.dev/#logo"
           },
@@ -850,10 +851,10 @@ export function getRouteMetadata(path: string): RouteMeta {
       const url = `https://alqaeed-sa.pages.dev/blog/${article.slug}/`;
       return {
         path: normalized,
-        title: BLOG_SEO_TITLES[article.slug] || `${article.title} | القائد للإدارة المالية`,
+        title: article.seoTitle || BLOG_SEO_TITLES[article.slug] || `${article.title} | القائد للإدارة المالية`,
         description: article.description,
         canonical: url,
-        ogTitle: BLOG_SEO_TITLES[article.slug] || `${article.title} | القائد للإدارة المالية`,
+        ogTitle: article.seoTitle || BLOG_SEO_TITLES[article.slug] || `${article.title} | القائد للإدارة المالية`,
         ogDescription: article.description,
         ogUrl: url,
         schema: {
@@ -864,7 +865,7 @@ export function getRouteMetadata(path: string): RouteMeta {
               "@id": `${url}#article`,
               "headline": article.title,
               "description": article.description,
-              "image": `https://alqaeed-sa.pages.dev/images/blog/${article.slug}.webp`,
+              "image": getBlogImage(article.slug),
               "inLanguage": "ar-SA",
               "author": {
                 "@type": "Person",
