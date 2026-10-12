@@ -1,5 +1,5 @@
 import { BLOG_ARTICLES } from '../data/blogArticles';
-import { getBlogImage } from '../data/blogImages';
+import { getBlogImageAbsolute } from '../data/blogImages';
 
 export interface RouteMeta {
   path: string;
@@ -865,7 +865,7 @@ export function getRouteMetadata(path: string): RouteMeta {
               "@id": `${url}#article`,
               "headline": article.title,
               "description": article.description,
-              "image": getBlogImage(article.slug),
+              "image": getBlogImageAbsolute(article.slug),
               "inLanguage": "ar-SA",
               "author": {
                 "@type": "Person",

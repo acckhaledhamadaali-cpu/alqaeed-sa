@@ -8,12 +8,18 @@ const BLOG_IMAGE_SOURCES: Record<string, string> = {
   'budgeting-planning-revenues-expenses': 'https://images.unsplash.com/photo-1762427354397-854a52e0ded7?auto=format&fit=crop&w=3840&q=72&fm=webp',
   'bookkeeping-importance-organized-accounting': 'https://images.unsplash.com/photo-1766871138969-510e404f1293?auto=format&fit=crop&w=3840&q=72&fm=webp',
   'zakat-tax-financial-data-organization': 'https://images.unsplash.com/photo-1772588627499-baefc8ab0ce7?auto=format&fit=crop&w=3840&q=72&fm=webp',
-  'zakat-vat-return-guide-saudi-businesses': 'https://images.unsplash.com/photo-1772588627499-baefc8ab0ce7?auto=format&fit=crop&w=3840&q=72&fm=webp',
   '7-signs-company-needs-remote-financial-management': 'https://images.unsplash.com/photo-1758518729711-1cbacd55efdb?auto=format&fit=crop&w=3840&q=72&fm=webp',
 };
 
 export function getBlogImage(slug: string): string {
   return BLOG_IMAGE_SOURCES[slug] ?? `/images/blog/${slug}.webp`;
+}
+
+export function getBlogImageAbsolute(slug: string): string {
+  const image = getBlogImage(slug);
+  return image.startsWith('http://') || image.startsWith('https://')
+    ? image
+    : new URL(image, 'https://alqaeed-sa.pages.dev').toString();
 }
 
 export function getBlogImageSrcSet(slug: string): string {

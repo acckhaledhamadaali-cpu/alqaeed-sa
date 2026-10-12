@@ -4,7 +4,7 @@ import SectionWrapper from '../../components/SectionWrapper';
 import Container from '../../components/Container';
 import { TYPOGRAPHY } from '../lib/tokens';
 import { BLOG_ARTICLES, BLOG_CATEGORIES } from '../data/blogArticles';
-import { getBlogImage, getBlogImageSrcSet } from '../data/blogImages';
+import { getBlogImage, getBlogImageAbsolute, getBlogImageSrcSet } from '../data/blogImages';
 import { BlogCategoryType } from '../types/blog';
 
 const WHATSAPP_NUMBER = "966511294383";
@@ -239,6 +239,9 @@ export default function ArticlePage({ slug }: { slug: string }) {
   const url = `https://alqaeed-sa.pages.dev/blog/${article.slug}/`;
   const articleImage = getBlogImage(article.slug);
   const articleImageSrcSet = getBlogImageSrcSet(article.slug);
+  const articleImageAlt = article.slug === 'zakat-vat-return-guide-saudi-businesses'
+    ? 'لقطات من أدلة ZATCA الرسمية لواجهة الإقرار الزكوي وإقرار ضريبة القيمة المضافة'
+    : article.title;
 
   const schema = {
     "@context": "https://schema.org",
@@ -248,7 +251,7 @@ export default function ArticlePage({ slug }: { slug: string }) {
         "@id": `${url}#article`,
         "headline": article.title,
         "description": article.description,
-        "image": articleImage,
+        "image": getBlogImageAbsolute(article.slug),
         "inLanguage": "ar-SA",
         "author": { "@type": "Person", "@id": "https://alqaeed-sa.pages.dev/#person", "name": "خالد القائد" },
         "publisher": { "@id": "https://alqaeed-sa.pages.dev/#organization" },
@@ -307,7 +310,7 @@ export default function ArticlePage({ slug }: { slug: string }) {
                 src={articleImage}
                 srcSet={articleImageSrcSet || undefined}
                 sizes="(max-width: 768px) calc(100vw - 32px), 768px"
-                alt={article.title}
+                alt={articleImageAlt}
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"
@@ -316,6 +319,13 @@ export default function ArticlePage({ slug }: { slug: string }) {
                 className="w-full h-full object-cover"
               />
             </div>
+            {article.slug === 'zakat-vat-return-guide-saudi-businesses' && (
+              <p className="mt-2 text-center text-xs text-text-muted leading-relaxed">
+                لقطات من الدليلين الرسميين لدى ZATCA:
+                {' '}<a href="https://zatca.gov.sa/ar/eServices/UserManual/Pages/UserManual-009.aspx" target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-2">دليل إقرار ضريبة القيمة المضافة</a>
+                {' '}و<a href="https://zatca.gov.sa/ar/eServices/Documents/eServices_Manual_051.pdf" target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-2">دليل الإقرار الزكوي</a>.
+              </p>
+            )}
           </header>
 
           <div className="prose prose-lg max-w-none text-text-primary text-sm md:text-base leading-relaxed mb-12">
