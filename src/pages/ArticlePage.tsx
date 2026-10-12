@@ -239,9 +239,7 @@ export default function ArticlePage({ slug }: { slug: string }) {
   const url = `https://alqaeed-sa.pages.dev/blog/${article.slug}/`;
   const articleImage = getBlogImage(article.slug);
   const articleImageSrcSet = getBlogImageSrcSet(article.slug);
-  const articleImageAlt = article.slug === 'zakat-vat-return-guide-saudi-businesses'
-    ? 'لقطات من أدلة ZATCA الرسمية لواجهة الإقرار الزكوي وإقرار ضريبة القيمة المضافة'
-    : article.title;
+  const articleImageAbsolute = getBlogImageAbsolute(article.slug);
 
   const schema = {
     "@context": "https://schema.org",
@@ -251,7 +249,7 @@ export default function ArticlePage({ slug }: { slug: string }) {
         "@id": `${url}#article`,
         "headline": article.title,
         "description": article.description,
-        "image": getBlogImageAbsolute(article.slug),
+        ...(articleImageAbsolute ? { "image": articleImageAbsolute } : {}),
         "inLanguage": "ar-SA",
         "author": { "@type": "Person", "@id": "https://alqaeed-sa.pages.dev/#person", "name": "خالد القائد" },
         "publisher": { "@id": "https://alqaeed-sa.pages.dev/#organization" },
@@ -303,28 +301,23 @@ export default function ArticlePage({ slug }: { slug: string }) {
             </div>
 
             <h1 className={`${TYPOGRAPHY.heading.h1} font-bold text-text-primary mb-4 leading-tight`}>{article.title}</h1>
-            <p className="text-sm md:text-base text-text-secondary leading-relaxed font-normal mb-6">{article.description}</p>
+            <p className={`text-sm md:text-base text-text-secondary leading-relaxed font-normal ${articleImage ? 'mb-6' : 'mb-0'}`}>{article.description}</p>
 
-            <div className="rounded-2xl overflow-hidden border border-border-subtle bg-surface-subtle shadow-sm aspect-video">
-              <img
-                src={articleImage}
-                srcSet={articleImageSrcSet || undefined}
-                sizes="(max-width: 768px) calc(100vw - 32px), 768px"
-                alt={articleImageAlt}
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-                width={1280}
-                height={720}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            {article.slug === 'zakat-vat-return-guide-saudi-businesses' && (
-              <p className="mt-2 text-center text-xs text-text-muted leading-relaxed">
-                لقطات من الدليلين الرسميين لدى ZATCA:
-                {' '}<a href="https://zatca.gov.sa/ar/eServices/UserManual/Pages/UserManual-009.aspx" target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-2">دليل إقرار ضريبة القيمة المضافة</a>
-                {' '}و<a href="https://zatca.gov.sa/ar/eServices/Documents/eServices_Manual_051.pdf" target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-2">دليل الإقرار الزكوي</a>.
-              </p>
+            {articleImage && (
+              <div className="rounded-2xl overflow-hidden border border-border-subtle bg-surface-subtle shadow-sm aspect-video">
+                <img
+                  src={articleImage}
+                  srcSet={articleImageSrcSet || undefined}
+                  sizes="(max-width: 768px) calc(100vw - 32px), 768px"
+                  alt={article.title}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  width={1280}
+                  height={720}
+                  className="w-full h-full object-cover"
+                />
+              </div>
             )}
           </header>
 

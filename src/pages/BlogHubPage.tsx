@@ -105,19 +105,21 @@ export default function BlogHubPage() {
                   return (
                     <article key={article.slug} className="border border-border-subtle rounded-xl overflow-hidden bg-white hover:shadow-md transition-shadow flex flex-col justify-between">
                       <div>
-                        <a href={`/blog/${article.slug}/`} className="block overflow-hidden bg-surface-subtle aspect-video border-b border-border-subtle">
-                          <img
-                            src={image}
-                            srcSet={imageSrcSet || undefined}
-                            sizes="(max-width: 767px) calc(100vw - 32px), 50vw"
-                            alt={article.title}
-                            loading="lazy"
-                            decoding="async"
-                            width={640}
-                            height={360}
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                          />
-                        </a>
+                        {image && (
+                          <a href={`/blog/${article.slug}/`} className="block overflow-hidden bg-surface-subtle aspect-video border-b border-border-subtle">
+                            <img
+                              src={image}
+                              srcSet={imageSrcSet || undefined}
+                              sizes="(max-width: 767px) calc(100vw - 32px), 50vw"
+                              alt={article.title}
+                              loading="lazy"
+                              decoding="async"
+                              width={640}
+                              height={360}
+                              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                            />
+                          </a>
+                        )}
 
                         <div className="p-6 pb-2">
                           <div className="flex items-center justify-between text-xs text-text-muted mb-3">

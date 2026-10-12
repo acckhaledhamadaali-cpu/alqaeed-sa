@@ -849,6 +849,7 @@ export function getRouteMetadata(path: string): RouteMeta {
     const article = BLOG_ARTICLES.find((a) => a.slug === slug);
     if (article) {
       const url = `https://alqaeed-sa.pages.dev/blog/${article.slug}/`;
+      const articleImage = getBlogImageAbsolute(article.slug);
       return {
         path: normalized,
         title: article.seoTitle || BLOG_SEO_TITLES[article.slug] || `${article.title} | القائد للإدارة المالية`,
@@ -865,7 +866,7 @@ export function getRouteMetadata(path: string): RouteMeta {
               "@id": `${url}#article`,
               "headline": article.title,
               "description": article.description,
-              "image": getBlogImageAbsolute(article.slug),
+              ...(articleImage ? { "image": articleImage } : {}),
               "inLanguage": "ar-SA",
               "author": {
                 "@type": "Person",
