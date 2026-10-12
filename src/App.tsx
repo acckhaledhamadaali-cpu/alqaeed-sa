@@ -115,7 +115,6 @@ export default function App({ path: propPath }: { path?: string } = {}) {
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
           <ZakatTaxPage />
-          <ServicePricingNote />
         </main>
         <FooterSection />
         <FloatingWhatsApp />

@@ -5,7 +5,7 @@ import { TYPOGRAPHY } from '../src/lib/tokens';
 import { MessageCircle } from 'lucide-react';
 
 const WHATSAPP_NUMBER = "966511294383";
-const HERO_WHATSAPP_MESSAGE = "السلام عليكم، نشاط منشأتي [نوع النشاط]، وعدد فروعها [العدد]. أحتاج [الخدمة أو التحدي]. أرجو توضيح نطاق الخدمة والمعلومات الأولية المطلوبة وطريقة تحديد الأتعاب.";
+const HERO_WHATSAPP_MESSAGE = "السلام عليكم، أرغب في الاستفسار عن خدمات القائد المحاسبية والمالية للمنشآت. أرجو إرشادي إلى نطاق الخدمة والمعلومات اللازمة للبدء.";
 const HERO_WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(HERO_WHATSAPP_MESSAGE)}`;
 
 export default function HeroSection(props: HTMLAttributes<HTMLElement>) {

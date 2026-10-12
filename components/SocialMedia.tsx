@@ -3,9 +3,7 @@ import { SiX } from 'react-icons/si';
 
 const WHATSAPP_NUMBER = "966511294383";
 const WHATSAPP_MESSAGE = `السلام عليكم
-أرغب في حجز استشارة لبحث سبل تطوير الأداء المالي لمنشأتي
-اسم حضرتك الكريم  /
-اسم المنشأة / نوع النشاط / عدد الفروع / هل يمكن تحديد موعد مناسب للبدء`;
+أود الاستفسار عن خدمات القائد للمحاسبة والإدارة المالية لمنشأتي. هل يمكنكم توضيح طريقة البدء؟`;
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 export default function SocialMedia() {
