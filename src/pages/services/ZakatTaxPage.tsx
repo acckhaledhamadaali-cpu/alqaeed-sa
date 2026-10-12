@@ -11,11 +11,58 @@ const makeWhatsAppUrl = (message: string) => 'https://wa.me/' + WHATSAPP_NUMBER 
 const VAT_WHATSAPP_URL = makeWhatsAppUrl(VAT_WHATSAPP_MESSAGE);
 const ZAKAT_WHATSAPP_URL = makeWhatsAppUrl(ZAKAT_WHATSAPP_MESSAGE);
 
+const VAT_SERVICE_URL = 'https://zatca.gov.sa/ar/eServices/Pages/eServices-009.aspx';
+const VAT_GUIDE_URL = 'https://zatca.gov.sa/ar/HelpCenter/guidelines/Documents/Simplified_VAT_Filing_Guidelines.pdf';
+const ZAKAT_SERVICE_URL = 'https://zatca.gov.sa/ar/eServices/Pages/eServices-051.aspx';
+const ZAKAT_REGULATION_URL = 'https://zatca.gov.sa/ar/RulesRegulations/Taxes/Pages/ZakatRegulations.aspx';
+
+function WhatsAppLink({
+  href,
+  onClick,
+  children,
+  primary = false,
+}: {
+  href: string;
+  onClick: () => void;
+  children: React.ReactNode;
+  primary?: boolean;
+}) {
+  const style = primary
+    ? 'border border-[#25D366] bg-[#25D366] text-white hover:bg-[#20ba5a]'
+    : 'border border-border-subtle bg-white text-text-primary hover:border-secondary/60 hover:bg-surface-muted/40';
+
+  return (
+    <a
+      href={href}
+      onClick={onClick}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-xs transition-colors sm:text-sm ${style}`}
+    >
+      <MessageCircle className="h-4 w-4" aria-hidden="true" />
+      {children}
+    </a>
+  );
+}
+
+function OfficialLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a
+      className="inline-flex min-h-10 items-center rounded-lg border border-border-subtle bg-white px-3 py-2 text-xs text-primary underline decoration-primary/40 underline-offset-4 transition-colors hover:border-secondary/50 hover:text-secondary sm:text-sm"
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {children}
+    </a>
+  );
+}
+
 export default function ZakatTaxPage() {
-  const name = 'إقرار ضريبة القيمة المضافة والإقرار الزكوي';
+  const name = 'الإقرار الزكوي وإقرار ضريبة القيمة المضافة';
   const slug = 'zakat-tax';
-  const metaTitle = 'إقرار ضريبة القيمة المضافة والإقرار الزكوي | القائد';
-  const metaDesc = 'إعداد ومراجعة إقرار ضريبة القيمة المضافة أو الإقرار الزكوي عن بُعد للمنشآت الصغيرة والمتوسطة في جميع مناطق السعودية، مع شرح المستندات وخطوات كل خدمة.';
+  const metaTitle = 'إقرار الزكاة وضريبة القيمة المضافة | القائد';
+  const metaDesc = 'إعداد ومراجعة إقرار ضريبة القيمة المضافة والإقرار الزكوي للمنشآت السعودية عن بُعد، مع توضيح البيانات والمستندات وخطوات كل خدمة.';
   const url = 'https://alqaeed-sa.pages.dev/services/' + slug + '/';
 
   const schema = {
@@ -35,7 +82,7 @@ export default function ZakatTaxPage() {
         '@type': 'Service',
         '@id': url + '#vat-service',
         name: 'إعداد ومراجعة إقرار ضريبة القيمة المضافة',
-        description: 'خدمة مستقلة لإعداد ومراجعة إقرار ضريبة القيمة المضافة للمنشآت المسجلة، عن بُعد في مناطق السعودية، وفق بيانات الفترة ومستنداتها.',
+        description: 'إعداد أو مراجعة بيانات إقرار ضريبة القيمة المضافة للمنشآت المسجلة، بحسب مستندات الفترة وقواعد الهيئة.',
         provider: { '@id': 'https://alqaeed-sa.pages.dev/#organization' },
         areaServed: 'Saudi Arabia',
       },
@@ -43,7 +90,7 @@ export default function ZakatTaxPage() {
         '@type': 'Service',
         '@id': url + '#zakat-service',
         name: 'إعداد ومراجعة الإقرار الزكوي',
-        description: 'خدمة مستقلة لإعداد ومراجعة الإقرار الزكوي للمنشآت بحسب صفتها وسجلاتها ومستنداتها، عن بُعد في مناطق السعودية.',
+        description: 'إعداد أو مراجعة بيانات الإقرار الزكوي بحسب صفة المكلف ونوع الإقرار والفترة والمستندات ذات الصلة.',
         provider: { '@id': 'https://alqaeed-sa.pages.dev/#organization' },
         areaServed: 'Saudi Arabia',
       },
@@ -74,179 +121,175 @@ export default function ZakatTaxPage() {
   return (
     <SectionWrapper id={'service-' + slug + '-section'} variant="white" spacing="default">
       <Container>
-        <div className="mx-auto max-w-3xl py-4 text-right font-arabic md:py-8">
-          <nav aria-label="مسار التنقل" className="mb-4 text-xs text-text-muted">
+        <div className="mx-auto max-w-5xl py-4 text-right font-arabic md:py-8">
+          <nav aria-label="مسار التنقل" className="mb-5 text-xs text-text-muted">
             <a href="/" className="transition-colors hover:text-primary">الرئيسية - القائد للإدارة المالية</a>
             <span className="mx-2 text-border-subtle">/</span>
             <span className="text-text-secondary">{name}</span>
           </nav>
 
-          <h1 className={`${TYPOGRAPHY.heading.h1} mb-4 leading-tight text-text-primary`}>
-            {name}
-          </h1>
-          <div className="mb-5 h-1 w-16 rounded-full bg-primary" aria-hidden="true" />
-          <p className="text-sm leading-8 text-text-secondary md:text-[15px]">
-            الزكاة وضريبة القيمة المضافة إقراران منفصلان. أساعد المنشآت الصغيرة والمتوسطة في إعداد الإقرار المناسب أو مراجعته بحسب مستنداتها، عن بُعد في جميع مناطق المملكة.
-          </p>
-          <p className="mt-2 text-xs leading-6 text-text-secondary">
-            خالد القائد | محاسب مالي
-          </p>
-
-          <div className="mt-5 flex flex-col gap-2 sm:flex-row">
-            <a
-              href={VAT_WHATSAPP_URL}
-              onClick={() => trackWhatsAppClick('vat')}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="تواصل عبر واتساب بشأن إقرار ضريبة القيمة المضافة"
-              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-[#25D366] px-5 py-2.5 text-xs text-white shadow-sm transition-all duration-200 hover:bg-[#20ba5a] focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2 sm:text-sm"
-            >
-              <MessageCircle className="h-4 w-4" aria-hidden="true" />
-              تواصل بشأن إقرار ضريبة القيمة المضافة
-            </a>
-            <a
-              href={ZAKAT_WHATSAPP_URL}
-              onClick={() => trackWhatsAppClick('zakat')}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="تواصل عبر واتساب بشأن الإقرار الزكوي"
-              className="inline-flex min-h-11 items-center justify-center rounded-xl border border-border-subtle bg-white px-5 py-2.5 text-xs text-primary transition-colors hover:border-secondary/50 hover:bg-surface-muted/40 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 sm:text-sm"
-            >
-              تواصل بشأن الإقرار الزكوي عبر واتساب
-            </a>
-          </div>
-
-          <nav aria-label="انتقل إلى تفاصيل الإقرار" className="mt-6 rounded-xl border border-border-subtle bg-surface-subtle/30 p-3">
-            <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-              <a
-                href="#vat-return"
-                className="group flex items-center justify-between gap-3 rounded-lg border border-border-subtle bg-white p-3 text-xs transition-colors hover:border-secondary/50 hover:bg-surface-muted/40 sm:text-sm"
-              >
-                <span className="flex items-center gap-2 text-secondary">
-                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" aria-hidden="true" />
-                  تفاصيل إقرار ضريبة القيمة المضافة
-                </span>
-                <span className="text-secondary/70 transition-transform group-hover:-translate-x-0.5" aria-hidden="true">←</span>
-              </a>
-              <a
-                href="#zakat-return"
-                className="group flex items-center justify-between gap-3 rounded-lg border border-border-subtle bg-white p-3 text-xs transition-colors hover:border-secondary/50 hover:bg-surface-muted/40 sm:text-sm"
-              >
-                <span className="flex items-center gap-2 text-secondary">
-                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" aria-hidden="true" />
-                  تفاصيل الإقرار الزكوي
-                </span>
-                <span className="text-secondary/70 transition-transform group-hover:-translate-x-0.5" aria-hidden="true">←</span>
-              </a>
+          <header className="grid gap-5 rounded-2xl border border-border-subtle bg-surface-subtle/40 p-5 md:grid-cols-[1fr_auto] md:items-center md:gap-8 md:p-8">
+            <div>
+              <p className="mb-2 text-xs text-secondary sm:text-sm">خدمة إعداد ومراجعة للمنشآت في المملكة</p>
+              <h1 className={`${TYPOGRAPHY.heading.h1} leading-tight text-text-primary`}>
+                الإقرار الزكوي وإقرار ضريبة القيمة المضافة
+              </h1>
+              <p className="mt-4 max-w-2xl text-sm leading-8 text-text-secondary md:text-[15px]">
+                لكل إقرار بياناته ومتطلباته. أراجع سجلات منشأتك وأجهّز الإقرار المناسب للفترة المحددة، ثم أوضح لك ما يحتاج إلى استكمال قبل اعتماده.
+              </p>
+              <p className="mt-3 text-xs leading-6 text-text-muted">
+                العمل عن بُعد في جميع مناطق المملكة · خالد القائد، محاسب مالي
+              </p>
             </div>
+            <div className="flex flex-col gap-2 md:min-w-56">
+              <WhatsAppLink href={VAT_WHATSAPP_URL} onClick={() => trackWhatsAppClick('vat')} primary>
+                استفسر عن إقرار ضريبة القيمة المضافة
+              </WhatsAppLink>
+              <WhatsAppLink href={ZAKAT_WHATSAPP_URL} onClick={() => trackWhatsAppClick('zakat')}>
+                استفسر عن الإقرار الزكوي
+              </WhatsAppLink>
+            </div>
+          </header>
+
+          <nav aria-label="انتقل إلى تفاصيل الإقرار" className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <a href="#vat-return" className="group rounded-xl border border-border-subtle bg-white p-4 transition-colors hover:border-secondary/50 hover:bg-surface-muted/30">
+              <span className="block text-xs text-text-muted">للمنشآت المسجلة في ضريبة القيمة المضافة</span>
+              <span className="mt-1 flex items-center justify-between gap-3 text-sm text-text-primary">
+                إقرار ضريبة القيمة المضافة
+                <span className="text-secondary transition-transform group-hover:-translate-x-1" aria-hidden="true">←</span>
+              </span>
+            </a>
+            <a href="#zakat-return" className="group rounded-xl border border-border-subtle bg-white p-4 transition-colors hover:border-secondary/50 hover:bg-surface-muted/30">
+              <span className="block text-xs text-text-muted">بحسب صفة المكلف ونوع الإقرار</span>
+              <span className="mt-1 flex items-center justify-between gap-3 text-sm text-text-primary">
+                الإقرار الزكوي
+                <span className="text-secondary transition-transform group-hover:-translate-x-1" aria-hidden="true">←</span>
+              </span>
+            </a>
           </nav>
 
-          <section id="vat-return" aria-labelledby="vat-return-heading" className="mt-8 scroll-mt-24 overflow-hidden rounded-xl border border-border-subtle bg-white">
-            <header className="border-b border-border-subtle bg-surface-subtle/30 px-5 py-4">
+          <section id="vat-return" aria-labelledby="vat-return-heading" className="mt-9 scroll-mt-24 overflow-hidden rounded-2xl border border-border-subtle bg-white">
+            <header className="border-b border-border-subtle px-5 py-5 md:px-7">
+              <p className="mb-1 text-xs text-secondary">أولًا · ضريبة القيمة المضافة</p>
               <h2 id="vat-return-heading" className="border-r-2 border-primary pr-3 text-lg text-text-primary md:text-xl">
                 إقرار ضريبة القيمة المضافة
               </h2>
-              <p className="mt-2 text-xs leading-6 text-text-secondary">
-                للأشخاص المسجلين في ضريبة القيمة المضافة عن الفترة المحددة.
+              <p className="mt-2 max-w-3xl text-sm leading-7 text-text-secondary">
+                يُقدَّم من الأشخاص المسجلين عن الفترة الضريبية المحددة، ويعرض التعاملات ذات الصلة بالمبيعات والمشتريات الخاضعة للضريبة. ويقارن الإعداد بين الضريبة على المبيعات وضريبة المشتريات المؤهلة للخصم، وفق شروط الهيئة.
               </p>
             </header>
-            <div className="space-y-4 p-5 text-sm leading-8 text-text-secondary md:p-6 md:text-[15px]">
-              <p>
-                يشتمل الإقرار على التعاملات الخاضعة للضريبة في المبيعات والمشتريات خلال الفترة، وفق سجلات المنشأة ومستنداتها.
-              </p>
+            <div className="space-y-6 p-5 md:p-7">
+              <div>
+                <h3 className="mb-2 text-base text-text-primary">ما الذي تتم مراجعته؟</h3>
+                <ul className="divide-y divide-border-subtle text-sm leading-7 text-text-secondary">
+                  <li className="grid gap-1 py-3 sm:grid-cols-[150px_1fr] sm:gap-4"><strong className="text-primary">المبيعات</strong><span>مطابقة إجماليات الفترة مع سجل الفواتير، والتحقق من تواريخ العمليات وتصنيفها وفق بيانات المنشأة.</span></li>
+                  <li className="grid gap-1 py-3 sm:grid-cols-[150px_1fr] sm:gap-4"><strong className="text-primary">المشتريات</strong><span>مقارنة المشتريات بفواتيرها المؤيدة، وفحص ارتباطها بالنشاط وأهلية ضريبة المدخلات للخصم.</span></li>
+                  <li className="grid gap-1 py-3 sm:grid-cols-[150px_1fr] sm:gap-4"><strong className="text-primary">التعديلات عند انطباقها</strong><span>مراجعة الإشعارات الدائنة أو المدينة، ومستندات الاستيراد والتسويات المرتبطة بالفترة.</span></li>
+                </ul>
+              </div>
 
-              <h3 className="mt-5 border-r-2 border-primary pr-3 text-base text-primary">طريقة العمل</h3>
-              <ol className="list-decimal space-y-1 pr-6">
-                <li>تحديد الفترة وحالة التسجيل، ثم استلام بيانات المبيعات والمشتريات.</li>
-                <li>مراجعة البيانات مقابل الفواتير والسجلات، وتوضيح الفروقات أو النواقص.</li>
-                <li>إعداد مسودة الإقرار وإيضاح أي نقاط تحتاج إلى مراجعة.</li>
-              </ol>
+              <div className="grid gap-5 border-t border-border-subtle pt-5 md:grid-cols-2">
+                <div>
+                  <h3 className="mb-2 text-base text-text-primary">ما الذي تجهزه للبدء؟</h3>
+                  <ul className="list-disc space-y-1 pr-5 text-sm leading-7 text-text-secondary">
+                    <li>تقرير أو سجل المبيعات والمشتريات للفترة، ويفضل أن يبيّن رقم الفاتورة وتاريخها وقيمتها والضريبة.</li>
+                    <li>الفواتير الضريبية والإشعارات ذات الصلة، مع مستندات الاستيراد أو التسويات إذا كانت ضمن معاملات المنشأة.</li>
+                    <li>الإقرار السابق إذا كان العمل يتضمن مراجعة تصحيح أو رصيد مرحّل.</li>
+                  </ul>
+                </div>
+                <div className="rounded-xl border-r-2 border-secondary bg-surface-subtle/40 p-4">
+                  <h3 className="text-sm text-text-primary">نقطة لا ينبغي تجاوزها</h3>
+                  <p className="mt-2 text-xs leading-7 text-text-secondary">
+                    وجود فاتورة لا يجعل ضريبة مشترياتها قابلة للخصم تلقائيًا. يلزم فحص نوع المصروف، وارتباطه بالنشاط، واستيفاء الفاتورة وشروط الخصم؛ وقد تختلف المعالجة بحسب طبيعة التوريد.
+                  </p>
+                </div>
+              </div>
 
-              <h3 className="mt-5 border-r-2 border-primary pr-3 text-base text-primary">ما يلزم للتجهيز</h3>
-              <ul className="list-disc list-inside space-y-1 pr-4">
-                <li>ملخص المبيعات والمشتريات للفترة الضريبية.</li>
-                <li>الفواتير الضريبية الصادرة والواردة، والإشعارات الدائنة أو المدينة ذات الصلة.</li>
-                <li>مستندات الاستيراد أو التصدير والتسويات، إذا كانت تنطبق على معاملات المنشأة.</li>
-              </ul>
-              <p className="border-r-2 border-secondary pr-3">
-                لا تُخصم ضريبة المدخلات لمجرد وجود فاتورة؛ تُراجع أهلية الخصم وشروطها والمستندات المؤيدة وفق قواعد الهيئة.
-              </p>
+              <div className="flex flex-wrap gap-2 border-t border-border-subtle pt-5">
+                <OfficialLink href={VAT_SERVICE_URL}>خدمة تقديم إقرار ضريبة القيمة المضافة من ZATCA</OfficialLink>
+                <OfficialLink href={VAT_GUIDE_URL}>الدليل المبسط لإعداد ورفع الإقرار</OfficialLink>
+              </div>
 
-              <h3 className="mt-5 border-r-2 border-primary pr-3 text-base text-primary">روابط ZATCA الرسمية</h3>
-              <ul className="list-disc list-inside space-y-1 pr-4">
-                <li><a className="text-primary underline underline-offset-4 hover:text-secondary" href="https://zatca.gov.sa/ar/eServices/Pages/eServices-009.aspx" target="_blank" rel="noopener noreferrer">تقديم إقرار ضريبة القيمة المضافة</a></li>
-                <li><a className="text-primary underline underline-offset-4 hover:text-secondary" href="https://zatca.gov.sa/ar/HelpCenter/guidelines/Documents/Simplified_VAT_Filing_Guidelines.pdf" target="_blank" rel="noopener noreferrer">الدليل المبسط لرفع الإقرار</a></li>
-              </ul>
-
-              <div className="border-t border-border-subtle pt-4">
-                <a href={VAT_WHATSAPP_URL} onClick={() => trackWhatsAppClick('vat')} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-[#25D366] px-5 py-2.5 text-xs text-white transition-colors hover:bg-[#20ba5a] sm:text-sm">
-                  <MessageCircle className="h-4 w-4" aria-hidden="true" />
-                  استفسر عن إقرار ضريبة القيمة المضافة
-                </a>
+              <div className="border-t border-border-subtle pt-5">
+                <WhatsAppLink href={VAT_WHATSAPP_URL} onClick={() => trackWhatsAppClick('vat')} primary>
+                  أرسل استفسارك عن إقرار القيمة المضافة
+                </WhatsAppLink>
               </div>
             </div>
           </section>
 
-          <section id="zakat-return" aria-labelledby="zakat-return-heading" className="mt-6 scroll-mt-24 overflow-hidden rounded-xl border border-border-subtle bg-white">
-            <header className="border-b border-border-subtle bg-surface-subtle/30 px-5 py-4">
+          <section id="zakat-return" aria-labelledby="zakat-return-heading" className="mt-6 scroll-mt-24 overflow-hidden rounded-2xl border border-border-subtle bg-white">
+            <header className="border-b border-border-subtle px-5 py-5 md:px-7">
+              <p className="mb-1 text-xs text-secondary">ثانيًا · الزكاة</p>
               <h2 id="zakat-return-heading" className="border-r-2 border-primary pr-3 text-lg text-text-primary md:text-xl">
-                الإقرار الزكوي
+                الإقرار الزكوي للمنشآت
               </h2>
-              <p className="mt-2 text-xs leading-6 text-text-secondary">
-                إقرار مستقل يُجهّز بحسب صفة المكلف والفترة المالية المسجلة لدى الهيئة.
+              <p className="mt-2 max-w-3xl text-sm leading-7 text-text-secondary">
+                الإقرار الزكوي مستقل عن إقرار ضريبة القيمة المضافة. تحدد بيانات التسجيل وصفة المكلف ونوع الإقرار والفترة المالية نطاق العمل. ولا يُستنتج الوعاء الزكوي من صافي الربح وحده؛ بل تُراجع البنود وفق المعالجات التي تنطبق على حالة المكلف.
               </p>
             </header>
-            <div className="space-y-4 p-5 text-sm leading-8 text-text-secondary md:p-6 md:text-[15px]">
-              <p>
-                يقدَّم الإقرار عن الفترة المالية ونوع المكلف المحددين لدى الهيئة؛ لذلك تختلف تفاصيل الملف والمرفقات من منشأة إلى أخرى.
-              </p>
+            <div className="space-y-6 p-5 md:p-7">
+              <div>
+                <h3 className="mb-2 text-base text-text-primary">ما الذي تتم مراجعته؟</h3>
+                <ul className="divide-y divide-border-subtle text-sm leading-7 text-text-secondary">
+                  <li className="grid gap-1 py-3 sm:grid-cols-[150px_1fr] sm:gap-4"><strong className="text-primary">بيانات المكلف</strong><span>التسجيل، وصفة المنشأة، ونوع الإقرار والفترة الظاهرة في حسابها لدى الهيئة.</span></li>
+                  <li className="grid gap-1 py-3 sm:grid-cols-[150px_1fr] sm:gap-4"><strong className="text-primary">البيانات المالية</strong><span>مطابقة الأرقام بالسجلات والقوائم وميزان المراجعة، وربط البنود بمستنداتها عند الحاجة.</span></li>
+                  <li className="grid gap-1 py-3 sm:grid-cols-[150px_1fr] sm:gap-4"><strong className="text-primary">متطلبات إضافية</strong><span>النماذج أو الإفصاحات التي يطلبها نوع الإقرار، مثل نموذج تسعير المعاملات إذا انطبق.</span></li>
+                </ul>
+              </div>
 
-              <h3 className="mt-5 border-r-2 border-primary pr-3 text-base text-primary">ما يلزم للتجهيز</h3>
-              <ul className="list-disc list-inside space-y-1 pr-4">
-                <li>بيانات المنشأة وصفة المكلف ونوع الإقرار والفترة المالية.</li>
-                <li>القوائم المالية وميزان المراجعة والسجلات ذات الصلة بحسب حالة المنشأة.</li>
-                <li>المستندات المؤيدة للبنود المالية، مثل الفواتير أو العقود أو كشوف الحساب عند ارتباطها بها.</li>
-              </ul>
-              <p className="border-r-2 border-secondary pr-3">
-                يوضح دليل ZATCA أن المكلفين الملزمين بمسك الدفاتر التجارية يرفقون القوائم المالية المدققة والمعتمدة من محاسب قانوني مرخص، مع مراعاة الاستثناءات النظامية؛ لذا يُتحقق من انطباق المتطلب على المنشأة.
-              </p>
+              <div className="grid gap-5 border-t border-border-subtle pt-5 md:grid-cols-2">
+                <div>
+                  <h3 className="mb-2 text-base text-text-primary">ما الذي تجهزه للبدء؟</h3>
+                  <ul className="list-disc space-y-1 pr-5 text-sm leading-7 text-text-secondary">
+                    <li>بيانات التسجيل ونوع الإقرار والفترة المالية المطلوب إعدادها.</li>
+                    <li>القوائم المالية وميزان المراجعة والسجل العام أو ما يتوفر من سجلات محاسبية عن الفترة.</li>
+                    <li>مستندات البنود محل المراجعة، والإقرار السابق أو نماذج إضافية إذا كانت مطلوبة للحالة.</li>
+                  </ul>
+                </div>
+                <div className="rounded-xl border-r-2 border-secondary bg-surface-subtle/40 p-4">
+                  <h3 className="text-sm text-text-primary">هل القوائم المدققة مطلوبة للجميع؟</h3>
+                  <p className="mt-2 text-xs leading-7 text-text-secondary">
+                    لا يصح تعميم هذا المتطلب على كل المنشآت دون فحص الحالة. قد يلزم بعض المكلفين إرفاق قوائم مالية مدققة؛ ويُتحقق من المتطلب بحسب صفة المكلف واللائحة الحالية ونوع الإقرار قبل التجهيز.
+                  </p>
+                </div>
+              </div>
 
-              <h3 className="mt-5 border-r-2 border-primary pr-3 text-base text-primary">طريقة العمل</h3>
-              <ol className="list-decimal space-y-1 pr-6">
-                <li>تحديد صفة المكلف والفترة ونوع الإقرار.</li>
-                <li>مراجعة السجلات والمستندات وإيضاح ما يحتاج إلى استكمال.</li>
-                <li>إعداد مسودة الإقرار وإيضاح ما يحتاج إلى استكمال أو تأكيد.</li>
-              </ol>
+              <div className="flex flex-wrap gap-2 border-t border-border-subtle pt-5">
+                <OfficialLink href={ZAKAT_SERVICE_URL}>خدمة تقديم إقرار الزكاة للمنشآت من ZATCA</OfficialLink>
+                <OfficialLink href={ZAKAT_REGULATION_URL}>اللائحة التنفيذية الحالية لجباية الزكاة 1445هـ</OfficialLink>
+              </div>
 
-              <h3 className="mt-5 border-r-2 border-primary pr-3 text-base text-primary">روابط ZATCA الرسمية</h3>
-              <ul className="list-disc list-inside space-y-1 pr-4">
-                <li><a className="text-primary underline underline-offset-4 hover:text-secondary" href="https://zatca.gov.sa/ar/eServices/Pages/eServices-051.aspx" target="_blank" rel="noopener noreferrer">تقديم إقرار الزكاة للمنشآت</a></li>
-                <li><a className="text-primary underline underline-offset-4 hover:text-secondary" href="https://zatca.gov.sa/ar/HelpCenter/guidelines/Documents/%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%86%D8%AF%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B2%D9%83%D9%88%D9%8A%D8%A9.pdf" target="_blank" rel="noopener noreferrer">دليل المستندات الزكوية</a></li>
-              </ul>
-
-              <div className="border-t border-border-subtle pt-4">
-                <a href={ZAKAT_WHATSAPP_URL} onClick={() => trackWhatsAppClick('zakat')} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-[#25D366] px-5 py-2.5 text-xs text-white transition-colors hover:bg-[#20ba5a] sm:text-sm">
-                  <MessageCircle className="h-4 w-4" aria-hidden="true" />
-                  استفسر عن الإقرار الزكوي
-                </a>
+              <div className="border-t border-border-subtle pt-5">
+                <WhatsAppLink href={ZAKAT_WHATSAPP_URL} onClick={() => trackWhatsAppClick('zakat')} primary>
+                  أرسل استفسارك عن الإقرار الزكوي
+                </WhatsAppLink>
               </div>
             </div>
           </section>
 
-          <aside className="mt-6 rounded-xl border border-border-subtle bg-surface-subtle/30 p-4 text-xs leading-7 text-text-secondary">
-            تُعد البيانات وفق سجلات ومستندات المنشأة؛ ولا يعني إعداد الإقرار تدقيق القوائم المالية أو اعتمادها. لا يتم الرفع إلا بطلبك وبعد اعتمادك واستكمال التفويض اللازم، والقرار النهائي من اختصاص الهيئة.
+          <section aria-labelledby="work-steps-heading" className="mt-7 rounded-2xl border border-border-subtle bg-surface-subtle/30 p-5 md:p-7">
+            <p className="text-xs text-secondary">خطوات واضحة قبل الإرسال</p>
+            <h2 id="work-steps-heading" className="mt-1 text-lg text-text-primary md:text-xl">كيف تسير الخدمة؟</h2>
+            <ol className="mt-4 divide-y divide-border-subtle">
+              <li className="grid gap-1 py-3 text-sm sm:grid-cols-[180px_1fr] sm:gap-4"><strong className="text-text-primary">١. تحديد الحالة</strong><span className="text-xs leading-7 text-text-secondary">نحدد الإقرار المطلوب والفترة وبيانات المنشأة المتاحة قبل طلب المستندات.</span></li>
+              <li className="grid gap-1 py-3 text-sm sm:grid-cols-[180px_1fr] sm:gap-4"><strong className="text-text-primary">٢. فحص السجلات</strong><span className="text-xs leading-7 text-text-secondary">أراجع البيانات المؤيدة، وأوضح لك النواقص أو الفروقات التي تحتاج إلى استيضاح.</span></li>
+              <li className="grid gap-1 py-3 text-sm sm:grid-cols-[180px_1fr] sm:gap-4"><strong className="text-text-primary">٣. مراجعة المسودة</strong><span className="text-xs leading-7 text-text-secondary">تستلم مسودة الإقرار والملاحظات لمراجعتها؛ ولا يتم الإرسال نيابة عنك إلا بعد اعتمادك واستكمال التفويض اللازم.</span></li>
+            </ol>
+          </section>
+
+          <aside className="mt-5 border-r-2 border-primary px-4 py-2 text-xs leading-7 text-text-secondary">
+            الخدمة إعداد ومراجعة للبيانات والإقرار، وليست تدقيقًا للقوائم المالية أو اعتمادًا لها. يعتمد الإقرار على صحة المستندات التي تقدمها المنشأة، وتبقى قرارات الربط والقبول من اختصاص هيئة الزكاة والضريبة والجمارك.
           </aside>
 
-          <aside className="mt-7 rounded-xl border border-border-subtle bg-white p-4 text-sm leading-7">
+          <aside className="mt-5 rounded-xl border border-border-subtle bg-white p-4 text-sm leading-7">
             <p className="text-text-secondary">
-              دليل ذو صلة: <a href="/blog/zakat-tax-financial-data-organization/" className="text-primary underline underline-offset-4 hover:text-secondary">تنظيم البيانات المالية للزكاة والضريبة</a>
+              قراءة مرتبطة: <a href="/blog/zakat-tax-financial-data-organization/" className="text-primary underline underline-offset-4 hover:text-secondary">كيف تجهّز بياناتك المالية قبل الإقرار؟</a>
             </p>
           </aside>
 
           <section aria-labelledby="related-services-heading" className="mt-8 border-t border-border-subtle pt-6">
-            <h2 id="related-services-heading" className="mb-4 text-lg text-text-primary">
-              خدمات مالية مرتبطة
-            </h2>
+            <h2 id="related-services-heading" className="mb-4 text-lg text-text-primary">خدمات مالية مرتبطة</h2>
             <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
               <a href="/services/bookkeeping/" className="group flex items-center justify-between gap-2 rounded-lg border border-border-subtle bg-white p-3 text-xs text-secondary transition-colors hover:border-secondary/50 hover:bg-surface-muted/40 sm:text-sm">
                 تنظيم الحسابات ومسك الدفاتر <span className="text-secondary/70 transition-transform group-hover:-translate-x-0.5" aria-hidden="true">←</span>

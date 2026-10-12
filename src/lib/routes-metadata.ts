@@ -201,11 +201,11 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
   },
   '/services/zakat-tax': {
     path: '/services/zakat-tax',
-    title: 'إقرار ضريبة القيمة المضافة والإقرار الزكوي | القائد',
-    description: 'إعداد ومراجعة إقرار ضريبة القيمة المضافة أو الإقرار الزكوي عن بُعد للمنشآت الصغيرة والمتوسطة في جميع مناطق السعودية، مع شرح المستندات وخطوات كل خدمة.',
+    title: 'إقرار الزكاة وضريبة القيمة المضافة | القائد',
+    description: 'إعداد ومراجعة إقرار ضريبة القيمة المضافة والإقرار الزكوي للمنشآت السعودية عن بُعد، مع توضيح البيانات والمستندات وخطوات كل خدمة.',
     canonical: 'https://alqaeed-sa.pages.dev/services/zakat-tax/',
-    ogTitle: 'إقرار ضريبة القيمة المضافة والإقرار الزكوي | القائد',
-    ogDescription: 'إعداد ومراجعة إقرار ضريبة القيمة المضافة أو الإقرار الزكوي عن بُعد للمنشآت الصغيرة والمتوسطة في جميع مناطق السعودية، مع شرح المستندات وخطوات كل خدمة.',
+    ogTitle: 'إقرار الزكاة وضريبة القيمة المضافة | القائد',
+    ogDescription: 'إعداد ومراجعة إقرار ضريبة القيمة المضافة والإقرار الزكوي للمنشآت السعودية عن بُعد، مع توضيح البيانات والمستندات وخطوات كل خدمة.',
     ogUrl: 'https://alqaeed-sa.pages.dev/services/zakat-tax/',
     schema: {
       "@context": "https://schema.org",
@@ -214,8 +214,8 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
           "@type": "WebPage",
           "@id": "https://alqaeed-sa.pages.dev/services/zakat-tax/#webpage",
           "url": "https://alqaeed-sa.pages.dev/services/zakat-tax/",
-          "name": "إقرار ضريبة القيمة المضافة والإقرار الزكوي | القائد",
-          "description": "إعداد ومراجعة إقرار ضريبة القيمة المضافة أو الإقرار الزكوي عن بُعد للمنشآت الصغيرة والمتوسطة في جميع مناطق السعودية، مع شرح المستندات وخطوات كل خدمة.",
+          "name": "إقرار الزكاة وضريبة القيمة المضافة | القائد",
+          "description": "إعداد ومراجعة إقرار ضريبة القيمة المضافة والإقرار الزكوي للمنشآت السعودية عن بُعد، مع توضيح البيانات والمستندات وخطوات كل خدمة.",
           "primaryImageOfPage": {
             "@id": "https://alqaeed-sa.pages.dev/#logo"
           },
@@ -228,7 +228,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
           "@type": "Service",
           "@id": "https://alqaeed-sa.pages.dev/services/zakat-tax/#vat-service",
           "name": "إعداد ومراجعة إقرار ضريبة القيمة المضافة",
-          "description": "خدمة مستقلة لإعداد ومراجعة إقرار ضريبة القيمة المضافة للمنشآت المسجلة، عن بُعد في مناطق السعودية، وفق بيانات الفترة ومستنداتها.",
+          "description": "إعداد أو مراجعة بيانات إقرار ضريبة القيمة المضافة للمنشآت المسجلة، بحسب مستندات الفترة وقواعد الهيئة.",
           "provider": {
             "@id": "https://alqaeed-sa.pages.dev/#organization"
           },
@@ -238,7 +238,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
           "@type": "Service",
           "@id": "https://alqaeed-sa.pages.dev/services/zakat-tax/#zakat-service",
           "name": "إعداد ومراجعة الإقرار الزكوي",
-          "description": "خدمة مستقلة لإعداد ومراجعة الإقرار الزكوي للمنشآت بحسب صفتها وسجلاتها ومستنداتها، عن بُعد في مناطق السعودية.",
+          "description": "إعداد أو مراجعة بيانات الإقرار الزكوي بحسب صفة المكلف ونوع الإقرار والفترة والمستندات ذات الصلة.",
           "provider": {
             "@id": "https://alqaeed-sa.pages.dev/#organization"
           },
@@ -257,7 +257,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
             {
               "@type": "ListItem",
               "position": 2,
-              "name": "إقرار ضريبة القيمة المضافة والإقرار الزكوي",
+              "name": "الإقرار الزكوي وإقرار ضريبة القيمة المضافة",
               "item": "https://alqaeed-sa.pages.dev/services/zakat-tax/"
             }
           ]
