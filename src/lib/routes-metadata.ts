@@ -146,8 +146,8 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
   },
   '/services/bookkeeping': {
     path: '/services/bookkeeping',
-    title: 'خدمات مسك الدفاتر المحاسبية للشركات | القائد للإدارة المالية',
-    description: 'نقدم خدمات تنظيم الحسابات ومسك الدفاتر الاحترافية. احصل على تقارير مالية دقيقة تساند نمو أعمالك وتضمن دقة قراراتك عبر أفضل البرامج المحاسبية.',
+    title: 'مسك الدفاتر وتنظيم الحسابات للشركات | القائد للإدارة المالية',
+    description: 'خدمة محاسب عن بُعد لتنظيم القيود والمبيعات والمشتريات والمصروفات ومطابقة الحسابات، مع تقارير مالية مفهومة للمنشآت في السعودية.',
     canonical: 'https://alqaeed-sa.pages.dev/services/bookkeeping/',
     ogTitle: 'خدمات مسك الدفاتر المحاسبية للشركات | القائد للإدارة المالية',
     ogDescription: 'نقدم خدمات تنظيم الحسابات ومسك الدفاتر الاحترافية. احصل على تقارير مالية دقيقة تساند نمو أعمالك وتضمن دقة قراراتك عبر أفضل البرامج المحاسبية.',
@@ -159,8 +159,8 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
           "@type": "WebPage",
           "@id": "https://alqaeed-sa.pages.dev/services/bookkeeping/#webpage",
           "url": "https://alqaeed-sa.pages.dev/services/bookkeeping/",
-          "name": "خدمات مسك الدفاتر المحاسبية للشركات | القائد للإدارة المالية",
-          "description": "نقدم خدمات تنظيم الحسابات ومسك الدفاتر الاحترافية. احصل على تقارير مالية دقيقة تساند نمو أعمالك وتضمن دقة قراراتك عبر أفضل البرامج المحاسبية.",
+          "name": "مسك الدفاتر وتنظيم الحسابات للشركات | القائد للإدارة المالية",
+          "description": "خدمة محاسب عن بُعد لتنظيم القيود والمبيعات والمشتريات والمصروفات ومطابقة الحسابات، مع تقارير مالية مفهومة للمنشآت في السعودية.",
           "primaryImageOfPage": {
             "@id": "https://alqaeed-sa.pages.dev/#logo"
           },
@@ -172,8 +172,8 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
         {
           "@type": "Service",
           "@id": "https://alqaeed-sa.pages.dev/services/bookkeeping/#service",
-          "name": "خدمات مسك الدفاتر المحاسبية للشركات | القائد للإدارة المالية",
-          "description": "نقدم خدمات تنظيم الحسابات ومسك الدفاتر الاحترافية. احصل على تقارير مالية دقيقة تساند نمو أعمالك وتضمن دقة قراراتك عبر أفضل البرامج المحاسبية.",
+          "name": "مسك الدفاتر وتنظيم الحسابات للشركات | القائد للإدارة المالية",
+          "description": "خدمة محاسب عن بُعد لتنظيم القيود والمبيعات والمشتريات والمصروفات ومطابقة الحسابات، مع تقارير مالية مفهومة للمنشآت في السعودية.",
           "provider": {
             "@id": "https://alqaeed-sa.pages.dev/#organization"
           },
@@ -186,13 +186,13 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
             {
               "@type": "ListItem",
               "position": 1,
-              "name": "الرئيسية",
+              "name": "مسك الدفاتر وتنظيم الحسابات للشركات | القائد للإدارة المالية",
               "item": "https://alqaeed-sa.pages.dev/"
             },
             {
               "@type": "ListItem",
               "position": 2,
-              "name": "تنظيم الحسابات ومسك الدفاتر",
+              "name": "مسك الدفاتر وتنظيم الحسابات للشركات | القائد للإدارة المالية",
               "item": "https://alqaeed-sa.pages.dev/services/bookkeeping/"
             }
           ]
@@ -268,8 +268,8 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
   },
   '/services/financial-statements': {
     path: '/services/financial-statements',
-    title: 'إعداد القوائم المالية للشركات | القائد للإدارة المالية',
-    description: 'احصل على قوائم مالية دقيقة وشفافة تعكس الأداء الحقيقي لمنشأتك. نساعدك في إعداد ميزانيات احترافية تدعم قراراتك وتزيد ثقة البنوك والمستثمرين.',
+    title: 'إعداد القوائم المالية للشركات والمنشآت | القائد للإدارة المالية',
+    description: 'إعداد القوائم المالية للمنشآت على أساس بياناتها وسجلاتها المتاحة، مع توضيح البنود التي تحتاج استكمالًا والتمييز بين الإعداد والتدقيق المستقل.',
     canonical: 'https://alqaeed-sa.pages.dev/services/financial-statements/',
     ogTitle: 'إعداد القوائم المالية للشركات | القائد للإدارة المالية',
     ogDescription: 'احصل على قوائم مالية دقيقة وشفافة تعكس الأداء الحقيقي لمنشأتك. نساعدك في إعداد ميزانيات احترافية تدعم قراراتك وتزيد ثقة البنوك والمستثمرين.',
@@ -281,8 +281,8 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
           "@type": "WebPage",
           "@id": "https://alqaeed-sa.pages.dev/services/financial-statements/#webpage",
           "url": "https://alqaeed-sa.pages.dev/services/financial-statements/",
-          "name": "إعداد القوائم المالية للشركات | القائد للإدارة المالية",
-          "description": "احصل على قوائم مالية دقيقة وشفافة تعكس الأداء الحقيقي لمنشأتك. نساعدك في إعداد ميزانيات احترافية تدعم قراراتك وتزيد ثقة البنوك والمستثمرين.",
+          "name": "إعداد القوائم المالية للشركات والمنشآت | القائد للإدارة المالية",
+          "description": "إعداد القوائم المالية للمنشآت على أساس بياناتها وسجلاتها المتاحة، مع توضيح البنود التي تحتاج استكمالًا والتمييز بين الإعداد والتدقيق المستقل.",
           "primaryImageOfPage": {
             "@id": "https://alqaeed-sa.pages.dev/#logo"
           },
@@ -294,8 +294,8 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
         {
           "@type": "Service",
           "@id": "https://alqaeed-sa.pages.dev/services/financial-statements/#service",
-          "name": "إعداد القوائم المالية للشركات | القائد للإدارة المالية",
-          "description": "احصل على قوائم مالية دقيقة وشفافة تعكس الأداء الحقيقي لمنشأتك. نساعدك في إعداد ميزانيات احترافية تدعم قراراتك وتزيد ثقة البنوك والمستثمرين.",
+          "name": "إعداد القوائم المالية للشركات والمنشآت | القائد للإدارة المالية",
+          "description": "إعداد القوائم المالية للمنشآت على أساس بياناتها وسجلاتها المتاحة، مع توضيح البنود التي تحتاج استكمالًا والتمييز بين الإعداد والتدقيق المستقل.",
           "provider": {
             "@id": "https://alqaeed-sa.pages.dev/#organization"
           },
@@ -308,13 +308,13 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
             {
               "@type": "ListItem",
               "position": 1,
-              "name": "الرئيسية",
+              "name": "إعداد القوائم المالية للشركات والمنشآت | القائد للإدارة المالية",
               "item": "https://alqaeed-sa.pages.dev/"
             },
             {
               "@type": "ListItem",
               "position": 2,
-              "name": "إعداد القوائم المالية",
+              "name": "إعداد القوائم المالية للشركات والمنشآت | القائد للإدارة المالية",
               "item": "https://alqaeed-sa.pages.dev/services/financial-statements/"
             }
           ]
@@ -324,8 +324,8 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
   },
   '/services/financial-analysis': {
     path: '/services/financial-analysis',
-    title: 'التحليل المالي للشركات وتقييم الأداء | القائد للإدارة المالية',
-    description: 'حول الأرقام الصامتة إلى استراتيجيات ناجحة. خدمات التحليل المالي الاحترافية لمساعدتك في فهم مؤشرات السيولة والربحية واكتشاف فرص النمو لمنشأتك.',
+    title: 'التحليل المالي للشركات ومؤشرات الأداء | القائد للإدارة المالية',
+    description: 'تحليل مالي للمنشآت يشرح اتجاه الإيرادات والتكاليف والربحية والسيولة، ويربط المؤشرات بالفترات السابقة لدعم قرارات صاحب العمل.',
     canonical: 'https://alqaeed-sa.pages.dev/services/financial-analysis/',
     ogTitle: 'التحليل المالي للشركات وتقييم الأداء | القائد للإدارة المالية',
     ogDescription: 'حول الأرقام الصامتة إلى استراتيجيات ناجحة. خدمات التحليل المالي الاحترافية لمساعدتك في فهم مؤشرات السيولة والربحية واكتشاف فرص النمو لمنشأتك.',
@@ -337,8 +337,8 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
           "@type": "WebPage",
           "@id": "https://alqaeed-sa.pages.dev/services/financial-analysis/#webpage",
           "url": "https://alqaeed-sa.pages.dev/services/financial-analysis/",
-          "name": "التحليل المالي للشركات وتقييم الأداء | القائد للإدارة المالية",
-          "description": "حول الأرقام الصامتة إلى استراتيجيات ناجحة. خدمات التحليل المالي الاحترافية لمساعدتك في فهم مؤشرات السيولة والربحية واكتشاف فرص النمو لمنشأتك.",
+          "name": "التحليل المالي للشركات ومؤشرات الأداء | القائد للإدارة المالية",
+          "description": "تحليل مالي للمنشآت يشرح اتجاه الإيرادات والتكاليف والربحية والسيولة، ويربط المؤشرات بالفترات السابقة لدعم قرارات صاحب العمل.",
           "primaryImageOfPage": {
             "@id": "https://alqaeed-sa.pages.dev/#logo"
           },
@@ -350,8 +350,8 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
         {
           "@type": "Service",
           "@id": "https://alqaeed-sa.pages.dev/services/financial-analysis/#service",
-          "name": "التحليل المالي للشركات وتقييم الأداء | القائد للإدارة المالية",
-          "description": "حول الأرقام الصامتة إلى استراتيجيات ناجحة. خدمات التحليل المالي الاحترافية لمساعدتك في فهم مؤشرات السيولة والربحية واكتشاف فرص النمو لمنشأتك.",
+          "name": "التحليل المالي للشركات ومؤشرات الأداء | القائد للإدارة المالية",
+          "description": "تحليل مالي للمنشآت يشرح اتجاه الإيرادات والتكاليف والربحية والسيولة، ويربط المؤشرات بالفترات السابقة لدعم قرارات صاحب العمل.",
           "provider": {
             "@id": "https://alqaeed-sa.pages.dev/#organization"
           },
@@ -364,13 +364,13 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
             {
               "@type": "ListItem",
               "position": 1,
-              "name": "الرئيسية",
+              "name": "التحليل المالي للشركات ومؤشرات الأداء | القائد للإدارة المالية",
               "item": "https://alqaeed-sa.pages.dev/"
             },
             {
               "@type": "ListItem",
               "position": 2,
-              "name": "التحليل المالي",
+              "name": "التحليل المالي للشركات ومؤشرات الأداء | القائد للإدارة المالية",
               "item": "https://alqaeed-sa.pages.dev/services/financial-analysis/"
             }
           ]
@@ -380,8 +380,8 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
   },
   '/services/management-reports': {
     path: '/services/management-reports',
-    title: 'إعداد التقارير الإدارية المالية للشركات | القائد للإدارة المالية',
-    description: 'ابقَ على اطلاع دائم بأداء منشأتك عبر تقارير إدارية ولوحات قياس دقيقة تصمم خصيصاً لتمنح الإدارة العليا القدرة على اتخاذ قرارات سريعة وصائبة.',
+    title: 'التقارير المالية والإدارية للشركات | القائد للإدارة المالية',
+    description: 'تقارير مالية وإدارية دورية توضح الإيرادات والمصروفات والأرصدة والانحرافات، وتساعد صاحب المنشأة على متابعة ما يحتاج قرارًا أو استكمالًا.',
     canonical: 'https://alqaeed-sa.pages.dev/services/management-reports/',
     ogTitle: 'إعداد التقارير الإدارية المالية للشركات | القائد للإدارة المالية',
     ogDescription: 'ابقَ على اطلاع دائم بأداء منشأتك عبر تقارير إدارية ولوحات قياس دقيقة تصمم خصيصاً لتمنح الإدارة العليا القدرة على اتخاذ قرارات سريعة وصائبة.',
@@ -393,8 +393,8 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
           "@type": "WebPage",
           "@id": "https://alqaeed-sa.pages.dev/services/management-reports/#webpage",
           "url": "https://alqaeed-sa.pages.dev/services/management-reports/",
-          "name": "إعداد التقارير الإدارية المالية للشركات | القائد للإدارة المالية",
-          "description": "ابقَ على اطلاع دائم بأداء منشأتك عبر تقارير إدارية ولوحات قياس دقيقة تصمم خصيصاً لتمنح الإدارة العليا القدرة على اتخاذ قرارات سريعة وصائبة.",
+          "name": "التقارير المالية والإدارية للشركات | القائد للإدارة المالية",
+          "description": "تقارير مالية وإدارية دورية توضح الإيرادات والمصروفات والأرصدة والانحرافات، وتساعد صاحب المنشأة على متابعة ما يحتاج قرارًا أو استكمالًا.",
           "primaryImageOfPage": {
             "@id": "https://alqaeed-sa.pages.dev/#logo"
           },
@@ -406,8 +406,8 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
         {
           "@type": "Service",
           "@id": "https://alqaeed-sa.pages.dev/services/management-reports/#service",
-          "name": "إعداد التقارير الإدارية المالية للشركات | القائد للإدارة المالية",
-          "description": "ابقَ على اطلاع دائم بأداء منشأتك عبر تقارير إدارية ولوحات قياس دقيقة تصمم خصيصاً لتمنح الإدارة العليا القدرة على اتخاذ قرارات سريعة وصائبة.",
+          "name": "التقارير المالية والإدارية للشركات | القائد للإدارة المالية",
+          "description": "تقارير مالية وإدارية دورية توضح الإيرادات والمصروفات والأرصدة والانحرافات، وتساعد صاحب المنشأة على متابعة ما يحتاج قرارًا أو استكمالًا.",
           "provider": {
             "@id": "https://alqaeed-sa.pages.dev/#organization"
           },
@@ -420,13 +420,13 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
             {
               "@type": "ListItem",
               "position": 1,
-              "name": "الرئيسية",
+              "name": "التقارير المالية والإدارية للشركات | القائد للإدارة المالية",
               "item": "https://alqaeed-sa.pages.dev/"
             },
             {
               "@type": "ListItem",
               "position": 2,
-              "name": "التقارير الإدارية",
+              "name": "التقارير المالية والإدارية للشركات | القائد للإدارة المالية",
               "item": "https://alqaeed-sa.pages.dev/services/management-reports/"
             }
           ]
@@ -436,8 +436,8 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
   },
   '/services/budgeting': {
     path: '/services/budgeting',
-    title: 'إعداد الموازنات التقديرية والتخطيط المالي | القائد للإدارة المالية',
-    description: 'خطط لنجاحك المالي بثقة. خدمة إعداد الموازنات التقديرية تساعدك على وضع أهداف مالية واضحة ومراقبة الانحرافات لضمان تحقيق رؤية منشأتك.',
+    title: 'إعداد الموازنة التقديرية والتخطيط المالي للشركات | القائد',
+    description: 'إعداد موازنة تقديرية للإيرادات والتكاليف والمصروفات، مع توثيق الفرضيات ومقارنة المخطط بالفعلي لمساعدة المنشأة على متابعة خطتها.',
     canonical: 'https://alqaeed-sa.pages.dev/services/budgeting/',
     ogTitle: 'إعداد الموازنات التقديرية والتخطيط المالي | القائد للإدارة المالية',
     ogDescription: 'خطط لنجاحك المالي بثقة. خدمة إعداد الموازنات التقديرية تساعدك على وضع أهداف مالية واضحة ومراقبة الانحرافات لضمان تحقيق رؤية منشأتك.',
@@ -449,8 +449,8 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
           "@type": "WebPage",
           "@id": "https://alqaeed-sa.pages.dev/services/budgeting/#webpage",
           "url": "https://alqaeed-sa.pages.dev/services/budgeting/",
-          "name": "إعداد الموازنات التقديرية والتخطيط المالي | القائد للإدارة المالية",
-          "description": "خطط لنجاحك المالي بثقة. خدمة إعداد الموازنات التقديرية تساعدك على وضع أهداف مالية واضحة ومراقبة الانحرافات لضمان تحقيق رؤية منشأتك.",
+          "name": "إعداد الموازنة التقديرية والتخطيط المالي للشركات | القائد",
+          "description": "إعداد موازنة تقديرية للإيرادات والتكاليف والمصروفات، مع توثيق الفرضيات ومقارنة المخطط بالفعلي لمساعدة المنشأة على متابعة خطتها.",
           "primaryImageOfPage": {
             "@id": "https://alqaeed-sa.pages.dev/#logo"
           },
@@ -462,8 +462,8 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
         {
           "@type": "Service",
           "@id": "https://alqaeed-sa.pages.dev/services/budgeting/#service",
-          "name": "إعداد الموازنات التقديرية والتخطيط المالي | القائد للإدارة المالية",
-          "description": "خطط لنجاحك المالي بثقة. خدمة إعداد الموازنات التقديرية تساعدك على وضع أهداف مالية واضحة ومراقبة الانحرافات لضمان تحقيق رؤية منشأتك.",
+          "name": "إعداد الموازنة التقديرية والتخطيط المالي للشركات | القائد",
+          "description": "إعداد موازنة تقديرية للإيرادات والتكاليف والمصروفات، مع توثيق الفرضيات ومقارنة المخطط بالفعلي لمساعدة المنشأة على متابعة خطتها.",
           "provider": {
             "@id": "https://alqaeed-sa.pages.dev/#organization"
           },
@@ -476,13 +476,13 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
             {
               "@type": "ListItem",
               "position": 1,
-              "name": "الرئيسية",
+              "name": "إعداد الموازنة التقديرية والتخطيط المالي للشركات | القائد",
               "item": "https://alqaeed-sa.pages.dev/"
             },
             {
               "@type": "ListItem",
               "position": 2,
-              "name": "إعداد الموازنات",
+              "name": "إعداد الموازنة التقديرية والتخطيط المالي للشركات | القائد",
               "item": "https://alqaeed-sa.pages.dev/services/budgeting/"
             }
           ]
@@ -492,8 +492,8 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
   },
   '/services/cash-flow': {
     path: '/services/cash-flow',
-    title: 'إدارة التدفقات النقدية للشركات | القائد للإدارة المالية',
-    description: 'حافظ على سيولة منشأتك وتجنب الأزمات المالية. نقدم خدمات تخطيط وإدارة التدفقات النقدية لضمان وفائك بالتزاماتك وتمويل نمو أعمالك بأمان.',
+    title: 'إدارة التدفقات النقدية والسيولة للشركات | القائد',
+    description: 'تنظيم توقع المقبوضات والمدفوعات والالتزامات ومتابعة السيولة، لتكوين رؤية زمنية تساعد الإدارة على التخطيط النقدي.',
     canonical: 'https://alqaeed-sa.pages.dev/services/cash-flow/',
     ogTitle: 'إدارة التدفقات النقدية للشركات | القائد للإدارة المالية',
     ogDescription: 'حافظ على سيولة منشأتك وتجنب الأزمات المالية. نقدم خدمات تخطيط وإدارة التدفقات النقدية لضمان وفائك بالتزاماتك وتمويل نمو أعمالك بأمان.',
@@ -505,8 +505,8 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
           "@type": "WebPage",
           "@id": "https://alqaeed-sa.pages.dev/services/cash-flow/#webpage",
           "url": "https://alqaeed-sa.pages.dev/services/cash-flow/",
-          "name": "إدارة التدفقات النقدية للشركات | القائد للإدارة المالية",
-          "description": "حافظ على سيولة منشأتك وتجنب الأزمات المالية. نقدم خدمات تخطيط وإدارة التدفقات النقدية لضمان وفائك بالتزاماتك وتمويل نمو أعمالك بأمان.",
+          "name": "إدارة التدفقات النقدية والسيولة للشركات | القائد",
+          "description": "تنظيم توقع المقبوضات والمدفوعات والالتزامات ومتابعة السيولة، لتكوين رؤية زمنية تساعد الإدارة على التخطيط النقدي.",
           "primaryImageOfPage": {
             "@id": "https://alqaeed-sa.pages.dev/#logo"
           },
@@ -518,8 +518,8 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
         {
           "@type": "Service",
           "@id": "https://alqaeed-sa.pages.dev/services/cash-flow/#service",
-          "name": "إدارة التدفقات النقدية للشركات | القائد للإدارة المالية",
-          "description": "حافظ على سيولة منشأتك وتجنب الأزمات المالية. نقدم خدمات تخطيط وإدارة التدفقات النقدية لضمان وفائك بالتزاماتك وتمويل نمو أعمالك بأمان.",
+          "name": "إدارة التدفقات النقدية والسيولة للشركات | القائد",
+          "description": "تنظيم توقع المقبوضات والمدفوعات والالتزامات ومتابعة السيولة، لتكوين رؤية زمنية تساعد الإدارة على التخطيط النقدي.",
           "provider": {
             "@id": "https://alqaeed-sa.pages.dev/#organization"
           },
@@ -532,13 +532,13 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
             {
               "@type": "ListItem",
               "position": 1,
-              "name": "الرئيسية",
+              "name": "إدارة التدفقات النقدية والسيولة للشركات | القائد",
               "item": "https://alqaeed-sa.pages.dev/"
             },
             {
               "@type": "ListItem",
               "position": 2,
-              "name": "إدارة التدفقات النقدية",
+              "name": "إدارة التدفقات النقدية والسيولة للشركات | القائد",
               "item": "https://alqaeed-sa.pages.dev/services/cash-flow/"
             }
           ]
@@ -548,8 +548,8 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
   },
   '/services/virtual-cfo': {
     path: '/services/virtual-cfo',
-    title: 'المدير المالي عن بعد (Virtual CFO) | القائد للإدارة المالية',
-    description: 'احصل على خبرات القيادة المالية الاستراتيجية بتكلفة مرنة. خدمة المدير المالي عن بعد تدعم نمو منشأتك وتوفر لك استشارات مالية متقدمة لقراراتك الحاسمة.',
+    title: 'مدير مالي عن بُعد للشركات والمنشآت | القائد للإدارة المالية',
+    description: 'دعم مالي عن بُعد للتخطيط والموازنات وتحليل النتائج والسيولة والتقارير، مع تحديد نطاق العمل بحسب احتياج المنشأة وبياناتها.',
     canonical: 'https://alqaeed-sa.pages.dev/services/virtual-cfo/',
     ogTitle: 'المدير المالي عن بعد (Virtual CFO) | القائد للإدارة المالية',
     ogDescription: 'احصل على خبرات القيادة المالية الاستراتيجية بتكلفة مرنة. خدمة المدير المالي عن بعد تدعم نمو منشأتك وتوفر لك استشارات مالية متقدمة لقراراتك الحاسمة.',
@@ -561,8 +561,8 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
           "@type": "WebPage",
           "@id": "https://alqaeed-sa.pages.dev/services/virtual-cfo/#webpage",
           "url": "https://alqaeed-sa.pages.dev/services/virtual-cfo/",
-          "name": "المدير المالي عن بعد (Virtual CFO) | القائد للإدارة المالية",
-          "description": "احصل على خبرات القيادة المالية الاستراتيجية بتكلفة مرنة. خدمة المدير المالي عن بعد تدعم نمو منشأتك وتوفر لك استشارات مالية متقدمة لقراراتك الحاسمة.",
+          "name": "مدير مالي عن بُعد للشركات والمنشآت | القائد للإدارة المالية",
+          "description": "دعم مالي عن بُعد للتخطيط والموازنات وتحليل النتائج والسيولة والتقارير، مع تحديد نطاق العمل بحسب احتياج المنشأة وبياناتها.",
           "primaryImageOfPage": {
             "@id": "https://alqaeed-sa.pages.dev/#logo"
           },
@@ -574,8 +574,8 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
         {
           "@type": "Service",
           "@id": "https://alqaeed-sa.pages.dev/services/virtual-cfo/#service",
-          "name": "المدير المالي عن بعد (Virtual CFO) | القائد للإدارة المالية",
-          "description": "احصل على خبرات القيادة المالية الاستراتيجية بتكلفة مرنة. خدمة المدير المالي عن بعد تدعم نمو منشأتك وتوفر لك استشارات مالية متقدمة لقراراتك الحاسمة.",
+          "name": "مدير مالي عن بُعد للشركات والمنشآت | القائد للإدارة المالية",
+          "description": "دعم مالي عن بُعد للتخطيط والموازنات وتحليل النتائج والسيولة والتقارير، مع تحديد نطاق العمل بحسب احتياج المنشأة وبياناتها.",
           "provider": {
             "@id": "https://alqaeed-sa.pages.dev/#organization"
           },
@@ -588,13 +588,13 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
             {
               "@type": "ListItem",
               "position": 1,
-              "name": "الرئيسية",
+              "name": "مدير مالي عن بُعد للشركات والمنشآت | القائد للإدارة المالية",
               "item": "https://alqaeed-sa.pages.dev/"
             },
             {
               "@type": "ListItem",
               "position": 2,
-              "name": "المدير المالي عن بعد",
+              "name": "مدير مالي عن بُعد للشركات والمنشآت | القائد للإدارة المالية",
               "item": "https://alqaeed-sa.pages.dev/services/virtual-cfo/"
             }
           ]
