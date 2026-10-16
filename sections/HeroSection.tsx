@@ -44,10 +44,11 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
               <div id="hero-brand-area" className="flex flex-col items-center md:items-start space-y-1">
                 <p className="text-sm md:text-base font-semibold text-text-secondary">خالد القائد | محاسب مالي</p>
                 <h1 id="hero-brand-name" className={`${TYPOGRAPHY.heading.h1} font-bold text-text-primary`}>
-                  <span id="hero-brand-tagline" className={`block ${TYPOGRAPHY.body.large} text-secondary uppercase font-semibold mt-1`}>
-                    الإدارة المالية المتكاملة عن بعد للمنشآت
-                  </span>
+                  محاسب مالي عن بُعد للمنشآت في السعودية
                 </h1>
+                <p id="hero-brand-tagline" className={`${TYPOGRAPHY.body.large} text-secondary font-semibold mt-1`}>
+                  إدارة مالية، مسك دفاتر، قوائم وتقارير، وزكاة وضريبة
+                </p>
               </div>
 
               {/* Description (Paragraph) */}
@@ -55,7 +56,7 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
                 id="hero-description" 
                 className={`${TYPOGRAPHY.body.large} max-w-xl`}
               >
-                أرتّب حسابات منشأتك وأجهّز القوائم والتقارير وأحلّل الأداء المالي. ابدأ باختيار احتياجك من الخيارات المختصرة أدناه، ثم أرسل معلومات نشاطك الأساسية لنناقش نطاق الخدمة والأتعاب.
+                أتولى تنظيم الحسابات ومسك الدفاتر، وتجهيز القوائم والتقارير المالية، وتحليل الأداء ومتابعة التدفقات النقدية، مع خدمات الزكاة والضريبة والإقرارات بحسب نطاق العمل. نحدد الخدمة والأتعاب بعد فهم نشاط منشأتك واحتياجها.
               </p>
 
               {/* Short Trust Line */}
