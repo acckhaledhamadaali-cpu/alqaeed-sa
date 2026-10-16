@@ -27,7 +27,7 @@ export default function FinalCTASection(props: HTMLAttributes<HTMLElement>) {
           
           {/* Title */}
           <SectionTitle id="final-cta-title" level={2} className="font-bold text-center max-w-xl text-sm sm:text-base md:text-lg font-arabic leading-relaxed">
-            إذا كنت تبحث عن تنظيم حسابات منشأتك وبناء نظام مالي يساعدك على اتخاذ قرارات أفضل، تواصل معي لمناقشة احتياج منشأتك
+            هل تحتاج إلى محاسب مالي عن بُعد لتنظيم حسابات منشأتك أو تجهيز التقارير ومتابعة الزكاة والضريبة؟ تواصل معي لمناقشة احتياجك ونطاق الخدمة
           </SectionTitle>
 
           {/* Button - WhatsApp style */}
