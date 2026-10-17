@@ -27,8 +27,11 @@ export default function FinalCTASection(props: HTMLAttributes<HTMLElement>) {
           
           {/* Title */}
           <SectionTitle id="final-cta-title" level={2} className="font-bold text-center max-w-xl text-sm sm:text-base md:text-lg font-arabic leading-relaxed">
-            اطلب فحصاً مجانياً لحسابات آخر شهرين واستلم تقريراً بالفجوات عبر الواتساب. تشمل الخدمات تنظيم الحسابات، تجهيز القوائم المالية، تهيئة أودو Odoo ERP، والإقرارات الضريبية والزكوية. ويمكن الاتفاق على توقيع اتفاقية سرية (NDA) قبل مشاركة البيانات.
+            احصل على إدارة مالية متقدمة بتكلفة مرنة تناسب حجم أعمالك
           </SectionTitle>
+          <p className="text-xs sm:text-sm md:text-base text-text-primary font-medium leading-relaxed font-arabic">
+            لا داعي لتحمل أعباء التوظيف الثابت والكامل وتكاليفه الباهظة. نوفر لمنشأتك إشرافاً مالياً واستراتيجياً منظماً عن بُعد. الأتعاب تُحدد بدقة وشفافية بعد معرفة حجم العمليات، وعدد الفروع، والخدمات المطلوبة لنشاطك.
+          </p>
 
           {/* Button - WhatsApp style */}
           <div id="final-cta-action" className="pt-1.5">
@@ -41,7 +44,7 @@ export default function FinalCTASection(props: HTMLAttributes<HTMLElement>) {
               id="final-cta-whatsapp-btn"
             >
               <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
-              <span>💬 اطلب فحصاً مجانياً لحساباتك لآخر شهرين واستلم تقرير الفجوات عبر الواتساب</span>
+              <span>💬 تواصل معي مباشرة عبر الواتساب على الرقم السعودي: 966511294383</span>
             </a>
           </div>
 

@@ -47,7 +47,7 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
                   محاسب مالي عن بعد للمنشآت في السعودية | من التنظيم اليومي إلى الامتثال الحكومي
                 </h1>
                 <p id="hero-brand-tagline" className={`${TYPOGRAPHY.body.large} text-secondary font-semibold mt-1`}>
-                  أعمال المحاسب المالي، القوائم المالية ومنصة قوائم، أودو Odoo ERP، والإقرارات الضريبية والزكوية
+                  أدير أعمال الإدارة المالية للحسابات بمرونة كاملة، وأتولى تهيئة نظام أودو المحاسبي، وإعداد القوائم المالية لمتابعة رفعها عبر منصة قوائم، مع تحضير الإقرارات الضريبية والزكوية بدقة تامة تحميك من الغرامات وكأنني متواجد داخل منشأتك تماماً.
                 </p>
               </div>
 
@@ -64,7 +64,7 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
                 id="hero-trust-line"
                 className="text-xs md:text-sm text-text-secondary font-arabic font-normal leading-relaxed mt-1"
               >
-                9 سنوات من الخبرة العملية في المحاسبة والإدارة المالية، منها 6 سنوات داخل المملكة العربية السعودية.
+                🔒 نلتزم بالسرية التامة لبياناتك مع إمكانية توقيع اتفاقية عدم إفصاح (NDA) قبل مشاركة المستندات
               </p>
 
               {/* Hero Actions (CTA) */}
@@ -77,7 +77,7 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
                   className="inline-flex items-center gap-x-2 px-5 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs sm:text-sm font-semibold shadow-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
                 >
                   <MessageCircle className="w-4 h-4" aria-hidden="true" />
-                  <span>💬 اطلب فحصاً مجانياً لحساباتك لآخر شهرين واستلم تقرير الفجوات عبر الواتساب</span>
+                  <span>اطلب فحصاً مجانياً لحساباتك لآخر شهرين واستلم تقرير الفجوات عبر الواتساب</span>
                 </a>
                 <a 
                   href="#services-section-wrapper"
