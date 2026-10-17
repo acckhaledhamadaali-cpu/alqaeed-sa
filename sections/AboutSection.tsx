@@ -24,10 +24,10 @@ export default function AboutSection(props: HTMLAttributes<HTMLElement>) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-x-10 md:gap-y-6 items-start">
             <div id="about-intro" className="text-right">
               <p className="text-xs sm:text-sm md:text-base text-text-primary font-medium leading-relaxed font-arabic">
-                أمتلك 9 سنوات من الخبرة العملية في المحاسبة والإدارة المالية، منها 6 سنوات داخل المملكة العربية السعودية. أتولى عن بُعد تنظيم الحسابات ومسك الدفاتر، ومراجعة المستندات والتسويات، وتجهيز القوائم والتقارير المالية وتحليل الأداء ومتابعة السيولة. كما أقدم خدمات الزكاة والضريبة والإقرارات ذات الصلة وفق نطاق العمل والمتطلبات المنطبقة على المنشأة.
+                أمتلك 9 سنوات من الخبرة العملية في المحاسبة والإدارة المالية، منها 6 سنوات داخل المملكة العربية السعودية. أتولى أعمال المحاسب المالي الداخلي عن بُعد، بما يشمل تنظيم الحسابات ومسك الدفاتر والتسويات وتأسيس الدورة المستندية والأنظمة المحاسبية للمنشآت الجديدة. كما أجهّز القوائم المالية ومتابعة رفعها عبر منصة قوائم وفق المتطلبات والصلاحيات المتاحة، وأهيئ وأدير نظام أودو Odoo ERP حسب نشاط المنشأة، وأعدّ الإقرارات الضريبية والزكوية وفق متطلبات هيئة الزكاة والضريبة والجمارك السعودية. وتشمل الخدمات التحليل المالي المتقدم وتقارير الأداء الإداري والسيولة والتدفقات النقدية.
               </p>
               <p className="mt-3 text-xs sm:text-sm md:text-base text-text-primary font-medium leading-relaxed font-arabic">
-                هدفي ليس تسجيل الأرقام فقط، بل تحويل البيانات المالية إلى صورة واضحة تساعدك على فهم وضع منشأتك واتخاذ قرارات أفضل.
+                هدفي ليس تسجيل الأرقام فقط، بل تحويل البيانات المالية إلى صورة واضحة تساعدك على فهم وضع منشأتك واتخاذ قرارات أفضل. تُعامل البيانات بسرية، ويمكن الاتفاق على توقيع اتفاقية عدم إفصاح (NDA) قبل تبادل المستندات؛ وتُتخذ إجراءات مناسبة لحماية المعلومات ضمن وسائل العمل المتاحة.
               </p>
             </div>
 
@@ -43,12 +43,12 @@ export default function AboutSection(props: HTMLAttributes<HTMLElement>) {
 
               <div className="rounded-lg border border-border bg-surface p-3 md:p-4">
                 <h3 className="text-xs md:text-sm font-bold text-text-primary font-arabic">محاسبة وإدارة مالية متكاملة</h3>
-                <p className="mt-1 text-[11px] md:text-xs text-text-secondary leading-relaxed font-arabic">تحليل • تقارير • سيولة • زكاة وضريبة</p>
+                <p className="mt-1 text-[11px] md:text-xs text-text-secondary leading-relaxed font-arabic">تحليل • تقارير • أودو ERP • زكاة وضريبة</p>
               </div>
 
               <div className="rounded-lg border border-border bg-surface p-3 md:p-4">
                 <h3 className="text-xs md:text-sm font-bold text-text-primary font-arabic">أعمل معك عن بُعد</h3>
-                <p className="mt-1 text-[11px] md:text-xs text-text-secondary leading-relaxed font-arabic">متابعة مالية منظمة دون الحاجة إلى تكوين إدارة مالية داخلية كاملة.</p>
+                <p className="mt-1 text-[11px] md:text-xs text-text-secondary leading-relaxed font-arabic">متابعة مالية منظمة عن بُعد مع مراعاة سرية البيانات واتفاقية NDA عند الاتفاق.</p>
               </div>
             </div>
           </div>
