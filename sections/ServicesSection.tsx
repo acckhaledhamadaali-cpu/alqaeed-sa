@@ -5,14 +5,11 @@ import SectionTitle from '../components/SectionTitle';
 import SectionDescription from '../components/SectionDescription';
 
 const SERVICES = [
-  { name: "تنظيم الحسابات ومسك الدفاتر", link: "/services/bookkeeping/" },
-  { name: "الزكاة والضريبة", link: "/services/zakat-tax/" },
-  { name: "إعداد القوائم المالية", link: "/services/financial-statements/" },
-  { name: "التحليل المالي", link: "/services/financial-analysis/" },
-  { name: "التقارير الإدارية", link: "/services/management-reports/" },
-  { name: "إعداد الموازنات", link: "/services/budgeting/" },
-  { name: "إدارة التدفقات النقدية", link: "/services/cash-flow/" },
-  { name: "مدير مالي افتراضي", link: "/services/virtual-cfo/" },
+  { name: "المحاسبة المالية ومسك الدفاتر: تأسيس الدورات المستندية، تسجيل القيود اليومية، وإجراء التسويات البنكية الدورية بانتظام.", link: "/services/bookkeeping/" },
+  { name: "منصة قوائم الحكومية: تجهيز القوائم والتقارير الماليّة السنوية ومتابعة رفعها وفق المتمتطلبات والصلاحيات المتاحة نظامياً.", link: "/services/financial-statements/" },
+  { name: "تهيئة أنظمة الـ ERP: تخصيص، وإدارة، وتهيئة نظام أودو (Odoo ERP) بالكامل وتكييفه ليناسب طبيعة نشاط منشأتك الفعلي.", link: "/services/virtual-cfo/" },
+  { name: "الزكاة والضريبة والجمارك: تحضير ومراجعة الإقرارات الضريبية والزكوية وضمان الامتثال التام للأنظمة السعودية لتجنب أي مخالفات.", link: "/services/zakat-tax/" },
+  { name: "التحليل المالي وإدارة السيولة: تقارير الأداء، تحليل هوامش الأرباح، ومتابعة التدفقات النقدية والمقبوضات لتأمين التزاماتك وتفادي الفجوات.", link: "/services/financial-analysis/" },
 ];
 
 export default function ServicesSection(props: HTMLAttributes<HTMLElement>) {
@@ -24,7 +21,7 @@ export default function ServicesSection(props: HTMLAttributes<HTMLElement>) {
           {/* Section Header */}
           <div id="services-header" className="flex flex-col space-y-1.5 text-center items-center">
             <SectionTitle id="services-title" level={2} className="font-bold">
-              ماذا أتولى داخل منشأتك
+              ماذا أتولى وأدير داخل منشأتك التجاريّة
             </SectionTitle>
             <SectionDescription id="services-description" className="text-center max-w-2xl text-text-secondary text-xs sm:text-sm">
               أتولى أعمال المحاسب المالي الداخلي عن بُعد، وتأسيس الدورة المستندية والأنظمة المحاسبية، وتجهيز القوائم المالية ومتابعة رفعها عبر منصة قوائم وفق المتطلبات والصلاحيات، وتهيئة وإدارة وتخصيص نظام أودو Odoo ERP بالكامل حسب نشاط المنشأة، وتحضير الإقرارات الضريبية والزكوية، وإصدار تقارير الأداء والسيولة والتدفقات النقدية.
