@@ -64,7 +64,7 @@ export default function ServicesSection(props: HTMLAttributes<HTMLElement>) {
         <div id="services-content" className="flex flex-col space-y-5 md:max-w-full mx-auto text-center items-center w-full">
           {/* Section Header */}
           <div id="services-header" className="flex flex-col space-y-1.5 text-center items-center">
-            <SectionTitle id="services-title" level={2} className="font-bold">
+            <SectionTitle id="services-title" level={2} className="font-bold text-xl md:text-3xl">
               ماذا أتولى وأدير داخل منشأتك التجاريّة
             </SectionTitle>
             <SectionDescription id="services-description" className="text-center max-w-2xl text-text-secondary text-xs sm:text-sm">
@@ -82,7 +82,7 @@ export default function ServicesSection(props: HTMLAttributes<HTMLElement>) {
           >
             <ul
               id="services-list"
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 text-right w-full"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 text-right w-full"
             >
               {SERVICES.map((service, index) => {
                 const isActive = activeCardIndex === index;
