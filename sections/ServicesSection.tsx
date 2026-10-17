@@ -10,6 +10,9 @@ const SERVICES = [
   { name: "تهيئة أنظمة الـ ERP: تخصيص، وإدارة، وتهيئة نظام أودو (Odoo ERP) بالكامل وتكييفه ليناسب طبيعة نشاط منشأتك الفعلي.", link: "/services/virtual-cfo/" },
   { name: "الزكاة والضريبة والجمارك: تحضير ومراجعة الإقرارات الضريبية والزكوية وضمان الامتثال التام للأنظمة السعودية لتجنب أي مخالفات.", link: "/services/zakat-tax/" },
   { name: "التحليل المالي وإدارة السيولة: تقارير الأداء، تحليل هوامش الأرباح، ومتابعة التدفقات النقدية والمقبوضات لتأمين التزاماتك وتفادي الفجوات.", link: "/services/financial-analysis/" },
+  { name: "التقارير الإدارية", link: "/services/management-reports/" },
+  { name: "إعداد الموازنات", link: "/services/budgeting/" },
+  { name: "إدارة التدفقات النقدية", link: "/services/cash-flow/" },
 ];
 
 export default function ServicesSection(props: HTMLAttributes<HTMLElement>) {
