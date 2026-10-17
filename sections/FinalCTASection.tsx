@@ -27,7 +27,7 @@ export default function FinalCTASection(props: HTMLAttributes<HTMLElement>) {
           
           {/* Title */}
           <SectionTitle id="final-cta-title" level={2} className="font-bold text-center max-w-xl text-sm sm:text-base md:text-lg font-arabic leading-relaxed">
-            هل تحتاج إلى محاسب مالي عن بُعد لتنظيم حسابات منشأتك أو تجهيز التقارير ومتابعة الزكاة والضريبة؟ تواصل معي لمناقشة احتياجك ونطاق الخدمة
+            اطلب فحصاً مجانياً لحسابات آخر شهرين واستلم تقريراً بالفجوات عبر الواتساب. تشمل الخدمات تنظيم الحسابات، تجهيز القوائم المالية، تهيئة أودو Odoo ERP، والإقرارات الضريبية والزكوية. ويمكن الاتفاق على توقيع اتفاقية سرية (NDA) قبل مشاركة البيانات.
           </SectionTitle>
 
           {/* Button - WhatsApp style */}
@@ -41,7 +41,7 @@ export default function FinalCTASection(props: HTMLAttributes<HTMLElement>) {
               id="final-cta-whatsapp-btn"
             >
               <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
-              <span>تواصل معي عبر واتساب</span>
+              <span>💬 اطلب فحصاً مجانياً لحساباتك لآخر شهرين واستلم تقرير الفجوات عبر الواتساب</span>
             </a>
           </div>
 
