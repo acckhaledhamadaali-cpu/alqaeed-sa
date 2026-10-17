@@ -44,10 +44,10 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
               <div id="hero-brand-area" className="flex flex-col items-center md:items-start space-y-1">
                 <p className="text-sm md:text-base font-semibold text-text-secondary">خالد القائد | محاسب مالي</p>
                 <h1 id="hero-brand-name" className={`${TYPOGRAPHY.heading.h1} font-bold text-text-primary`}>
-                  محاسب مالي عن بُعد للمنشآت في السعودية
+                  محاسب مالي عن بعد للمنشآت في السعودية | من التنظيم اليومي إلى الامتثال الحكومي
                 </h1>
                 <p id="hero-brand-tagline" className={`${TYPOGRAPHY.body.large} text-secondary font-semibold mt-1`}>
-                  إدارة مالية، مسك دفاتر، قوائم وتقارير، وزكاة وضريبة
+                  أعمال المحاسب المالي، القوائم المالية ومنصة قوائم، أودو Odoo ERP، والإقرارات الضريبية والزكوية
                 </p>
               </div>
 
@@ -56,7 +56,7 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
                 id="hero-description" 
                 className={`${TYPOGRAPHY.body.large} max-w-xl`}
               >
-                أتولى تنظيم الحسابات ومسك الدفاتر، وتجهيز القوائم والتقارير المالية، وتحليل الأداء ومتابعة التدفقات النقدية، مع خدمات الزكاة والضريبة والإقرارات بحسب نطاق العمل. نحدد الخدمة والأتعاب بعد فهم نشاط منشأتك واحتياجها.
+                أتولى أعمال المحاسب المالي الداخلي عن بُعد، من تأسيس الدورة المستندية والأنظمة المحاسبية إلى مسك الدفاتر والتسويات والتقارير. تشمل الخدمات تجهيز القوائم المالية ومتابعة رفعها عبر منصة قوائم وفق المتطلبات والصلاحيات، وتهيئة وإدارة نظام أودو Odoo ERP حسب نشاط المنشأة، وتحضير الإقرارات الضريبية والزكوية، والتحليل المالي وتقارير الأداء والسيولة والتدفقات النقدية. تُحدد تفاصيل الخدمة وفق احتياج المنشأة ونطاق العمل.
               </p>
 
               {/* Short Trust Line */}
@@ -77,14 +77,14 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
                   className="inline-flex items-center gap-x-2 px-5 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs sm:text-sm font-semibold shadow-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
                 >
                   <MessageCircle className="w-4 h-4" aria-hidden="true" />
-                  <span>ناقش احتياج منشأتك</span>
+                  <span>💬 اطلب فحصاً مجانياً لحساباتك لآخر شهرين واستلم تقرير الفجوات عبر الواتساب</span>
                 </a>
                 <a 
                   href="#services-section-wrapper"
                   id="hero-secondary-cta"
                   className="inline-flex items-center px-4 py-2.5 rounded-xl bg-surface-subtle border border-border-subtle hover:border-primary text-text-primary hover:text-primary text-xs sm:text-sm font-medium transition-all duration-200"
                 >
-                  اعرف الخدمة المناسبة
+                  استكشف خدمات الامتثال والإدارة المالية
                 </a>
               </div>
             </header>
