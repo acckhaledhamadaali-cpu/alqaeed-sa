@@ -27,7 +27,7 @@ export default function ServicesSection(props: HTMLAttributes<HTMLElement>) {
               ماذا أتولى داخل منشأتك
             </SectionTitle>
             <SectionDescription id="services-description" className="text-center max-w-2xl text-text-secondary text-xs sm:text-sm">
-              أتولى إدارة وتنظيم الجوانب المالية التي تحتاجها المنشآت لتصبح الحسابات واضحة والتقارير دقيقة والقرارات مبنية على أرقام فعلية.
+              أتولى أعمال المحاسب المالي الداخلي عن بُعد، وتأسيس الدورة المستندية والأنظمة المحاسبية، وتجهيز القوائم المالية ومتابعة رفعها عبر منصة قوائم وفق المتطلبات والصلاحيات، وتهيئة وإدارة نظام أودو Odoo ERP حسب نشاط المنشأة، وتحضير الإقرارات الضريبية والزكوية، وإصدار تقارير الأداء والسيولة والتدفقات النقدية.
             </SectionDescription>
             <p className="max-w-2xl text-center text-xs sm:text-sm text-text-secondary leading-6">
               تُحدَّد الأتعاب بعد معرفة حجم العمليات، وعدد الفروع، والخدمات المطلوبة.
