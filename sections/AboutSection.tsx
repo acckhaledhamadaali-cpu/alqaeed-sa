@@ -54,22 +54,28 @@ export default function AboutSection(props: HTMLAttributes<HTMLElement>) {
           </div>
 
           <section id="financial-report-preview" className="mt-6 border-t border-border-subtle pt-5 text-right">
-            <div className="mb-3 text-center">
-              <h3 className="text-sm sm:text-base font-bold text-text-primary font-arabic">شاهد ما الذي توضحه تقارير منشأتك</h3>
-              <p className="mt-1 text-xs sm:text-sm text-text-secondary font-arabic">أمثلة على المعلومات التي يمكن تنظيمها وعرضها بحسب البيانات المتاحة ونطاق الخدمة.</p>
+            <div className="mb-4 text-center">
+              <h3 className="text-sm font-bold text-text-primary sm:text-base">هذا ما ستراه في تقريرك</h3>
+              <p className="mt-1 text-xs text-text-secondary sm:text-sm">نموذج توضيحي ببيانات افتراضية، يختلف حسب نشاطك وجودة بياناتك.</p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <div className="rounded-lg border border-border bg-surface p-3">
-                <h4 className="text-xs sm:text-sm font-bold text-text-primary font-arabic">الأداء والربحية</h4>
-                <p className="mt-1 text-[11px] sm:text-xs text-text-secondary leading-relaxed font-arabic">الإيرادات والمصروفات وصافي نتيجة الفترة ومقارنتها بالفترات السابقة عند توفر البيانات.</p>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+              <div className="rounded-xl border border-border bg-surface p-4">
+                <p className="text-xs text-text-secondary">صافي الربح</p>
+                <p className="mt-2 text-2xl font-extrabold text-text-primary">+12.4%</p>
+                <div className="mt-3 h-2 rounded-full bg-slate-100"><div className="h-2 w-3/4 rounded-full bg-emerald-500" /></div>
+                <p className="mt-2 text-[11px] text-text-muted">مقارنة بالفترة السابقة</p>
               </div>
-              <div className="rounded-lg border border-border bg-surface p-3">
-                <h4 className="text-xs sm:text-sm font-bold text-text-primary font-arabic">السيولة والتدفقات النقدية</h4>
-                <p className="mt-1 text-[11px] sm:text-xs text-text-secondary leading-relaxed font-arabic">متابعة المقبوضات والمدفوعات والالتزامات المتوقعة لدعم التخطيط النقدي.</p>
+              <div className="rounded-xl border border-border bg-surface p-4">
+                <p className="text-xs text-text-secondary">السيولة المتوقعة</p>
+                <p className="mt-2 text-2xl font-extrabold text-text-primary">13 أسبوعًا</p>
+                <div className="mt-3 flex h-8 items-end gap-1"><span className="h-3 w-1/6 rounded-sm bg-emerald-200" /><span className="h-5 w-1/6 rounded-sm bg-emerald-300" /><span className="h-4 w-1/6 rounded-sm bg-emerald-400" /><span className="h-7 w-1/6 rounded-sm bg-emerald-500" /><span className="h-6 w-1/6 rounded-sm bg-emerald-400" /><span className="h-8 w-1/6 rounded-sm bg-emerald-600" /></div>
+                <p className="mt-2 text-[11px] text-text-muted">توقع المقبوضات والمدفوعات</p>
               </div>
-              <div className="rounded-lg border border-border bg-surface p-3">
-                <h4 className="text-xs sm:text-sm font-bold text-text-primary font-arabic">المؤشرات المالية</h4>
-                <p className="mt-1 text-[11px] sm:text-xs text-text-secondary leading-relaxed font-arabic">مؤشرات مختارة تساعد على فهم الأداء واتخاذ القرار، وفق طبيعة النشاط وجودة البيانات.</p>
+              <div className="rounded-xl border border-border bg-surface p-4">
+                <p className="text-xs text-text-secondary">أولوية تحتاج قرارًا</p>
+                <p className="mt-2 text-lg font-extrabold text-text-primary">ذمم متأخرة</p>
+                <div className="mt-3 flex items-center gap-2"><span className="h-3 w-3 rounded-full bg-amber-400" /><span className="text-xs font-bold text-amber-700">مراجعة التحصيل</span></div>
+                <p className="mt-2 text-[11px] text-text-muted">نحوّل الرقم إلى خطوة عملية</p>
               </div>
             </div>
           </section>

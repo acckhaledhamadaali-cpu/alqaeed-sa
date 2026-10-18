@@ -1,73 +1,35 @@
 import { HTMLAttributes } from 'react';
+import { AlertTriangle, BarChart3, CheckCircle2, Droplets, FileWarning, WalletCards } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import SectionWrapper from '../components/SectionWrapper';
 import Container from '../components/Container';
-import { TYPOGRAPHY } from '../src/lib/tokens';
 
-interface ChallengeItem {
-  problem: string;
-  solution: string;
-}
-
-const CHALLENGES: ChallengeItem[] = [
-  {
-    problem: "عدم وضوح صافي الأرباح والأداء المالي الحقيقي",
-    solution: "إعداد القوائم والتقارير الدورية التي توضح نتائج الأعمال بدقة."
-  },
-  {
-    problem: "عدم انتظام الحسابات والبيانات المالية",
-    solution: "تنظيم القيود المحاسبية وتجهيز متطلبات الامتثال والزكاة والضريبة."
-  },
-  {
-    problem: "غياب التقارير المالية المفيدة لاتخاذ القرار",
-    solution: "إصدار تقارير وتحليلات دورية تمنح الإدارة رؤية واضحة لأداء المنشأة."
-  },
-  {
-    problem: "ضعف وضوح التدفقات النقدية والسيولة",
-    solution: "متابعة حركة المقبوضات والمدفوعات لتأمين الالتزامات وتفادي أي فجوات نقدية."
-  },
-  {
-    problem: "الحاجة لإدارة مالية متقدمة بتكلفة مرنة",
-    solution: "إشراف مالي واستراتيجي عن بعد دون تحمل أعباء التوظيف الثابت الكامل."
-  }
+const CHALLENGES: Array<{ problem: string; solution: string; Icon: LucideIcon }> = [
+  { problem: 'ربح غير واضح', solution: 'ربحية مفهومة', Icon: BarChart3 },
+  { problem: 'حسابات غير مرتبة', solution: 'قيود منتظمة', Icon: FileWarning },
+  { problem: 'تقارير بلا قرار', solution: 'تقرير تنفيذي', Icon: CheckCircle2 },
+  { problem: 'سيولة تحت الضغط', solution: 'توقع نقدي', Icon: Droplets },
+  { problem: 'تكلفة CFO مرتفعة', solution: 'إشراف مرن', Icon: WalletCards },
 ];
 
 export default function ChallengesSection(props: HTMLAttributes<HTMLElement>) {
   return (
     <SectionWrapper id="challenges-section-wrapper" variant="white" spacing="dense" {...props}>
       <Container id="challenges-container">
-        <div id="challenges-content" className="flex flex-col space-y-4 max-w-2xl md:max-w-full mx-auto text-right">
-          
-          {/* Header */}
-          <div id="challenges-header" className="text-right pb-1">
-            <h2 id="challenges-title" className={`${TYPOGRAPHY.heading.h2} text-text-primary font-bold font-arabic`}>
-              هل تواجه أحد هذه التحديات في منشأتك؟
-            </h2>
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-5 flex items-center gap-2">
+            <AlertTriangle className="h-5 w-5 text-amber-500" aria-hidden="true" />
+            <h2 id="challenges-title" className="text-xl font-extrabold text-slate-950 sm:text-2xl">ما الذي يربك أرقامك؟</h2>
           </div>
-
-          {/* List of Challenges */}
-          <div id="challenges-list" className="flex flex-col md:flex-row md:flex-wrap md:gap-x-8 gap-y-3.5">
-            {CHALLENGES.map((item, index) => (
-              <div 
-                key={index} 
-                id={`challenge-item-${index}`}
-                className="w-full md:w-[calc(50%-1rem)] pb-3.5 last:pb-0 border-b border-slate-100 last:border-b-0 flex flex-col space-y-1 text-right"
-              >
-                <div id={`challenge-prob-row-${index}`} className="flex items-start space-x-1.5 space-x-reverse">
-                  <span id={`challenge-check-${index}`} className="text-secondary font-bold text-sm md:text-base select-none leading-none mt-0.5">✓</span>
-                  <h3 id={`challenge-problem-${index}`} className="text-xs sm:text-sm md:text-base font-bold text-text-primary leading-relaxed">
-                    {item.problem}
-                  </h3>
-                </div>
-                <div id={`challenge-sol-row-${index}`} className="pr-4 sm:pr-5">
-                  <p id={`challenge-solution-${index}`} className="text-[11px] sm:text-xs md:text-sm text-text-secondary leading-relaxed font-arabic">
-                    <span id={`challenge-label-${index}`} className="text-secondary font-semibold ml-1">الحل:</span>
-                    {item.solution}
-                  </p>
-                </div>
-              </div>
+          <div id="challenges-list" className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            {CHALLENGES.map(({ problem, solution, Icon }) => (
+              <article key={problem} className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                <Icon className="h-5 w-5 text-emerald-600" aria-hidden="true" />
+                <h3 className="mt-3 text-sm font-extrabold text-slate-950">{problem}</h3>
+                <p className="mt-1 text-sm font-bold text-emerald-700">{solution}</p>
+              </article>
             ))}
           </div>
-
         </div>
       </Container>
     </SectionWrapper>

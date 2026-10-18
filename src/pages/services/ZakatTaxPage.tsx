@@ -102,6 +102,7 @@ export default function ZakatTaxPage() {
             </div>
             <a
               href={WHATSAPP_URL}
+              data-track-whatsapp="cta"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex min-h-11 items-center justify-center rounded-lg bg-[#25D366] px-5 py-2.5 text-xs text-white transition-colors hover:bg-[#20ba5a] sm:text-sm md:min-w-56"
