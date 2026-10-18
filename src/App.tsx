@@ -34,7 +34,6 @@ import CashFlowPage from './pages/services/CashFlowPage';
 import VirtualCfoPage from './pages/services/VirtualCfoPage';
 
 import ServicePricingNote from './components/ServicePricingNote';
-import LogoAssetsPage from './pages/admin/LogoAssetsPage';
 
 export default function App({ path: propPath }: { path?: string } = {}) {
   const currentPath = propPath || (typeof window !== 'undefined' ? window.location.pathname : '/');
@@ -78,10 +77,6 @@ export default function App({ path: propPath }: { path?: string } = {}) {
       document.removeEventListener('click', handleTrackedLinkClick);
     };
   }, [path]);
-
-  if (path === '/logo-assets') {
-    return <LogoAssetsPage />;
-  }
 
   if (path.startsWith('/sectors/')) {
     const slug = path.replace(/^\/sectors\//, '').replace(/\/$/, '');
@@ -247,4 +242,34 @@ export default function App({ path: propPath }: { path?: string } = {}) {
     );
   }
 
-  // الكود ينتهي هنا بشكل سليم بناءً على الملف المرفق
+  if (path.startsWith('/blog/')) {
+    const slug = path.replace(/^\/blog\//, '').replace(/\/$/, '');
+    return (
+      <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
+        <main id="main-content" className="flex-grow">
+          <ArticlePage slug={slug} />
+        </main>
+        <FooterSection />
+        <FloatingWhatsApp />
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10" dir="rtl">
+      <main id="main-content">
+        <HeroSection />
+        <ExperienceBar />
+        <ChallengesSection />
+        <SectorsSection />
+        <ServicesSection />
+        <HowIWorkSection />
+        <AboutSection />
+        <SoftwareIntegrations />
+        <FinalCTASection />
+      </main>
+      <FooterSection />
+      <FloatingWhatsApp />
+    </div>
+  );
+}
