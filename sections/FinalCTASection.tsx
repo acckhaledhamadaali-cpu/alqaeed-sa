@@ -10,6 +10,15 @@ const WHATSAPP_MESSAGE = "السلام عليكم، أود الاستفسار ع
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 export default function FinalCTASection(props: HTMLAttributes<HTMLElement>) {
+  const trackWhatsAppClick = () => {
+    if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+      (window as any).gtag('event', 'whatsapp_click', {
+        event_category: 'engagement',
+        event_label: 'cta_whatsapp',
+        link_url: WHATSAPP_URL
+      });
+    }
+  };
 
   return (
     <SectionWrapper id="final-cta-section-wrapper" variant="white" spacing="dense" {...props}>
@@ -28,9 +37,9 @@ export default function FinalCTASection(props: HTMLAttributes<HTMLElement>) {
           <div id="final-cta-action" className="pt-1.5">
             <a 
               href={WHATSAPP_URL}
-              data-track-whatsapp="final_cta"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={trackWhatsAppClick}
               className="inline-flex items-center gap-x-2 px-5 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs sm:text-sm font-semibold shadow-md transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
               id="final-cta-whatsapp-btn"
             >

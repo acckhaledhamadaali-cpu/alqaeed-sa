@@ -2,15 +2,72 @@
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <!-- Meta Pixel: async, non-blocking standard loader. -->
+    <!-- Meta Pixel: queue events immediately, load the external library after intent or idle time. -->
     <script>
-      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)
-      }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1358162632825916');
-      fbq('track', 'PageView');
+      (function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = true;
+        n.version = '2.0';
+        n.queue = [];
+        n('init', '1358162632825916');
+
+        var requested = false;
+        function loadPixel() {
+          if (requested) return;
+          requested = true;
+          t = b.createElement(e);
+          t.async = true;
+          t.src = v;
+          s = b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t, s);
+        }
+
+        ['pointerdown', 'touchstart', 'keydown', 'scroll'].forEach(function (eventName) {
+          f.addEventListener(eventName, loadPixel, { once: true, passive: true, capture: true });
+        });
+        f.setTimeout(loadPixel, 8000);
+      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    </script>
+    <script>
+      (function() {
+        try {
+          var originalFetch = window.fetch;
+          var currentFetch = originalFetch;
+          Object.defineProperty(window, 'fetch', {
+            get: function() {
+              return currentFetch;
+            },
+            set: function(fn) {
+              currentFetch = fn;
+            },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (e) {
+          try {
+            var proto = Object.getPrototypeOf(window) || (typeof Window !== 'undefined' && Window.prototype);
+            if (proto) {
+              var origFetch = proto.fetch || window.fetch;
+              var curFetch = origFetch;
+              Object.defineProperty(proto, 'fetch', {
+                get: function() {
+                  return curFetch;
+                },
+                set: function(fn) {
+                  curFetch = fn;
+                },
+                configurable: true,
+                enumerable: true
+              });
+            }
+          } catch (err) {}
+        }
+      })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="IvFOKYmrfdg6a8N2Ke4gZGWWOzYd1w0i3G55eem5BMo" />
@@ -69,69 +126,238 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["Organization", "ProfessionalService"],
-      "@id": "https://alqaeed-sa.pages.dev/#organization",
-      "name": "القائد للإدارة المالية",
-      "alternateName": "Al-Qaeed Financial Management",
-      "url": "https://alqaeed-sa.pages.dev/",
-      "logo": "https://alqaeed-sa.pages.dev/favicon.png",
-      "image": "https://alqaeed-sa.pages.dev/images/khaled.webp",
-      "description": "إدارة مالية ومحاسبة عن بُعد للمنشآت في السعودية، تشمل تنظيم الحسابات والتقارير والربحية والسيولة وتجهيز متطلبات الزكاة والضريبة ضمن نطاق العمل المتفق عليه.",
-      "telephone": "+966511294383",
-      "email": "alqaeed.sa@gmail.com",
-      "areaServed": { "@type": "Country", "name": "Saudi Arabia" },
-      "founder": { "@id": "https://alqaeed-sa.pages.dev/#person" },
-      "sameAs": [
-        "https://www.linkedin.com/in/alqaeed-fin-acc-tax/",
-        "https://www.instagram.com/alqaeed.sa",
-        "https://x.com/alqaeed_sa",
-        "https://www.youtube.com/@alqaeed-fin-Acc-tax-sa",
-        "https://www.tiktok.com/@alqaeed.sa1"
-      ]
-    },
-    {
       "@type": "Person",
       "@id": "https://alqaeed-sa.pages.dev/#person",
       "name": "خالد القائد",
       "jobTitle": "محاسب مالي ومؤسس القائد",
       "url": "https://alqaeed-sa.pages.dev/",
-      "image": "https://alqaeed-sa.pages.dev/images/khaled.webp",
-      "description": "محاسب مالي يقدم إدارة مالية وتقارير واضحة للمنشآت السعودية عن بُعد.",
-      "worksFor": { "@id": "https://alqaeed-sa.pages.dev/#organization" },
+      "image": {
+        "@id": "https://alqaeed-sa.pages.dev/#logo"
+      },
+      "description": "خالد القائد، محاسب مالي ومؤسس القائد. متخصص في الإدارة المالية المتكاملة والتقارير والتحليل المالي والزكاة والضرائب للمنشآت.",
+      "email": "alqaeed.sa@gmail.com",
+      "telephone": "+966511294383",
       "hasCredential": [
-        { "@type": "EducationalOccupationalCredential", "name": "ماجستير إدارة الأعمال MBA" },
-        { "@type": "EducationalOccupationalCredential", "name": "بكالوريوس تجارة – محاسبة" }
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "ماجستير إدارة الأعمال MBA"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "بكالوريوس التجارة شعبة المحاسبة"
+        }
+      ],
+      "knowsAbout": [
+        "الإدارة المالية",
+        "الإدارة المالية عن بعد",
+        "التخطيط المالي",
+        "التحليل المالي",
+        "إعداد القوائم المالية",
+        "مسك الدفاتر",
+        "المؤشرات المالية",
+        "إعداد الميزانيات",
+        "التقارير المالية",
+        "تحليل الربحية",
+        "تحليل التدفقات النقدية",
+        "الزكاة",
+        "ضريبة القيمة المضافة",
+        "الفاتورة الإلكترونية",
+        "الاستشارات المالية",
+        "Financial Management",
+        "Remote Financial Management",
+        "Financial Analysis",
+        "Financial Planning",
+        "Budgeting",
+        "Financial Statements",
+        "VAT",
+        "IFRS",
+        "ERP",
+        "Virtual CFO",
+        "KPIs",
+        "Cash Flow",
+        "Internal Control",
+        "Financial Reporting"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "SA",
+        "addressRegion": "المملكة العربية السعودية"
+      },
+      "worksFor": {
+        "@id": "https://alqaeed-sa.pages.dev/#organization"
+      },
+      "sameAs": [
+        "https://www.tiktok.com/@alqaeed.sa1",
+        "https://www.instagram.com/alqaeed.sa",
+        "https://x.com/alqaeed_sa",
+        "https://www.youtube.com/@alqaeed-fin-Acc-tax-sa",
+        "https://www.facebook.com/share/1E5ttqMGB8/",
+        "https://www.linkedin.com/in/alqaeed-fin-acc-tax/"
+      ]
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://alqaeed-sa.pages.dev/#service",
+      "name": "القائد",
+      "url": "https://alqaeed-sa.pages.dev/",
+      "logo": {
+        "@id": "https://alqaeed-sa.pages.dev/#logo"
+      },
+      "image": {
+        "@id": "https://alqaeed-sa.pages.dev/#logo"
+      },
+      "description": "القائد - الإدارة المالية المتكاملة عن بعد للمنشآت. أقدم حلولاً مالية شاملة للمنشآت الصغيرة والمتوسطة لضمان الامتثال المالي وتحسين الأداء.",
+      "telephone": "+966511294383",
+      "provider": {
+        "@id": "https://alqaeed-sa.pages.dev/#person"
+      },
+      "areaServed": "Saudi Arabia",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "خدمات الإدارة المالية",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "تنظيم الحسابات ومسك الدفاتر"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "الزكاة والضريبة"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "إعداد القوائم المالية"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "التحليل المالي"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "التقارير الإدارية"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "إعداد الموازنات"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "إدارة التدفقات النقدية"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "المدير المالي عن بعد Virtual CFO"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://alqaeed-sa.pages.dev/#organization",
+      "name": "القائد",
+      "url": "https://alqaeed-sa.pages.dev/",
+      "logo": {
+        "@id": "https://alqaeed-sa.pages.dev/#logo"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+966511294383",
+        "contactType": "customer service",
+        "email": "alqaeed.sa@gmail.com",
+        "availableLanguage": [
+          "Arabic",
+          "English"
+        ],
+        "areaServed": "SA"
+      },
+      "image": {
+        "@id": "https://alqaeed-sa.pages.dev/#logo"
+      },
+      "email": "alqaeed.sa@gmail.com",
+      "telephone": "+966511294383",
+      "addressCountry": "SA",
+      "areaServed": "Saudi Arabia",
+      "sameAs": [
+        "https://www.tiktok.com/@alqaeed.sa1",
+        "https://www.instagram.com/alqaeed.sa",
+        "https://x.com/alqaeed_sa",
+        "https://www.youtube.com/@alqaeed-fin-Acc-tax-sa",
+        "https://www.facebook.com/share/1E5ttqMGB8/",
+        "https://www.linkedin.com/in/alqaeed-fin-acc-tax/"
       ]
     },
     {
       "@type": "WebSite",
       "@id": "https://alqaeed-sa.pages.dev/#website",
       "url": "https://alqaeed-sa.pages.dev/",
-      "name": "القائد للإدارة المالية",
-      "inLanguage": "ar-SA",
-      "publisher": { "@id": "https://alqaeed-sa.pages.dev/#organization" }
+      "name": "القائد | الإدارة المالية المتكاملة عن بعد للمنشآت",
+      "description": "القائد - الإدارة المالية المتكاملة عن بعد للمنشآت. حلول مالية متكاملة لدعم اتخاذ القرار وتحسين الأداء المالي للمنشآت في السعودية.",
+      "publisher": {
+        "@id": "https://alqaeed-sa.pages.dev/#organization"
+      }
     },
     {
       "@type": "WebPage",
       "@id": "https://alqaeed-sa.pages.dev/#webpage",
       "url": "https://alqaeed-sa.pages.dev/",
-      "name": "إدارة مالية أوضح للمنشآت السعودية | القائد",
-      "description": "إدارة مالية ومحاسبة عن بُعد للمنشآت السعودية: حسابات مرتبة، تقارير مفهومة، وربحية وسيولة أوضح.",
-      "inLanguage": "ar-SA",
-      "isPartOf": { "@id": "https://alqaeed-sa.pages.dev/#website" },
-      "about": { "@id": "https://alqaeed-sa.pages.dev/#organization" }
+      "name": "القائد | الإدارة المالية المتكاملة عن بعد للمنشآت",
+      "description": "القائد - الإدارة المالية المتكاملة عن بعد للمنشآت. حلول مالية متكاملة لدعم اتخاذ القرار وتحسين الأداء المالي للمنشآت في السعودية.",
+      "isPartOf": {
+        "@id": "https://alqaeed-sa.pages.dev/#website"
+      },
+      "about": {
+        "@id": "https://alqaeed-sa.pages.dev/#organization"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://alqaeed-sa.pages.dev/#logo"
+      },
+      "inLanguage": "ar-SA"
     },
     {
-      "@type": "ItemList",
-      "@id": "https://alqaeed-sa.pages.dev/#services",
-      "name": "خدمات القائد للإدارة المالية",
+      "@type": "BreadcrumbList",
+      "@id": "https://alqaeed-sa.pages.dev/#breadcrumb",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "الحسابات والدفاتر", "url": "https://alqaeed-sa.pages.dev/services/bookkeeping/" },
-        { "@type": "ListItem", "position": 2, "name": "القوائم والتقارير", "url": "https://alqaeed-sa.pages.dev/services/financial-statements/" },
-        { "@type": "ListItem", "position": 3, "name": "الربحية والسيولة", "url": "https://alqaeed-sa.pages.dev/services/financial-analysis/" },
-        { "@type": "ListItem", "position": 4, "name": "الزكاة والضريبة", "url": "https://alqaeed-sa.pages.dev/services/zakat-tax/" },
-        { "@type": "ListItem", "position": 5, "name": "الأنظمة والتخطيط", "url": "https://alqaeed-sa.pages.dev/services/virtual-cfo/" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "الرئيسية",
+          "item": "https://alqaeed-sa.pages.dev/"
+        }
       ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://alqaeed-sa.pages.dev/#logo",
+      "url": "https://alqaeed-sa.pages.dev/images/khaled.webp",
+      "contentUrl": "https://alqaeed-sa.pages.dev/images/khaled.webp",
+      "caption": "القائد - الإدارة المالية المتكاملة عن بعد للمنشآت",
+      "width": "1023",
+      "height": "1537",
+      "inLanguage": "ar-SA"
     }
   ]
 }

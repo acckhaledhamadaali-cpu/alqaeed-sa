@@ -71,6 +71,15 @@ export default function BookkeepingPage() {
     schema
   });
 
+  const trackWhatsAppClick = () => {
+    if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+      (window as any).gtag('event', 'whatsapp_click', {
+        event_category: 'engagement',
+        event_label: 'service_cta_' + slug,
+        link_url: WHATSAPP_URL
+      });
+    }
+  };
 
   return (
     <SectionWrapper id={"service-" + slug + "-section"} variant="white" spacing="default">
@@ -235,7 +244,6 @@ export default function BookkeepingPage() {
             </p>
             <a
               href={WHATSAPP_URL}
-              data-track-whatsapp="cta"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-x-2 px-6 py-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs md:text-sm font-semibold rounded-xl transition-all shadow-sm duration-200 hover:scale-[1.02] active:scale-[0.98]"

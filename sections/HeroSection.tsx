@@ -1,43 +1,97 @@
 import { HTMLAttributes } from 'react';
 import SectionWrapper from '../components/SectionWrapper';
 import Container from '../components/Container';
-import { ShieldCheck, MessageCircle } from 'lucide-react';
+import { TYPOGRAPHY } from '../src/lib/tokens';
+import { MessageCircle } from 'lucide-react';
 
-const WHATSAPP_URL =
-  'https://wa.me/966511294383?text=' +
-  encodeURIComponent('السلام عليكم، أريد فحصًا ماليًا أوليًا لمنشأتي.');
+const WHATSAPP_NUMBER = "966511294383";
+const HERO_WHATSAPP_MESSAGE = "السلام عليكم، أرغب في الاستفسار عن خدمات القائد المحاسبية والمالية للمنشآت. أرجو إرشادي إلى نطاق الخدمة والمعلومات اللازمة للبدء.";
+const HERO_WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(HERO_WHATSAPP_MESSAGE)}`;
 
 export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
   return (
     <SectionWrapper id="hero-section-wrapper" variant="white" spacing="default" {...props}>
       <Container id="hero-container">
-        <div className="grid items-center gap-8 md:grid-cols-12 md:gap-10">
-          <div className="order-2 md:order-1 md:col-span-7">
-            <p className="mb-3 text-sm font-bold text-emerald-700">القائد للإدارة المالية</p>
-            <h1 id="hero-brand-name" className="max-w-2xl text-3xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-4xl md:text-5xl">
-              اعرف ربحك. واضبط سيولتك.
-            </h1>
-            <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-              Virtual CFO عن بُعد للمنشآت السعودية: حسابات مرتبة، تقارير مفهومة، وامتثال دون تكلفة موظف مالي كامل.
-            </p>
-            <p className="mt-3 inline-flex items-center gap-2 text-xs text-slate-500">
-              <ShieldCheck className="h-4 w-4 text-emerald-600" aria-hidden="true" />
-              سرية تامة؛ NDA قبل مشاركة المستندات.
-            </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" data-track-whatsapp="hero" id="hero-primary-cta" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#25D366] px-5 text-sm font-bold text-white transition hover:bg-[#20ba5a] focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2">
-                <MessageCircle className="h-4 w-4" aria-hidden="true" />
-                اطلب فحصًا ماليًا عبر واتساب
-              </a>
-              <a href="#services-section-wrapper" id="hero-secondary-cta" className="inline-flex min-h-12 items-center justify-center rounded-xl border border-slate-200 px-5 text-sm font-bold text-slate-800 transition hover:border-emerald-500 hover:text-emerald-700">
-                شاهد الخدمات
-              </a>
-            </div>
-            <p className="mt-3 text-xs text-slate-500">نراجع آخر شهرين ونوضح لك أهم الفجوات.</p>
+        {/* Responsive layout: Message first on mobile; profile image remains on the right on desktop. */}
+        <div id="hero-grid-layout" className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-8 items-center">
+          
+          {/* Profile Image Area (After the message on mobile, right on desktop - 5 columns) */}
+          <div id="hero-image-column" className="w-full md:col-span-5 flex justify-center order-2 md:order-2">
+            <img 
+              src="/images/khaled.webp"
+              srcSet="/images/khaled-400.webp 400w, /images/khaled-800.webp 800w, /images/khaled.webp 1023w"
+              sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1023px"
+              alt="خالد القائد، محاسب مالي في القائد للإدارة المالية"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              referrerPolicy="no-referrer"
+              width={600}
+              height={900}
+              className="w-[90%] max-w-[240px] sm:max-w-[280px] md:max-w-[90%] aspect-[9/16] object-cover object-center bg-white rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.01)]"
+              id="hero-profile-image"
+            />
           </div>
-          <div className="order-1 flex justify-center md:order-2 md:col-span-5 md:justify-end">
-            <img src="/images/khaled-800.webp" srcSet="/images/khaled-400.webp 400w, /images/khaled-800.webp 800w" sizes="(max-width: 768px) 240px, 360px" width={400} height={600} loading="eager" fetchPriority="high" decoding="async" alt="خالد القائد، مستشار مالي للمنشآت السعودية" className="h-auto w-56 rounded-2xl object-cover sm:w-64 md:w-80" id="hero-profile-image" />
+
+          {/* Text Area (First on mobile, left on desktop - 7 columns) */}
+          <div 
+            id="hero-text-column" 
+            className="md:col-span-7 flex flex-col items-center md:items-start text-center md:text-right space-y-4 md:space-y-5 order-1 md:order-1"
+          >
+            
+            <header id="hero-header" className="flex flex-col items-center md:items-start space-y-3.5 md:space-y-4 w-full text-center md:text-right">
+              {/* Brand & Tagline Area */}
+              <div id="hero-brand-area" className="flex flex-col items-center md:items-start space-y-1">
+                <p className="text-sm md:text-base font-semibold text-text-secondary">خالد القائد | محاسب مالي</p>
+                <h1 id="hero-brand-name" className={`${TYPOGRAPHY.heading.h1} font-bold text-text-primary`}>
+                  محاسب مالي عن بعد للمنشآت في السعودية | من التنظيم اليومي إلى الامتثال الحكومي
+                </h1>
+                <p id="hero-brand-tagline" className={`${TYPOGRAPHY.body.large} text-secondary font-semibold mt-1`}>
+                  أدير حسابات منشأتك بمرونة كاملة عن بُعد؛ من ادارة الحسابات وتهيئة نظام أودو (Odoo ERP)، إلى إعداد القوائم المالية وتحضير الإقرارات الضريبية والزكوية بامتثال تام يحميك من الغرامات وكأنني متواجد معك تماماً.
+                </p>
+              </div>
+
+              {/* Description (Paragraph) */}
+              <p 
+                id="hero-description" 
+                className={`${TYPOGRAPHY.body.large} max-w-xl`}
+              >
+                أوفر للمنشآت والشركات بالسعودية كفاءة المحاسب المالي الداخلي والـ Virtual CFO بتكلفة مرنة تناسب حجم أعمالك. تشمل خدماتنا تأسيس الدورات المستندية، التسويات البنكية، رفع تقارير الأداء والسيولة، وضمان الامتثال الكامل مع هيئة الزكاة والضريبة والجمارك دون أعباء التوظيف الثابت.
+              </p>
+
+              {/* Short Trust Line */}
+              <p 
+                id="hero-trust-line"
+                className="text-xs md:text-sm text-text-secondary font-arabic font-normal leading-relaxed mt-1"
+              >
+                🔒 نلتزم بالسرية التامة لبياناتك مع إمكانية توقيع اتفاقية عدم إفصاح (NDA) قبل مشاركة المستندات
+              </p>
+
+              {/* Hero Actions (CTA) */}
+              <div id="hero-cta-actions" className="flex flex-wrap items-center justify-center md:justify-start gap-3 pt-2">
+                <a 
+                  href={HERO_WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  id="hero-primary-cta"
+                  className="inline-flex w-full max-w-full sm:w-auto items-center justify-center gap-x-2 px-4 sm:px-5 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs sm:text-sm text-center font-semibold shadow-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
+                >
+                  <MessageCircle className="w-4 h-4" aria-hidden="true" />
+                  <span className="inline md:hidden">اطلب فحصاً مجانياً لحساباتك عبر الواتساب</span>
+                  <span className="hidden md:inline">اطلب فحصاً مجانياً لحساباتك لآخر شهرين واستلم تقرير الفجوات عبر الواتساب</span>
+                </a>
+                <a 
+                  href="#services-section-wrapper"
+                  id="hero-secondary-cta"
+                  className="inline-flex items-center px-4 py-2.5 rounded-xl bg-surface-subtle border border-border-subtle hover:border-primary text-text-primary hover:text-primary text-xs sm:text-sm font-medium transition-all duration-200"
+                >
+                  استكشف خدمات الامتثال والإدارة المالية
+                </a>
+              </div>
+            </header>
+
           </div>
+
         </div>
       </Container>
     </SectionWrapper>

@@ -56,14 +56,13 @@ export default function App({ path: propPath }: { path?: string } = {}) {
       }
 
       const href = link.getAttribute('href') || '';
-      const source = link.getAttribute('data-track-whatsapp') || link.id || 'whatsapp';
 
       if (!href) {
         return;
       }
 
       if (href.startsWith('https://wa.me/') || href.includes('api.whatsapp.com')) {
-        trackMetaLead(source, href);
+        trackMetaLead('WhatsApp', href);
         return;
       }
 
