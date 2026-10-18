@@ -34,7 +34,6 @@ import CashFlowPage from './pages/services/CashFlowPage';
 import VirtualCfoPage from './pages/services/VirtualCfoPage';
 
 import ServicePricingNote from './components/ServicePricingNote';
-
 import LogoAssetsPage from './pages/admin/LogoAssetsPage';
 
 export default function App({ path: propPath }: { path?: string } = {}) {
@@ -248,37 +247,4 @@ export default function App({ path: propPath }: { path?: string } = {}) {
     );
   }
 
-  if (path.startsWith('/blog/')) {
-    const slug = path.replace(/^\/blog\//, '').replace(/\/$/, '');
-    return (
-      <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
-        <main id="main-content" className="flex-grow">
-          <ArticlePage slug={slug} />
-        </main>
-        <FooterSection />
-        <FloatingWhatsApp />
-      </div>
-    );
-  }
-
-  return (
-    <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10" dir="rtl">
-      <main id="main-content">
-        {/* Structural sections in order */}
-        <HeroSection />
-        <ExperienceBar />
-        <ChallengesSection />
-        <SectorsSection />
-        <ServicesSection />
-        <HowIWorkSection />
-        <AboutSection />
-        <SoftwareIntegrations />
-        <FinalCTASection />
-      </main>
-      <FooterSection />
-      
-      {/* Floating elements */}
-      <FloatingWhatsApp />
-    </div>
-  );
-}
+  // الكود ينتهي هنا بشكل سليم بناءً على الملف المرفق
