@@ -4,11 +4,12 @@ import Container from '../../components/Container';
 import { TYPOGRAPHY } from '../lib/tokens';
 
 export default function CookiesPage() {
+  const url = "https://alqaeed-sa.pages.dev/cookies/";
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://alqaeed-sa.pages.dev/cookies/#webpage",
-    "url": "https://alqaeed-sa.pages.dev/cookies",
+    "@id": `${url}#webpage`,
+    "url": url,
     "name": "سياسة ملفات تعريف الارتباط | القائد",
     "description": "تعرف على كيفية استخدامنا لملفات تعريف الارتباط (Cookies) لتحسين تجربتك على موقع القائد وتحليل أداء الموقع.",
     "primaryImageOfPage": {
@@ -23,7 +24,7 @@ export default function CookiesPage() {
   useSEO({
     title: "سياسة ملفات تعريف الارتباط | القائد",
     description: "تعرف على كيفية استخدامنا لملفات تعريف الارتباط (Cookies) لتحسين تجربتك على موقع القائد وتحليل أداء الموقع.",
-    canonical: "https://alqaeed-sa.pages.dev/cookies",
+    canonical: url,
     schema
   });
 
@@ -62,7 +63,7 @@ export default function CookiesPage() {
               </p>
               <ul className="list-disc list-inside mt-2 space-y-1 pr-4">
                 <li>
-                  <strong>تحليل الأداء (Analytics):</strong> نستخدم أدوات مثل Google Analytics و Microsoft Clarity لفهم كيفية تفاعل الزوار مع الموقع، مما يساعدنا في تحسين المحتوى وطريقة عرض خدماتنا (مثل خدمات التحليل المالي والمدير المالي عن بعد).
+                  <strong>تحليل الأداء والقياس (Analytics & Measurement):</strong> نستخدم أدوات مثل Google Analytics وMicrosoft Clarity وMeta Pixel لفهم كيفية تفاعل الزوار مع الموقع وقياس فعالية الحملات، مما يساعدنا في تحسين المحتوى وطريقة عرض خدماتنا.
                 </li>
                 <li>
                   <strong>تسهيل تجربة الاستخدام:</strong> لضمان عمل الموقع بشكل سريع وفعال على جميع الأجهزة.

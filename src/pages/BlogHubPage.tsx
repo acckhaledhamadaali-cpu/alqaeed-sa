@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSEO } from '../hooks/useSEO';
 import SectionWrapper from '../../components/SectionWrapper';
 import Container from '../../components/Container';
@@ -12,19 +12,58 @@ const WHATSAPP_MESSAGE = `السلام عليكم
 أود الاستفسار عن خدمات القائد للإدارة المالية واستشارة متخصصة لمنشأتي.`;
 const WHATSAPP_URL = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(WHATSAPP_MESSAGE);
 
+const ZATCA_WEEKLY_TIPS = [
+  "تذكير ضريبي: تحقق من موعد إقرار ضريبة القيمة المضافة والفترة المستحقة من حساب منشأتك لدى هيئة الزكاة والضريبة والجمارك؛ تختلف المواعيد بحسب دورية الإقرار.",
+  "تذكير زكوي: جهّز ميزان المراجعة والقوائم المالية والمستندات المؤيدة مبكراً، وتحقق من المهلة المنطبقة على منشأتك عبر القنوات الرسمية للهيئة.",
+  "قبل تقديم الإقرار: طابق فواتير المبيعات والمشتريات مع السجلات المحاسبية وكشوف البنك، وراجع الفروقات قبل اعتماد البيانات.",
+  "لا تعتمد على مواعيد عامة: راجع حساب المكلف لدى هيئة الزكاة والضريبة والجمارك للتحقق من الفترة وتاريخ الاستحقاق الفعلي.",
+  "للجاهزية الضريبية: احتفظ بالفواتير والإشعارات الدائنة والمدينة وسجلات الاستيراد ذات الصلة بالفترة قبل إعداد إقرار ضريبة القيمة المضافة.",
+  "للجاهزية الزكوية: راجع بيانات السنة المالية والقوائم وميزان المراجعة والمستندات المؤيدة، وتحقق من متطلبات الإقرار المنطبقة على حالة المنشأة."
+];
+
+function getSaudiWeekNumber(date = new Date()): number {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Riyadh",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).formatToParts(date);
+  const part = (type: string) => parts.find((item) => item.type === type)?.value ?? "";
+  const year = Number(part("year"));
+  const month = Number(part("month"));
+  const day = Number(part("day"));
+  const dateUtc = Date.UTC(year, month - 1, day);
+  const yearStartUtc = Date.UTC(year, 0, 1);
+  const dayOfYear = Math.floor((dateUtc - yearStartUtc) / 86_400_000);
+  const janFirstDay = new Date(yearStartUtc).getUTCDay();
+  const weekStartOffset = (janFirstDay + 1) % 7;
+  return Math.floor((dayOfYear + weekStartOffset) / 7) + 1;
+}
+
+function rotateArticles<T>(articles: T[], offset: number): T[] {
+  if (articles.length === 0) return articles;
+  const start = ((offset % articles.length) + articles.length) % articles.length;
+  return [...articles.slice(start), ...articles.slice(0, start)];
+}
+
 export default function BlogHubPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [weekNumber, setWeekNumber] = useState<number | null>(null);
+
+  useEffect(() => {
+    setWeekNumber(getSaudiWeekNumber());
+  }, []);
 
   const metaTitle = "المكتبة المالية | القائد للإدارة المالية";
   const metaDesc = "المكتبة المالية من القائد - أدلة ومعارف مالية ومحاسبية متخصصة تهدف لمساعدة أصحاب المنشآت والشركات في المملكة العربية السعودية على إدارة أعمالهم واتخاذ قرارات مالية صائبة.";
-  const url = "https://alqaeed-sa.pages.dev/blog";
+  const url = "https://alqaeed-sa.pages.dev/blog/";
 
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "CollectionPage",
-        "@id": url + "/#webpage",
+        "@id": url + "#webpage",
         "url": url,
         "name": metaTitle,
         "description": metaDesc,
@@ -34,7 +73,7 @@ export default function BlogHubPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": url + "/#breadcrumb",
+        "@id": url + "#breadcrumb",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://alqaeed-sa.pages.dev/" },
           { "@type": "ListItem", "position": 2, "name": "المكتبة المالية", "item": url }
@@ -45,9 +84,17 @@ export default function BlogHubPage() {
 
   useSEO({ title: metaTitle, description: metaDesc, canonical: url, schema });
 
-  const filteredArticles = selectedCategory === 'all'
+  const weeklyArticles = weekNumber === null
     ? BLOG_ARTICLES
-    : BLOG_ARTICLES.filter((article) => article.category === selectedCategory);
+    : rotateArticles(BLOG_ARTICLES, weekNumber - 1);
+
+  const filteredArticles = selectedCategory === 'all'
+    ? weeklyArticles
+    : weeklyArticles.filter((article) => article.category === selectedCategory);
+
+  const weeklyTip = weekNumber === null
+    ? ZATCA_WEEKLY_TIPS[0]
+    : ZATCA_WEEKLY_TIPS[(weekNumber - 1) % ZATCA_WEEKLY_TIPS.length];
 
   const getCategoryName = (catId: BlogCategoryType) => {
     const found = BLOG_CATEGORIES.find((c) => c.id === catId);
@@ -58,6 +105,9 @@ export default function BlogHubPage() {
     <SectionWrapper id="blog-hub-section" variant="white" spacing="default">
       <Container>
         <div className="max-w-4xl mx-auto py-4 md:py-8 text-right font-arabic">
+          <div id="zatca-news-ticker" className="text-xs md:text-sm text-text-secondary leading-relaxed mb-4" role="status" aria-live="polite">
+            {weeklyTip}
+          </div>
           <nav aria-label="مسار التنقل" className="mb-4 text-xs text-text-muted">
             <a href="/" className="hover:text-primary transition-colors">الرئيسية - القائد للإدارة المالية</a>
             <span className="mx-2 text-border-subtle">/</span>
@@ -99,31 +149,36 @@ export default function BlogHubPage() {
 
             {filteredArticles.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {filteredArticles.map((article) => {
+                {filteredArticles.map((article, index) => {
                   const image = getBlogImage(article.slug);
                   const imageSrcSet = getBlogImageSrcSet(article.slug);
                   return (
                     <article key={article.slug} className="border border-border-subtle rounded-xl overflow-hidden bg-white hover:shadow-md transition-shadow flex flex-col justify-between">
                       <div>
-                        <a href={`/blog/${article.slug}/`} className="block overflow-hidden bg-surface-subtle aspect-video border-b border-border-subtle">
-                          <img
-                            src={image}
-                            srcSet={imageSrcSet || undefined}
-                            sizes="(max-width: 767px) calc(100vw - 32px), 50vw"
-                            alt={article.title}
-                            loading="lazy"
-                            decoding="async"
-                            width={640}
-                            height={360}
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                          />
-                        </a>
+                        {image && (
+                          <a href={`/blog/${article.slug}/`} className="block overflow-hidden bg-surface-subtle aspect-video border-b border-border-subtle">
+                            <img
+                              src={image}
+                              srcSet={imageSrcSet || undefined}
+                              sizes="(max-width: 767px) calc(100vw - 32px), 50vw"
+                              alt={article.title}
+                              loading="lazy"
+                              decoding="async"
+                              width={640}
+                              height={360}
+                              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                            />
+                          </a>
+                        )}
 
                         <div className="p-6 pb-2">
                           <div className="flex items-center justify-between text-xs text-text-muted mb-3">
                             <span className="bg-primary/10 text-primary font-medium px-2.5 py-1 rounded-md">{getCategoryName(article.category)}</span>
                             <span>{article.readingTime}</span>
                           </div>
+                          {selectedCategory === 'all' && index === 0 && (
+                            <p className="text-xs text-primary font-semibold mb-2">مقال الأسبوع الرئيسي المختار</p>
+                          )}
                           <h3 className="font-bold text-text-primary text-lg mb-2 leading-snug hover:text-primary transition-colors"><a href={`/blog/${article.slug}/`}>{article.title}</a></h3>
                           <p className="text-xs md:text-sm text-text-secondary leading-relaxed line-clamp-2 mb-4">{article.description}</p>
                         </div>
@@ -158,7 +213,7 @@ export default function BlogHubPage() {
           <section className="bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-right">
               <h3 className="text-base md:text-lg font-bold text-text-primary mb-1">هل تحتاج إلى استشارة مالية مخصصة لمنشأتك؟</h3>
-              <p className="text-xs md:text-sm text-text-secondary leading-relaxed">تواصل مباشرة مع الأستاذ خالد حمادة لمناقشة التحديات المالية لمنشأتك وحجز موعد للبدء.</p>
+              <p className="text-xs md:text-sm text-text-secondary leading-relaxed">تواصل مباشرة مع الأستاذ خالد القائد لمناقشة التحديات المالية لمنشأتك وحجز موعد للبدء.</p>
             </div>
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="whitespace-nowrap px-6 py-3 bg-primary text-white text-sm font-semibold rounded-xl hover:bg-primary/90 transition-colors shadow-sm">تواصل مباشرة عبر واتساب</a>
           </section>

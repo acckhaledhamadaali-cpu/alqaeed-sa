@@ -2,6 +2,37 @@
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
+    <!-- Meta Pixel: queue events immediately, load the external library after intent or idle time. -->
+    <script>
+      (function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = true;
+        n.version = '2.0';
+        n.queue = [];
+        n('init', '1358162632825916');
+
+        var requested = false;
+        function loadPixel() {
+          if (requested) return;
+          requested = true;
+          t = b.createElement(e);
+          t.async = true;
+          t.src = v;
+          s = b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t, s);
+        }
+
+        ['pointerdown', 'touchstart', 'keydown', 'scroll'].forEach(function (eventName) {
+          f.addEventListener(eventName, loadPixel, { once: true, passive: true, capture: true });
+        });
+        f.setTimeout(loadPixel, 8000);
+      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    </script>
     <script>
       (function() {
         try {
@@ -41,27 +72,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="IvFOKYmrfdg6a8N2Ke4gZGWWOzYd1w0i3G55eem5BMo" />
     <meta name="msvalidate.01" content="7A404DD9E8922C791564C901C7726512" />
-    <!-- Performance Optimization: Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
-    
     <!-- Preload Hero Image -->
     <link rel="preload" as="image" href="/images/khaled-400.webp" imagesrcset="/images/khaled-400.webp 400w, /images/khaled-800.webp 800w, /images/khaled.webp 1023w" imagesizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1023px" fetchpriority="high" />
 
-    <title>القائد | الإدارة المالية المتكاملة عن بعد للمنشآت</title>
+    <title>محاسب مالي عن بعد في السعودية | القائد للإدارة المالية والإقرارات</title>
     
     <!-- Primary Meta Tags -->
-    <meta name="title" content="القائد | الإدارة المالية المتكاملة عن بعد للمنشآت" />
-    <meta name="description" content="القائد - الإدارة المالية المتكاملة عن بعد للمنشآت. أقدم حلولاً مالية متكاملة لدعم اتخاذ القرار وتحسين الأداء المالي، من خلال مسك الدفاتر، التحليل المالي، التخطيط المالي، وإعداد الميزانيات للمنشآت في المملكة العربية السعودية." />
+    <meta name="title" content="محاسب مالي عن بعد في السعودية | القائد للإدارة المالية والإقرارات" />
+    <meta name="description" content="أعمال المحاسب المالي عن بُعد للمنشآت في السعودية: تنظيم الحسابات والدورة المستندية، إعداد القوائم المالية وتجهيز رفعها عبر منصة قوائم وفق المتطلبات والصلاحيات، تهيئة وإدارة وتخصيص نظام أودو Odoo ERP بالكامل حسب نشاط المنشأة، وتحضير الإقرارات الضريبية والزكوية والتحليل المالي." />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="language" content="Arabic" />
 
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://alqaeed-sa.pages.dev/" />
-    <meta property="og:title" content="القائد | الإدارة المالية المتكاملة عن بعد للمنشآت" />
-    <meta property="og:description" content="القائد - الإدارة المالية المتكاملة عن بعد للمنشآت. حلول مالية متكاملة لدعم اتخاذ القرار وتحسين الأداء المالي للمنشآت في السعودية." />
+    <meta property="og:title" content="محاسب مالي عن بعد في السعودية | القائد للإدارة المالية والإقرارات" />
+    <meta property="og:description" content="أعمال المحاسب المالي عن بُعد: تنظيم الحسابات، تجهيز القوائم المالية، تهيئة وتخصيص أودو Odoo ERP حسب نشاط المنشأة، والإقرارات الضريبية والزكوية والتحليل المالي للمنشآت في السعودية." />
     <meta property="og:image" content="https://alqaeed-sa.pages.dev/images/khaled.webp" />
     <meta property="og:image:alt" content="القائد - الإدارة المالية المتكاملة عن بعد للمنشآت" />
     <meta property="og:image:width" content="1023" />
@@ -73,21 +99,22 @@
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://alqaeed-sa.pages.dev/" />
-    <meta name="twitter:title" content="القائد | الإدارة المالية المتكاملة عن بعد للمنشآت" />
-    <meta name="twitter:description" content="القائد - الإدارة المالية المتكاملة عن بعد للمنشآت. حلول مالية متكاملة لدعم اتخاذ القرار وتحسين الأداء المالي للمنشآت في السعودية." />
+    <meta name="twitter:title" content="محاسب مالي عن بعد في السعودية | القائد للإدارة المالية والإقرارات" />
+    <meta name="twitter:description" content="أعمال المحاسب المالي عن بُعد: تنظيم الحسابات، تجهيز القوائم المالية، تهيئة أودو Odoo ERP، والإقرارات الضريبية والزكوية والتحليل المالي للمنشآت في السعودية." />
     <meta name="twitter:image" content="https://alqaeed-sa.pages.dev/images/khaled.webp" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://alqaeed-sa.pages.dev/" />
 
     <!-- Favicons & Devices Theme Configuration -->
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=4" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=4" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192x192.png?v=4" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/icons/icon-512x512.png?v=4" />
-    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png?v=4" />
-    <link rel="manifest" href="/manifest.webmanifest?v=4" />
+    <link rel="icon" href="/favicon.ico?v=6" sizes="any" />
+    <link rel="shortcut icon" href="/favicon.ico?v=6" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=6" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=6" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192x192.png?v=6" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/icons/icon-512x512.png?v=6" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png?v=6" />
+    <link rel="manifest" href="/manifest.webmanifest?v=6" />
     <meta name="theme-color" content="#ffffff" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -102,12 +129,12 @@
       "@type": "Person",
       "@id": "https://alqaeed-sa.pages.dev/#person",
       "name": "خالد القائد",
-      "jobTitle": "مؤسس القائد ومتخصص في الإدارة المالية المتكاملة عن بعد للمنشآت",
+      "jobTitle": "محاسب مالي ومؤسس القائد",
       "url": "https://alqaeed-sa.pages.dev/",
       "image": {
         "@id": "https://alqaeed-sa.pages.dev/#logo"
       },
-      "description": "خالد القائد، مؤسس القائد. متخصص في الإدارة المالية المتكاملة، التقارير المالية، التحليل المالي، والزكاة والضرائب لتقديم رؤى دقيقة تدعم اتخاذ القرار وتحسن الأداء المالي للمنشآت.",
+      "description": "خالد القائد، محاسب مالي ومؤسس القائد. متخصص في الإدارة المالية المتكاملة والتقارير والتحليل المالي والزكاة والضرائب للمنشآت.",
       "email": "alqaeed.sa@gmail.com",
       "telephone": "+966511294383",
       "hasCredential": [
@@ -181,7 +208,6 @@
       },
       "description": "القائد - الإدارة المالية المتكاملة عن بعد للمنشآت. أقدم حلولاً مالية شاملة للمنشآت الصغيرة والمتوسطة لضمان الامتثال المالي وتحسين الأداء.",
       "telephone": "+966511294383",
-      "priceRange": "$",
       "provider": {
         "@id": "https://alqaeed-sa.pages.dev/#person"
       },
@@ -268,7 +294,6 @@
         ],
         "areaServed": "SA"
       },
-      "legalName": "مؤسسة خالد القائد للخدمات التجارية",
       "image": {
         "@id": "https://alqaeed-sa.pages.dev/#logo"
       },
@@ -339,9 +364,16 @@
     </script>
   </head>
   <body>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=1358162632825916&ev=PageView&noscript=1"
+        alt=""
+      />
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
-

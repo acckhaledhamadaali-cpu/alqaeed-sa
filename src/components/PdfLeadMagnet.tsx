@@ -72,7 +72,7 @@ export default function PdfLeadMagnet({ title, subtitle, reportName, whatsappUrl
 
       <div className="mt-4 flex items-center justify-center gap-2 text-xs text-text-muted">
         <Lock className="w-3.5 h-3.5" />
-        <span>جميع النماذج تخضع لميثاق السرية التامة (NDA). الأرقام المعروضة للاسترشاد فقط.</span>
+        <span>النماذج المعروضة توضيحية وبأرقام افتراضية، ولا تمثل بيانات عميل أو تقريرًا صادرًا عن منشأة فعلية.</span>
       </div>
     </div>
   );

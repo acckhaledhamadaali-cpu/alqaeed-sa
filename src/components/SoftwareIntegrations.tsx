@@ -1,4 +1,5 @@
 import React from 'react';
+import Container from '../../components/Container';
 import AccountingLogoMarquee from './AccountingLogoMarquee';
 
 export default function SoftwareIntegrations() {
@@ -13,7 +14,9 @@ export default function SoftwareIntegrations() {
         </p>
       </div>
 
-      <AccountingLogoMarquee />
+      <Container id="software-integrations-marquee-container">
+        <AccountingLogoMarquee />
+      </Container>
     </div>
   );
 }

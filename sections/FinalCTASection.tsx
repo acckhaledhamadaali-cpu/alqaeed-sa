@@ -5,7 +5,7 @@ import SectionTitle from '../components/SectionTitle';
 import { MessageCircle } from 'lucide-react';
 
 const WHATSAPP_NUMBER = "966511294383";
-const WHATSAPP_MESSAGE = "السلام عليكم، أود مناقشة تنظيم حسابات منشأتي وبناء نظام مالي يدعم اتخاذ القرار.";
+const WHATSAPP_MESSAGE = "السلام عليكم، أود الاستفسار عن خدمة محاسبية أو مالية تناسب احتياج منشأتي. ما المعلومات التي تحتاجونها لبدء النقاش؟";
 
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
@@ -27,8 +27,11 @@ export default function FinalCTASection(props: HTMLAttributes<HTMLElement>) {
           
           {/* Title */}
           <SectionTitle id="final-cta-title" level={2} className="font-bold text-center max-w-xl text-sm sm:text-base md:text-lg font-arabic leading-relaxed">
-            إذا كنت تبحث عن تنظيم حسابات منشأتك وبناء نظام مالي يساعدك على اتخاذ قرارات أفضل، تواصل معي لمناقشة احتياج منشأتك
+            احصل على إدارة مالية متقدمة بتكلفة مرنة تناسب حجم أعمالك
           </SectionTitle>
+          <p className="text-xs sm:text-sm md:text-base text-text-primary font-medium leading-relaxed font-arabic">
+            لا داعي لتحمل أعباء التوظيف الثابت والكامل وتكاليفه الباهظة. نوفر لمنشأتك إشرافاً مالياً واستراتيجياً منظماً عن بُعد. الأتعاب تُحدد بدقة وشفافية بعد معرفة حجم العمليات، وعدد الفروع، والخدمات المطلوبة لنشاطك.
+          </p>
 
           {/* Button - WhatsApp style */}
           <div id="final-cta-action" className="pt-1.5">
@@ -41,7 +44,7 @@ export default function FinalCTASection(props: HTMLAttributes<HTMLElement>) {
               id="final-cta-whatsapp-btn"
             >
               <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
-              <span>تواصل معي عبر واتساب</span>
+              <span>💬 تواصل معي مباشرة عبر الواتساب على الرقم السعودي: 966511294383</span>
             </a>
           </div>
 

@@ -4,7 +4,7 @@ import SectionWrapper from '../../components/SectionWrapper';
 import Container from '../../components/Container';
 import { TYPOGRAPHY } from '../lib/tokens';
 import { BLOG_ARTICLES, BLOG_CATEGORIES } from '../data/blogArticles';
-import { getBlogImage, getBlogImageSrcSet } from '../data/blogImages';
+import { getBlogImage, getBlogImageAbsolute, getBlogImageSrcSet } from '../data/blogImages';
 import { BlogCategoryType } from '../types/blog';
 
 const WHATSAPP_NUMBER = "966511294383";
@@ -175,7 +175,7 @@ function ArticleNotFound() {
 
     const canonicalTag = document.querySelector('link[rel="canonical"]');
     if (canonicalTag) {
-      canonicalTag.setAttribute('href', 'https://alqaeed-sa.pages.dev/blog');
+      canonicalTag.setAttribute('href', 'https://alqaeed-sa.pages.dev/blog/');
     }
 
     let robotsTag = document.querySelector('meta[name="robots"]');
@@ -234,21 +234,22 @@ export default function ArticlePage({ slug }: { slug: string }) {
 
   if (!article) return <ArticleNotFound />;
 
-  const metaTitle = `${article.title} | القائد للإدارة المالية`;
+  const metaTitle = article.seoTitle || `${article.title} | القائد للإدارة المالية`;
   const metaDesc = article.description;
-  const url = `https://alqaeed-sa.pages.dev/blog/${article.slug}`;
+  const url = `https://alqaeed-sa.pages.dev/blog/${article.slug}/`;
   const articleImage = getBlogImage(article.slug);
   const articleImageSrcSet = getBlogImageSrcSet(article.slug);
+  const articleImageAbsolute = getBlogImageAbsolute(article.slug);
 
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Article",
-        "@id": `${url}/#article`,
+        "@id": `${url}#article`,
         "headline": article.title,
         "description": article.description,
-        "image": articleImage,
+        ...(articleImageAbsolute ? { "image": articleImageAbsolute } : {}),
         "inLanguage": "ar-SA",
         "author": { "@type": "Person", "@id": "https://alqaeed-sa.pages.dev/#person", "name": "خالد القائد" },
         "publisher": { "@id": "https://alqaeed-sa.pages.dev/#organization" },
@@ -258,10 +259,10 @@ export default function ArticlePage({ slug }: { slug: string }) {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": `${url}/#breadcrumb`,
+        "@id": `${url}#breadcrumb`,
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://alqaeed-sa.pages.dev/" },
-          { "@type": "ListItem", "position": 2, "name": "المكتبة المالية", "item": "https://alqaeed-sa.pages.dev/blog" },
+          { "@type": "ListItem", "position": 2, "name": "المكتبة المالية", "item": "https://alqaeed-sa.pages.dev/blog/" },
           { "@type": "ListItem", "position": 3, "name": article.title, "item": url }
         ]
       }
@@ -300,22 +301,24 @@ export default function ArticlePage({ slug }: { slug: string }) {
             </div>
 
             <h1 className={`${TYPOGRAPHY.heading.h1} font-bold text-text-primary mb-4 leading-tight`}>{article.title}</h1>
-            <p className="text-sm md:text-base text-text-secondary leading-relaxed font-normal mb-6">{article.description}</p>
+            <p className={`text-sm md:text-base text-text-secondary leading-relaxed font-normal ${articleImage ? 'mb-6' : 'mb-0'}`}>{article.description}</p>
 
-            <div className="rounded-2xl overflow-hidden border border-border-subtle bg-surface-subtle shadow-sm aspect-video">
-              <img
-                src={articleImage}
-                srcSet={articleImageSrcSet || undefined}
-                sizes="(max-width: 768px) calc(100vw - 32px), 768px"
-                alt={article.title}
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-                width={1280}
-                height={720}
-                className="w-full h-full object-cover"
-              />
-            </div>
+            {articleImage && (
+              <div className="rounded-2xl overflow-hidden border border-border-subtle bg-surface-subtle shadow-sm aspect-video">
+                <img
+                  src={articleImage}
+                  srcSet={articleImageSrcSet || undefined}
+                  sizes="(max-width: 768px) calc(100vw - 32px), 768px"
+                  alt={article.title}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  width={1280}
+                  height={720}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            )}
           </header>
 
           <div className="prose prose-lg max-w-none text-text-primary text-sm md:text-base leading-relaxed mb-12">

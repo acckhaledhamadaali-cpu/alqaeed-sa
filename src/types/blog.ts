@@ -14,6 +14,7 @@ export interface RelatedServiceLink {
 export interface BlogArticle {
   slug: string;
   title: string;
+  seoTitle?: string;
   description: string;
   category: BlogCategoryType;
   publishedAt: string;

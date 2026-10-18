@@ -4,11 +4,12 @@ import Container from '../../components/Container';
 import { TYPOGRAPHY } from '../lib/tokens';
 
 export default function PrivacyPolicyPage() {
+  const url = "https://alqaeed-sa.pages.dev/privacy-policy/";
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://alqaeed-sa.pages.dev/privacy-policy/#webpage",
-    "url": "https://alqaeed-sa.pages.dev/privacy-policy",
+    "@id": `${url}#webpage`,
+    "url": url,
     "name": "سياسة الخصوصية | القائد",
     "description": "توضح سياسة الخصوصية كيفية تعاملنا مع بياناتك في القائد لخدمات الإدارة المالية عن بعد. نحن نلتزم بحماية سرية معلوماتك.",
     "primaryImageOfPage": {
@@ -23,7 +24,7 @@ export default function PrivacyPolicyPage() {
   useSEO({
     title: "سياسة الخصوصية | القائد",
     description: "توضح سياسة الخصوصية كيفية تعاملنا مع بياناتك في القائد لخدمات الإدارة المالية عن بعد. نحن نلتزم بحماية سرية معلوماتك.",
-    canonical: "https://alqaeed-sa.pages.dev/privacy-policy",
+    canonical: url,
     schema
   });
 
@@ -51,7 +52,7 @@ export default function PrivacyPolicyPage() {
             <div>
               <h2 className="text-base md:text-lg font-bold text-text-primary mb-2">جمع المعلومات</h2>
               <p>
-                قد نقوم بجمع بيانات التواصل التي يقدمها المستخدم طوعاً عند التواصل معنا، كما قد يتم جمع بيانات استخدام مجهولة الهوية عبر أدوات التحليل مثل Google Analytics و Microsoft Clarity لتحسين أداء الموقع وتجربة المستخدم.
+                قد نقوم بجمع بيانات التواصل التي يقدمها المستخدم طوعاً عند التواصل معنا، كما قد يتم جمع بيانات استخدام وتفاعل مع الموقع عبر أدوات القياس والتحليل مثل Google Analytics وMicrosoft Clarity وMeta Pixel لتحسين أداء الموقع وقياس فعالية الحملات والمحتوى.
               </p>
             </div>
 
@@ -77,14 +78,14 @@ export default function PrivacyPolicyPage() {
             <div>
               <h2 className="text-base md:text-lg font-bold text-text-primary mb-2">السرية وحماية البيانات</h2>
               <p>
-                نظراً لطبيعة عملنا في الاستشارات وإدارة الحسابات، فإن السرية هي الركيزة الأساسية لخدماتنا. نحن لا نشارك، أو نبيع، أو نؤجر معلوماتك أو بيانات منشأتك لأي أطراف ثالثة. يتم التعامل مع كافة البيانات التي تقدمها إلينا عبر وسائل التواصل بدرجة عالية من السرية والاحترافية.
+                نظراً لطبيعة عملنا في الاستشارات وإدارة الحسابات، فإن السرية هي الركيزة الأساسية لخدماتنا. لا نبيع أو نؤجر معلوماتك أو بيانات منشأتك. نتفق مع العميل على وسيلة مناسبة لتبادل الملفات، ونحذف ملفات العمل بعد انتهاء الخدمة. وقد تتم معالجة بعض بيانات الاستخدام والتفاعل مع الموقع من خلال مزودي أدوات القياس والتحليل المذكورين في هذه السياسة، وفقاً لوظائف كل خدمة وسياساتها.
               </p>
             </div>
 
             <div>
               <h2 className="text-base md:text-lg font-bold text-text-primary mb-2">التحليلات (Analytics)</h2>
               <p>
-                قد يستخدم الموقع أدوات تحليل قياسية (مثل Google Analytics و Microsoft Clarity) لتحسين تجربة المستخدم. هذه الأدوات تجمع بيانات عامة ومجهولة الهوية عن كيفية تفاعل الزوار مع الموقع، ولا يمكن من خلالها تحديد هويتك الشخصية.
+                قد يستخدم الموقع أدوات قياس وتحليل مثل Google Analytics وMicrosoft Clarity وMeta Pixel لتحسين تجربة المستخدم وقياس التفاعل وفعالية الحملات. قد تُرسل بعض بيانات الاستخدام والأحداث إلى مزودي هذه الخدمات وفقاً لوظائف كل أداة وسياساتها.
               </p>
             </div>
 
