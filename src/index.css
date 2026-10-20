@@ -34,7 +34,7 @@
 }
 
 @theme {
-  --animate-marquee: marquee 16s linear infinite;
+  --animate-marquee: marquee 22s linear infinite;
   @keyframes marquee {
     from {
       transform: translateX(-50%);
@@ -100,7 +100,7 @@ body {
 #experience-bar-items {
   margin-block: 0 !important;
   padding-block: 0 !important;
-  animation: marquee 16s linear infinite !important;
+  animation: marquee 22s linear infinite !important;
   animation-play-state: running !important;
   animation-delay: 0s !important;
   transform: translateX(-50%);
@@ -117,7 +117,7 @@ body {
 }
 
 #challenges-section-wrapper {
-  padding-top: 0 !important;
+  padding-top: 4px !important;
   margin-top: 0 !important;
 }
 
@@ -137,7 +137,7 @@ body {
   }
 
   #challenges-section-wrapper {
-    padding-top: 0 !important;
+    padding-top: 4px !important;
     padding-bottom: 12px !important;
   }
 }
@@ -152,7 +152,7 @@ body {
   }
 
   #challenges-section-wrapper {
-    padding-top: 0 !important;
+    padding-top: 4px !important;
   }
 }
 
