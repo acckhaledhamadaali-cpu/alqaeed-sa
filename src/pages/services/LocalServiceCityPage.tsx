@@ -1,6 +1,6 @@
 import { MessageCircle, ArrowLeft, CheckCircle2, FileText, Calculator, Building2 } from 'lucide-react';
 import { useSEO } from '../../hooks/useSEO';
-import { getLocalSeoPage, LOCAL_SEO_SERVICES, SAUDI_CITIES, SITE_URL } from '../../data/localSeo';
+import { getLocalSeoPage, LOCAL_SEO_SERVICES, SAUDI_CITIES } from '../../data/localSeo';
 
 const WHATSAPP_NUMBER = '966511294383';
 
