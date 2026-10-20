@@ -12,7 +12,38 @@ const CHALLENGES = [
   { problem: "مشاكل وغرامات إقرارات هيئة الزكاة والضريبة المعلقة", slug: "zatca-tax-returns" }
 ];
 
+/**
+ * Deterministic daily shuffle: every visitor sees the same order for a given UTC date.
+ * The seeded pseudo-random generator avoids hydration differences and changes the order daily.
+ */
+function getDailyChallenges() {
+  const dateKey = new Date().toISOString().slice(0, 10);
+  let seed = 2166136261;
+
+  for (let i = 0; i < dateKey.length; i++) {
+    seed ^= dateKey.charCodeAt(i);
+    seed = Math.imul(seed, 16777619);
+  }
+
+  const random = () => {
+    seed += 0x6D2B79F5;
+    let value = seed;
+    value = Math.imul(value ^ (value >>> 15), value | 1);
+    value ^= value + Math.imul(value ^ (value >>> 7), value | 61);
+    return ((value ^ (value >>> 14)) >>> 0) / 4294967296;
+  };
+
+  const shuffled = [...CHALLENGES];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
 export default function ChallengesSection(props: HTMLAttributes<HTMLElement>) {
+  const dailyChallenges = getDailyChallenges();
+
   return (
     <SectionWrapper id="challenges-section-wrapper" variant="white" spacing="dense" {...props}>
       <Container id="challenges-container">
@@ -23,7 +54,7 @@ export default function ChallengesSection(props: HTMLAttributes<HTMLElement>) {
             </h2>
           </div>
           <div id="challenges-list" className="flex flex-col md:flex-row md:flex-wrap md:gap-x-8 gap-y-3.5">
-            {CHALLENGES.map((item, index) => (
+            {dailyChallenges.map((item, index) => (
               <div
                 key={item.slug}
                 id={`challenge-item-${index}`}
