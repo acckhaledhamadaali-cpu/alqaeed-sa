@@ -34,7 +34,7 @@
 }
 
 @theme {
-  --animate-marquee: marquee 35s linear infinite;
+  --animate-marquee: marquee 20s linear infinite;
   @keyframes marquee {
     from {
       transform: translateX(-50%);
@@ -78,7 +78,7 @@ body {
   box-shadow: none !important;
   outline: 0 !important;
   margin-block: 0 !important;
-  padding-block: 4px !important;
+  padding-block: 0 !important;
   min-height: 0 !important;
 }
 
@@ -98,7 +98,7 @@ body {
 #experience-bar-items {
   margin-block: 0 !important;
   padding-block: 0 !important;
-  animation-duration: 35s !important;
+  animation-duration: 20s !important;
   animation-play-state: running !important;
 }
 
@@ -108,7 +108,7 @@ body {
 }
 
 #challenges-section-wrapper {
-  padding-top: 8px !important;
+  padding-top: 0 !important;
   margin-top: 0 !important;
 }
 
@@ -124,11 +124,11 @@ body {
   }
 
   #experience-bar-section {
-    padding-block: 2px !important;
+    padding-block: 0 !important;
   }
 
   #challenges-section-wrapper {
-    padding-top: 5px !important;
+    padding-top: 0 !important;
     padding-bottom: 12px !important;
   }
 }
@@ -139,11 +139,11 @@ body {
   }
 
   #experience-bar-section {
-    padding-block: 4px !important;
+    padding-block: 0 !important;
   }
 
   #challenges-section-wrapper {
-    padding-top: 8px !important;
+    padding-top: 0 !important;
   }
 }
 
