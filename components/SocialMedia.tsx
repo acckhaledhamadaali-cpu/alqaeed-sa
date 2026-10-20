@@ -9,12 +9,6 @@ const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent
 export default function SocialMedia() {
   const socials = [
     {
-      name: 'اتصال هاتفي',
-      icon: FaPhone,
-      url: 'tel:+966511294383',
-      colorClass: 'text-primary hover:shadow-[0_2px_8px_rgba(37,99,235,0.25)]',
-    },
-    {
       name: 'Email',
       icon: FaEnvelope,
       url: 'mailto:alqaeed.sa@gmail.com',
@@ -68,6 +62,20 @@ export default function SocialMedia() {
     <div className="w-full flex flex-col items-center pt-2 pb-4">
       <h3 className="text-xs md:text-sm font-bold text-primary mb-3 font-arabic">تواصل معنا وتابعنا على مواقع التواصل</h3>
       <div className="flex flex-row justify-center items-center gap-1.5 md:gap-2.5">
+        <details className="relative">
+          <summary
+            aria-label="اتصال هاتفي"
+            title="اتصال هاتفي"
+            className="list-none cursor-pointer flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-surface-primary border border-border-subtle text-primary hover:shadow-[0_2px_8px_rgba(37,99,235,0.25)] transition-all duration-300 ease-out hover:scale-105"
+          >
+            <FaPhone aria-hidden="true" className="w-4 h-4 md:w-5 md:h-5" />
+          </summary>
+          <div className="absolute bottom-full right-0 z-50 mb-2 min-w-max rounded-xl border border-border-subtle bg-white p-2 shadow-lg">
+            <p className="px-2 py-1 text-xs font-semibold text-primary font-arabic">اختر رقم الاتصال</p>
+            <a href="tel:+966511294383" className="block rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100" dir="ltr">0511294383</a>
+            <a href="tel:+966548482979" className="block rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100" dir="ltr">0548482979</a>
+          </div>
+        </details>
         {socials.map((social) => {
           const Icon = social.icon;
           return (
