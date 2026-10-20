@@ -62,3 +62,81 @@ body {
 #root :where(*) {
   font-weight: 700 !important;
 }
+
+/* Homepage marquee and section spacing fix */
+#hero {
+  padding-bottom: 8px !important;
+  margin-bottom: 0 !important;
+}
+
+#experience-bar-section {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  margin-block: 0 !important;
+  padding-block: 4px !important;
+  min-height: 0 !important;
+}
+
+#experience-bar-section::before,
+#experience-bar-section::after {
+  content: none !important;
+  display: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+#experience-bar-container {
+  padding-block: 0 !important;
+  margin-block: 0 !important;
+}
+
+#experience-bar-items {
+  margin-block: 0 !important;
+  padding-block: 0 !important;
+}
+
+#challenges-section-wrapper {
+  padding-top: 8px !important;
+  margin-top: 0 !important;
+}
+
+#challenges-container,
+#challenges-content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+@media (max-width: 767px) {
+  #hero {
+    padding-bottom: 5px !important;
+  }
+
+  #experience-bar-section {
+    padding-block: 2px !important;
+  }
+
+  #challenges-section-wrapper {
+    padding-top: 5px !important;
+    padding-bottom: 12px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  #hero {
+    padding-bottom: 8px !important;
+  }
+
+  #experience-bar-section {
+    padding-block: 4px !important;
+  }
+
+  #challenges-section-wrapper {
+    padding-top: 8px !important;
+  }
+}
+
