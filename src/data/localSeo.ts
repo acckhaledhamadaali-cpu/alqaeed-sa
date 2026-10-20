@@ -154,8 +154,7 @@ export function getLocalSeoPage(path: string): LocalSeoPage | undefined {
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'الرئيسية', item: `${SITE_URL}/` },
           { '@type': 'ListItem', position: 2, name: 'الخدمات', item: `${SITE_URL}/services/bookkeeping/` },
-          { '@type': 'ListItem', position: 3, name: city.name, item: `${SITE_URL}/services/${city.slug}/` },
-          { '@type': 'ListItem', position: 4, name: service.shortName, item: canonical },
+          { '@type': 'ListItem', position: 3, name: service.shortName + ' في ' + city.name, item: canonical },
         ],
       },
     ],
