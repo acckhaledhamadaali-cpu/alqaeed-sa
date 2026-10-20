@@ -104,7 +104,7 @@ export default function BlogHubPage() {
   return (
     <SectionWrapper id="blog-hub-section" variant="white" spacing="default">
       <Container>
-        <div className="max-w-4xl mx-auto py-4 md:py-8 text-right font-arabic">
+        <div className="max-w-4xl mx-auto py-3 md:py-5 text-right font-arabic">
           <div id="zatca-news-ticker" className="text-xs md:text-sm text-text-secondary leading-relaxed mb-4" role="status" aria-live="polite">
             {weeklyTip}
           </div>
@@ -114,7 +114,7 @@ export default function BlogHubPage() {
             <span className="text-text-secondary">المكتبة المالية</span>
           </nav>
 
-          <header className="mb-10">
+          <header className="mb-6">
             <h1 className={`${TYPOGRAPHY.heading.h1} font-bold text-text-primary mb-4 leading-tight`}>المكتبة المالية</h1>
             <div className="w-16 h-1 bg-primary mb-6 rounded-full"></div>
             <p className="text-sm md:text-base text-text-secondary leading-relaxed max-w-3xl">
@@ -122,11 +122,11 @@ export default function BlogHubPage() {
             </p>
           </header>
 
-          <section aria-labelledby="categories-heading" className="mb-12">
+          <section aria-labelledby="categories-heading" className="mb-8">
             <h2 id="categories-heading" className="text-lg md:text-xl font-bold text-text-primary mb-4">محاور المعرفة المالية</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {BLOG_CATEGORIES.map((category) => (
-                <div key={category.id} className="bg-surface-subtle/50 border border-border-subtle rounded-xl p-5 hover:border-primary/40 transition-colors">
+                <div key={category.id} className="bg-surface-subtle/50 border border-border-subtle rounded-xl p-4 hover:border-primary/40 transition-colors">
                   <h3 className="font-bold text-text-primary text-base mb-2">{category.name}</h3>
                   <p className="text-xs md:text-sm text-text-secondary leading-relaxed">{category.description}</p>
                 </div>
@@ -134,8 +134,8 @@ export default function BlogHubPage() {
             </div>
           </section>
 
-          <section aria-labelledby="articles-heading" className="mb-12">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 border-b border-border-subtle pb-4">
+          <section aria-labelledby="articles-heading" className="mb-8">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4 border-b border-border-subtle pb-4">
               <h2 id="articles-heading" className="text-lg md:text-xl font-bold text-text-primary">المقالات والأدلة التخصصية</h2>
               <div className="flex flex-wrap gap-2 text-xs">
                 <button type="button" onClick={() => setSelectedCategory('all')} className={`px-3 py-1.5 rounded-lg transition-colors ${selectedCategory === 'all' ? 'bg-primary text-white font-medium' : 'bg-surface-subtle text-text-secondary hover:text-text-primary'}`}>الكل</button>
@@ -148,7 +148,7 @@ export default function BlogHubPage() {
             </div>
 
             {filteredArticles.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {filteredArticles.map((article, index) => {
                   const image = getBlogImage(article.slug);
                   const imageSrcSet = getBlogImageSrcSet(article.slug);
@@ -171,7 +171,7 @@ export default function BlogHubPage() {
                           </a>
                         )}
 
-                        <div className="p-6 pb-2">
+                        <div className="p-4 pb-2">
                           <div className="flex items-center justify-between text-xs text-text-muted mb-3">
                             <span className="bg-primary/10 text-primary font-medium px-2.5 py-1 rounded-md">{getCategoryName(article.category)}</span>
                             <span>{article.readingTime}</span>
@@ -193,7 +193,7 @@ export default function BlogHubPage() {
                 })}
               </div>
             ) : (
-              <div className="border border-border-subtle bg-surface-subtle/30 rounded-2xl p-8 text-center">
+              <div className="border border-border-subtle bg-surface-subtle/30 rounded-2xl p-6 text-center">
                 <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4 text-xl font-bold">📖</div>
                 <h3 className="text-base md:text-lg font-bold text-text-primary mb-2">جاري إعداد ونشر الأدلة التخصصية</h3>
                 <p className="text-xs md:text-sm text-text-secondary leading-relaxed max-w-xl mx-auto mb-6">يحرص فريق القائد للإدارة المالية على إعداد محتوى مالي ومحاسبي أصيل ومدقق يلبي احتياجات المنشآت السعودية بدقة تامة. يتم تدقيق الأدلة خطوة بخطوة وستُنشر تباعاً في هذا القسم.</p>
@@ -210,7 +210,7 @@ export default function BlogHubPage() {
             )}
           </section>
 
-          <section className="bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <section className="bg-primary/5 border border-primary/20 rounded-2xl p-4 md:p-6 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-right">
               <h3 className="text-base md:text-lg font-bold text-text-primary mb-1">هل تحتاج إلى استشارة مالية مخصصة لمنشأتك؟</h3>
               <p className="text-xs md:text-sm text-text-secondary leading-relaxed">تواصل مباشرة مع الأستاذ خالد القائد لمناقشة التحديات المالية لمنشأتك وحجز موعد للبدء.</p>
