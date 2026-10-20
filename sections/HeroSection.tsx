@@ -2,7 +2,6 @@ import { HTMLAttributes } from 'react';
 import SectionWrapper from '../components/SectionWrapper';
 import Container from '../components/Container';
 import { TYPOGRAPHY } from '../src/lib/tokens';
-import { MessageCircle } from 'lucide-react';
 
 const WHATSAPP_NUMBER = "966511294383";
 const HERO_WHATSAPP_MESSAGE = "السلام عليكم، أرغب في طلب فحص مجاني لحسابات منشأتي عن آخر شهرين. أرجو توضيح المستندات المطلوبة وطريقة البدء.";
@@ -75,25 +74,26 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
 
               <div
                 id="hero-cta-actions"
-                className="flex flex-wrap items-center justify-center md:justify-start gap-3 pt-2 w-full"
+                className="flex flex-nowrap items-stretch justify-center md:justify-start gap-2 pt-2 w-full md:w-auto"
               >
                 <a
                   href={HERO_WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   id="hero-primary-cta"
-                  className="inline-flex w-full sm:w-auto items-center justify-center gap-x-2 px-4 sm:px-5 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs sm:text-sm text-center font-semibold shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
+                  className="inline-flex w-auto min-w-0 flex-none items-center justify-center px-2.5 sm:px-4 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-[10px] sm:text-xs md:text-sm text-center font-semibold leading-tight shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2 whitespace-nowrap"
                 >
-                  <MessageCircle className="w-4 h-4" aria-hidden="true" />
-                  <span>اطلب فحصاً مجانياً لحساباتك (آخر شهرين)</span>
+                  <span className="sm:hidden">فحص مجاني للحسابات</span>
+                  <span className="hidden sm:inline">اطلب فحصاً مجانياً لحساباتك (آخر شهرين)</span>
                 </a>
 
                 <a
                   href="#services"
                   id="hero-secondary-cta"
-                  className="inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-surface-subtle border border-border-subtle hover:border-primary text-text-primary hover:text-primary text-xs sm:text-sm font-medium transition-all duration-200"
+                  className="inline-flex w-auto min-w-0 flex-none items-center justify-center px-2.5 sm:px-4 py-2.5 rounded-xl bg-surface-subtle border border-border-subtle hover:border-primary text-text-primary hover:text-primary text-[10px] sm:text-xs md:text-sm text-center font-medium leading-tight transition-all duration-200 whitespace-nowrap"
                 >
-                  استكشف الخدمات والامتثال المالي
+                  <span className="sm:hidden">استكشف الخدمات</span>
+                  <span className="hidden sm:inline">استكشف الخدمات والامتثال المالي</span>
                 </a>
               </div>
             </header>
