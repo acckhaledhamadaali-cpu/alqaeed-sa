@@ -2,7 +2,7 @@ import { HTMLAttributes } from 'react';
 import SectionWrapper from '../components/SectionWrapper';
 import Container from '../components/Container';
 import { TYPOGRAPHY } from '../src/lib/tokens';
-import { Phone } from 'lucide-react';
+import { FaPhone } from 'react-icons/fa';
 
 const WHATSAPP_NUMBER = "966511294383";
 const HERO_WHATSAPP_MESSAGE = "السلام عليكم، أرغب في طلب فحص مجاني لحسابات منشأتي عن آخر شهرين. أرجو توضيح المستندات المطلوبة وطريقة البدء.";
@@ -94,7 +94,7 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
                   title="اتصل الآن"
                   className="inline-flex flex-none self-stretch items-center justify-center w-10 sm:w-11 px-0 rounded-xl bg-primary hover:opacity-90 text-white shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                 >
-                  <Phone className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
+                  <FaPhone className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
                 </a>
 
                 <a
