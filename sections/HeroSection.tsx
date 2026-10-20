@@ -66,31 +66,6 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
                 </p>
               </div>
 
-              <ul
-                id="hero-benefits"
-                className="w-full max-w-xl space-y-3 text-sm md:text-base leading-7 text-text-secondary text-right"
-              >
-                <li>
-                  <strong className="text-text-primary">تهيئة وإدارة أنظمة الـ ERP:</strong>{" "}
-                  تخصيص متكامل لنظام أودو (Odoo) ليناسب نشاطك.
-                </li>
-                <li>
-                  <strong className="text-text-primary">الامتثال الحكومي التام:</strong>{" "}
-                  إعداد القوائم المالية، والتقارير الزكوية والضريبية بدقة.
-                </li>
-                <li>
-                  <strong className="text-text-primary">إدارة السيولة والأداء:</strong>{" "}
-                  تسويات بنكية، تقارير أداء، وتأمين تدفقاتك النقدية.
-                </li>
-              </ul>
-
-              <p
-                id="hero-trust-line"
-                className="w-full text-xs md:text-sm text-text-secondary leading-relaxed mt-1 text-right"
-              >
-                🔒 <strong>بياناتك في أمان:</strong> نلتزم بالسرية التامة مع إمكانية توقيع اتفاقية عدم إفصاح (NDA) قبل مشاركة أي مستندات.
-              </p>
-
               <div
                 id="hero-cta-actions"
                 className="flex flex-wrap items-center justify-center md:justify-start gap-3 pt-2 w-full"
