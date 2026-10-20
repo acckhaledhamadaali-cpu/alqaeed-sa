@@ -276,7 +276,7 @@ export default function ArticlePage({ slug }: { slug: string }) {
     return found ? found.name : 'مالية ومحاسبة';
   };
 
-  const whatsappMessage = `السلام عليكم\nأطلعت على مقال: "${article.title}" في المكتبة المالية للقائد.\nأود استشارة مخصصة لمنشأتي حول هذا الموضوع.`;
+  const isChallengeArticle = ["real-profit", "product-pricing", "business-expansion", "remote-accountant", "qawaem-financial-statements", "zatca-tax-returns"].includes(article.slug);\n  const whatsappMessage = isChallengeArticle\n    ? `السلام عليكم خالد القائد، قرأت مقال: "${article.title}". أرغب في طلب فحص مجاني لحسابات منشأتي لآخر شهرين بخصوص هذه المشكلة.`\n    : `السلام عليكم\\nأطلعت على مقال: "${article.title}" في المكتبة المالية للقائد.\\nأود استشارة مخصصة لمنشأتي حول هذا الموضوع.`;
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
@@ -355,7 +355,7 @@ export default function ArticlePage({ slug }: { slug: string }) {
           <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 text-center">
             <h3 className="text-base font-bold text-text-primary mb-2">هل تواجه تحدياً في تطبيق هذه المعايير في منشأتك؟</h3>
             <p className="text-xs md:text-sm text-text-secondary leading-relaxed mb-4 max-w-lg mx-auto">فريق القائد للإدارة المالية جاهز لتقديم الدعم التخصصي والتحليل المالي المتكامل لنشاطك.</p>
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-2.5 bg-primary text-white text-xs md:text-sm font-semibold rounded-xl hover:bg-primary/90 transition-colors shadow-sm">استشارة مباشرة عبر واتساب</a>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-2.5 bg-primary text-white text-xs md:text-sm font-semibold rounded-xl hover:bg-primary/90 transition-colors shadow-sm">{isChallengeArticle ? "اطلب فحصاً مجانياً لآخر شهرين عبر واتساب" : "استشارة مباشرة عبر واتساب"}</a>
           </div>
         </article>
       </Container>
