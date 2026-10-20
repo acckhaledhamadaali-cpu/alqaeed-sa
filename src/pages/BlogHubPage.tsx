@@ -122,17 +122,6 @@ export default function BlogHubPage() {
             </p>
           </header>
 
-          <section aria-labelledby="categories-heading" className="mb-8">
-            <h2 id="categories-heading" className="text-lg md:text-xl font-bold text-text-primary mb-4">محاور المعرفة المالية</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {BLOG_CATEGORIES.map((category) => (
-                <div key={category.id} className="bg-surface-subtle/50 border border-border-subtle rounded-xl p-4 hover:border-primary/40 transition-colors">
-                  <h3 className="font-bold text-text-primary text-base mb-2">{category.name}</h3>
-                  <p className="text-xs md:text-sm text-text-secondary leading-relaxed">{category.description}</p>
-                </div>
-              ))}
-            </div>
-          </section>
 
           <section aria-labelledby="articles-heading" className="mb-8">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4 border-b border-border-subtle pb-4">
