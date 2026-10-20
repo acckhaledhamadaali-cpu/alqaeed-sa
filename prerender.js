@@ -26,7 +26,7 @@ async function prerender() {
     process.exit(1);
   }
 
-  const { render, ROUTES_METADATA, BLOG_ARTICLES } = await import(`file://${ssrBundlePath}`);
+  const { render, ROUTES_METADATA, BLOG_ARTICLES, getLocalSeoRoutes } = await import(`file://${ssrBundlePath}`);
 
   // Base routes from metadata
   const baseRoutes = Object.keys(ROUTES_METADATA);
@@ -44,7 +44,8 @@ async function prerender() {
     '/sectors/startups-growing',
   ];
 
-  const routes = [...new Set([...baseRoutes, ...articleRoutes, ...sectorRoutes])];
+  const localSeoRoutes = typeof getLocalSeoRoutes === 'function' ? getLocalSeoRoutes() : [];
+  const routes = [...new Set([...baseRoutes, ...articleRoutes, ...sectorRoutes, ...localSeoRoutes])];
   console.log(`Starting SSG Pre-rendering for ${routes.length} routes...`);
 
   for (const route of routes) {
