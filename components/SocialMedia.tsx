@@ -1,4 +1,4 @@
-import { FaTiktok, FaInstagram, FaYoutube, FaFacebook, FaLinkedin, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
+import { FaTiktok, FaInstagram, FaYoutube, FaFacebook, FaLinkedin, FaWhatsapp, FaEnvelope, FaPhone } from 'react-icons/fa';
 import { SiX } from 'react-icons/si';
 
 const WHATSAPP_NUMBER = '966511294383';
@@ -8,6 +8,12 @@ const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent
 
 export default function SocialMedia() {
   const socials = [
+    {
+      name: 'اتصال هاتفي',
+      icon: FaPhone,
+      url: 'tel:+966511294383',
+      colorClass: 'text-primary hover:shadow-[0_2px_8px_rgba(37,99,235,0.25)]',
+    },
     {
       name: 'Email',
       icon: FaEnvelope,
