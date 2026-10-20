@@ -22,8 +22,8 @@ export default function SectionWrapper({
   };
 
   const spacings = {
-    default: 'py-4 md:py-7',
-    dense: 'py-3 md:py-4',
+    default: 'py-3 md:py-5',
+    dense: 'py-2 md:py-3',
     none: 'py-0',
   };
 
