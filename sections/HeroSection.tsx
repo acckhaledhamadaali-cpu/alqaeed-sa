@@ -99,10 +99,10 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
                   <div className="absolute right-0 top-full z-50 mt-2 min-w-52 rounded-xl border border-border-subtle bg-white p-2 text-right shadow-lg">
                     <p className="px-3 py-2 text-xs font-semibold text-text-secondary">اختر رقم الاتصال</p>
                     <a href="tel:+966511294383" className="block rounded-lg px-3 py-2.5 text-sm font-medium text-text-primary hover:bg-surface-subtle focus:outline-none focus:ring-2 focus:ring-primary">
-                      الرقم الأساسي: 0511294383
+                      0511294383
                     </a>
                     <a href="tel:+966548482979" className="block rounded-lg px-3 py-2.5 text-sm font-medium text-text-primary hover:bg-surface-subtle focus:outline-none focus:ring-2 focus:ring-primary">
-                      الرقم البديل: 0548482979
+                      0548482979
                     </a>
                   </div>
                 </details>
