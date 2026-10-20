@@ -34,6 +34,7 @@ import CashFlowPage from './pages/services/CashFlowPage';
 import VirtualCfoPage from './pages/services/VirtualCfoPage';
 
 import ServicePricingNote from './components/ServicePricingNote';
+import LocalServiceCityPage from './pages/services/LocalServiceCityPage';
 
 export default function App({ path: propPath }: { path?: string } = {}) {
   const currentPath = propPath || (typeof window !== 'undefined' ? window.location.pathname : '/');
@@ -77,6 +78,18 @@ export default function App({ path: propPath }: { path?: string } = {}) {
       document.removeEventListener('click', handleTrackedLinkClick);
     };
   }, [path]);
+
+  if (/^\/services\/[^/]+\/(tax-services|financial-statements|accounting-services)$/.test(path)) {
+    return (
+      <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
+        <main id="main-content" className="flex-grow">
+          <LocalServiceCityPage path={path} />
+        </main>
+        <FooterSection />
+        <FloatingWhatsApp />
+      </div>
+    );
+  }
 
   if (path.startsWith('/sectors/')) {
     const slug = path.replace(/^\/sectors\//, '').replace(/\/$/, '');
