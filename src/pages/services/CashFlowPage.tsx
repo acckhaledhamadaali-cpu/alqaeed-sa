@@ -84,7 +84,7 @@ export default function CashFlowPage() {
   return (
     <SectionWrapper id={"service-" + slug + "-section"} variant="white" spacing="default">
       <Container>
-        <div className="max-w-3xl mx-auto py-4 md:py-8 text-right font-arabic">
+        <div className="max-w-3xl mx-auto py-3 md:py-5 text-right font-arabic">
           
           {/* Breadcrumb Navigation */}
           <nav aria-label="مسار التنقل" className="mb-4 text-xs text-text-muted">
@@ -237,7 +237,7 @@ export default function CashFlowPage() {
           />
 
           {/* Service CTA Card */}
-          <div className="my-8 p-6 bg-surface-subtle/60 border border-border-subtle rounded-2xl text-center">
+          <div className="my-5 p-4 bg-surface-subtle/60 border border-border-subtle rounded-2xl text-center">
             <h3 className="text-base md:text-lg font-bold text-text-primary mb-2">
               هل تحتاج إلى ضبط ومتابعة التدفقات النقدية؟
             </h3>
