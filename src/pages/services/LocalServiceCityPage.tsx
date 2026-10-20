@@ -7,6 +7,19 @@ const WHATSAPP_NUMBER = '966511294383';
 export default function LocalServiceCityPage({ path }: { path: string }) {
   const page = getLocalSeoPage(path);
 
+  const fallback = {
+    title: 'الخدمة غير متاحة | القائد للإدارة المالية',
+    description: 'خدمات محاسبية عن بُعد للمنشآت الصغيرة والمتوسطة في السعودية.',
+    canonical: 'https://alqaeed-sa.pages.dev/services/bookkeeping/',
+    schema: { '@context': 'https://schema.org', '@type': 'WebPage', name: 'الخدمات المحاسبية' },
+  };
+  useSEO({
+    title: page?.title ?? fallback.title,
+    description: page?.description ?? fallback.description,
+    canonical: page?.canonical ?? fallback.canonical,
+    schema: page?.schema ?? fallback.schema,
+  });
+
   if (!page) {
     return (
       <main dir="rtl" className="mx-auto max-w-3xl px-4 py-20 text-right font-arabic">
@@ -18,7 +31,6 @@ export default function LocalServiceCityPage({ path }: { path: string }) {
   }
 
   const { city, service, title, description, canonical } = page;
-  useSEO({ title, description, canonical, schema: page.schema });
 
   const message = `السلام عليكم، أحتاج الاستفسار عن ${service.shortName} لمنشأتي في ${city.name}. أرجو توضيح البيانات المطلوبة ونطاق الخدمة.`;
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
