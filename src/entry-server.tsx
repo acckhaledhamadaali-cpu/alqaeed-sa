@@ -2,6 +2,7 @@ import { renderToString } from 'react-dom/server';
 import App from './App';
 import { ROUTES_METADATA, getRouteMetadata } from './lib/routes-metadata';
 import { BLOG_ARTICLES } from './data/blogArticles';
+import { getLocalSeoRoutes } from './data/localSeo';
 
 export function render(path: string) {
   const normalizedPath = (path.endsWith('/') && path.length > 1) ? path.slice(0, -1) : path;
@@ -13,4 +14,4 @@ export function render(path: string) {
   };
 }
 
-export { ROUTES_METADATA, BLOG_ARTICLES, getRouteMetadata };
+export { ROUTES_METADATA, BLOG_ARTICLES, getRouteMetadata, getLocalSeoRoutes };
