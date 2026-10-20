@@ -5,12 +5,12 @@ import { TYPOGRAPHY } from '../src/lib/tokens';
 import { MessageCircle } from 'lucide-react';
 
 const WHATSAPP_NUMBER = "966511294383";
-const HERO_WHATSAPP_MESSAGE = "السلام عليكم، أرغب في الاستفسار عن خدمات القائد المحاسبية والمالية للمنشآت. أرجو إرشادي إلى نطاق الخدمة والمعلومات اللازمة للبدء.";
+const HERO_WHATSAPP_MESSAGE = "السلام عليكم، أرغب في طلب فحص مجاني لحسابات منشأتي عن آخر شهرين. أرجو توضيح المستندات المطلوبة وطريقة البدء.";
 const HERO_WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(HERO_WHATSAPP_MESSAGE)}`;
 
 export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
   return (
-    <SectionWrapper id="hero-section-wrapper" variant="white" spacing="default" {...props}>
+    <SectionWrapper id="hero" variant="white" spacing="default" {...props}>
       <Container id="hero-container">
         {/* Responsive layout: Message first on mobile; profile image remains on the right on desktop. */}
         <div id="hero-grid-layout" className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-8 items-center">
@@ -39,53 +39,79 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
             className="md:col-span-7 flex flex-col items-center md:items-start text-center md:text-right space-y-4 md:space-y-5 order-1 md:order-1"
           >
             
-            <header id="hero-header" className="flex flex-col items-center md:items-start space-y-3.5 md:space-y-4 w-full text-center md:text-right">
-              {/* Brand & Tagline Area */}
-              <div id="hero-brand-area" className="flex flex-col items-center md:items-start space-y-1">
-                <p className="text-sm md:text-base font-semibold text-text-secondary">خالد القائد | محاسب مالي</p>
-                <h1 id="hero-brand-name" className={`${TYPOGRAPHY.heading.h1} font-bold text-text-primary`}>
-                  محاسب مالي عن بعد للمنشآت في السعودية | من التنظيم اليومي إلى الامتثال الحكومي
+            <header
+              id="hero-header"
+              className="flex flex-col items-center md:items-start space-y-3.5 md:space-y-4 w-full text-center md:text-right"
+            >
+              <div
+                id="hero-brand-area"
+                className="flex flex-col items-center md:items-start space-y-2"
+              >
+                <p className="text-sm md:text-base font-semibold text-text-secondary">
+                  خالد القائد | محاسب مالي
+                </p>
+
+                <h1
+                  id="hero-title"
+                  className={`${TYPOGRAPHY.heading.h1} font-bold text-text-primary`}
+                >
+                  محاسب مالي متكامل لمنشأتك في السعودية.. عن بُعد
                 </h1>
-                <p id="hero-brand-tagline" className={`${TYPOGRAPHY.body.large} text-secondary font-semibold mt-1`}>
-                  أدير حسابات منشأتك بمرونة كاملة عن بُعد؛ من ادارة الحسابات وتهيئة نظام أودو (Odoo ERP)، إلى إعداد القوائم المالية وتحضير الإقرارات الضريبية والزكوية بامتثال تام يحميك من الغرامات وكأنني متواجد معك تماماً.
+
+                <p
+                  id="hero-subtitle"
+                  className={`${TYPOGRAPHY.body.large} text-secondary font-semibold mt-1`}
+                >
+                  أدير حساباتك بمرونة كاملة، من التنظيم اليومي إلى الامتثال الضريبي والزكوي، وبكفاءة الـ Virtual CFO التي تحمي منشأتك من الغرامات.
                 </p>
               </div>
 
-              {/* Description (Paragraph) */}
-              <p 
-                id="hero-description" 
-                className={`${TYPOGRAPHY.body.large} max-w-xl`}
+              <ul
+                id="hero-benefits"
+                className="w-full max-w-xl space-y-3 text-sm md:text-base leading-7 text-text-secondary text-right"
               >
-                أوفر للمنشآت والشركات بالسعودية كفاءة المحاسب المالي الداخلي والـ Virtual CFO بتكلفة مرنة تناسب حجم أعمالك. تشمل خدماتنا تأسيس الدورات المستندية، التسويات البنكية، رفع تقارير الأداء والسيولة، وضمان الامتثال الكامل مع هيئة الزكاة والضريبة والجمارك دون أعباء التوظيف الثابت.
-              </p>
+                <li>
+                  <strong className="text-text-primary">تهيئة وإدارة أنظمة الـ ERP:</strong>{" "}
+                  تخصيص متكامل لنظام أودو (Odoo) ليناسب نشاطك.
+                </li>
+                <li>
+                  <strong className="text-text-primary">الامتثال الحكومي التام:</strong>{" "}
+                  إعداد القوائم المالية، والتقارير الزكوية والضريبية بدقة.
+                </li>
+                <li>
+                  <strong className="text-text-primary">إدارة السيولة والأداء:</strong>{" "}
+                  تسويات بنكية، تقارير أداء، وتأمين تدفقاتك النقدية.
+                </li>
+              </ul>
 
-              {/* Short Trust Line */}
-              <p 
+              <p
                 id="hero-trust-line"
-                className="text-xs md:text-sm text-text-secondary font-arabic font-normal leading-relaxed mt-1"
+                className="w-full text-xs md:text-sm text-text-secondary leading-relaxed mt-1 text-right"
               >
-                🔒 نلتزم بالسرية التامة لبياناتك مع إمكانية توقيع اتفاقية عدم إفصاح (NDA) قبل مشاركة المستندات
+                🔒 <strong>بياناتك في أمان:</strong> نلتزم بالسرية التامة مع إمكانية توقيع اتفاقية عدم إفصاح (NDA) قبل مشاركة أي مستندات.
               </p>
 
-              {/* Hero Actions (CTA) */}
-              <div id="hero-cta-actions" className="flex flex-wrap items-center justify-center md:justify-start gap-3 pt-2">
-                <a 
+              <div
+                id="hero-cta-actions"
+                className="flex flex-wrap items-center justify-center md:justify-start gap-3 pt-2 w-full"
+              >
+                <a
                   href={HERO_WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   id="hero-primary-cta"
-                  className="inline-flex w-full max-w-full sm:w-auto items-center justify-center gap-x-2 px-4 sm:px-5 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs sm:text-sm text-center font-semibold shadow-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
+                  className="inline-flex w-full sm:w-auto items-center justify-center gap-x-2 px-4 sm:px-5 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs sm:text-sm text-center font-semibold shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
                 >
                   <MessageCircle className="w-4 h-4" aria-hidden="true" />
-                  <span className="inline md:hidden">اطلب فحصاً مجانياً لحساباتك عبر الواتساب</span>
-                  <span className="hidden md:inline">اطلب فحصاً مجانياً لحساباتك لآخر شهرين واستلم تقرير الفجوات عبر الواتساب</span>
+                  <span>اطلب فحصاً مجانياً لحساباتك (آخر شهرين)</span>
                 </a>
-                <a 
-                  href="#services-section-wrapper"
+
+                <a
+                  href="#services"
                   id="hero-secondary-cta"
-                  className="inline-flex items-center px-4 py-2.5 rounded-xl bg-surface-subtle border border-border-subtle hover:border-primary text-text-primary hover:text-primary text-xs sm:text-sm font-medium transition-all duration-200"
+                  className="inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-surface-subtle border border-border-subtle hover:border-primary text-text-primary hover:text-primary text-xs sm:text-sm font-medium transition-all duration-200"
                 >
-                  استكشف خدمات الامتثال والإدارة المالية
+                  استكشف الخدمات والامتثال المالي
                 </a>
               </div>
             </header>
