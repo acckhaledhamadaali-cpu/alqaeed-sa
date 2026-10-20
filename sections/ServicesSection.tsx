@@ -59,7 +59,7 @@ export default function ServicesSection(props: HTMLAttributes<HTMLElement>) {
   }, []);
 
   return (
-    <SectionWrapper id="services-section-wrapper" variant="white" spacing="dense" {...props}>
+    <SectionWrapper id="services" variant="white" spacing="dense" {...props}>
       <Container id="services-container">
         <div id="services-content" className="flex flex-col space-y-5 md:max-w-full mx-auto text-center items-center w-full">
           {/* Section Header */}
