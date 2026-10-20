@@ -87,15 +87,25 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
                   اطلب فحصاً مجانياً لحساباتك (آخر شهرين)
                 </a>
 
-                <a
-                  href="tel:+966511294383"
-                  id="hero-call-cta"
-                  aria-label="اتصل الآن"
-                  title="اتصل الآن"
-                  className="inline-flex flex-none self-stretch items-center justify-center w-9 sm:w-11 min-h-9 sm:min-h-10 px-0 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
-                >
-                  <FaPhone className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
-                </a>
+                <details id="hero-call-menu" className="relative inline-flex flex-none self-stretch">
+                  <summary
+                    id="hero-call-cta"
+                    aria-label="اختر رقم الاتصال"
+                    title="اختر رقم الاتصال"
+                    className="list-none inline-flex cursor-pointer self-stretch items-center justify-center w-9 sm:w-11 min-h-9 sm:min-h-10 px-0 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2 [&::-webkit-details-marker]:hidden"
+                  >
+                    <FaPhone className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
+                  </summary>
+                  <div className="absolute right-0 top-full z-50 mt-2 min-w-52 rounded-xl border border-border-subtle bg-white p-2 text-right shadow-lg">
+                    <p className="px-3 py-2 text-xs font-semibold text-text-secondary">اختر رقم الاتصال</p>
+                    <a href="tel:+966511294383" className="block rounded-lg px-3 py-2.5 text-sm font-medium text-text-primary hover:bg-surface-subtle focus:outline-none focus:ring-2 focus:ring-primary">
+                      الرقم الأساسي: 0511294383
+                    </a>
+                    <a href="tel:+966548482979" className="block rounded-lg px-3 py-2.5 text-sm font-medium text-text-primary hover:bg-surface-subtle focus:outline-none focus:ring-2 focus:ring-primary">
+                      الرقم البديل: 0548482979
+                    </a>
+                  </div>
+                </details>
 
                 <a
                   href="#services"
