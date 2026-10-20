@@ -30,7 +30,7 @@ export default function LocalServiceCityPage({ path }: { path: string }) {
     );
   }
 
-  const { city, service, title, description, canonical } = page;
+  const { city, service, title } = page;
 
   const message = `السلام عليكم، أحتاج الاستفسار عن ${service.shortName} لمنشأتي في ${city.name}. أرجو توضيح البيانات المطلوبة ونطاق الخدمة.`;
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
