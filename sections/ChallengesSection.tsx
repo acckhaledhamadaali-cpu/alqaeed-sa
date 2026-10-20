@@ -8,7 +8,7 @@ const CHALLENGES = [
   { problem: "صعوبة تسعير المنتجات أو الخدمات وتآكل الأرباح", slug: "product-pricing" },
   { problem: "التفكير في فتح فروع جديدة والخوف من نقص السيولة", slug: "business-expansion" },
   { problem: "العبء المالي والالتزامات الباهظة لتوظيف محاسب ثابت", slug: "remote-accountant" },
-  { problem: "خطر إيقاف الخدمات الحكومية بسبب تأخر رفع ميزانية منشأتك", slug: "qawaem-financial-statements" },
+  { problem: "خطر إيقاف الخدمات الحكومية بسبب تأخر رفع القوائم المالية لمنشأتك", slug: "qawaem-financial-statements" },
   { problem: "مشاكل وغرامات إقرارات هيئة الزكاة والضريبة المعلقة", slug: "zatca-tax-returns" }
 ];
 
