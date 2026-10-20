@@ -2,11 +2,10 @@ import { HTMLAttributes } from 'react';
 import Container from '../components/Container';
 
 const ITEMS = [
-  "ماجستير إدارة الأعمال (MBA)",
-  "محاسبة مالية وإدارة سيولة",
-  "تحليل مالي وتقارير إدارية",
-  "إدارة مالية ومتابعة سيولة عن بعد",
-  "أنظمة المحاسبة وERP"
+  "تهيئة وإدارة أنظمة الـ ERP: تخصيص متكامل لنظام أودو (Odoo) ليناسب نشاطك",
+  "الامتثال الحكومي التام: إعداد القوائم المالية، والتقارير الزكوية والضريبية بدقة",
+  "إدارة السيولة والأداء: تسويات بنكية، تقارير أداء، وتأمين تدفقاتك النقدية",
+  "🔒 بياناتك في أمان: نلتزم بالسرية التامة مع إمكانية توقيع اتفاقية عدم إفصاح (NDA) قبل مشاركة أي مستندات"
 ];
 
 export default function ExperienceBar(props: HTMLAttributes<HTMLElement>) {
@@ -17,7 +16,7 @@ export default function ExperienceBar(props: HTMLAttributes<HTMLElement>) {
       {...props}
     >
       <Container id="experience-bar-container">
-        <div className="w-full overflow-hidden" dir="ltr" aria-label="المؤهلات والخبرات">
+        <div className="w-full overflow-hidden" dir="ltr" aria-label="الخدمات المالية">
           <div
             id="experience-bar-items"
             className="flex w-max animate-marquee [animation-direction:reverse] hover:[animation-play-state:paused] motion-reduce:w-full motion-reduce:animate-none motion-reduce:flex-wrap motion-reduce:justify-center text-center text-xs md:text-sm font-medium tracking-wide font-sans text-text-secondary"
