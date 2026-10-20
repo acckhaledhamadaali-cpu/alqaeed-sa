@@ -45,7 +45,7 @@ function parseContentToElements(content: string): React.ReactNode[] {
     if (!currentList) return;
     if (currentList.type === 'ul') {
       elements.push(
-        <ul key={`ul-${elementIndex++}`} className="my-4 space-y-2 mr-6 list-disc list-outside text-text-secondary text-sm md:text-base leading-relaxed">
+        <ul key={`ul-${elementIndex++}`} className="my-3 space-y-1.5 mr-6 list-disc list-outside text-text-secondary text-sm md:text-base leading-relaxed">
           {currentList.items.map((item, idx) => (
             <li key={idx}>{renderInline(item)}</li>
           ))}
@@ -53,7 +53,7 @@ function parseContentToElements(content: string): React.ReactNode[] {
       );
     } else {
       elements.push(
-        <ol key={`ol-${elementIndex++}`} className="my-4 space-y-2 mr-6 list-decimal list-outside text-text-secondary text-sm md:text-base leading-relaxed">
+        <ol key={`ol-${elementIndex++}`} className="my-3 space-y-1.5 mr-6 list-decimal list-outside text-text-secondary text-sm md:text-base leading-relaxed">
           {currentList.items.map((item, idx) => (
             <li key={idx}>{renderInline(item)}</li>
           ))}
@@ -76,7 +76,7 @@ function parseContentToElements(content: string): React.ReactNode[] {
       flushList();
       const text = trimmed.slice(4);
       elements.push(
-        <h3 key={`h3-${elementIndex++}`} className="text-base md:text-lg font-bold text-text-primary mt-6 mb-3">
+        <h3 key={`h3-${elementIndex++}`} className="text-base md:text-lg font-bold text-text-primary mt-4 mb-2">
           {renderInline(text)}
         </h3>
       );
@@ -87,7 +87,7 @@ function parseContentToElements(content: string): React.ReactNode[] {
       flushList();
       const text = trimmed.slice(3);
       elements.push(
-        <h2 key={`h2-${elementIndex++}`} className="text-lg md:text-xl font-bold text-text-primary mt-8 mb-4 pb-2 border-b border-border-subtle">
+        <h2 key={`h2-${elementIndex++}`} className="text-lg md:text-xl font-bold text-text-primary mt-6 mb-3 pb-1.5 border-b border-border-subtle">
           {renderInline(text)}
         </h2>
       );
@@ -98,7 +98,7 @@ function parseContentToElements(content: string): React.ReactNode[] {
       flushList();
       const text = trimmed.slice(2);
       elements.push(
-        <div key={`quote-${elementIndex++}`} className="my-5 p-4 rounded-xl bg-surface-subtle/70 border-r-4 border-primary text-text-primary text-sm leading-relaxed">
+        <div key={`quote-${elementIndex++}`} className="my-3 p-3 rounded-xl bg-surface-subtle/70 border-r-4 border-primary text-text-primary text-sm leading-relaxed">
           {renderInline(text)}
         </div>
       );
@@ -132,7 +132,7 @@ function parseContentToElements(content: string): React.ReactNode[] {
       const altText = imgMatch[1];
       const imgSrc = imgMatch[2];
       elements.push(
-        <div key={`img-wrap-${elementIndex++}`} className="my-6">
+        <div key={`img-wrap-${elementIndex++}`} className="my-4">
           <img
             src={imgSrc}
             alt={altText}
@@ -154,7 +154,7 @@ function parseContentToElements(content: string): React.ReactNode[] {
 
     flushList();
     elements.push(
-      <p key={`p-${elementIndex++}`} className="text-text-secondary text-sm md:text-base leading-relaxed mb-4">
+      <p key={`p-${elementIndex++}`} className="text-text-secondary text-sm md:text-base leading-relaxed mb-3">
         {renderInline(trimmed)}
       </p>
     );
@@ -202,7 +202,7 @@ function ArticleNotFound() {
   return (
     <SectionWrapper id="article-not-found-section" variant="white" spacing="default">
       <Container>
-        <div className="max-w-3xl mx-auto py-12 text-right font-arabic">
+        <div className="max-w-3xl mx-auto py-8 text-right font-arabic">
           <nav aria-label="مسار التنقل" className="mb-4 text-xs text-text-muted">
             <a href="/" className="hover:text-primary transition-colors">الرئيسية</a>
             <span className="mx-2 text-border-subtle">/</span>
@@ -211,7 +211,7 @@ function ArticleNotFound() {
             <span className="text-text-secondary">المقال غير متوفر</span>
           </nav>
 
-          <div className="border border-border-subtle bg-surface-subtle/30 rounded-2xl p-8 text-center my-8">
+          <div className="border border-border-subtle bg-surface-subtle/30 rounded-2xl p-6 text-center my-5">
             <h1 className={`${TYPOGRAPHY.heading.h2} font-bold text-text-primary mb-3`}>
               المقال غير متوفر حالياً
             </h1>
@@ -285,7 +285,7 @@ export default function ArticlePage({ slug }: { slug: string }) {
   return (
     <SectionWrapper id={`article-${article.slug}-section`} variant="white" spacing="default">
       <Container>
-        <article className="max-w-3xl mx-auto py-4 md:py-8 text-right font-arabic">
+        <article className="max-w-3xl mx-auto py-3 md:py-5 text-right font-arabic">
           <nav aria-label="مسار التنقل" className="mb-4 text-xs text-text-muted">
             <a href="/" className="hover:text-primary transition-colors">الرئيسية</a>
             <span className="mx-2 text-border-subtle">/</span>
@@ -294,7 +294,7 @@ export default function ArticlePage({ slug }: { slug: string }) {
             <span className="text-text-secondary">{article.title}</span>
           </nav>
 
-          <header className="mb-8 border-b border-border-subtle pb-6">
+          <header className="mb-6 border-b border-border-subtle pb-4">
             <div className="flex flex-wrap items-center gap-2 mb-3 text-xs">
               <span className="bg-primary/10 text-primary font-semibold px-3 py-1 rounded-md">{getCategoryName(article.category)}</span>
               <span className="text-text-muted">•</span>
@@ -304,7 +304,7 @@ export default function ArticlePage({ slug }: { slug: string }) {
             </div>
 
             <h1 className={`${TYPOGRAPHY.heading.h1} font-bold text-text-primary mb-4 leading-tight`}>{article.title}</h1>
-            <p className={`text-sm md:text-base text-text-secondary leading-relaxed font-normal ${articleImage ? 'mb-6' : 'mb-0'}`}>{article.description}</p>
+            <p className={`text-sm md:text-base text-text-secondary leading-relaxed font-normal ${articleImage ? 'mb-4' : 'mb-0'}`}>{article.description}</p>
 
             {articleImage && (
               <div className="rounded-2xl overflow-hidden border border-border-subtle bg-surface-subtle shadow-sm aspect-video">
@@ -324,12 +324,12 @@ export default function ArticlePage({ slug }: { slug: string }) {
             )}
           </header>
 
-          <div className="prose prose-lg max-w-none text-text-primary text-sm md:text-base leading-relaxed mb-12">
+          <div className="prose prose-lg max-w-none text-text-primary text-sm md:text-base leading-relaxed mb-8">
             {parseContentToElements(article.content)}
           </div>
 
           {article.relatedArticles && article.relatedArticles.length > 0 && (
-            <section aria-labelledby="related-articles-heading" className="border-t border-border-subtle pt-8 mb-8">
+            <section aria-labelledby="related-articles-heading" className="border-t border-border-subtle pt-5 mb-6">
               <h3 id="related-articles-heading" className="text-base md:text-lg font-bold text-text-primary mb-4">مقالات ذات صلة في المكتبة المالية:</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {article.relatedArticles.map((rel) => (
@@ -343,7 +343,7 @@ export default function ArticlePage({ slug }: { slug: string }) {
           )}
 
           {article.relatedService && (
-            <aside aria-label="الخدمة المرتبطة بالمقال" className="bg-surface-subtle/60 border border-border-subtle rounded-2xl p-6 md:p-8 mb-8">
+            <aside aria-label="الخدمة المرتبطة بالمقال" className="bg-surface-subtle/60 border border-border-subtle rounded-2xl p-4 md:p-6 mb-6">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div>
                   <span className="text-xs text-primary font-bold uppercase tracking-wider block mb-1">حلول مالية مرتبطة</span>
@@ -355,9 +355,9 @@ export default function ArticlePage({ slug }: { slug: string }) {
             </aside>
           )}
 
-          <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 text-center">
+          <div className="bg-primary/5 border border-primary/20 rounded-2xl p-4 text-center">
             <h3 className="text-base font-bold text-text-primary mb-2">هل تواجه تحدياً في تطبيق هذه المعايير في منشأتك؟</h3>
-            <p className="text-xs md:text-sm text-text-secondary leading-relaxed mb-4 max-w-lg mx-auto">فريق القائد للإدارة المالية جاهز لتقديم الدعم التخصصي والتحليل المالي المتكامل لنشاطك.</p>
+            <p className="text-xs md:text-sm text-text-secondary leading-relaxed mb-3 max-w-lg mx-auto">فريق القائد للإدارة المالية جاهز لتقديم الدعم التخصصي والتحليل المالي المتكامل لنشاطك.</p>
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-2.5 bg-primary text-white text-xs md:text-sm font-semibold rounded-xl hover:bg-primary/90 transition-colors shadow-sm">{isChallengeArticle ? "اطلب فحصاً مجانياً لآخر شهرين عبر واتساب" : "استشارة مباشرة عبر واتساب"}</a>
           </div>
         </article>
