@@ -16,8 +16,7 @@ const CHALLENGES = [
  * Deterministic daily shuffle: every visitor sees the same order for a given UTC date.
  * The seeded pseudo-random generator avoids hydration differences and changes the order daily.
  */
-function getDailyChallenges() {
-  const dateKey = new Date().toISOString().slice(0, 10);
+function shuffleForDate(dateKey: string) {
   let seed = 2166136261;
 
   for (let i = 0; i < dateKey.length; i++) {
@@ -39,6 +38,24 @@ function getDailyChallenges() {
     [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
   }
   return shuffled;
+}
+
+function getDailyChallenges() {
+  const today = new Date();
+  const todayKey = today.toISOString().slice(0, 10);
+  const yesterday = new Date(today);
+  yesterday.setUTCDate(yesterday.getUTCDate() - 1);
+  const yesterdayKey = yesterday.toISOString().slice(0, 10);
+
+  const todayOrder = shuffleForDate(todayKey);
+  const yesterdayOrder = shuffleForDate(yesterdayKey);
+
+  // Guarantee the order changes at UTC midnight, even if both seeded shuffles happen to match.
+  if (todayOrder.every((item, index) => item.slug === yesterdayOrder[index].slug)) {
+    todayOrder.push(todayOrder.shift()!);
+  }
+
+  return todayOrder;
 }
 
 export default function ChallengesSection(props: HTMLAttributes<HTMLElement>) {
