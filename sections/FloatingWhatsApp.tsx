@@ -1,5 +1,5 @@
 import { HTMLAttributes } from 'react';
-import { MessageCircle } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 import { Z_INDEX } from '../src/lib/tokens';
 
 const WHATSAPP_NUMBER = "966511294383";
@@ -29,7 +29,7 @@ export default function FloatingWhatsApp(props: HTMLAttributes<HTMLAnchorElement
       aria-label="تواصل عبر واتساب"
       id="floating-whatsapp-btn"
     >
-      <MessageCircle className="w-7 h-7" aria-hidden="true" />
+      <FaWhatsapp className="w-8 h-8" aria-hidden="true" />
     </a>
   );
 }
