@@ -34,7 +34,7 @@
 }
 
 @theme {
-  --animate-marquee: marquee 22s linear infinite;
+  --animate-marquee: marquee 26s linear infinite;
   @keyframes marquee {
     from {
       transform: translateX(-50%);
@@ -100,7 +100,7 @@ body {
 #experience-bar-items {
   margin-block: 0 !important;
   padding-block: 0 !important;
-  animation: marquee 22s linear infinite !important;
+  animation: marquee 26s linear infinite !important;
   animation-play-state: running !important;
   animation-delay: 0s !important;
   transform: translateX(-50%);
