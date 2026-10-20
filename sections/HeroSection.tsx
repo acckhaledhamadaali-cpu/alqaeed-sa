@@ -81,19 +81,17 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
                   target="_blank"
                   rel="noopener noreferrer"
                   id="hero-primary-cta"
-                  className="inline-flex w-auto min-w-0 flex-none items-center justify-center px-2.5 sm:px-4 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-[10px] sm:text-xs md:text-sm text-center font-semibold leading-tight shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2 whitespace-nowrap"
+                  className="inline-flex flex-1 min-w-0 items-center justify-center px-2 sm:px-4 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-[10px] sm:text-xs md:text-sm text-center font-semibold leading-snug shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2 whitespace-normal"
                 >
-                  <span className="sm:hidden">فحص مجاني للحسابات</span>
-                  <span className="hidden sm:inline">اطلب فحصاً مجانياً لحساباتك (آخر شهرين)</span>
+                  اطلب فحصاً مجانياً لحساباتك (آخر شهرين)
                 </a>
 
                 <a
                   href="#services"
                   id="hero-secondary-cta"
-                  className="inline-flex w-auto min-w-0 flex-none items-center justify-center px-2.5 sm:px-4 py-2.5 rounded-xl bg-surface-subtle border border-border-subtle hover:border-primary text-text-primary hover:text-primary text-[10px] sm:text-xs md:text-sm text-center font-medium leading-tight transition-all duration-200 whitespace-nowrap"
+                  className="inline-flex flex-1 min-w-0 items-center justify-center px-2 sm:px-4 py-2.5 rounded-xl bg-surface-subtle border border-border-subtle hover:border-primary text-text-primary hover:text-primary text-[10px] sm:text-xs md:text-sm text-center font-medium leading-snug transition-all duration-200 whitespace-normal"
                 >
-                  <span className="sm:hidden">استكشف الخدمات</span>
-                  <span className="hidden sm:inline">استكشف الخدمات والامتثال المالي</span>
+                  استكشف الخدمات والامتثال المالي
                 </a>
               </div>
             </header>
