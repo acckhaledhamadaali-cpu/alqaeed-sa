@@ -27,8 +27,8 @@ export default function ExperienceBar(props: HTMLAttributes<HTMLElement>) {
                 className="flex shrink-0 items-center gap-0 whitespace-nowrap motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:whitespace-normal"
                 aria-hidden={set === 1}
               >
-                {ITEMS.map((item, index) => (
-                  <div key={index} className="flex shrink-0 items-center gap-x-2 px-2 sm:gap-x-3 sm:px-3">
+                {[0, 1].flatMap((repeat) => ITEMS.map((item, index) => (
+                  <div key={`${repeat}-${index}`} className="flex shrink-0 items-center gap-x-2 px-2 sm:gap-x-3 sm:px-3">
                     <span id={set === 0 ? `exp-item-${index}` : undefined} className="hover:text-text-primary transition-colors duration-150" dir="rtl">
                       {item}
                     </span>
@@ -40,7 +40,7 @@ export default function ExperienceBar(props: HTMLAttributes<HTMLElement>) {
                       |
                     </span>
                   </div>
-                ))}
+                )))}
               </div>
             ))}
           </div>
