@@ -8,6 +8,9 @@ const ITEMS = [
   "سرية تامة للبيانات مع إمكانية توقيع اتفاقية عدم إفصاح قبل استلام المستندات"
 ];
 
+// Duplicate the full sequence within each track so its loop boundary matches exactly.
+const LOOP_ITEMS = [...ITEMS, ...ITEMS];
+
 export default function ExperienceBar(props: HTMLAttributes<HTMLElement>) {
   return (
     <section
@@ -27,20 +30,20 @@ export default function ExperienceBar(props: HTMLAttributes<HTMLElement>) {
                 className="flex shrink-0 items-center gap-0 whitespace-nowrap motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:whitespace-normal"
                 aria-hidden={set === 1}
               >
-                {[0, 1].flatMap((repeat) => ITEMS.map((item, index) => (
-                  <div key={`${repeat}-${index}`} className="flex shrink-0 items-center gap-x-2 px-2 sm:gap-x-3 sm:px-3">
-                    <span id={set === 0 && repeat === 0 ? `exp-item-${index}` : undefined} className="hover:text-text-primary transition-colors duration-150" dir="rtl">
+                {LOOP_ITEMS.map((item, index) => (
+                  <div key={index} className="flex shrink-0 items-center gap-x-2 px-2 sm:gap-x-3 sm:px-3">
+                    <span id={set === 0 && index < ITEMS.length ? `exp-item-${index}` : undefined} className="hover:text-text-primary transition-colors duration-150" dir="rtl">
                       {item}
                     </span>
                     <span
-                      id={set === 0 && repeat === 0 ? `exp-divider-${index}` : undefined}
+                      id={set === 0 && index < ITEMS.length ? `exp-divider-${index}` : undefined}
                       className="text-text-muted/40 select-none font-light text-xs sm:text-sm"
                       aria-hidden="true"
                     >
                       |
                     </span>
                   </div>
-                )))}
+                ))}
               </div>
             ))}
           </div>
