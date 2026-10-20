@@ -34,7 +34,7 @@
 }
 
 @theme {
-  --animate-marquee: marquee 20s linear infinite;
+  --animate-marquee: marquee 16s linear infinite;
   @keyframes marquee {
     from {
       transform: translateX(-50%);
@@ -70,6 +70,8 @@ body {
 }
 
 #experience-bar-section {
+  display: block !important;
+  line-height: 1.25 !important;
   background: transparent !important;
   background-color: transparent !important;
   border: 0 !important;
@@ -98,13 +100,20 @@ body {
 #experience-bar-items {
   margin-block: 0 !important;
   padding-block: 0 !important;
-  animation-duration: 20s !important;
+  animation: marquee 16s linear infinite !important;
   animation-play-state: running !important;
+  animation-delay: 0s !important;
+  transform: translateX(-50%);
 }
 
 #experience-bar-items:hover,
 #experience-bar-section:hover #experience-bar-items {
   animation-play-state: running !important;
+}
+
+@keyframes marquee {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0%); }
 }
 
 #challenges-section-wrapper {
