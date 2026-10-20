@@ -381,11 +381,11 @@ export const BLOG_ARTICLES: BlogArticle[] = [
   {
     slug: 'cash-flow-management-avoid-financial-crisis',
     title: 'كيف تساعدك إدارة التدفقات النقدية على تجنب الأزمات المالية؟',
-    seoTitle: 'إدارة السيولة وأنظمة أودو والفوترة الإلكترونية في مكة والخبر ونجران وجازان | القائد',
+    seoTitle: 'أودو وإدارة السيولة في مكة والخبر | القائد',
     description: 'إرشادات لإدارة التدفقات النقدية وربط العمليات المحاسبية في مكة المكرمة والخبر ونجران وجازان، من تهيئة نظام أودو إلى متابعة الفوترة الإلكترونية وتكاليف المقاولات.',
     category: 'financial-management',
     publishedAt: '2026-08-27',
-    updatedAt: '2026-08-27',
+    updatedAt: '2026-10-20',
     author: 'خالد القائد',
     readingTime: '6 دقائق للقراءة',
     keywords: [
@@ -493,11 +493,11 @@ export const BLOG_ARTICLES: BlogArticle[] = [
   {
     slug: 'financial-statements-importance-decision-making',
     title: 'القوائم المالية للشركات: ما أهميتها وكيف تساعد الإدارة في اتخاذ القرار؟',
-    seoTitle: 'القوائم المالية وتجهيز منصة قوائم للمنشآت في المدينة المنورة وحائل وعرعر | القائد',
+    seoTitle: 'القوائم المالية ومنصة قوائم في المدينة وحائل | القائد',
     description: 'شرح إقفال الحسابات وإعداد القوائم المالية وتجهيز متطلبات منصة قوائم للمنشآت في المدينة المنورة وحائل وعرعر، مع توضيح دور المحاسب وحدود الاعتماد المهني.',
     category: 'financial-management',
     publishedAt: '2026-08-27',
-    updatedAt: '2026-08-27',
+    updatedAt: '2026-10-20',
     author: 'خالد القائد',
     readingTime: '6 دقائق للقراءة',
     keywords: [
@@ -595,11 +595,11 @@ export const BLOG_ARTICLES: BlogArticle[] = [
   {
     slug: 'financial-analysis-key-ratios-business-owners',
     title: 'التحليل المالي للشركات: أهم المؤشرات التي يجب أن يعرفها صاحب المنشأة',
-    seoTitle: 'تحليل التكاليف والتسعير للمنشآت في الطائف وبريدة والجبيل | القائد',
+    seoTitle: 'حساب التكاليف والتسعير في الطائف وبريدة والجبيل | القائد',
     description: 'دليل عملي لتحليل تكلفة المواد والتشغيل وهوامش الربح للمطاعم والتجزئة والصناعة في الطائف وبريدة والجبيل، مع أمثلة تساعد على تحسين التسعير ومراقبة المخزون.',
     category: 'financial-management',
     publishedAt: '2026-08-27',
-    updatedAt: '2026-08-27',
+    updatedAt: '2026-10-20',
     author: 'خالد القائد',
     readingTime: '7 دقائق للقراءة',
     keywords: [
@@ -773,11 +773,11 @@ export const BLOG_ARTICLES: BlogArticle[] = [
   {
     slug: 'bookkeeping-importance-organized-accounting',
     title: 'مسك الدفاتر للشركات: لماذا تعتبر المحاسبة المنظمة أساسًا للإدارة المالية؟',
-    seoTitle: 'تنظيم الحسابات والتقارير المالية للمنشآت في حفر الباطن وأبها وينبع والخرج وسكاكا | القائد',
+    seoTitle: 'تنظيم الحسابات في حفر الباطن وأبها | القائد',
     description: 'خطوات عملية لمعالجة الحسابات المعلقة وتنظيم السجلات وإعداد التقارير الإدارية وضبط المصروفات للمنشآت في حفر الباطن وأبها وينبع والخرج وسكاكا.',
     category: 'accounting',
     publishedAt: '2026-08-27',
-    updatedAt: '2026-08-27',
+    updatedAt: '2026-10-20',
     author: 'خالد القائد',
     readingTime: '5 دقائق للقراءة',
     keywords: [
@@ -872,11 +872,11 @@ export const BLOG_ARTICLES: BlogArticle[] = [
   {
     slug: 'zakat-tax-financial-data-organization',
     title: 'الزكاة والضريبة للشركات: لماذا تحتاج المنشأة إلى تنظيم بياناتها المالية؟',
-    seoTitle: 'الإقرارات الضريبية في الرياض وجدة والدمام والدوادمي | القائد',
+    seoTitle: 'الإقرارات الضريبية في الرياض وجدة والدمام | القائد',
     description: 'دليل تجهيز الإقرارات الضريبية وتنظيم السجلات للمنشآت في الرياض وجدة والدمام والدوادمي، مع أمثلة على مطابقة الفواتير ومراجعة الدفاتر قبل التقديم.',
     category: 'tax-zakat',
     publishedAt: '2026-08-27',
-    updatedAt: '2026-08-27',
+    updatedAt: '2026-10-20',
     author: 'خالد القائد',
     readingTime: '6 دقائق للقراءة',
     keywords: [
