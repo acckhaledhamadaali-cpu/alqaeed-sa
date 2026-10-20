@@ -34,7 +34,7 @@
 }
 
 @theme {
-  --animate-marquee: marquee 30s linear infinite;
+  --animate-marquee: marquee 60s linear infinite;
   @keyframes marquee {
     from {
       transform: translateX(-50%);
