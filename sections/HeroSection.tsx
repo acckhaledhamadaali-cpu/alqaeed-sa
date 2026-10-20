@@ -62,7 +62,14 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
                   id="hero-subtitle"
                   className={`${TYPOGRAPHY.body.large} text-secondary font-semibold mt-1`}
                 >
-                  أدير حساباتك بمرونة كاملة، من التنظيم اليومي إلى الامتثال الضريبي والزكوي، وبكفاءة الـ Virtual CFO التي تحمي منشأتك من الغرامات.
+                  أدير حساباتك بمرونة كاملة من التنظيم اليومي إلى الامتثال الضريبي والزكوي، وبكفاءة الـ Virtual CFO التي تحمي منشأتك من الغرامات.
+                </p>
+
+                <p
+                  id="hero-description"
+                  className="text-sm md:text-base text-text-secondary leading-7 mt-2 max-w-2xl"
+                >
+                  أتولى تهيئة أنظمة الـ ERP وتخصيص نظام أودو، وإعداد القوائم المالية السنوية وتقديمها عبر منصة قوائم، وإدارة الإقرارات الضريبية والزكوية بامتثال كامل لمتطلبات هيئة الزكاة والضريبة والجمارك لحماية منشأتك من غرامات التأخير.
                 </p>
               </div>
 
