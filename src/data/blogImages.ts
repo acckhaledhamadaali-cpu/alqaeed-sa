@@ -13,6 +13,13 @@ const BLOG_IMAGE_SOURCES: Record<string, string> = {
 const ARTICLES_WITHOUT_COVER_IMAGE = new Set([
   'zakat-vat-return-guide-saudi-businesses',
   'bookkeeping-importance-organized-accounting',
+  // These six challenge articles intentionally use a text-only layout until local cover assets are available.
+  'real-profit',
+  'product-pricing',
+  'business-expansion',
+  'remote-accountant',
+  'qawaem-financial-statements',
+  'zatca-tax-returns',
 ]);
 
 export function getBlogImage(slug: string): string {
