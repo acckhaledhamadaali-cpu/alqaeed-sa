@@ -2,6 +2,7 @@ import { HTMLAttributes } from 'react';
 import SectionWrapper from '../components/SectionWrapper';
 import Container from '../components/Container';
 import { TYPOGRAPHY } from '../src/lib/tokens';
+import { Phone } from 'lucide-react';
 
 const WHATSAPP_NUMBER = "966511294383";
 const HERO_WHATSAPP_MESSAGE = "السلام عليكم، أرغب في طلب فحص مجاني لحسابات منشأتي عن آخر شهرين. أرجو توضيح المستندات المطلوبة وطريقة البدء.";
@@ -74,22 +75,32 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
 
               <div
                 id="hero-cta-actions"
-                className="flex flex-nowrap items-stretch justify-center md:justify-start gap-2 pt-2 w-full md:w-auto"
+                className="flex flex-nowrap items-stretch justify-center md:justify-start gap-1.5 sm:gap-2 pt-2 w-full md:w-auto"
               >
                 <a
                   href={HERO_WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   id="hero-primary-cta"
-                  className="inline-flex flex-1 min-w-0 items-center justify-center px-2 sm:px-4 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-[10px] sm:text-xs md:text-sm text-center font-semibold leading-snug shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2 whitespace-normal"
+                  className="inline-flex flex-1 min-w-0 items-center justify-center px-1.5 sm:px-4 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-[9px] sm:text-xs md:text-sm text-center font-semibold leading-snug shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2 whitespace-normal"
                 >
                   اطلب فحصاً مجانياً لحساباتك (آخر شهرين)
                 </a>
 
                 <a
+                  href="tel:+966511294383"
+                  id="hero-call-cta"
+                  aria-label="اتصل الآن"
+                  title="اتصل الآن"
+                  className="inline-flex flex-none self-stretch items-center justify-center w-10 sm:w-11 px-0 rounded-xl bg-primary hover:opacity-90 text-white shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                >
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
+                </a>
+
+                <a
                   href="#services"
                   id="hero-secondary-cta"
-                  className="inline-flex flex-1 min-w-0 items-center justify-center px-2 sm:px-4 py-2.5 rounded-xl bg-surface-subtle border border-border-subtle hover:border-primary text-text-primary hover:text-primary text-[10px] sm:text-xs md:text-sm text-center font-medium leading-snug transition-all duration-200 whitespace-normal"
+                  className="inline-flex flex-1 min-w-0 items-center justify-center px-1.5 sm:px-4 py-2.5 rounded-xl bg-surface-subtle border border-border-subtle hover:border-primary text-text-primary hover:text-primary text-[9px] sm:text-xs md:text-sm text-center font-medium leading-snug transition-all duration-200 whitespace-normal"
                 >
                   استكشف الخدمات والامتثال المالي
                 </a>
