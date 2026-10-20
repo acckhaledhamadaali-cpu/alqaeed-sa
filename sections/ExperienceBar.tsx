@@ -29,11 +29,11 @@ export default function ExperienceBar(props: HTMLAttributes<HTMLElement>) {
               >
                 {[0, 1].flatMap((repeat) => ITEMS.map((item, index) => (
                   <div key={`${repeat}-${index}`} className="flex shrink-0 items-center gap-x-2 px-2 sm:gap-x-3 sm:px-3">
-                    <span id={set === 0 ? `exp-item-${index}` : undefined} className="hover:text-text-primary transition-colors duration-150" dir="rtl">
+                    <span id={set === 0 && repeat === 0 ? `exp-item-${index}` : undefined} className="hover:text-text-primary transition-colors duration-150" dir="rtl">
                       {item}
                     </span>
                     <span
-                      id={set === 0 ? `exp-divider-${index}` : undefined}
+                      id={set === 0 && repeat === 0 ? `exp-divider-${index}` : undefined}
                       className="text-text-muted/40 select-none font-light text-xs sm:text-sm"
                       aria-hidden="true"
                     >
