@@ -21,7 +21,7 @@ const BLOG_IMAGE_SOURCES: Record<string, string> = {
   'zakat-vat-return-guide-saudi-businesses': 'https://images.pexels.com/photos/8296977/pexels-photo-8296977.jpeg?auto=compress&cs=tinysrgb&w=3840&h=2160&fit=crop',
   'bookkeeping-importance-organized-accounting': 'https://images.pexels.com/photos/8939048/pexels-photo-8939048.jpeg?auto=compress&cs=tinysrgb&w=3840&h=2160&fit=crop',
   'real-profit': 'https://images.pexels.com/photos/8939055/pexels-photo-8939055.jpeg?auto=compress&cs=tinysrgb&w=3840&h=2160&fit=crop',
-  'product-pricing': 'https://images.pexels.com/photos/8296948/pexels-photo-8296948.jpeg?auto=compress&cs=tinysrgb&w=3840&h=2160&fit=crop',
+  'product-pricing': 'https://images.pexels.com/photos/8939103/pexels-photo-8939103.jpeg?auto=compress&cs=tinysrgb&w=3840&h=2160&fit=crop',
   'business-expansion': 'https://images.pexels.com/photos/8939042/pexels-photo-8939042.jpeg?auto=compress&cs=tinysrgb&w=3840&h=2160&fit=crop',
   'remote-accountant': 'https://images.pexels.com/photos/7984733/pexels-photo-7984733.jpeg?auto=compress&cs=tinysrgb&w=3840&h=2160&fit=crop',
   'qawaem-financial-statements': 'https://images.pexels.com/photos/8939105/pexels-photo-8939105.jpeg?auto=compress&cs=tinysrgb&w=3840&h=2160&fit=crop',
