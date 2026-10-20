@@ -276,7 +276,9 @@ export default function ArticlePage({ slug }: { slug: string }) {
     return found ? found.name : 'مالية ومحاسبة';
   };
 
-  const isChallengeArticle = ["real-profit", "product-pricing", "business-expansion", "remote-accountant", "qawaem-financial-statements", "zatca-tax-returns"].includes(article.slug);\n  const whatsappMessage = isChallengeArticle\n    ? `السلام عليكم خالد القائد، قرأت مقال: "${article.title}". أرغب في طلب فحص مجاني لحسابات منشأتي لآخر شهرين بخصوص هذه المشكلة.`\n    : `السلام عليكم\\nأطلعت على مقال: "${article.title}" في المكتبة المالية للقائد.\\nأود استشارة مخصصة لمنشأتي حول هذا الموضوع.`;
+  const isChallengeArticle = ["real-profit", "product-pricing", "business-expansion", "remote-accountant", "qawaem-financial-statements", "zatca-tax-returns"].includes(article.slug);
+  const whatsappMessage = isChallengeArticle
+    ? `السلام عليكم خالد القائد، قرأت مقال: "${article.title}". أرغب في طلب فحص مجاني لحسابات منشأتي لآخر شهرين بخصوص هذه المشكلة.`\n    : `السلام عليكم\\nأطلعت على مقال: "${article.title}" في المكتبة المالية للقائد.\\nأود استشارة مخصصة لمنشأتي حول هذا الموضوع.`;
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
