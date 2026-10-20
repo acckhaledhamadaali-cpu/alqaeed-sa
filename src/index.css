@@ -34,7 +34,7 @@
 }
 
 @theme {
-  --animate-marquee: marquee 60s linear infinite;
+  --animate-marquee: marquee 35s linear infinite;
   @keyframes marquee {
     from {
       transform: translateX(-50%);
@@ -98,6 +98,13 @@ body {
 #experience-bar-items {
   margin-block: 0 !important;
   padding-block: 0 !important;
+  animation-duration: 35s !important;
+  animation-play-state: running !important;
+}
+
+#experience-bar-items:hover,
+#experience-bar-section:hover #experience-bar-items {
+  animation-play-state: running !important;
 }
 
 #challenges-section-wrapper {
