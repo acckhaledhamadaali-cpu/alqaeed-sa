@@ -92,7 +92,7 @@ export default function HeroSection(props: HTMLAttributes<HTMLElement>) {
                   id="hero-call-cta"
                   aria-label="اتصل الآن"
                   title="اتصل الآن"
-                  className="inline-flex flex-none self-stretch items-center justify-center w-10 sm:w-11 px-0 rounded-xl bg-primary hover:opacity-90 text-white shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  className="inline-flex flex-none self-stretch items-center justify-center w-10 sm:w-11 px-0 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
                 >
                   <FaPhone className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
                 </a>
