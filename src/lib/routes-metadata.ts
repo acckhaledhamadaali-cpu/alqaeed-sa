@@ -1,5 +1,6 @@
 import { BLOG_ARTICLES } from '../data/blogArticles';
 import { getBlogImageAbsolute } from '../data/blogImages';
+import { getLocalSeoPage } from '../data/localSeo';
 
 export interface RouteMeta {
   path: string;
@@ -840,6 +841,9 @@ const BLOG_SEO_TITLES: Record<string, string> = {
 
 export function getRouteMetadata(path: string): RouteMeta {
   const normalized = (path.endsWith('/') && path.length > 1) ? path.slice(0, -1) : path;
+  const localSeoPage = getLocalSeoPage(normalized);
+  if (localSeoPage) return localSeoPage;
+
   if (ROUTES_METADATA[normalized]) {
     return ROUTES_METADATA[normalized];
   }
