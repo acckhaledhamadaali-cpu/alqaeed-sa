@@ -47,18 +47,18 @@
   </url>
   <url>
     <loc>https://alqaeed-sa.pages.dev/privacy-policy/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://alqaeed-sa.pages.dev/terms/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://alqaeed-sa.pages.dev/cookies/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://alqaeed-sa.pages.dev/blog/</loc>
@@ -67,51 +67,61 @@
   </url>
   <url>
     <loc>https://alqaeed-sa.pages.dev/blog/remote-accountant-saudi-companies/</loc>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alqaeed-sa.pages.dev/blog/what-is-virtual-cfo-and-when-needed/</loc>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alqaeed-sa.pages.dev/blog/difference-between-accountant-and-cfo/</loc>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alqaeed-sa.pages.dev/blog/cash-flow-management-avoid-financial-crisis/</loc>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alqaeed-sa.pages.dev/blog/financial-statements-importance-decision-making/</loc>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alqaeed-sa.pages.dev/blog/financial-analysis-key-ratios-business-owners/</loc>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alqaeed-sa.pages.dev/blog/budgeting-planning-revenues-expenses/</loc>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alqaeed-sa.pages.dev/blog/bookkeeping-importance-organized-accounting/</loc>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alqaeed-sa.pages.dev/blog/zakat-tax-financial-data-organization/</loc>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alqaeed-sa.pages.dev/blog/7-signs-company-needs-remote-financial-management/</loc>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -147,6 +157,7 @@
   </url>
   <url>
     <loc>https://alqaeed-sa.pages.dev/blog/zakat-vat-return-guide-saudi-businesses/</loc>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
