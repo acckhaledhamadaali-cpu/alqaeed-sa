@@ -5,7 +5,6 @@
 
 import { useEffect } from 'react';
 import HeroSection from '../sections/HeroSection';
-import ExperienceBar from '../sections/ExperienceBar';
 import SectorsSection from '../sections/SectorsSection';
 import HowIWorkSection from '../sections/HowIWorkSection';
 import ChallengesSection from '../sections/ChallengesSection';
@@ -160,7 +159,6 @@ export default function App({ path: propPath }: { path?: string } = {}) {
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
           <BudgetingPage />
-          <ServicePricingNote />
         </main>
         <FooterSection />
         <FloatingWhatsApp />
@@ -259,7 +257,6 @@ export default function App({ path: propPath }: { path?: string } = {}) {
     <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10" dir="rtl">
       <main id="main-content">
         <HeroSection />
-        <ExperienceBar />
         <ChallengesSection />
         <SectorsSection />
         <ServicesSection />
