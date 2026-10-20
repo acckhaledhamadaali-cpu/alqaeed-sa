@@ -7,7 +7,7 @@ export default function FooterSection(props: HTMLAttributes<HTMLElement>) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <SectionWrapper id="footer-section-wrapper" variant="white" spacing="none" as="footer" {...props}>
+    <SectionWrapper id="footer-section-wrapper" variant="white" spacing="none" as="footer" className="relative z-10 !overflow-visible" {...props}>
       <Container id="footer-container">
         <SocialMedia />
         <div id="footer-content" className="py-3 flex flex-col items-center justify-center text-center space-y-2 border-t border-border-subtle mt-1">
