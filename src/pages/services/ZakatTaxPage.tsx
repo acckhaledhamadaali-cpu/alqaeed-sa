@@ -116,7 +116,7 @@ export default function ZakatTaxPage() {
             <a href="#zakat-return" className="text-primary underline underline-offset-4 hover:text-secondary">الإقرار الزكوي</a>
           </nav>
 
-          <section id="vat-return" aria-labelledby="vat-return-heading" className="mt-8 scroll-mt-24">
+          <section id="vat-return" aria-labelledby="vat-return-heading" className="mt-6 scroll-mt-24">
             <p className="mb-1 text-xs text-secondary">أولًا · ضريبة القيمة المضافة</p>
             <h2 id="vat-return-heading" className="text-lg text-text-primary md:text-xl">
               إقرار ضريبة القيمة المضافة
@@ -161,7 +161,7 @@ export default function ZakatTaxPage() {
             </p>
           </section>
 
-          <section id="zakat-return" aria-labelledby="zakat-return-heading" className="mt-9 scroll-mt-24">
+          <section id="zakat-return" aria-labelledby="zakat-return-heading" className="mt-6 scroll-mt-24">
             <p className="mb-1 text-xs text-secondary">ثانيًا · الزكاة</p>
             <h2 id="zakat-return-heading" className="text-lg text-text-primary md:text-xl">
               الإقرار الزكوي للمنشآت
@@ -211,7 +211,7 @@ export default function ZakatTaxPage() {
             </p>
           </section>
 
-          <section id="service-scope" aria-labelledby="service-scope-heading" className="mt-9 scroll-mt-24">
+          <section id="service-scope" aria-labelledby="service-scope-heading" className="mt-6 scroll-mt-24">
             <h2 id="service-scope-heading" className="text-base text-text-primary">كيف تسير الخدمة؟</h2>
             <ol className="mt-2 list-decimal space-y-1 pr-5 text-sm leading-7 text-text-secondary">
               <li>نحدد نوع الإقرار والفترة وما يظهر في حساب المنشأة لدى الهيئة.</li>
@@ -223,7 +223,7 @@ export default function ZakatTaxPage() {
             </p>
           </section>
 
-          <section id="common-questions" aria-labelledby="common-questions-heading" className="mt-9 scroll-mt-24">
+          <section id="common-questions" aria-labelledby="common-questions-heading" className="mt-6 scroll-mt-24">
             <h2 id="common-questions-heading" className="text-lg text-text-primary md:text-xl">أسئلة قد تهمك</h2>
             <div className="mt-3 space-y-4">
               <article>
