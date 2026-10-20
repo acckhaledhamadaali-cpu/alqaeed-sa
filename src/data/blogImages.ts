@@ -1,30 +1,29 @@
+/**
+ * Original 4K vector covers for all published financial articles.
+ * Each SVG has a 3840 × 2160 viewBox and stays sharp at every display size.
+ */
 const BLOG_IMAGE_SOURCES: Record<string, string> = {
-  'remote-accountant-saudi-companies': 'https://images.unsplash.com/photo-1781246435700-afec19012b45?auto=format&fit=crop&w=3840&q=72&fm=webp',
-  'what-is-virtual-cfo-and-when-needed': 'https://images.unsplash.com/photo-1758518729711-1cbacd55efdb?auto=format&fit=crop&w=3840&q=72&fm=webp',
-  'difference-between-accountant-and-cfo': 'https://images.unsplash.com/photo-1762427354397-854a52e0ded7?auto=format&fit=crop&w=3840&q=72&fm=webp',
-  'cash-flow-management-avoid-financial-crisis': 'https://images.unsplash.com/photo-1707157284454-553ef0a4ed0d?auto=format&fit=crop&w=3840&q=72&fm=webp',
-  'financial-statements-importance-decision-making': 'https://images.unsplash.com/photo-1758518727820-28491c194bee?auto=format&fit=crop&w=3840&q=72&fm=webp',
-  'financial-analysis-key-ratios-business-owners': 'https://images.unsplash.com/photo-1781246435700-afec19012b45?auto=format&fit=crop&w=3840&q=72&fm=webp',
-  'budgeting-planning-revenues-expenses': 'https://images.unsplash.com/photo-1762427354397-854a52e0ded7?auto=format&fit=crop&w=3840&q=72&fm=webp',
-  'zakat-tax-financial-data-organization': 'https://images.unsplash.com/photo-1772588627499-baefc8ab0ce7?auto=format&fit=crop&w=3840&q=72&fm=webp',
-  '7-signs-company-needs-remote-financial-management': 'https://images.unsplash.com/photo-1758518729711-1cbacd55efdb?auto=format&fit=crop&w=3840&q=72&fm=webp',
+  'remote-accountant-saudi-companies': '/images/blog/remote-accountant-saudi-companies.svg',
+  'what-is-virtual-cfo-and-when-needed': '/images/blog/what-is-virtual-cfo-and-when-needed.svg',
+  'difference-between-accountant-and-cfo': '/images/blog/difference-between-accountant-and-cfo.svg',
+  'cash-flow-management-avoid-financial-crisis': '/images/blog/cash-flow-management-avoid-financial-crisis.svg',
+  'financial-statements-importance-decision-making': '/images/blog/financial-statements-importance-decision-making.svg',
+  'financial-analysis-key-ratios-business-owners': '/images/blog/financial-analysis-key-ratios-business-owners.svg',
+  'budgeting-planning-revenues-expenses': '/images/blog/budgeting-planning-revenues-expenses.svg',
+  'zakat-tax-financial-data-organization': '/images/blog/zakat-tax-financial-data-organization.svg',
+  '7-signs-company-needs-remote-financial-management': '/images/blog/7-signs-company-needs-remote-financial-management.svg',
+  'zakat-vat-return-guide-saudi-businesses': '/images/blog/zakat-vat-return-guide-saudi-businesses.svg',
+  'bookkeeping-importance-organized-accounting': '/images/blog/bookkeeping-importance-organized-accounting.svg',
+  'real-profit': '/images/blog/real-profit.svg',
+  'product-pricing': '/images/blog/product-pricing.svg',
+  'business-expansion': '/images/blog/business-expansion.svg',
+  'remote-accountant': '/images/blog/remote-accountant.svg',
+  'qawaem-financial-statements': '/images/blog/qawaem-financial-statements.svg',
+  'zatca-tax-returns': '/images/blog/zatca-tax-returns.svg',
 };
 
-const ARTICLES_WITHOUT_COVER_IMAGE = new Set([
-  'zakat-vat-return-guide-saudi-businesses',
-  'bookkeeping-importance-organized-accounting',
-  // These six challenge articles intentionally use a text-only layout until local cover assets are available.
-  'real-profit',
-  'product-pricing',
-  'business-expansion',
-  'remote-accountant',
-  'qawaem-financial-statements',
-  'zatca-tax-returns',
-]);
-
 export function getBlogImage(slug: string): string {
-  if (ARTICLES_WITHOUT_COVER_IMAGE.has(slug)) return '';
-  return BLOG_IMAGE_SOURCES[slug] ?? `/images/blog/${slug}.webp`;
+  return BLOG_IMAGE_SOURCES[slug] ?? '';
 }
 
 export function getBlogImageAbsolute(slug: string): string {
@@ -35,10 +34,7 @@ export function getBlogImageAbsolute(slug: string): string {
     : new URL(image, 'https://alqaeed-sa.pages.dev').toString();
 }
 
-export function getBlogImageSrcSet(slug: string): string {
-  const src = getBlogImage(slug);
-  if (!src.startsWith('https://images.unsplash.com/')) return '';
-  return [640, 960, 1440, 1920, 3840]
-    .map((width) => `${src.replace('w=3840', `w=${width}`)} ${width}w`)
-    .join(', ');
+export function getBlogImageSrcSet(_slug: string): string {
+  // Vector covers scale cleanly; a raster srcset is unnecessary.
+  return '';
 }
