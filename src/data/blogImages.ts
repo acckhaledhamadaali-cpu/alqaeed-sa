@@ -1,8 +1,8 @@
 /**
  * Article-specific photography for the Alqaeed Saudi financial-management blog.
- * All photos showing people were selected from Pexels listings described as male
- * business professionals/accountants. Tax and bookkeeping may also use document-only
- * imagery so no women appear in the image.
+ * Photo direction: male-only business imagery with an Arabic/Middle Eastern professional
+ * visual where appropriate, alongside finance-specific photos. Tax and bookkeeping may
+ * also use document-only imagery. Review individual stock photos before production use.
  * Pexels license: https://www.pexels.com/legal-pages/license/
  */
 const image = (id: string) =>
@@ -10,11 +10,11 @@ const image = (id: string) =>
 
 const BLOG_IMAGE_SOURCES: Record<string, string> = {
   // Remote accounting: male accountant working with financial papers and calculator.
-  'remote-accountant-saudi-companies': image('8297126'),
+  'remote-accountant-saudi-companies': image('8939105'),
   // Virtual CFO: executive reviewing documents in a modern office.
-  'what-is-virtual-cfo-and-when-needed': image('8123894'),
+  'what-is-virtual-cfo-and-when-needed': image('8939057'),
   // Accountant vs CFO: male professional examining financial documents.
-  'difference-between-accountant-and-cfo': image('7821546'),
+  'difference-between-accountant-and-cfo': image('8939057'),
   // Cash flow: male business professional analyzing figures and charts.
   'cash-flow-management-avoid-financial-crisis': image('5915297'),
   // Financial statements: man reviewing business documents and charts.
@@ -38,7 +38,7 @@ const BLOG_IMAGE_SOURCES: Record<string, string> = {
   // Expansion planning: man reviewing financial graphs in an office.
   'business-expansion': image('7698817'),
   // Remote accountant topic: male accountant discussing reports in an office.
-  'remote-accountant': image('6694873'),
+  'remote-accountant': image('8939105'),
   // Financial statements (legacy slug): mature businessman reviewing a report.
   'qawaem-financial-statements': image('7845349'),
   // ZATCA returns (legacy slug): tax forms, calculator, and organized documents.
