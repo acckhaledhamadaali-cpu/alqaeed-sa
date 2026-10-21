@@ -1,31 +1,48 @@
 /**
- * Curated real photography for Arabic/Saudi business audiences.
- * Wardrobe mix: Saudi thobe, formal suits, and smart-casual shirts.
- * People-focused photos are selected from male-subject source descriptions;
- * accounting topics use real office, calculator, paperwork, and finance-chart imagery.
- * Pexels commercial-use license: https://www.pexels.com/legal-pages/license/
- *
- * CDN requests a 3840x2160 landscape crop. Original source dimensions vary by photo;
- * this requests a 4K-sized delivery but does not upscale a lower-resolution original.
+ * Article-specific photography for the Alqaeed Saudi financial-management blog.
+ * All photos showing people were selected from Pexels listings described as male
+ * business professionals/accountants. Tax and bookkeeping may also use document-only
+ * imagery so no women appear in the image.
+ * Pexels license: https://www.pexels.com/legal-pages/license/
  */
+const image = (id: string) =>
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop`;
+
 const BLOG_IMAGE_SOURCES: Record<string, string> = {
-  'remote-accountant-saudi-companies': 'https://images.pexels.com/photos/7984740/pexels-photo-7984740.jpeg?auto=compress&cs=tinysrgb&w=3840&h=2160&fit=crop',
-  'what-is-virtual-cfo-and-when-needed': 'https://images.pexels.com/photos/7472428/pexels-photo-7472428.jpeg?auto=compress&cs=tinysrgb&w=3840&h=2160&fit=crop',
-  'difference-between-accountant-and-cfo': 'https://images.pexels.com/photos/8939054/pexels-photo-8939054.jpeg?auto=compress&cs=tinysrgb&w=3840&h=2160&fit=crop',
-  'cash-flow-management-avoid-financial-crisis': 'https://images.pexels.com/photos/6694492/pexels-photo-6694492.jpeg?auto=compress&cs=tinysrgb&w=3840&h=2160&fit=crop',
-  'financial-statements-importance-decision-making': 'https://images.pexels.com/photos/8296948/pexels-photo-8296948.jpeg?auto=compress&cs=tinysrgb&w=3840&h=2160&fit=crop',
-  'financial-analysis-key-ratios-business-owners': 'https://images.pexels.com/photos/7567432/pexels-photo-7567432.jpeg?auto=compress&cs=tinysrgb&w=3840&h=2160&fit=crop',
-  'budgeting-planning-revenues-expenses': 'https://images.pexels.com/photos/8297126/pexels-photo-8297126.jpeg?auto=compress&cs=tinysrgb&w=3840&h=2160&fit=crop',
-  'zakat-tax-financial-data-organization': 'https://images.pexels.com/photos/8939103/pexels-photo-8939103.jpeg?auto=compress&cs=tinysrgb&w=3840&h=2160&fit=crop',
-  '7-signs-company-needs-remote-financial-management': 'https://images.pexels.com/photos/7594092/pexels-photo-7594092.jpeg?auto=compress&cs=tinysrgb&w=3840&h=2160&fit=crop',
-  'zakat-vat-return-guide-saudi-businesses': 'https://images.pexels.com/photos/8939042/pexels-photo-8939042.jpeg?auto=compress&cs=tinysrgb&w=3840&h=2160&fit=crop',
-  'bookkeeping-importance-organized-accounting': 'https://images.pexels.com/photos/8068010/pexels-photo-8068010.jpeg?auto=compress&cs=tinysrgb&w=3840&h=2160&fit=crop',
-  'real-profit': 'https://images.pexels.com/photos/7567426/pexels-photo-7567426.jpeg?auto=compress&cs=tinysrgb&w=3840&h=2160&fit=crop',
-  'product-pricing': 'https://images.pexels.com/photos/8939055/pexels-photo-8939055.jpeg?auto=compress&cs=tinysrgb&w=3840&h=2160&fit=crop',
-  'business-expansion': 'https://images.pexels.com/photos/8973544/pexels-photo-8973544.jpeg?auto=compress&cs=tinysrgb&w=3840&h=2160&fit=crop',
-  'remote-accountant': 'https://images.pexels.com/photos/7567427/pexels-photo-7567427.jpeg?auto=compress&cs=tinysrgb&w=3840&h=2160&fit=crop',
-  'qawaem-financial-statements': 'https://images.pexels.com/photos/8939105/pexels-photo-8939105.jpeg?auto=compress&cs=tinysrgb&w=3840&h=2160&fit=crop',
-  'zatca-tax-returns': 'https://images.pexels.com/photos/8939100/pexels-photo-8939100.jpeg?auto=compress&cs=tinysrgb&w=3840&h=2160&fit=crop',
+  // Remote accounting: male accountant working with financial papers and calculator.
+  'remote-accountant-saudi-companies': image('8297126'),
+  // Virtual CFO: executive reviewing documents in a modern office.
+  'what-is-virtual-cfo-and-when-needed': image('8123894'),
+  // Accountant vs CFO: male professional examining financial documents.
+  'difference-between-accountant-and-cfo': image('7821546'),
+  // Cash flow: male business professional analyzing figures and charts.
+  'cash-flow-management-avoid-financial-crisis': image('5915297'),
+  // Financial statements: man reviewing business documents and charts.
+  'financial-statements-importance-decision-making': image('7868977'),
+  // Financial analysis: businessman reviewing reports at his desk.
+  'financial-analysis-key-ratios-business-owners': image('7580653'),
+  // Budgeting: businessman with calculator, laptop, and financial documents.
+  'budgeting-planning-revenues-expenses': image('7821716'),
+  // Zakat and tax organization: male professional working on tax documents.
+  'zakat-tax-financial-data-organization': image('7821712'),
+  // Signs that a company needs financial leadership: businessman reviewing charts.
+  '7-signs-company-needs-remote-financial-management': image('5921484'),
+  // Tax returns: male professional handling finance paperwork and calculator.
+  'zakat-vat-return-guide-saudi-businesses': image('7821712'),
+  // Bookkeeping: male professional working through business paperwork.
+  'bookkeeping-importance-organized-accounting': image('7821541'),
+  // Profitability: focused businessman working with a calculator and documents.
+  'real-profit': image('7821702'),
+  // Product pricing: business professional examining financial documents.
+  'product-pricing': image('7821546'),
+  // Expansion planning: man reviewing financial graphs in an office.
+  'business-expansion': image('7698817'),
+  // Remote accountant topic: male accountant discussing reports in an office.
+  'remote-accountant': image('6694873'),
+  // Financial statements (legacy slug): mature businessman reviewing a report.
+  'qawaem-financial-statements': image('7845349'),
+  // ZATCA returns (legacy slug): tax forms, calculator, and organized documents.
+  'zatca-tax-returns': image('6928997'),
 };
 
 export function getBlogImage(slug: string): string {
@@ -37,6 +54,6 @@ export function getBlogImageAbsolute(slug: string): string {
 }
 
 export function getBlogImageSrcSet(_slug: string): string {
-  // The CDN URL requests a 3840 × 2160 crop; native source dimensions vary.
+  // Each image is served as a responsive landscape crop from the image CDN.
   return '';
 }
