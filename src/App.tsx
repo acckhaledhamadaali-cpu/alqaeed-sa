@@ -25,6 +25,7 @@ import ArticlePage from './pages/ArticlePage';
 import SectorDetailPage from './pages/sectors/SectorDetailPage';
 
 import BookkeepingPage from './pages/services/BookkeepingPage';
+import TaxInvoiceIssuancePage from './pages/services/TaxInvoiceIssuancePage';
 import ZakatTaxPage from './pages/services/ZakatTaxPage';
 import FinancialStatementsPage from './pages/services/FinancialStatementsPage';
 import FinancialAnalysisPage from './pages/services/FinancialAnalysisPage';
@@ -97,6 +98,18 @@ export default function App({ path: propPath }: { path?: string } = {}) {
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
           <SectorDetailPage slug={slug} />
+        </main>
+        <FooterSection />
+        <FloatingWhatsApp />
+      </div>
+    );
+  }
+
+  if (path === '/services/tax-invoice-issuance') {
+    return (
+      <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
+        <main id="main-content" className="flex-grow">
+          <TaxInvoiceIssuancePage />
         </main>
         <FooterSection />
         <FloatingWhatsApp />
