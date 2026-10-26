@@ -201,6 +201,45 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
       ]
     }
   },
+  '/services/tax-invoice-issuance': {
+    path: '/services/tax-invoice-issuance',
+    title: 'إصدار فواتير ضريبية وإلكترونية للشركات | القائد',
+    description: 'خدمة إصدار وتجهيز الفواتير الضريبية والإلكترونية للمنشآت في السعودية، مع تنظيم بيانات المبيعات والعملاء ومراعاة متطلبات الفوترة المنطبقة.',
+    canonical: 'https://alqaeed-sa.pages.dev/services/tax-invoice-issuance/',
+    ogTitle: 'إصدار فواتير ضريبية وإلكترونية للشركات | القائد',
+    ogDescription: 'مساندة محاسبية عن بُعد لتجهيز وإصدار الفواتير الضريبية وفق بيانات العمليات ونظام المنشأة ومتطلبات الفوترة الإلكترونية المنطبقة.',
+    ogUrl: 'https://alqaeed-sa.pages.dev/services/tax-invoice-issuance/',
+    schema: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://alqaeed-sa.pages.dev/services/tax-invoice-issuance/#webpage",
+          "url": "https://alqaeed-sa.pages.dev/services/tax-invoice-issuance/",
+          "name": "إصدار فواتير ضريبية وإلكترونية للشركات | القائد",
+          "description": "خدمة إصدار وتجهيز الفواتير الضريبية والإلكترونية للمنشآت في السعودية، مع تنظيم بيانات المبيعات والعملاء ومراعاة متطلبات الفوترة المنطبقة.",
+          "inLanguage": "ar-SA",
+          "isPartOf": { "@id": "https://alqaeed-sa.pages.dev/#website" }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://alqaeed-sa.pages.dev/services/tax-invoice-issuance/#service",
+          "name": "إصدار فواتير ضريبية وإلكترونية للشركات",
+          "description": "مساندة المنشآت في تجهيز وإصدار الفواتير الضريبية والإلكترونية وفق بيانات العمليات والنظام المستخدم.",
+          "provider": { "@id": "https://alqaeed-sa.pages.dev/#organization" },
+          "areaServed": { "@type": "Country", "name": "Saudi Arabia" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://alqaeed-sa.pages.dev/services/tax-invoice-issuance/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://alqaeed-sa.pages.dev/" },
+            { "@type": "ListItem", "position": 2, "name": "إصدار الفواتير الضريبية", "item": "https://alqaeed-sa.pages.dev/services/tax-invoice-issuance/" }
+          ]
+        }
+      ]
+    }
+  },
   '/services/zakat-tax': {
     path: '/services/zakat-tax',
     title: 'إقرار الزكاة وضريبة القيمة المضافة | القائد',
