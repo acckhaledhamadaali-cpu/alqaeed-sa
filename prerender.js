@@ -19,7 +19,7 @@ async function prerender() {
   // Normalize route paths so trailing slashes never bypass route rules.
   const normalizeRoute = (route) => {
     if (!route || route === '/') return '/';
-    return `/${route.replace(/^\\/+|\\/+$/g, '')}`;
+    return `/${route.replace(/^\/+|\/+$/g, '')}`;
   };
 
   // Legacy public route kept reachable, but excluded from search indexing and the sitemap.
