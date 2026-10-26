@@ -16,7 +16,13 @@ async function prerender() {
 
   const template = fs.readFileSync(templatePath, 'utf8');
 
-  // Legacy public route kept reachable, but excluded from search indexing.
+  // Normalize route paths so trailing slashes never bypass route rules.
+  const normalizeRoute = (route) => {
+    if (!route || route === '/') return '/';
+    return `/${route.replace(/^\\/+|\\/+$/g, '')}`;
+  };
+
+  // Legacy public route kept reachable, but excluded from search indexing and the sitemap.
   const NOINDEX_ROUTES = new Set(['/services/virtual-cfo']);
 
   // Import SSR bundle
@@ -78,7 +84,7 @@ async function prerender() {
     html = html.replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/i, `<link rel="canonical" href="${metadata.canonical}" />`);
 
     // 7. Update robots directive for legacy/deprioritized pages
-    const robotsContent = NOINDEX_ROUTES.has(route) ? 'noindex, follow' : 'index, follow';
+    const robotsContent = NOINDEX_ROUTES.has(normalizeRoute(route)) ? 'noindex, follow' : 'index, follow';
     if (/<meta\s+name="robots"\s+content="[^"]*"\s*\/?>/i.test(html)) {
       html = html.replace(/<meta\s+name="robots"\s+content="[^"]*"\s*\/?>/i, `<meta name="robots" content="${robotsContent}" />`);
     } else {
@@ -111,7 +117,8 @@ async function prerender() {
   // Update/generate sitemap.xml in dist and public
   const sitemapPath = path.resolve(distDir, 'sitemap.xml');
   const publicSitemapPath = path.resolve(__dirname, 'public', 'sitemap.xml');
-  const sitemapEntries = routes.filter((r) => !NOINDEX_ROUTES.has(r)).map((r) => {
+  const sitemapRoutes = routes.filter((r) => !NOINDEX_ROUTES.has(normalizeRoute(r)));
+  const sitemapEntries = sitemapRoutes.map((r) => {
     const loc = r === '/' ? 'https://alqaeed-sa.pages.dev/' : `https://alqaeed-sa.pages.dev${r}/`;
     const normalized = r.endsWith('/') && r.length > 1 ? r.slice(0, -1) : r;
     const articleSlug = normalized.startsWith('/blog/') ? normalized.replace(/^\/blog\//, '') : null;
@@ -128,7 +135,7 @@ async function prerender() {
   if (fs.existsSync(path.dirname(publicSitemapPath))) {
     fs.writeFileSync(publicSitemapPath, sitemapContent, 'utf8');
   }
-  console.log(`✓ [Sitemap] Generated: sitemap.xml with ${routes.length} URLs (in dist and public)`);
+  console.log(`✓ [Sitemap] Generated: sitemap.xml with ${sitemapRoutes.length} indexable URLs (in dist and public)`);
 
   console.log('Static Site Pre-rendering completed successfully!');
 }
