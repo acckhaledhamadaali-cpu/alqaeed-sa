@@ -22,8 +22,8 @@ async function prerender() {
     return `/${route.replace(/^\/+|\/+$/g, '')}`;
   };
 
-  // Legacy public route kept reachable, but excluded from search indexing and the sitemap.
-  const NOINDEX_ROUTES = new Set(['/services/virtual-cfo']);
+  // All public service pages are indexable unless explicitly excluded here.
+  const NOINDEX_ROUTES = new Set([]);
 
   // Import SSR bundle
   const ssrBundlePath = path.resolve(__dirname, 'dist-ssr', 'entry-server.js');
