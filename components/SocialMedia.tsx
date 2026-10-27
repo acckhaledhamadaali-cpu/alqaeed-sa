@@ -61,6 +61,34 @@ export default function SocialMedia() {
   return (
     <div className="w-full flex flex-col items-center pt-2 pb-4">
       <h3 className="text-xs md:text-sm font-bold text-primary mb-3 font-arabic">تواصل معنا وتابعنا على مواقع التواصل</h3>
+
+      <div className="mt-4 w-full max-w-xl rounded-xl border border-[#D4AF37]/40 bg-[#0F172A] px-4 py-3 sm:px-5 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-sm">
+        <div className="text-center sm:text-right">
+          <p className="text-sm font-bold text-white font-arabic">رأيك يصنع فرقًا</p>
+          <p className="text-xs text-white/75 font-arabic mt-1">شارك تجربتك أو اطّلع على حضور القائد على Google</p>
+        </div>
+        <div className="flex items-center gap-2 shrink-0">
+          <a
+            href="https://g.page/r/CbiFH7EXtOhYEBI/review"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="اكتب تقييمك على Google"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#D4AF37] px-3 py-2 text-xs font-bold text-[#0F172A] hover:bg-[#e4c45c] transition-colors"
+          >
+            <span aria-hidden="true" className="font-bold text-sm">G</span>
+            اكتب تقييمك
+          </a>
+          <a
+            href="https://www.google.com/search?q=%D8%A7%D9%84%D9%82%D8%A7%D8%A6%D8%AF+%D9%84%D9%84%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9+%D8%A7%D9%84%D9%85%D8%A7%D9%84%D9%8A%D8%A9"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="ابحث عن القائد على Google لمشاهدة الملف والتقييمات"
+            className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/30 px-3 py-2 text-xs font-semibold text-white hover:bg-white/10 transition-colors"
+          >
+            <span aria-hidden="true">مشاهدة التقييمات</span>
+          </a>
+        </div>
+      </div>
       <div className="flex flex-row justify-center items-center gap-1.5 md:gap-2.5">
         <details className="relative">
           <summary
