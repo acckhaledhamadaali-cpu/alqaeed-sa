@@ -62,10 +62,10 @@ export default function SocialMedia() {
     <div className="w-full flex flex-col items-center pt-2 pb-4">
       <h3 className="text-xs md:text-sm font-bold text-primary mb-3 font-arabic">تواصل معنا وتابعنا على مواقع التواصل</h3>
 
-      <div className="mt-4 w-full max-w-xl rounded-xl border border-[#D4AF37]/40 bg-[#0F172A] px-4 py-3 sm:px-5 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-sm">
+      <div className="mt-4 w-full max-w-xl rounded-xl border border-[#D4AF37]/60 bg-[#FFFEFA] px-4 py-3 sm:px-5 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-sm">
         <div className="text-center sm:text-right">
-          <p className="text-sm font-bold text-white font-arabic">رأيك يصنع فرقًا</p>
-          <p className="text-xs text-white/75 font-arabic mt-1">شارك تجربتك أو اطّلع على حضور القائد على Google</p>
+          <p className="text-sm font-bold text-[#111111] font-arabic">رأيك يصنع فرقًا</p>
+          <p className="text-xs text-[#333333] font-arabic mt-1">شارك تجربتك أو اطّلع على حضور القائد على Google</p>
         </div>
         <div className="flex items-center gap-2 shrink-0">
           <a
@@ -73,7 +73,7 @@ export default function SocialMedia() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="اكتب تقييمك على Google"
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#D4AF37] px-3 py-2 text-xs font-bold text-[#0F172A] hover:bg-[#e4c45c] transition-colors"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#D4AF37] px-3 py-2 text-xs font-bold text-[#111111] hover:bg-[#e4c45c] transition-colors"
           >
             <span aria-hidden="true" className="font-bold text-sm">G</span>
             اكتب تقييمك
@@ -83,7 +83,7 @@ export default function SocialMedia() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="ابحث عن القائد على Google لمشاهدة الملف والتقييمات"
-            className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/30 px-3 py-2 text-xs font-semibold text-white hover:bg-white/10 transition-colors"
+            className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#0F172A]/25 px-3 py-2 text-xs font-semibold text-[#111111] hover:bg-[#F5F1E6] transition-colors"
           >
             <span aria-hidden="true">مشاهدة التقييمات</span>
           </a>
