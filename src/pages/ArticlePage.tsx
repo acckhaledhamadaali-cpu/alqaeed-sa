@@ -337,7 +337,7 @@ export default function ArticlePage({ slug }: { slug: string }) {
                   ]
                 : [
                     { title: 'الهيئة السعودية للمراجعين والمحاسبين – المعايير المحاسبية المعتمدة', url: 'https://www.socpa.org.sa/Socpa/Professional-standards/Accounting-standards/Auditing-Standards-Endorsed.aspx' },
-                    { title: 'مؤسسة IFRS – الملف التعريفي لتطبيق المعايير في السعودية', url: 'https://www.ifrs.org/content/dam/ifrs/publications/jurisdictions/pdf-profiles/saudi-arabia-ifrs-profile.pdf' }
+                    { title: 'مؤسسة IFRS – الملف التعريفي لتطبيق المعايير في السعودية', url: 'https://www.ifrs.org/use-around-the-world/use-of-ifrs-standards-by-jurisdiction/' }
                   ]
               ).map((source) => (
                 <li key={source.url}>
