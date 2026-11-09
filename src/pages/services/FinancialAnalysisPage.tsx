@@ -14,7 +14,7 @@ export default function FinancialAnalysisPage() {
   const slug = "financial-analysis";
   const metaTitle = "التحليل المالي للشركات ومؤشرات الأداء | القائد للإدارة المالية";
   const metaDesc = "تحليل مالي للمنشآت يشرح اتجاه الإيرادات والتكاليف والربحية والسيولة، ويربط المؤشرات بالفترات السابقة لدعم قرارات صاحب العمل.";
-  const url = "https://alqaeed-sa.pages.dev/services/" + slug;
+  const url = "https://alqaeed-sa.pages.dev/services/" + slug + "/";
   
   const schema = {
     "@context": "https://schema.org",
@@ -98,6 +98,10 @@ export default function FinancialAnalysisPage() {
           </h1>
           <div className="w-16 h-1 bg-primary mb-6 rounded-full"></div>
 
+          <figure className="mb-7 overflow-hidden rounded-2xl border border-border-subtle bg-surface-subtle">
+            <img src="/images/blog/financial-analysis-key-ratios-business-owners.webp" alt="صورة توضح قراءة المؤشرات والتحليل المالي" width={1280} height={720} loading="eager" decoding="async" className="h-auto max-h-[360px] w-full object-cover" />
+          </figure>
+
           <div className="text-sm md:text-[15px] text-text-secondary leading-loose space-y-4">
             <p>
               التحليل المالي قراءة منظمة للقوائم والبيانات المحاسبية لمعرفة ما الذي تغيّر ولماذا. لا يكتفي بعرض نسبة الربحية أو رصيد النقد؛ بل يقارن الإيرادات والتكاليف والمصروفات والأرصدة بين فترات متقاربة، ثم يوضح الأسئلة التي تحتاج إلى متابعة. لذلك تبدأ جودة التحليل من اكتمال البيانات وثبات طريقة تصنيفها.
@@ -136,6 +140,9 @@ export default function FinancialAnalysisPage() {
             </p>
           </div>
 
+          <div className="mb-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs md:text-sm leading-6 text-amber-900" role="note">
+            **تنبيه:** النموذج التالي توضيحي ببيانات افتراضية أُعدت لشرح شكل التقرير فقط، ولا يمثل قوائم أو سجلات أو نتائج فعلية لعميل.
+          </div>
           <PdfLeadMagnet 
             title="" 
             subtitle="" 
