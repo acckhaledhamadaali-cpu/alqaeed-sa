@@ -137,7 +137,7 @@ export default function BookkeepingPage() {
           </div>
 
           <div className="mb-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs md:text-sm leading-6 text-amber-900" role="note">
-            **تنبيه:** النموذج التالي توضيحي ببيانات افتراضية أُعدت لشرح شكل التقرير فقط، ولا يمثل قوائم أو سجلات أو نتائج فعلية لعميل.
+            <strong>تنبيه:</strong> النموذج التالي توضيحي ببيانات افتراضية أُعدت لشرح شكل التقرير فقط، ولا يمثل قوائم أو سجلات أو نتائج فعلية لعميل.
           </div>
           <PdfLeadMagnet 
             title="" 
