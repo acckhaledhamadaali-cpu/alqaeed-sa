@@ -99,7 +99,8 @@ export default function BookkeepingPage() {
           <div className="w-16 h-1 bg-primary mb-6 rounded-full"></div>
 
           <figure className="mb-7 overflow-hidden rounded-2xl border border-border-subtle bg-surface-subtle">
-            <img src="/images/blog/bookkeeping-importance-organized-accounting.webp" alt="صورة توضح تنظيم المستندات والدفاتر المحاسبية" width={1280} height={720} loading="eager" decoding="async" className="h-auto max-h-[360px] w-full object-cover" />
+            <img src="https://images.pexels.com/photos/7654591/pexels-photo-7654591.jpeg?cs=srgb&dl=pexels-pavel-danilyuk-7654591.jpg&fm=jpg" alt="صورة توضح تنظيم المستندات والدفاتر المحاسبية" width={1280} height={720} loading="eager" decoding="async" className="h-auto max-h-[360px] w-full object-cover" />
+            <figcaption className="px-3 py-2 text-[11px] text-text-muted">الصورة: <a href="https://www.pexels.com/photo/a-person-using-calculator-7654591/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">Pavel Danilyuk / Pexels</a></figcaption>
           </figure>
 
           <div className="text-sm md:text-[15px] text-text-secondary leading-loose space-y-4">
