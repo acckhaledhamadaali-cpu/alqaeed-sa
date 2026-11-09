@@ -14,7 +14,7 @@ export default function CashFlowPage() {
   const slug = "cash-flow";
   const metaTitle = "إدارة التدفقات النقدية والسيولة للشركات | القائد";
   const metaDesc = "تنظيم توقع المقبوضات والمدفوعات والالتزامات ومتابعة السيولة، لتكوين رؤية زمنية تساعد الإدارة على التخطيط النقدي.";
-  const url = "https://alqaeed-sa.pages.dev/services/" + slug;
+  const url = "https://alqaeed-sa.pages.dev/services/" + slug + "/";
   
   const schema = {
     "@context": "https://schema.org",
@@ -97,6 +97,10 @@ export default function CashFlowPage() {
             {name}
           </h1>
           <div className="w-16 h-1 bg-primary mb-6 rounded-full"></div>
+
+          <figure className="mb-7 overflow-hidden rounded-2xl border border-border-subtle bg-surface-subtle">
+            <img src="/images/blog/cash-flow-management-avoid-financial-crisis.webp" alt="صورة توضح متابعة التدفقات النقدية والسيولة" width={1280} height={720} loading="eager" decoding="async" className="h-auto max-h-[360px] w-full object-cover" />
+          </figure>
 
           <div className="text-sm md:text-[15px] text-text-secondary leading-loose space-y-4">
             <p>
