@@ -99,7 +99,8 @@ export default function CashFlowPage() {
           <div className="w-16 h-1 bg-primary mb-6 rounded-full"></div>
 
           <figure className="mb-7 overflow-hidden rounded-2xl border border-border-subtle bg-surface-subtle">
-            <img src="/images/blog/cash-flow-management-avoid-financial-crisis.webp" alt="صورة توضح متابعة التدفقات النقدية والسيولة" width={1280} height={720} loading="eager" decoding="async" className="h-auto max-h-[360px] w-full object-cover" />
+            <img src="https://images.pexels.com/photos/8297163/pexels-photo-8297163.jpeg?cs=srgb&dl=pexels-mikhail-nilov-8297163.jpg&fm=jpg" alt="صورة توضح متابعة التدفقات النقدية والسيولة" width={1280} height={720} loading="eager" decoding="async" className="h-auto max-h-[360px] w-full object-cover" />
+            <figcaption className="px-3 py-2 text-[11px] text-text-muted">الصورة: <a href="https://www.pexels.com/photo/person-reviewing-documents-with-calculator-8297163/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">Mikhail Nilov / Pexels</a></figcaption>
           </figure>
 
           <div className="text-sm md:text-[15px] text-text-secondary leading-loose space-y-4">
