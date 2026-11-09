@@ -31,6 +31,11 @@ export default function TaxInvoiceIssuancePage() {
             <p className="text-base md:text-lg leading-8 text-text-secondary mb-7">
               هل تتعامل منشأتك مع عدد كبير من الطلبات أو العملاء وتحتاج إلى تنظيم إصدار الفواتير؟ تساعدك خدمة إصدار الفواتير الضريبية على ترتيب بيانات المبيعات وتجهيز الفواتير وفق المعلومات التي تقدمها منشأتك، بما يدعم انتظام العمل وسهولة الرجوع إلى المستندات.
             </p>
+            <figure className="mb-7 overflow-hidden rounded-2xl border border-border-subtle bg-surface-subtle">
+              <img src="https://images.pexels.com/photos/6928997/pexels-photo-6928997.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" alt="صورة توضح تنظيم الفواتير والمستندات الضريبية" width={1280} height={720} loading="eager" decoding="async" className="h-auto max-h-[360px] w-full object-cover" />
+              <figcaption className="px-3 py-2 text-[11px] text-text-muted">صورة توضيحية من <a href="https://www.pexels.com/license/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">Pexels</a></figcaption>
+            </figure>
+
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-white hover:opacity-90">
               <MessageCircle className="w-5 h-5" aria-hidden="true" />
               استفسر عن خدمة إصدار الفواتير

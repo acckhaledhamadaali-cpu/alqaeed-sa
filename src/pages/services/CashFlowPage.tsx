@@ -14,7 +14,7 @@ export default function CashFlowPage() {
   const slug = "cash-flow";
   const metaTitle = "إدارة التدفقات النقدية والسيولة للشركات | القائد";
   const metaDesc = "تنظيم توقع المقبوضات والمدفوعات والالتزامات ومتابعة السيولة، لتكوين رؤية زمنية تساعد الإدارة على التخطيط النقدي.";
-  const url = "https://alqaeed-sa.pages.dev/services/" + slug;
+  const url = "https://alqaeed-sa.pages.dev/services/" + slug + "/";
   
   const schema = {
     "@context": "https://schema.org",
@@ -98,6 +98,11 @@ export default function CashFlowPage() {
           </h1>
           <div className="w-16 h-1 bg-primary mb-6 rounded-full"></div>
 
+          <figure className="mb-7 overflow-hidden rounded-2xl border border-border-subtle bg-surface-subtle">
+            <img src="https://images.pexels.com/photos/5915297/pexels-photo-5915297.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" alt="صورة توضح متابعة التدفقات النقدية والسيولة" width={1280} height={720} loading="eager" decoding="async" className="h-auto max-h-[360px] w-full object-cover" />
+            <figcaption className="px-3 py-2 text-[11px] text-text-muted">صورة توضيحية من <a href="https://www.pexels.com/license/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">Pexels</a></figcaption>
+          </figure>
+
           <div className="text-sm md:text-[15px] text-text-secondary leading-loose space-y-4">
             <p>
               قد تسجل المنشأة ربحًا بينما يتأخر تحصيل فواتيرها أو تستحق عليها مدفوعات قبل دخول النقد. لذلك تُظهر متابعة التدفقات النقدية توقيت المقبوضات والمدفوعات، وتساعد على كشف الفترات التي قد تضغط على السيولة. وهي تختلف عن الربح المحاسبي وعن رصيد البنك في يوم واحد.
@@ -134,9 +139,7 @@ export default function CashFlowPage() {
             <p>
               للبدء، حدّد الأفق الزمني الذي تريد متابعته، وقدّم أرصدة النقد المتاحة وقائمة المستحقات والمصروفات المعروفة. بعد ذلك يتضح مستوى التفصيل الممكن ودورية تحديث التوقع.
             </p>
-          </div>
-
-          <PdfLeadMagnet 
+          </div><PdfLeadMagnet 
             title="" 
             subtitle="" 
             reportName="تقرير تحليل السيولة والتدفقات النقدية" 
@@ -147,7 +150,7 @@ export default function CashFlowPage() {
                 <div className="border-b-2 border-emerald-800 pb-3 mb-4 flex justify-between items-end">
                   <div>
                     <h2 className="text-lg md:text-xl font-bold text-gray-900 font-arabic mb-1">Statement of Cash Flows</h2>
-                    <p className="text-gray-500">للفترة من 01-يناير إلى 31-ديسمبر 2024</p>
+                    <p className="text-gray-500">فترة سنوية افتراضية لأغراض التوضيح</p>
                   </div>
                   <div className="text-left text-[9px] md:text-[10px] text-gray-400">
                     <p>Financial Dept.</p>
@@ -286,10 +289,10 @@ export default function CashFlowPage() {
                 <span className="text-secondary text-base">←</span>
               </a>
               <a
-                href="/services/virtual-cfo/"
+                href="/services/financial-analysis/"
                 className="p-3 bg-surface-subtle/50 hover:bg-surface-subtle border border-border-subtle rounded-lg text-xs md:text-sm font-medium text-text-primary hover:text-primary transition-all flex items-center justify-between"
               >
-                <span>المدير المالي عن بعد (Virtual CFO)</span>
+                <span>التحليل المالي</span>
                 <span className="text-secondary text-base">←</span>
               </a>
             </div>

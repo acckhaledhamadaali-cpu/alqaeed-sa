@@ -14,7 +14,7 @@ export default function BudgetingPage() {
   const slug = "budgeting";
   const metaTitle = "إعداد الموازنة التقديرية والتخطيط المالي للشركات | القائد";
   const metaDesc = "إعداد موازنة تقديرية للإيرادات والتكاليف والمصروفات، مع توثيق الفرضيات ومقارنة المخطط بالفعلي لمساعدة المنشأة على متابعة خطتها.";
-  const url = "https://alqaeed-sa.pages.dev/services/" + slug;
+  const url = "https://alqaeed-sa.pages.dev/services/" + slug + "/";
   
   const schema = {
     "@context": "https://schema.org",
@@ -98,6 +98,11 @@ export default function BudgetingPage() {
           </h1>
           <div className="w-16 h-1 bg-primary mb-6 rounded-full"></div>
 
+          <figure className="mb-7 overflow-hidden rounded-2xl border border-border-subtle bg-surface-subtle">
+            <img src="https://images.pexels.com/photos/7821716/pexels-photo-7821716.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" alt="صورة توضح التخطيط للموازنة والإيرادات والمصروفات" width={1280} height={720} loading="eager" decoding="async" className="h-auto max-h-[360px] w-full object-cover" />
+            <figcaption className="px-3 py-2 text-[11px] text-text-muted">صورة توضيحية من <a href="https://www.pexels.com/license/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">Pexels</a></figcaption>
+          </figure>
+
           <div className="text-sm md:text-[15px] text-text-secondary leading-loose space-y-4">
             <p>
               الموازنة التقديرية خطة رقمية لفترة قادمة تُبنى على افتراضات واضحة عن المبيعات والتكاليف والمصروفات والموارد. وهي ليست وعدًا بتحقق الأرقام؛ بل مرجع تقارن به المنشأة الأداء الفعلي وتراجع افتراضاتها عند تغير ظروف العمل.
@@ -134,9 +139,7 @@ export default function BudgetingPage() {
             <p>
               إذا كنت تحتاج موازنة لمنشأتك، جهّز نتائج سابقة متاحة وخطة العمل للفترة المقبلة وأي التزامات أو مشتريات كبيرة معروفة. نحدد معًا ما يمكن تقديره وما يحتاج افتراضًا صريحًا، ثم تُعرض الموازنة بصيغة قابلة للمراجعة.
             </p>
-          </div>
-
-          <PdfLeadMagnet 
+          </div><PdfLeadMagnet 
             title="" 
             subtitle="" 
             reportName="تقرير متابعة الموازنة وتحليل الانحرافات" 
@@ -147,7 +150,7 @@ export default function BudgetingPage() {
                 <div className="border-b-2 border-gray-800 pb-3 mb-4 flex justify-between items-end">
                   <div>
                     <h2 className="text-lg md:text-xl font-bold text-gray-900 font-arabic mb-1">Budget vs. Actual Report</h2>
-                    <p className="text-gray-500">الربع الثالث - Q3 2024</p>
+                    <p className="text-gray-500">ربع افتراضي لأغراض التوضيح</p>
                   </div>
                   <div className="text-left text-[9px] md:text-[10px] text-gray-400">
                     <p>Department: Corporate</p>

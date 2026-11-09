@@ -22,9 +22,6 @@ async function prerender() {
     return `/${route.replace(/^\/+|\/+$/g, '')}`;
   };
 
-  // All public service pages are indexable unless explicitly excluded here.
-  const NOINDEX_ROUTES = new Set([]);
-
   // Import SSR bundle
   const ssrBundlePath = path.resolve(__dirname, 'dist-ssr', 'entry-server.js');
   if (!fs.existsSync(ssrBundlePath)) {
@@ -33,6 +30,13 @@ async function prerender() {
   }
 
   const { render, ROUTES_METADATA, BLOG_ARTICLES, getLocalSeoRoutes } = await import(`file://${ssrBundlePath}`);
+
+  // Keep template-based city pages accessible to visitors, but out of the index
+  // until each city has genuinely unique, verifiable local information.
+  const NOINDEX_ROUTES = new Set([
+    '/services/virtual-cfo',
+    ...(typeof getLocalSeoRoutes === 'function' ? getLocalSeoRoutes() : []),
+  ].map(normalizeRoute));
 
   // Base routes from metadata
   const baseRoutes = Object.keys(ROUTES_METADATA);

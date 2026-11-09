@@ -14,7 +14,7 @@ export default function FinancialStatementsPage() {
   const slug = "financial-statements";
   const metaTitle = "إعداد القوائم المالية للشركات والمنشآت | القائد للإدارة المالية";
   const metaDesc = "إعداد القوائم المالية للمنشآت على أساس بياناتها وسجلاتها المتاحة، مع توضيح البنود التي تحتاج استكمالًا والتمييز بين الإعداد والتدقيق المستقل.";
-  const url = "https://alqaeed-sa.pages.dev/services/" + slug;
+  const url = "https://alqaeed-sa.pages.dev/services/" + slug + "/";
   
   const schema = {
     "@context": "https://schema.org",
@@ -98,6 +98,11 @@ export default function FinancialStatementsPage() {
           </h1>
           <div className="w-16 h-1 bg-primary mb-6 rounded-full"></div>
 
+          <figure className="mb-7 overflow-hidden rounded-2xl border border-border-subtle bg-surface-subtle">
+            <img src="https://images.pexels.com/photos/7868977/pexels-photo-7868977.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" alt="صورة توضح القوائم المالية والتقارير" width={1280} height={720} loading="eager" decoding="async" className="h-auto max-h-[360px] w-full object-cover" />
+            <figcaption className="px-3 py-2 text-[11px] text-text-muted">صورة توضيحية من <a href="https://www.pexels.com/license/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">Pexels</a></figcaption>
+          </figure>
+
           <div className="text-sm md:text-[15px] text-text-secondary leading-loose space-y-4">
             <p>
               القوائم المالية تلخص ما حدث في المنشأة خلال فترة محددة وما لديها من أصول والتزامات في تاريخ معين. يحتاجها صاحب العمل لفهم الإيرادات والتكاليف والربحية والسيولة، وقد تُطلب أيضًا من جهات خارجية بحسب غرض الاستخدام والمتطلبات المنطبقة. لا تكفي صياغة القوائم وحدها لإثبات دقة كل رقم؛ لذلك يبدأ الإعداد من مراجعة السجلات والمستندات والتسويات المتاحة.
@@ -133,9 +138,7 @@ export default function FinancialStatementsPage() {
             <p>
               عند طلب الخدمة، وضّح الفترة والغرض من القوائم وما إذا كانت هناك متطلبات محددة من بنك أو جهة أخرى. بعد مراجعة البيانات المتاحة تُحدد النواقص ونطاق الإعداد قبل البدء، ولا يُفترض مسبقًا أن القوائم ستؤدي إلى قبول تمويل أو تحقق نتيجة معينة.
             </p>
-          </div>
-
-          <PdfLeadMagnet 
+          </div><PdfLeadMagnet 
             title="" 
             subtitle="" 
             reportName="قائمة المركز المالي وقائمة الدخل" 
@@ -146,7 +149,7 @@ export default function FinancialStatementsPage() {
                 <div className="border-b-2 border-gray-800 pb-3 mb-4 flex justify-between items-end">
                   <div>
                     <h2 className="text-lg md:text-xl font-bold text-gray-900 font-arabic mb-1">Financial Statements</h2>
-                    <p className="text-gray-500">As of December 31, 2024</p>
+                    <p className="text-gray-500">Illustrative reporting date</p>
                   </div>
                   <div className="text-left text-[9px] md:text-[10px] text-gray-400">
                     <p>Status: Unaudited (Draft)</p>
@@ -224,7 +227,7 @@ export default function FinancialStatementsPage() {
                   </div>
                   
                   <div className="mt-4 bg-gray-50 border border-gray-200 p-3 rounded text-[10px] md:text-[11px] text-gray-600 text-center">
-                    تم إعداد هذه القوائم المالية وفقاً للمعايير الدولية للتقرير المالي (IFRS) المعتمدة في المملكة العربية السعودية.
+                    هذا نموذج افتراضي لأغراض الشرح فقط، ولا يمثل قوائم منشأة فعلية أو تأكيدًا على الامتثال لإطار محاسبي محدد. يتحدد الإطار المناسب بحسب طبيعة المنشأة ومتطلبات الهيئة السعودية للمراجعين والمحاسبين.
                   </div>
                 </div>
               </div>

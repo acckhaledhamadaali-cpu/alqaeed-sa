@@ -20,20 +20,22 @@ function setMeta(selector: string, content: string, attributeName: 'name' | 'pro
 }
 
 export function useSEO({ title, description, canonical, schema }: SEOProps) {
+  const normalizedCanonical = canonical.endsWith('/') ? canonical : `${canonical}/`;
+
   useEffect(() => {
     document.title = title;
 
     setMeta('meta[name="description"]', description, 'name');
     setMeta('meta[property="og:title"]', title, 'property');
     setMeta('meta[property="og:description"]', description, 'property');
-    setMeta('meta[property="og:url"]', canonical, 'property');
+    setMeta('meta[property="og:url"]', normalizedCanonical, 'property');
     setMeta('meta[name="twitter:title"]', title, 'name');
     setMeta('meta[name="twitter:description"]', description, 'name');
-    setMeta('meta[name="twitter:url"]', canonical, 'name');
+    setMeta('meta[name="twitter:url"]', normalizedCanonical, 'name');
 
     const canonicalTag = document.querySelector('link[rel="canonical"]');
     if (canonicalTag) {
-      canonicalTag.setAttribute('href', canonical);
+      canonicalTag.setAttribute('href', normalizedCanonical);
     }
 
     let schemaScript = document.getElementById('schema-jsonld') as HTMLScriptElement | null;
@@ -54,5 +56,5 @@ export function useSEO({ title, description, canonical, schema }: SEOProps) {
       schemaScript.textContent = schemaString;
       document.head.appendChild(schemaScript);
     }
-  }, [title, description, canonical, schema]);
+  }, [title, description, normalizedCanonical, schema]);
 }

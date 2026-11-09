@@ -14,7 +14,7 @@ export default function ManagementReportsPage() {
   const slug = "management-reports";
   const metaTitle = "التقارير المالية والإدارية للشركات | القائد للإدارة المالية";
   const metaDesc = "تقارير مالية وإدارية دورية توضح الإيرادات والمصروفات والأرصدة والانحرافات، وتساعد صاحب المنشأة على متابعة ما يحتاج قرارًا أو استكمالًا.";
-  const url = "https://alqaeed-sa.pages.dev/services/" + slug;
+  const url = "https://alqaeed-sa.pages.dev/services/" + slug + "/";
   
   const schema = {
     "@context": "https://schema.org",
@@ -98,6 +98,11 @@ export default function ManagementReportsPage() {
           </h1>
           <div className="w-16 h-1 bg-primary mb-6 rounded-full"></div>
 
+          <figure className="mb-7 overflow-hidden rounded-2xl border border-border-subtle bg-surface-subtle">
+            <img src="https://images.pexels.com/photos/5921484/pexels-photo-5921484.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" alt="صورة توضح متابعة الأداء المالي والتقارير الإدارية" width={1280} height={720} loading="eager" decoding="async" className="h-auto max-h-[360px] w-full object-cover" />
+            <figcaption className="px-3 py-2 text-[11px] text-text-muted">صورة توضيحية من <a href="https://www.pexels.com/license/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">Pexels</a></figcaption>
+          </figure>
+
           <div className="text-sm md:text-[15px] text-text-secondary leading-loose space-y-4">
             <p>
               التقرير الإداري الجيد يجيب عن أسئلة محددة: كيف كان الأداء خلال الفترة؟ ما البنود التي تغيّرت؟ وما البيانات التي تحتاج متابعة؟ بدل عرض جداول طويلة، يجمع التقرير المؤشرات المتفق عليها ويشرحها بوضوح. وتعتمد دقته على انتظام التسجيل واكتمال المستندات ومواعيد الإقفال.
@@ -136,8 +141,7 @@ export default function ManagementReportsPage() {
             </p>
           </div>
 
-          {/* PDF Lead Magnet Mockup */}
-          <PdfLeadMagnet 
+          {/* PDF Lead Magnet Mockup */}<PdfLeadMagnet 
             title=""
             subtitle=""
             reportName="Branch_Performance_Analytics"
@@ -342,10 +346,10 @@ export default function ManagementReportsPage() {
                 <span className="text-secondary text-base">←</span>
               </a>
               <a
-                href="/services/virtual-cfo/"
+                href="/services/financial-analysis/"
                 className="p-3 bg-surface-subtle/50 hover:bg-surface-subtle border border-border-subtle rounded-lg text-xs md:text-sm font-medium text-text-primary hover:text-primary transition-all flex items-center justify-between"
               >
-                <span>المدير المالي عن بعد (Virtual CFO)</span>
+                <span>التحليل المالي</span>
                 <span className="text-secondary text-base">←</span>
               </a>
             </div>

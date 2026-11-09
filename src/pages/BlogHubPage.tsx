@@ -161,7 +161,7 @@ export default function BlogHubPage() {
                         )}
 
                         <div className="p-4 pb-2">
-                          <div className="flex items-center justify-between text-xs text-text-muted mb-3">
+                          <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-text-muted mb-3">
                             <span className="bg-primary/10 text-primary font-medium px-2.5 py-1 rounded-md">{getCategoryName(article.category)}</span>
                             <span>{article.readingTime}</span>
                           </div>
@@ -173,8 +173,9 @@ export default function BlogHubPage() {
                         </div>
                       </div>
 
-                      <div className="px-6 py-4 border-t border-border-subtle flex items-center justify-between text-xs text-text-muted">
+                      <div className="px-4 sm:px-6 py-4 border-t border-border-subtle flex flex-wrap items-center justify-between gap-2 text-xs text-text-muted">
                         <span>{article.author}</span>
+                        <span>نُشر {new Date(`${article.publishedAt}T12:00:00`).toLocaleDateString("ar-SA")}{article.updatedAt && article.updatedAt !== article.publishedAt ? ` · حُدّث ${new Date(`${article.updatedAt}T12:00:00`).toLocaleDateString("ar-SA")}` : ""}</span>
                         <a href={`/blog/${article.slug}/`} className="text-primary font-medium hover:underline inline-flex items-center gap-1">قراءة المقال ←</a>
                       </div>
                     </article>
