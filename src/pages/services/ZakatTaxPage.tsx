@@ -110,6 +110,11 @@ export default function ZakatTaxPage() {
             </a>
           </header>
 
+          <figure className="mb-6 overflow-hidden rounded-2xl border border-border-subtle bg-surface-subtle">
+            <img src="https://images.pexels.com/photos/7821712/pexels-photo-7821712.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" alt="صورة توضح مراجعة مستندات الزكاة والضريبة وتنظيم البيانات المالية" width={1280} height={720} loading="eager" decoding="async" className="h-auto max-h-[360px] w-full object-cover" />
+            <figcaption className="px-3 py-2 text-[11px] text-text-muted">صورة توضيحية من <a href="https://www.pexels.com/license/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">Pexels</a></figcaption>
+          </figure>
+
           <nav aria-label="انتقل إلى تفاصيل الإقرار" className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs sm:text-sm">
             <span className="text-text-muted">انتقل إلى:</span>
             <a href="#vat-return" className="text-primary underline underline-offset-4 hover:text-secondary">ضريبة القيمة المضافة</a>
