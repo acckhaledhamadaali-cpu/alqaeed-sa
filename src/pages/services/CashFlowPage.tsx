@@ -99,8 +99,8 @@ export default function CashFlowPage() {
           <div className="w-16 h-1 bg-primary mb-6 rounded-full"></div>
 
           <figure className="mb-7 overflow-hidden rounded-2xl border border-border-subtle bg-surface-subtle">
-            <img src="https://images.pexels.com/photos/8296970/pexels-photo-8296970.jpeg?cs=srgb&dl=pexels-mikhail-nilov-8296970.jpg&fm=jpg" alt="صورة توضح متابعة التدفقات النقدية والسيولة" width={1280} height={720} loading="eager" decoding="async" className="h-auto max-h-[360px] w-full object-cover" />
-            <figcaption className="px-3 py-2 text-[11px] text-text-muted">الصورة: <a href="https://www.pexels.com/photo/a-person-examining-documents-8296970/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">Mikhail Nilov / Pexels</a></figcaption>
+            <img src="https://images.pexels.com/photos/5915297/pexels-photo-5915297.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" alt="صورة توضح متابعة التدفقات النقدية والسيولة" width={1280} height={720} loading="eager" decoding="async" className="h-auto max-h-[360px] w-full object-cover" />
+            <figcaption className="px-3 py-2 text-[11px] text-text-muted">صورة توضيحية من <a href="https://www.pexels.com/license/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">Pexels</a></figcaption>
           </figure>
 
           <div className="text-sm md:text-[15px] text-text-secondary leading-loose space-y-4">
