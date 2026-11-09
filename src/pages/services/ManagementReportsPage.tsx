@@ -141,11 +141,7 @@ export default function ManagementReportsPage() {
             </p>
           </div>
 
-          {/* PDF Lead Magnet Mockup */}
-          <div className="mb-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs md:text-sm leading-6 text-amber-900" role="note">
-            <strong>تنبيه:</strong> النموذج التالي توضيحي ببيانات افتراضية لشرح شكل التقرير فقط، ولا يمثل نتائج فعلية لعميل أو منشأة.
-          </div>
-          <PdfLeadMagnet 
+          {/* PDF Lead Magnet Mockup */}<PdfLeadMagnet 
             title=""
             subtitle=""
             reportName="Branch_Performance_Analytics"
