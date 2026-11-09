@@ -23,7 +23,7 @@ async function prerender() {
   };
 
   // All public service pages are indexable unless explicitly excluded here.
-  const NOINDEX_ROUTES = new Set([]);
+  const NOINDEX_ROUTES = new Set(['/services/virtual-cfo']);
 
   // Import SSR bundle
   const ssrBundlePath = path.resolve(__dirname, 'dist-ssr', 'entry-server.js');
