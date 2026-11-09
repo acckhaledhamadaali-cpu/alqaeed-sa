@@ -14,7 +14,7 @@ export default function ManagementReportsPage() {
   const slug = "management-reports";
   const metaTitle = "التقارير المالية والإدارية للشركات | القائد للإدارة المالية";
   const metaDesc = "تقارير مالية وإدارية دورية توضح الإيرادات والمصروفات والأرصدة والانحرافات، وتساعد صاحب المنشأة على متابعة ما يحتاج قرارًا أو استكمالًا.";
-  const url = "https://alqaeed-sa.pages.dev/services/" + slug;
+  const url = "https://alqaeed-sa.pages.dev/services/" + slug + "/";
   
   const schema = {
     "@context": "https://schema.org",
@@ -97,6 +97,10 @@ export default function ManagementReportsPage() {
             {name}
           </h1>
           <div className="w-16 h-1 bg-primary mb-6 rounded-full"></div>
+
+          <figure className="mb-7 overflow-hidden rounded-2xl border border-border-subtle bg-surface-subtle">
+            <img src="/images/blog/7-signs-company-needs-remote-financial-management.webp" alt="صورة توضح متابعة الأداء المالي والتقارير الإدارية" width={1280} height={720} loading="eager" decoding="async" className="h-auto max-h-[360px] w-full object-cover" />
+          </figure>
 
           <div className="text-sm md:text-[15px] text-text-secondary leading-loose space-y-4">
             <p>
