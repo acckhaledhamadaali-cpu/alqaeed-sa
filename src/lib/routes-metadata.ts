@@ -151,7 +151,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
     description: 'خدمة محاسب عن بُعد لتنظيم القيود والمبيعات والمشتريات والمصروفات ومطابقة الحسابات، مع تقارير مالية مفهومة للمنشآت في السعودية.',
     canonical: 'https://alqaeed-sa.pages.dev/services/bookkeeping/',
     ogTitle: 'خدمات مسك الدفاتر المحاسبية للشركات | القائد للإدارة المالية',
-    ogDescription: 'نقدم خدمات تنظيم الحسابات ومسك الدفاتر الاحترافية. احصل على تقارير مالية دقيقة تساند نمو أعمالك وتضمن دقة قراراتك عبر أفضل البرامج المحاسبية.',
+    ogDescription: 'تسجيل العمليات ومطابقة الحسابات وتجهيز ميزان مراجعة وتقارير دورية، بحسب المستندات المتاحة ونطاق العمل المتفق عليه.',
     ogUrl: 'https://alqaeed-sa.pages.dev/services/bookkeeping/',
     schema: {
       "@context": "https://schema.org",
@@ -312,7 +312,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
     description: 'إعداد القوائم المالية للمنشآت على أساس بياناتها وسجلاتها المتاحة، مع توضيح البنود التي تحتاج استكمالًا والتمييز بين الإعداد والتدقيق المستقل.',
     canonical: 'https://alqaeed-sa.pages.dev/services/financial-statements/',
     ogTitle: 'إعداد القوائم المالية للشركات | القائد للإدارة المالية',
-    ogDescription: 'احصل على قوائم مالية دقيقة وشفافة تعكس الأداء الحقيقي لمنشأتك. نساعدك في إعداد ميزانيات احترافية تدعم قراراتك وتزيد ثقة البنوك والمستثمرين.',
+    ogDescription: 'إعداد القوائم المالية على أساس السجلات والمستندات المتاحة، مع توضيح النواقص والتمييز بين الإعداد والتدقيق المستقل.',
     ogUrl: 'https://alqaeed-sa.pages.dev/services/financial-statements/',
     schema: {
       "@context": "https://schema.org",
@@ -368,7 +368,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
     description: 'تحليل مالي للمنشآت يشرح اتجاه الإيرادات والتكاليف والربحية والسيولة، ويربط المؤشرات بالفترات السابقة لدعم قرارات صاحب العمل.',
     canonical: 'https://alqaeed-sa.pages.dev/services/financial-analysis/',
     ogTitle: 'التحليل المالي للشركات وتقييم الأداء | القائد للإدارة المالية',
-    ogDescription: 'حول الأرقام الصامتة إلى استراتيجيات ناجحة. خدمات التحليل المالي الاحترافية لمساعدتك في فهم مؤشرات السيولة والربحية واكتشاف فرص النمو لمنشأتك.',
+    ogDescription: 'تحليل اتجاه الإيرادات والتكاليف والربحية والسيولة، مع شرح المؤشرات وحدودها وربطها بسياق نشاط المنشأة.',
     ogUrl: 'https://alqaeed-sa.pages.dev/services/financial-analysis/',
     schema: {
       "@context": "https://schema.org",
@@ -424,7 +424,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
     description: 'تقارير مالية وإدارية دورية توضح الإيرادات والمصروفات والأرصدة والانحرافات، وتساعد صاحب المنشأة على متابعة ما يحتاج قرارًا أو استكمالًا.',
     canonical: 'https://alqaeed-sa.pages.dev/services/management-reports/',
     ogTitle: 'إعداد التقارير الإدارية المالية للشركات | القائد للإدارة المالية',
-    ogDescription: 'ابقَ على اطلاع دائم بأداء منشأتك عبر تقارير إدارية ولوحات قياس دقيقة تصمم خصيصاً لتمنح الإدارة العليا القدرة على اتخاذ قرارات سريعة وصائبة.',
+    ogDescription: 'تقارير دورية توضح الإيرادات والمصروفات والأرصدة والانحرافات، وتساعد الإدارة على تحديد ما يحتاج متابعة أو قرارًا.',
     ogUrl: 'https://alqaeed-sa.pages.dev/services/management-reports/',
     schema: {
       "@context": "https://schema.org",
@@ -480,7 +480,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
     description: 'إعداد موازنة تقديرية للإيرادات والتكاليف والمصروفات، مع توثيق الفرضيات ومقارنة المخطط بالفعلي لمساعدة المنشأة على متابعة خطتها.',
     canonical: 'https://alqaeed-sa.pages.dev/services/budgeting/',
     ogTitle: 'إعداد الموازنات التقديرية والتخطيط المالي | القائد للإدارة المالية',
-    ogDescription: 'خطط لنجاحك المالي بثقة. خدمة إعداد الموازنات التقديرية تساعدك على وضع أهداف مالية واضحة ومراقبة الانحرافات لضمان تحقيق رؤية منشأتك.',
+    ogDescription: 'إعداد موازنة تقديرية بفرضيات موثقة ومقارنة المخطط بالفعلي، مع تحديث التوقعات عند تغير ظروف العمل.',
     ogUrl: 'https://alqaeed-sa.pages.dev/services/budgeting/',
     schema: {
       "@context": "https://schema.org",
@@ -536,7 +536,7 @@ export const ROUTES_METADATA: Record<string, RouteMeta> = {
     description: 'تنظيم توقع المقبوضات والمدفوعات والالتزامات ومتابعة السيولة، لتكوين رؤية زمنية تساعد الإدارة على التخطيط النقدي.',
     canonical: 'https://alqaeed-sa.pages.dev/services/cash-flow/',
     ogTitle: 'إدارة التدفقات النقدية للشركات | القائد للإدارة المالية',
-    ogDescription: 'حافظ على سيولة منشأتك وتجنب الأزمات المالية. نقدم خدمات تخطيط وإدارة التدفقات النقدية لضمان وفائك بالتزاماتك وتمويل نمو أعمالك بأمان.',
+    ogDescription: 'تنظيم توقع المقبوضات والمدفوعات والالتزامات ومتابعة السيولة، مع توضيح الافتراضات ومخاطر التوقع.',
     ogUrl: 'https://alqaeed-sa.pages.dev/services/cash-flow/',
     schema: {
       "@context": "https://schema.org",
