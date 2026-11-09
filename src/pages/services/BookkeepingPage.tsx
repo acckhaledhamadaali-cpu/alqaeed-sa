@@ -135,12 +135,7 @@ export default function BookkeepingPage() {
             <p>
               إذا كنت تبحث عن محاسب مالي عن بُعد لتنظيم حسابات منشأتك، اذكر نوع النشاط والبرنامج المحاسبي المستخدم وحجم العمل التقريبي في رسالتك. بعد ذلك نحدد ما يدخل في النطاق، والبيانات المطلوبة، وآلية المتابعة.
             </p>
-          </div>
-
-          <div className="mb-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs md:text-sm leading-6 text-amber-900" role="note">
-            <strong>تنبيه:</strong> النموذج التالي توضيحي ببيانات افتراضية أُعدت لشرح شكل التقرير فقط، ولا يمثل قوائم أو سجلات أو نتائج فعلية لعميل.
-          </div>
-          <PdfLeadMagnet 
+          </div><PdfLeadMagnet 
             title="" 
             subtitle="" 
             reportName="ميزان المراجعة (نسخة مستخرجة)" 
