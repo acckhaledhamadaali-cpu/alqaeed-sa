@@ -139,12 +139,7 @@ export default function FinancialAnalysisPage() {
             <p>
               إذا أردت تحليلًا ماليًا لمنشأتك، أرسل نوع النشاط والفترة التي تريد مراجعتها والتقارير المتاحة. نوضح أولًا ما يمكن استخلاصه من البيانات وما يحتاج إلى استكمال، ثم نتفق على شكل التقرير ومؤشراته.
             </p>
-          </div>
-
-          <div className="mb-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs md:text-sm leading-6 text-amber-900" role="note">
-            <strong>تنبيه:</strong> النموذج التالي توضيحي ببيانات افتراضية أُعدت لشرح شكل التقرير فقط، ولا يمثل قوائم أو سجلات أو نتائج فعلية لعميل.
-          </div>
-          <PdfLeadMagnet 
+          </div><PdfLeadMagnet 
             title="" 
             subtitle="" 
             reportName="تقرير التحليل المالي ومؤشرات الأداء" 
