@@ -16,9 +16,9 @@ const SERVICES = [
     link: "/services/financial-statements/",
   },
   {
-    title: "تهيئة أنظمة الـ ERP",
-    desc: "تخصيص وإدارة وتثبيت نظام أودو (Odoo ERP) بالكامل وتكييفه ليناسب نشاطك الفعلي.",
-    link: "/services/virtual-cfo/",
+    title: "التقارير المالية والإدارية",
+    desc: "تقارير دورية توضح الإيرادات والمصروفات والأرصدة ومؤشرات الأداء لدعم قرارات الإدارة.",
+    link: "/services/management-reports/",
   },
   {
     title: "الزكاة والضريبة والجمارك",
@@ -68,7 +68,7 @@ export default function ServicesSection(props: HTMLAttributes<HTMLElement>) {
               ماذا أتولى وأدير داخل منشأتك التجاريّة
             </SectionTitle>
             <SectionDescription id="services-description" className="text-center max-w-2xl text-text-secondary text-xs sm:text-sm">
-              خدمات محاسبية ومالية عن بُعد تشمل تنظيم الحسابات، وإعداد القوائم المالية، وتهيئة الأنظمة المحاسبية، والإقرارات الضريبية والزكوية، وتحليل الأداء والسيولة.
+              خدمات محاسبية ومالية عن بُعد تشمل تنظيم الحسابات، وإعداد القوائم المالية، والتقارير المالية، والإقرارات الضريبية والزكوية، وتحليل الأداء والسيولة.
             </SectionDescription>
             <p className="max-w-2xl text-center text-xs sm:text-sm text-text-secondary leading-6">
               تُحدَّد الأتعاب بعد معرفة حجم العمليات، وعدد الفروع، والخدمات المطلوبة.
