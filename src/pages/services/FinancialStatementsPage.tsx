@@ -138,12 +138,7 @@ export default function FinancialStatementsPage() {
             <p>
               عند طلب الخدمة، وضّح الفترة والغرض من القوائم وما إذا كانت هناك متطلبات محددة من بنك أو جهة أخرى. بعد مراجعة البيانات المتاحة تُحدد النواقص ونطاق الإعداد قبل البدء، ولا يُفترض مسبقًا أن القوائم ستؤدي إلى قبول تمويل أو تحقق نتيجة معينة.
             </p>
-          </div>
-
-          <div className="mb-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs md:text-sm leading-6 text-amber-900" role="note">
-            <strong>تنبيه:</strong> النموذج التالي توضيحي ببيانات افتراضية أُعدت لشرح شكل التقرير فقط، ولا يمثل قوائم أو سجلات أو نتائج فعلية لعميل.
-          </div>
-          <PdfLeadMagnet 
+          </div><PdfLeadMagnet 
             title="" 
             subtitle="" 
             reportName="قائمة المركز المالي وقائمة الدخل" 
