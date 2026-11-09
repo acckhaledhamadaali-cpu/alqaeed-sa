@@ -99,8 +99,8 @@ export default function FinancialAnalysisPage() {
           <div className="w-16 h-1 bg-primary mb-6 rounded-full"></div>
 
           <figure className="mb-7 overflow-hidden rounded-2xl border border-border-subtle bg-surface-subtle">
-            <img src="https://images.unsplash.com/photo-1713461983836-de0a45009424?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="صورة توضح قراءة المؤشرات والتحليل المالي" width={1280} height={720} loading="eager" decoding="async" className="h-auto max-h-[360px] w-full object-cover" />
-            <figcaption className="px-3 py-2 text-[11px] text-text-muted">الصورة: <a href="https://unsplash.com/photos/a-person-pointing-at-a-calculator-on-a-desk-eGI0aGwuE-A" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">Jakub Żerdzicki / Unsplash</a></figcaption>
+            <img src="https://images.pexels.com/photos/7580653/pexels-photo-7580653.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" alt="صورة توضح قراءة المؤشرات والتحليل المالي" width={1280} height={720} loading="eager" decoding="async" className="h-auto max-h-[360px] w-full object-cover" />
+            <figcaption className="px-3 py-2 text-[11px] text-text-muted">صورة توضيحية من <a href="https://www.pexels.com/license/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">Pexels</a></figcaption>
           </figure>
 
           <div className="text-sm md:text-[15px] text-text-secondary leading-loose space-y-4">
