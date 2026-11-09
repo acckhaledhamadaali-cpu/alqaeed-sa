@@ -154,7 +154,7 @@ export default function BudgetingPage() {
                 <div className="border-b-2 border-gray-800 pb-3 mb-4 flex justify-between items-end">
                   <div>
                     <h2 className="text-lg md:text-xl font-bold text-gray-900 font-arabic mb-1">Budget vs. Actual Report</h2>
-                    <p className="text-gray-500">الربع الثالث - Q3 2024</p>
+                    <p className="text-gray-500">ربع افتراضي لأغراض التوضيح</p>
                   </div>
                   <div className="text-left text-[9px] md:text-[10px] text-gray-400">
                     <p>Department: Corporate</p>
