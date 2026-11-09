@@ -14,7 +14,7 @@ export default function BookkeepingPage() {
   const slug = "bookkeeping";
   const metaTitle = "مسك الدفاتر وتنظيم الحسابات للشركات | القائد للإدارة المالية";
   const metaDesc = "خدمة محاسب عن بُعد لتنظيم القيود والمبيعات والمشتريات والمصروفات ومطابقة الحسابات، مع تقارير مالية مفهومة للمنشآت في السعودية.";
-  const url = "https://alqaeed-sa.pages.dev/services/" + slug;
+  const url = "https://alqaeed-sa.pages.dev/services/" + slug + "/";
   
   const schema = {
     "@context": "https://schema.org",
@@ -98,6 +98,10 @@ export default function BookkeepingPage() {
           </h1>
           <div className="w-16 h-1 bg-primary mb-6 rounded-full"></div>
 
+          <figure className="mb-7 overflow-hidden rounded-2xl border border-border-subtle bg-surface-subtle">
+            <img src="/images/blog/bookkeeping-importance-organized-accounting.webp" alt="صورة توضح تنظيم المستندات والدفاتر المحاسبية" width={1280} height={720} loading="eager" decoding="async" className="h-auto max-h-[360px] w-full object-cover" />
+          </figure>
+
           <div className="text-sm md:text-[15px] text-text-secondary leading-loose space-y-4">
             <p>
               تسجيل المبيعات والمشتريات والمصروفات في وقتها وبالمستندات المناسبة هو ما يوضح لصاحب المنشأة أين دخل المال وأين صُرف. خدمة مسك الدفاتر المحاسبية ترتب هذه الحركات في حسابات مفهومة، بدل الاعتماد على ملفات متفرقة أو مراجعة الحسابات مرة واحدة في نهاية السنة. الخدمة متاحة عن بُعد للمنشآت في مناطق المملكة، ويُحدد نطاقها بحسب نشاط المنشأة والبيانات المتاحة.
@@ -132,6 +136,9 @@ export default function BookkeepingPage() {
             </p>
           </div>
 
+          <div className="mb-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs md:text-sm leading-6 text-amber-900" role="note">
+            **تنبيه:** النموذج التالي توضيحي ببيانات افتراضية أُعدت لشرح شكل التقرير فقط، ولا يمثل قوائم أو سجلات أو نتائج فعلية لعميل.
+          </div>
           <PdfLeadMagnet 
             title="" 
             subtitle="" 
