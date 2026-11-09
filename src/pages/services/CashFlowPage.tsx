@@ -293,10 +293,10 @@ export default function CashFlowPage() {
                 <span className="text-secondary text-base">←</span>
               </a>
               <a
-                href="/services/virtual-cfo/"
+                href="/services/financial-analysis/"
                 className="p-3 bg-surface-subtle/50 hover:bg-surface-subtle border border-border-subtle rounded-lg text-xs md:text-sm font-medium text-text-primary hover:text-primary transition-all flex items-center justify-between"
               >
-                <span>المدير المالي عن بعد (Virtual CFO)</span>
+                <span>التحليل المالي</span>
                 <span className="text-secondary text-base">←</span>
               </a>
             </div>
