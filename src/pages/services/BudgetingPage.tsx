@@ -14,7 +14,7 @@ export default function BudgetingPage() {
   const slug = "budgeting";
   const metaTitle = "إعداد الموازنة التقديرية والتخطيط المالي للشركات | القائد";
   const metaDesc = "إعداد موازنة تقديرية للإيرادات والتكاليف والمصروفات، مع توثيق الفرضيات ومقارنة المخطط بالفعلي لمساعدة المنشأة على متابعة خطتها.";
-  const url = "https://alqaeed-sa.pages.dev/services/" + slug;
+  const url = "https://alqaeed-sa.pages.dev/services/" + slug + "/";
   
   const schema = {
     "@context": "https://schema.org",
@@ -97,6 +97,10 @@ export default function BudgetingPage() {
             {name}
           </h1>
           <div className="w-16 h-1 bg-primary mb-6 rounded-full"></div>
+
+          <figure className="mb-7 overflow-hidden rounded-2xl border border-border-subtle bg-surface-subtle">
+            <img src="/images/blog/budgeting-planning-revenues-expenses.webp" alt="صورة توضح التخطيط للموازنة والإيرادات والمصروفات" width={1280} height={720} loading="eager" decoding="async" className="h-auto max-h-[360px] w-full object-cover" />
+          </figure>
 
           <div className="text-sm md:text-[15px] text-text-secondary leading-loose space-y-4">
             <p>
