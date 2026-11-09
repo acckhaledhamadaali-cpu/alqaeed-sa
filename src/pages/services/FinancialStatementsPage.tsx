@@ -14,7 +14,7 @@ export default function FinancialStatementsPage() {
   const slug = "financial-statements";
   const metaTitle = "إعداد القوائم المالية للشركات والمنشآت | القائد للإدارة المالية";
   const metaDesc = "إعداد القوائم المالية للمنشآت على أساس بياناتها وسجلاتها المتاحة، مع توضيح البنود التي تحتاج استكمالًا والتمييز بين الإعداد والتدقيق المستقل.";
-  const url = "https://alqaeed-sa.pages.dev/services/" + slug;
+  const url = "https://alqaeed-sa.pages.dev/services/" + slug + "/";
   
   const schema = {
     "@context": "https://schema.org",
@@ -98,6 +98,10 @@ export default function FinancialStatementsPage() {
           </h1>
           <div className="w-16 h-1 bg-primary mb-6 rounded-full"></div>
 
+          <figure className="mb-7 overflow-hidden rounded-2xl border border-border-subtle bg-surface-subtle">
+            <img src="/images/blog/financial-statements-importance-decision-making.webp" alt="صورة توضح القوائم المالية والتقارير" width={1280} height={720} loading="eager" decoding="async" className="h-auto max-h-[360px] w-full object-cover" />
+          </figure>
+
           <div className="text-sm md:text-[15px] text-text-secondary leading-loose space-y-4">
             <p>
               القوائم المالية تلخص ما حدث في المنشأة خلال فترة محددة وما لديها من أصول والتزامات في تاريخ معين. يحتاجها صاحب العمل لفهم الإيرادات والتكاليف والربحية والسيولة، وقد تُطلب أيضًا من جهات خارجية بحسب غرض الاستخدام والمتطلبات المنطبقة. لا تكفي صياغة القوائم وحدها لإثبات دقة كل رقم؛ لذلك يبدأ الإعداد من مراجعة السجلات والمستندات والتسويات المتاحة.
@@ -135,6 +139,9 @@ export default function FinancialStatementsPage() {
             </p>
           </div>
 
+          <div className="mb-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs md:text-sm leading-6 text-amber-900" role="note">
+            **تنبيه:** النموذج التالي توضيحي ببيانات افتراضية أُعدت لشرح شكل التقرير فقط، ولا يمثل قوائم أو سجلات أو نتائج فعلية لعميل.
+          </div>
           <PdfLeadMagnet 
             title="" 
             subtitle="" 
