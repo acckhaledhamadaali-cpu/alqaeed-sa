@@ -327,6 +327,26 @@ export default function ArticlePage({ slug }: { slug: string }) {
           <div className="prose prose-lg max-w-none text-text-primary text-sm md:text-base leading-relaxed mb-8">
             {parseContentToElements(article.content)}
           </div>
+          <section aria-labelledby="article-sources-heading" className="mb-7 rounded-xl border border-border-subtle bg-surface-subtle/40 p-4">
+            <h2 id="article-sources-heading" className="text-sm md:text-base font-bold text-text-primary mb-3">مصادر رسمية للتحقق والتوسع</h2>
+            <ul className="space-y-2 text-xs md:text-sm leading-6">
+              {(article.category === 'tax-zakat'
+                ? [
+                    { title: 'هيئة الزكاة والضريبة والجمارك – الأدلة والإرشادات', url: 'https://zatca.gov.sa/ar/HelpCenter/guidelines/Pages/default.aspx' },
+                    { title: 'الهيئة – ضريبة القيمة المضافة', url: 'https://zatca.gov.sa/ar/RulesRegulations/VAT/Pages/default.aspx' }
+                  ]
+                : [
+                    { title: 'الهيئة السعودية للمراجعين والمحاسبين – المعايير المحاسبية المعتمدة', url: 'https://www.socpa.org.sa/Socpa/Professional-standards/Accounting-standards/Auditing-Standards-Endorsed.aspx' },
+                    { title: 'مؤسسة IFRS – الملف التعريفي لتطبيق المعايير في السعودية', url: 'https://www.ifrs.org/content/dam/ifrs/publications/jurisdictions/pdf-profiles/saudi-arabia-ifrs-profile.pdf' }
+                  ]
+              ).map((source) => (
+                <li key={source.url}>
+                  <a href={source.url} target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-4 hover:text-secondary">{source.title}</a>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-3 text-[11px] leading-5 text-text-muted">هذه روابط للمراجع الأصلية للتحقق من المتطلبات والمعايير؛ ويظل التطبيق مرتبطًا بالنصوص السارية وحالة المنشأة.</p>
+          </section>
 
           {article.relatedArticles && article.relatedArticles.length > 0 && (
             <section aria-labelledby="related-articles-heading" className="border-t border-border-subtle pt-5 mb-6">
