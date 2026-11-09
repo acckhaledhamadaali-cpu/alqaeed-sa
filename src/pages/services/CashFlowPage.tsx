@@ -139,12 +139,7 @@ export default function CashFlowPage() {
             <p>
               للبدء، حدّد الأفق الزمني الذي تريد متابعته، وقدّم أرصدة النقد المتاحة وقائمة المستحقات والمصروفات المعروفة. بعد ذلك يتضح مستوى التفصيل الممكن ودورية تحديث التوقع.
             </p>
-          </div>
-
-          <div className="mb-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs md:text-sm leading-6 text-amber-900" role="note">
-            <strong>تنبيه:</strong> النموذج التالي توضيحي ببيانات افتراضية لشرح شكل التقرير فقط، ولا يمثل نتائج فعلية لعميل أو منشأة.
-          </div>
-          <PdfLeadMagnet 
+          </div><PdfLeadMagnet 
             title="" 
             subtitle="" 
             reportName="تقرير تحليل السيولة والتدفقات النقدية" 
