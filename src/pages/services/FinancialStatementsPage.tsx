@@ -153,7 +153,7 @@ export default function FinancialStatementsPage() {
                 <div className="border-b-2 border-gray-800 pb-3 mb-4 flex justify-between items-end">
                   <div>
                     <h2 className="text-lg md:text-xl font-bold text-gray-900 font-arabic mb-1">Financial Statements</h2>
-                    <p className="text-gray-500">As of December 31, 2024</p>
+                    <p className="text-gray-500">Illustrative reporting date</p>
                   </div>
                   <div className="text-left text-[9px] md:text-[10px] text-gray-400">
                     <p>Status: Unaudited (Draft)</p>
@@ -231,7 +231,7 @@ export default function FinancialStatementsPage() {
                   </div>
                   
                   <div className="mt-4 bg-gray-50 border border-gray-200 p-3 rounded text-[10px] md:text-[11px] text-gray-600 text-center">
-                    تم إعداد هذه القوائم المالية وفقاً للمعايير الدولية للتقرير المالي (IFRS) المعتمدة في المملكة العربية السعودية.
+                    هذا نموذج افتراضي لأغراض الشرح فقط، ولا يمثل قوائم منشأة فعلية أو تأكيدًا على الامتثال لإطار محاسبي محدد. يتحدد الإطار المناسب بحسب طبيعة المنشأة ومتطلبات الهيئة السعودية للمراجعين والمحاسبين.
                   </div>
                 </div>
               </div>
