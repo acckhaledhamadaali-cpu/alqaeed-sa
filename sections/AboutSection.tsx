@@ -17,7 +17,7 @@ export default function AboutSection(props: HTMLAttributes<HTMLElement>) {
         <div id="about-content" className="w-full md:max-w-full mx-auto text-right">
           <div id="about-header" className="w-full text-center mb-4 md:mb-5">
             <SectionTitle id="about-title" level={2} className="font-bold">
-              شريكك المالي الافتراضي: خبرة ممتدة في بيئة الأعمال السعودية
+              محاسبك المالي عن بُعد بخبرة في بيئة الأعمال السعودية
             </SectionTitle>
           </div>
 
@@ -43,7 +43,7 @@ export default function AboutSection(props: HTMLAttributes<HTMLElement>) {
 
               <div className="rounded-lg border border-border bg-surface p-3 md:p-4">
                 <h3 className="text-xs md:text-sm font-bold text-text-primary font-arabic">محاسبة وإدارة مالية متكاملة</h3>
-                <p className="mt-1 text-[11px] md:text-xs text-text-secondary leading-relaxed font-arabic">تحليل • تقارير • أودو ERP • زكاة وضريبة</p>
+                <p className="mt-1 text-[11px] md:text-xs text-text-secondary leading-relaxed font-arabic">محاسبة • تقارير • تحليل مالي • زكاة وضريبة</p>
               </div>
 
               <div className="rounded-lg border border-border bg-surface p-3 md:p-4">
