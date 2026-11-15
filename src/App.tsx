@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { lazy, Suspense, useEffect } from 'react';
+import { lazy, Suspense, useEffect, type ReactNode } from 'react';
 import HeroSection from '../sections/HeroSection';
 import ExperienceBar from '../sections/ExperienceBar';
 import SectorsSection from '../sections/SectorsSection';
@@ -38,7 +38,7 @@ const LocalServiceCityPage = lazy(() => import('./pages/services/LocalServiceCit
 
 import ServicePricingNote from './components/ServicePricingNote';
 
-function RouteSuspense({ children }: { children: React.ReactNode }) {
+function RouteSuspense({ children }: { children: ReactNode }) {
   return (
     <Suspense fallback={<div className="min-h-[40vh]" role="status" aria-label="جارٍ تحميل الصفحة" />}>
       {children}
