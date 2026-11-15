@@ -59,7 +59,7 @@ async function prerender() {
   console.log(`Starting SSG Pre-rendering for ${routes.length} routes...`);
 
   for (const route of routes) {
-    const { appHtml, metadata } = render(route);
+    const { appHtml, metadata } = await render(route);
 
     let html = template;
 
