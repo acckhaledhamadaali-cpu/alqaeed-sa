@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import HeroSection from '../sections/HeroSection';
 import ExperienceBar from '../sections/ExperienceBar';
 import SectorsSection from '../sections/SectorsSection';
@@ -17,25 +17,34 @@ import FloatingWhatsApp from '../sections/FloatingWhatsApp';
 import SoftwareIntegrations from './components/SoftwareIntegrations';
 import { trackMetaContact, trackMetaLead, trackMetaPageView } from './lib/metaPixel';
 
-import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
-import TermsPage from './pages/TermsPage';
-import CookiesPage from './pages/CookiesPage';
-import BlogHubPage from './pages/BlogHubPage';
-import ArticlePage from './pages/ArticlePage';
-import SectorDetailPage from './pages/sectors/SectorDetailPage';
+// Route-level code splitting: only the requested secondary page is downloaded.
+const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'));
+const TermsPage = lazy(() => import('./pages/TermsPage'));
+const CookiesPage = lazy(() => import('./pages/CookiesPage'));
+const BlogHubPage = lazy(() => import('./pages/BlogHubPage'));
+const ArticlePage = lazy(() => import('./pages/ArticlePage'));
+const SectorDetailPage = lazy(() => import('./pages/sectors/SectorDetailPage'));
 
-import BookkeepingPage from './pages/services/BookkeepingPage';
-import TaxInvoiceIssuancePage from './pages/services/TaxInvoiceIssuancePage';
-import ZakatTaxPage from './pages/services/ZakatTaxPage';
-import FinancialStatementsPage from './pages/services/FinancialStatementsPage';
-import FinancialAnalysisPage from './pages/services/FinancialAnalysisPage';
-import ManagementReportsPage from './pages/services/ManagementReportsPage';
-import BudgetingPage from './pages/services/BudgetingPage';
-import CashFlowPage from './pages/services/CashFlowPage';
-import VirtualCfoPage from './pages/services/VirtualCfoPage';
+const BookkeepingPage = lazy(() => import('./pages/services/BookkeepingPage'));
+const TaxInvoiceIssuancePage = lazy(() => import('./pages/services/TaxInvoiceIssuancePage'));
+const ZakatTaxPage = lazy(() => import('./pages/services/ZakatTaxPage'));
+const FinancialStatementsPage = lazy(() => import('./pages/services/FinancialStatementsPage'));
+const FinancialAnalysisPage = lazy(() => import('./pages/services/FinancialAnalysisPage'));
+const ManagementReportsPage = lazy(() => import('./pages/services/ManagementReportsPage'));
+const BudgetingPage = lazy(() => import('./pages/services/BudgetingPage'));
+const CashFlowPage = lazy(() => import('./pages/services/CashFlowPage'));
+const VirtualCfoPage = lazy(() => import('./pages/services/VirtualCfoPage'));
+const LocalServiceCityPage = lazy(() => import('./pages/services/LocalServiceCityPage'));
 
 import ServicePricingNote from './components/ServicePricingNote';
-import LocalServiceCityPage from './pages/services/LocalServiceCityPage';
+
+function RouteSuspense({ children }: { children: React.ReactNode }) {
+  return (
+    <Suspense fallback={<div className="min-h-[40vh]" role="status" aria-label="جارٍ تحميل الصفحة" />}>
+      {children}
+    </Suspense>
+  );
+}
 
 export default function App({ path: propPath }: { path?: string } = {}) {
   const currentPath = propPath || (typeof window !== 'undefined' ? window.location.pathname : '/');
@@ -84,7 +93,7 @@ export default function App({ path: propPath }: { path?: string } = {}) {
     return (
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
-          <LocalServiceCityPage path={path} />
+          <RouteSuspense><LocalServiceCityPage path={path} /></RouteSuspense>
         </main>
         <FooterSection />
         <FloatingWhatsApp />
@@ -97,7 +106,7 @@ export default function App({ path: propPath }: { path?: string } = {}) {
     return (
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
-          <SectorDetailPage slug={slug} />
+          <RouteSuspense><SectorDetailPage slug={slug} /></RouteSuspense>
         </main>
         <FooterSection />
         <FloatingWhatsApp />
@@ -109,7 +118,7 @@ export default function App({ path: propPath }: { path?: string } = {}) {
     return (
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
-          <TaxInvoiceIssuancePage />
+          <RouteSuspense><TaxInvoiceIssuancePage /></RouteSuspense>
         </main>
         <FooterSection />
         <FloatingWhatsApp />
@@ -121,7 +130,7 @@ export default function App({ path: propPath }: { path?: string } = {}) {
     return (
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
-          <BookkeepingPage />
+          <RouteSuspense><BookkeepingPage /></RouteSuspense>
           <ServicePricingNote />
         </main>
         <FooterSection />
@@ -134,7 +143,7 @@ export default function App({ path: propPath }: { path?: string } = {}) {
     return (
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
-          <ZakatTaxPage />
+          <RouteSuspense><ZakatTaxPage /></RouteSuspense>
         </main>
         <FooterSection />
         <FloatingWhatsApp />
@@ -146,7 +155,7 @@ export default function App({ path: propPath }: { path?: string } = {}) {
     return (
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
-          <FinancialStatementsPage />
+          <RouteSuspense><FinancialStatementsPage /></RouteSuspense>
           <ServicePricingNote />
         </main>
         <FooterSection />
@@ -159,7 +168,7 @@ export default function App({ path: propPath }: { path?: string } = {}) {
     return (
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
-          <FinancialAnalysisPage />
+          <RouteSuspense><FinancialAnalysisPage /></RouteSuspense>
           <ServicePricingNote />
         </main>
         <FooterSection />
@@ -172,7 +181,7 @@ export default function App({ path: propPath }: { path?: string } = {}) {
     return (
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
-          <ManagementReportsPage />
+          <RouteSuspense><ManagementReportsPage /></RouteSuspense>
           <ServicePricingNote />
         </main>
         <FooterSection />
@@ -185,7 +194,7 @@ export default function App({ path: propPath }: { path?: string } = {}) {
     return (
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
-          <BudgetingPage />
+          <RouteSuspense><BudgetingPage /></RouteSuspense>
         </main>
         <FooterSection />
         <FloatingWhatsApp />
@@ -197,7 +206,7 @@ export default function App({ path: propPath }: { path?: string } = {}) {
     return (
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
-          <CashFlowPage />
+          <RouteSuspense><CashFlowPage /></RouteSuspense>
           <ServicePricingNote />
         </main>
         <FooterSection />
@@ -210,7 +219,7 @@ export default function App({ path: propPath }: { path?: string } = {}) {
     return (
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
-          <VirtualCfoPage />
+          <RouteSuspense><VirtualCfoPage /></RouteSuspense>
           <ServicePricingNote />
         </main>
         <FooterSection />
@@ -223,7 +232,7 @@ export default function App({ path: propPath }: { path?: string } = {}) {
     return (
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
-          <PrivacyPolicyPage />
+          <RouteSuspense><PrivacyPolicyPage /></RouteSuspense>
         </main>
         <FooterSection />
         <FloatingWhatsApp />
@@ -235,7 +244,7 @@ export default function App({ path: propPath }: { path?: string } = {}) {
     return (
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
-          <TermsPage />
+          <RouteSuspense><TermsPage /></RouteSuspense>
         </main>
         <FooterSection />
         <FloatingWhatsApp />
@@ -247,7 +256,7 @@ export default function App({ path: propPath }: { path?: string } = {}) {
     return (
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
-          <CookiesPage />
+          <RouteSuspense><CookiesPage /></RouteSuspense>
         </main>
         <FooterSection />
         <FloatingWhatsApp />
@@ -259,7 +268,7 @@ export default function App({ path: propPath }: { path?: string } = {}) {
     return (
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
-          <BlogHubPage />
+          <RouteSuspense><BlogHubPage /></RouteSuspense>
         </main>
         <FooterSection />
         <FloatingWhatsApp />
@@ -272,7 +281,7 @@ export default function App({ path: propPath }: { path?: string } = {}) {
     return (
       <div className="min-h-screen bg-white text-text-primary antialiased selection:bg-secondary/10 flex flex-col" dir="rtl">
         <main id="main-content" className="flex-grow">
-          <ArticlePage slug={slug} />
+          <RouteSuspense><ArticlePage slug={slug} /></RouteSuspense>
         </main>
         <FooterSection />
         <FloatingWhatsApp />
