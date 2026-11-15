@@ -38,6 +38,7 @@ const LocalServiceCityPage = lazy(() => import('./pages/services/LocalServiceCit
 
 import ServicePricingNote from './components/ServicePricingNote';
 
+// The static renderer waits for lazy route modules; this fallback is client-only while a chunk loads.
 function RouteSuspense({ children }: { children: ReactNode }) {
   return (
     <Suspense fallback={<div className="min-h-[40vh]" role="status" aria-label="جارٍ تحميل الصفحة" />}>
